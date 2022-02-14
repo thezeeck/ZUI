@@ -4,7 +4,7 @@ import { HeaderComponent } from "./styles";
 export const Header = () => {
   return (
     <HeaderComponent>
-      <figure>
+      <figure id="logo">
         <img src={img.logo} alt="ZUI UI"/>
       </figure>
     </HeaderComponent>

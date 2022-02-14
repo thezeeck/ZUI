@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderComponent = styled.header`
   display: flex;
 
-  figure {
+  #logo {
     width: 6.25rem;
     margin: 1rem;
 
