@@ -1,7 +1,11 @@
-import { AvatarContent } from "./content/Avatar"
+import { AvatarContent } from "./content/Avatar";
+import { GridContent } from "./content/Grid";
 
 export const Main = () => {
   return (
-    <AvatarContent />
+    <main>
+      <GridContent />
+      <AvatarContent />
+    </main>
   )
 }

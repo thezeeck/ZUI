@@ -8,8 +8,23 @@ export const AvatarUI = styled.span`
   height: ${({size}) => `var(--ZUI-avatar-size-${size})`};
   overflow: hidden;
   position: relative;
+  border-radius: ${({squared}) => squared ? "33%" : "50%"};
+  transition: all .3s ease;
+  font-size: ${({size}) => `var(--ZUI-avatar-font-${size})`};
+  cursor: ${({pointer}) => pointer ? "pointer" : "initial"};
 
-  span {
+  &.zoom:hover {
+
+    figure {
+      transform: scale(1.2);
+    }
+
+    .text {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  .background {
     background: ${({color}) => color};
     display: block;
     height: 100%;
@@ -17,13 +32,18 @@ export const AvatarUI = styled.span`
   }
 
   figure {
-    margin: 0;
+    margin: ${({bordered, borderWeight}) => bordered ? `var(--ZUI-avatar-border-${borderWeight})` : 0};
     line-height: 0;
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: ${({bordered, borderWeight}) => bordered ? `calc(100% - (var(--ZUI-avatar-border-${borderWeight}) * 2))` : "100%"};
+    height: ${({bordered, borderWeight}) => bordered ? `calc(100% - (var(--ZUI-avatar-border-${borderWeight}) * 2))` : "100%"};
+    overflow: hidden;
+    border-radius: ${({squared}) => squared ? "33%" : "50%"};
+    box-sizing: border-box;
+    border: ${({bordered}) => bordered ? ".125rem solid var(--secondary-dark)" : "0 none"};
+    transition: all .3s ease;
 
     img {
       width: 100%;
@@ -34,7 +54,11 @@ export const AvatarUI = styled.span`
 
   .text {
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    color: ${({textColor}) => textColor};
+    transform: translate(-50%, -50%) scale(.8);
+    transition: all .3s ease;
   }
 `;
