@@ -1,39 +1,33 @@
 import { AvatarUI } from "./styles";
 
-export const Avatar = ({
-  src = "",
-  text = "",
-  size = "md",
-  bordered = false,
-  color = "transparent",
-  zoom = false,
-  squared = false,
-  // icon = "",
-  // group = false,
-  alt = "",
-  textColor = "",
-  borderWeight = "normal",
-  pointer = false,
-  className,
-}) => {
-  const classList = className ? className.split(" ") : [];
-  if (zoom) classList.push("zoom");
+export const Avatar = props => {
+  const classList = props.className ? props.className.split(" ") : [];
+  if (props.zoom) classList.push("zoom");
   return (
     <AvatarUI
-      size={size}
-      color={color}
-      textColor={textColor}
-      squared={squared}
-      bordered={bordered}
-      borderWeight={borderWeight}
-      pointer={pointer}
-      className={classList}>
+      {...props}>
       <span className="background"></span>
-      {src &&
+      {props.imgSrc &&
         <figure>
-          <img src={src} alt={alt}/>
+          <img src={props.imgSrc} alt={props.textAlt}/>
         </figure>}
-      {text && <span className="text">{text}</span>}
+      {props.text && <span className="text">{props.text}</span>}
     </AvatarUI>
   )
+}
+
+Avatar.defaultProps = {
+  imgSrc: "",
+  text: "",
+  size: "md",
+  bordered: false,
+  bgColor: "transparent",
+  zoom: false,
+  squared: false,
+  // icon: "",
+  // group: false,
+  textAlt: "",
+  textColor: "#fff",
+  borderWeight: "normal",
+  pointer: false,
 }

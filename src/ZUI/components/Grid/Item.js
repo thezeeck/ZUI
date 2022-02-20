@@ -1,22 +1,25 @@
 import { GridItem } from "./styles";
 
-export const Item = ({
-  children,
-  xs = 12,
-  sm = 12,
-  md = 12,
-  lg = 12,
-  xl = 12,
-  style = null
-}) => (
+export const Item = props => {
+  const xs = props.xs;
+  const sm = props.sm ? props.sm : xs;
+  const md = props.md ? props.md : sm;
+  const lg = props.lg ? props.lg : md;
+  const xl = props.xl ? props.xl : lg;
+
+  return (
   <GridItem className="grid-item"
     xs={xs}
     sm={sm}
     md={md}
     lg={lg}
     xl={xl}
-    style={style}
+    {...props}
   >
-    {children}
+    {props.children}
   </GridItem>
-)
+)};
+
+Item.defaultProps = {
+  xs: 12
+}

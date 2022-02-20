@@ -12,6 +12,7 @@ export const Aside = () => {
           <h2>Components</h2>
           <ul>
             <li><a href="#avatarWidget">Avatar</a></li>
+            <li><a href="#cardWidget">Avatar</a></li>
           </ul>
         </li>
       </ul>

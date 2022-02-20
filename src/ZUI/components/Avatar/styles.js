@@ -25,7 +25,7 @@ export const AvatarUI = styled.span`
   }
 
   .background {
-    background: ${({color}) => color};
+    background: ${({bgColor}) => bgColor};
     display: block;
     height: 100%;
     width: 100%;

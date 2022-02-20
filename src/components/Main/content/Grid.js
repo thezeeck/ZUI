@@ -1,4 +1,4 @@
-import { Grid } from "../../../ZUI";
+import { Grid, Card } from "../../../ZUI";
 
 export const GridContent = () => {
   const grid1 = [];
@@ -13,20 +13,42 @@ export const GridContent = () => {
       <section>
         <Grid.Container gap=".5rem">
           {grid1.map(elem => 
-            <Grid.Item xs={1} key={elem} style={{backgroundColor: "blue", height: "1rem", textAlign: "center"}}>
-              <span>{elem}</span>  
+            <Grid.Item xs={1} key={elem} style={{textAlign: "center"}}>
+              <Card>{elem}</Card>  
             </Grid.Item>
           )}
         </Grid.Container>
-        <Grid.Container gap=".5rem">
-          <Grid.Item xs={6} style={{backgroundColor: "blue", height: "1rem", textAlign: "center"}}>
-            <span>1</span>  
+        <Grid.Container>
+          <Grid.Item xs={6} style={{textAlign: "center"}}>
+            <Card style={{backgroundColor: "blue"}}>1</Card>  
           </Grid.Item>
-          <Grid.Item xs={6} style={{backgroundColor: "blue", height: "1rem", textAlign: "center"}}>
-            <span>1</span>  
+          <Grid.Item xs={5} style={{textAlign: "center"}}>
+            <Card style={{backgroundColor: "blue"}}>1</Card>  
           </Grid.Item>
-          <Grid.Item xs={1} style={{backgroundColor: "blue", height: "1rem", textAlign: "center"}}>
-            <span>1</span>  
+          <Grid.Item xs={2} style={{textAlign: "center"}}>
+            <Card style={{backgroundColor: "blue"}}>1</Card>  
+          </Grid.Item>
+        </Grid.Container>
+        <Grid.Container wrap="no-wrap">
+          <Grid.Item xs={6} style={{textAlign: "center"}}>
+            <Card style={{backgroundColor: "blue"}}>1</Card>  
+          </Grid.Item>
+          <Grid.Item xs={5} style={{textAlign: "center"}}>
+            <Card style={{backgroundColor: "blue"}}>1</Card>  
+          </Grid.Item>
+          <Grid.Item xs={2} style={{textAlign: "center"}}>
+            <Card style={{backgroundColor: "blue"}}>1</Card>  
+          </Grid.Item>
+        </Grid.Container>
+        <Grid.Container>
+          <Grid.Item xs={0} sm={2} md={4} lg={6} xl={8} style={{textAlign: "center"}}>
+            <Card style={{backgroundColor: "blue"}}>1</Card>  
+          </Grid.Item>
+          <Grid.Item xs={2} style={{textAlign: "center"}}>
+            <Card style={{backgroundColor: "blue"}}>1</Card>  
+          </Grid.Item>
+          <Grid.Item xs={2} style={{textAlign: "center"}}>
+            <Card style={{backgroundColor: "blue"}}>1</Card>  
           </Grid.Item>
         </Grid.Container>
       </section>

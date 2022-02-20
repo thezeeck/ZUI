@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const GridContainer = styled.ul`
   --gap: ${({gap}) => gap};
   list-style: none;
-  padding: 1rem;
+  padding: var(--gap) calc(var(--gap) / 2);
   margin: 0;
-  gap: var(--gap);
   display: inline-flex;
   flex-wrap: ${({wrap}) => wrap};
   justify-content: ${({justify}) => justify};
@@ -17,7 +16,29 @@ export const GridContainer = styled.ul`
 `;
 
 export const GridItem = styled.li`
-  max-width: ${({xs}) => `calc(((${xs} / 12) * 100%) - var(--gap))`};
+  width: ${({xs}) => `calc((${xs} / 12) * 100%)`};
   box-sizing: border-box;
-  flex: 1 1 auto;
+  flex-grow: 0;
+  padding: var(--gap) calc(var(--gap) / 2);
+  display: ${({xs}) => xs === 0 ? "none" : "block"};
+
+  @media (min-width: 650px) {
+    width: ${({sm}) => `calc((${sm} / 12) * 100%)`};
+    display: ${({sm}) => sm === 0 ? "none" : "block"};
+  }
+
+  @media (min-width: 1000px) {
+    width: ${({md}) => `calc((${md} / 12) * 100%)`};
+    display: ${({md}) => md === 0 ? "none" : "block"};
+  }
+
+  @media (min-width: 1200px) {
+    width: ${({lg}) => `calc((${lg} / 12) * 100%)`};
+    display: ${({lg}) => lg === 0 ? "none" : "block"};
+  }
+
+  @media (min-width: 1400px) {
+    width: ${({xl}) => `calc((${xl} / 12) * 100%)`};
+    display: ${({xl}) => xl === 0 ? "none" : "block"};
+  }
 `;

@@ -6,6 +6,9 @@ export const Main = () => {
     <main>
       <GridContent />
       <AvatarContent />
+      <div>
+        Card
+      </div>
     </main>
   )
 }
