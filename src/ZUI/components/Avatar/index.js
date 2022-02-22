@@ -4,8 +4,7 @@ export const Avatar = props => {
   const classList = props.className ? props.className.split(" ") : [];
   if (props.zoom) classList.push("zoom");
   return (
-    <AvatarUI
-      {...props}>
+    <AvatarUI {...props}>
       <span className="background"></span>
       {props.imgSrc &&
         <figure>

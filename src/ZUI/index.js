@@ -1,5 +1,32 @@
 import "./styles.css";
+import { Avatar } from "./components/Avatar";
+import { Grid } from "./components/Grid";
+import { Card } from "./components/Card";
+import { darkTheme } from "./components/Theme/themes";
+import { lightTheme } from "./components/Theme/themes";
+import { Theme, ThemeProvider } from "./components/Theme";
+import { CreateTheme } from "./components/Theme/themes";
 
-export { Avatar } from "./components/Avatar";
-export { Grid } from "./components/Grid";
-export { Card } from "./components/Card";
+const ZUI = {
+  Avatar,
+  Grid,
+  Card,
+  darkTheme,
+  lightTheme,
+  Theme,
+  ThemeProvider,
+  CreateTheme,
+}
+
+export { 
+  Avatar,
+  Grid,
+  Card,
+  darkTheme,
+  lightTheme,
+  Theme,
+  ThemeProvider,
+  CreateTheme,
+}
+
+export default ZUI;
