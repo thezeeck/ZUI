@@ -4,8 +4,9 @@ import { Grid } from "./components/Grid";
 import { Card } from "./components/Card";
 import { darkTheme } from "./components/Theme/themes";
 import { lightTheme } from "./components/Theme/themes";
-import { Theme, ThemeProvider } from "./components/Theme";
+import { Theme, ThemeProvider, SetTheme, GetTheme } from "./components/Theme";
 import { CreateTheme } from "./components/Theme/themes";
+import { colorsSchema } from "./components/Theme/colorsSchema";
 
 const ZUI = {
   Avatar,
@@ -16,6 +17,9 @@ const ZUI = {
   Theme,
   ThemeProvider,
   CreateTheme,
+  colorsSchema,
+  GetTheme,
+  SetTheme,
 }
 
 export { 
@@ -27,6 +31,9 @@ export {
   Theme,
   ThemeProvider,
   CreateTheme,
+  colorsSchema,
+  GetTheme,
+  SetTheme,
 }
 
 export default ZUI;
