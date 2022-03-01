@@ -1,13 +1,15 @@
 import { AvatarUI } from "./styles";
 import { GetTheme } from "../Theme";
-import { theme } from "../../../styles/theme";
 
 export const Avatar = props => {
   const classList = props.className ? props.className.split(" ") : [];
-  const theme = GetTheme();
+  const { theme } = GetTheme();
+  console.log("avatar", theme);
+  const textColor = props.textColor ? props.textColor : theme.colors.text;
+  console.log(textColor);
   if (props.zoom) classList.push("zoom");
   return (
-    <AvatarUI {...props}>
+    <AvatarUI {...props} textColor={textColor}>
       <span className="background"></span>
       {props.imgSrc &&
         <figure>
@@ -29,7 +31,6 @@ Avatar.defaultProps = {
   // icon: "",
   // group: false,
   textAlt: "",
-  textColor: theme.colors.text,
   borderWeight: "normal",
   pointer: false,
 }

@@ -3,21 +3,21 @@ import { core } from "./coreTheme";
 
 export const Theme = createContext(core);
 
-export const ThemeProvider = ({thm, children}) => {
-  const [theme, setTheme] = useState(thm);
+export const ThemeProvider = ({theme, children}) => {
+  const [newTheme, setTheme] = useState(theme);
   return (
-    <Theme.Provider value={{theme, setTheme}}>
+    <Theme.Provider value={[newTheme, setTheme]}>
       {children}
     </Theme.Provider>
   )
 };
 
 export const GetTheme = () => {
-  const { theme } = useContext(Theme);
+  const [ theme ] = useContext(Theme);
   return theme;
 };
 
 export const SetTheme = (newTheme) => {
-  const { setTheme } = useContext(Theme);
+  const [ _, setTheme ] = useContext(Theme);
   return setTheme(newTheme);
 }

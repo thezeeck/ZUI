@@ -8,7 +8,6 @@ export const AvatarContent = () => (
         text="JS"
         size="xs"
         bgColor="#f1f1f1"
-        textColor="#000"
         pointer
         zoom
       />
@@ -16,7 +15,6 @@ export const AvatarContent = () => (
         text="JS"
         size="sm"
         bgColor="#f1f1f1"
-        textColor="#000"
         pointer
         zoom
       />
