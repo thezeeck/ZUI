@@ -20,7 +20,7 @@ Card.defaultProps = {
   zoom: false,
   // icon: "",
   textAlt: "",
-  textColor: "#000",
+  textColor: "inherit",
   borderWeight: "normal",
   pointer: false,
 }

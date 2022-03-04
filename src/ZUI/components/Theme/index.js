@@ -14,7 +14,7 @@ export const ThemeProvider = ({theme, children}) => {
 
 export const GetTheme = () => {
   const [ theme ] = useContext(Theme);
-  return theme;
+  return theme.theme;
 };
 
 export const SetTheme = (newTheme) => {

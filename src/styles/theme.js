@@ -1,8 +1,11 @@
-import { CreateTheme } from "../ZUI";
+import { CreateTheme, darkTheme } from "../ZUI";
 
 export const theme = CreateTheme({
-  colors: {
-    primary: "#D8EFFF",
-    secondaryDark: "#000A11"
-  }
-});
+  theme: {
+    colors: {
+      background: "#000A11"
+    },
+  },
+  type: "userTheme",
+
+}, darkTheme);

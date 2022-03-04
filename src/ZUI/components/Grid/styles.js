@@ -22,22 +22,22 @@ export const GridItem = styled.li`
   padding: var(--gap) calc(var(--gap) / 2);
   display: ${({xs}) => xs === 0 ? "none" : "block"};
 
-  @media (min-width: 650px) {
+  @media (min-width: ${({theme}) => theme.breakPoints.sm}) {
     width: ${({sm}) => `calc((${sm} / 12) * 100%)`};
     display: ${({sm}) => sm === 0 ? "none" : "block"};
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: ${({theme}) => theme.breakPoints.md}) {
     width: ${({md}) => `calc((${md} / 12) * 100%)`};
     display: ${({md}) => md === 0 ? "none" : "block"};
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: ${({theme}) => theme.breakPoints.lg}) {
     width: ${({lg}) => `calc((${lg} / 12) * 100%)`};
     display: ${({lg}) => lg === 0 ? "none" : "block"};
   }
 
-  @media (min-width: 1400px) {
+  @media (min-width: ${({theme}) => theme.breakPoints.xl}) {
     width: ${({xl}) => `calc((${xl} / 12) * 100%)`};
     display: ${({xl}) => xl === 0 ? "none" : "block"};
   }

@@ -1,28 +1,32 @@
-import { core } from "./coreTheme"
+import { core } from "./coreTheme";
+import { mergeTheme } from "./mergeTheme";
 
-export const darkTheme = {
-  ...core,
-  type: "light",
-  theme: {
-    colors: {
-      secondary: "#fff",
+export const CreateTheme = (theme, base) => {
+  return mergeTheme(theme, base ? base : core);
+}
+
+export const lightTheme = CreateTheme(
+  {
+    type: "light",
+    theme: {
+      colors: {
+        text: "#000",
+        background: "#fff",
+      }
     }
-  }
-}
+  },
+  core
+);
 
-export const lightTheme = {
-  ...core,
-  type: "dark",
-  theme: {
-    colors: {
-      secondary: "#000",
+export const darkTheme = CreateTheme(
+  {
+    type: "dark",
+    theme: {
+      colors: {
+        text: "#fff",
+        background: "#000",
+      }
     }
-  }
-}
-
-export const CreateTheme = theme => {
-  return {
-    ...core,
-    theme
-  }
-}
+  },
+  core
+)

@@ -49,6 +49,13 @@ export const core = {
       error: colorsSchema.red500,
       errorDark: colorsSchema.red700,
       errorShadow: colorsSchema.red900,
+    },
+    breakPoints: {
+      sm: "650px",
+      md: "1000px",
+      lg: "1200px",
+      xl: "1400px",
     }
-  }
+  },
+  type: "core"
 }
