@@ -4,13 +4,13 @@ export const AvatarUI = styled.span`
   border: 0;
   display: inline-block;
   vertical-align: middle;
-  width: ${({size}) => `var(--ZUI-avatar-size-${size})`};
-  height: ${({size}) => `var(--ZUI-avatar-size-${size})`};
+  width: ${({theme, size}) => theme.avatarSize[size]};
+  height: ${({theme, size}) => theme.avatarSize[size]};
   overflow: hidden;
   position: relative;
   border-radius: ${({squared}) => squared ? "33%" : "50%"};
   transition: all .3s ease;
-  font-size: ${({size}) => `var(--ZUI-avatar-font-${size})`};
+  font-size: ${({theme, size}) => theme.avatarSize[`font_${size}`]};
   cursor: ${({pointer}) => pointer ? "pointer" : "initial"};
 
   &.zoom:hover {
@@ -32,19 +32,26 @@ export const AvatarUI = styled.span`
   }
 
   figure {
-    margin: ${({bordered, borderWeight}) => bordered ? `var(--ZUI-avatar-border-${borderWeight})` : 0};
     line-height: 0;
     position: absolute;
     left: 0;
     top: 0;
-    width: ${({bordered, borderWeight}) => bordered ? `calc(100% - (var(--ZUI-avatar-border-${borderWeight}) * 2))` : "100%"};
-    height: ${({bordered, borderWeight}) => bordered ? `calc(100% - (var(--ZUI-avatar-border-${borderWeight}) * 2))` : "100%"};
     overflow: hidden;
+    transition: all .3s ease;
     border-radius: ${({squared}) => squared ? "33%" : "50%"};
     box-sizing: border-box;
-    border: ${({bordered}) => bordered ? ".125rem solid var(--secondary-dark)" : "0 none"};
-    transition: all .3s ease;
-
+    ${({theme, bordered, borderWeight}) => bordered ? `
+      width: calc(100% - (${theme.avatarSize["boder_" + borderWeight]} * 2));
+      height: calc(100% - (${theme.avatarSize["boder_" + borderWeight]} * 2));
+      border: .125rem solid ${theme.colors.secondaryDark};
+      margin: ${theme.avatarSize["border_" + borderWeight]};
+    ` : `
+      width: 100%;
+      height: 100%;
+      border: 0 none;
+      margin: 0;
+    `}
+    
     img {
       width: 100%;
       height: 100%;
@@ -57,7 +64,7 @@ export const AvatarUI = styled.span`
     left: 50%;
     top: 50%;
     text-align: center;
-    color: ${({textColor}) => textColor};
+    color: ${({textColor}) => textColor ? textColor : "inherit"};
     transform: translate(-50%, -50%) scale(.8);
     transition: all .3s ease;
   }

@@ -8,11 +8,9 @@ export const CreateTheme = (theme, base) => {
 export const lightTheme = CreateTheme(
   {
     type: "light",
-    theme: {
-      colors: {
-        text: "#000",
-        background: "#fff",
-      }
+    colors: {
+      text: "#000",
+      background: "#fff",
     }
   },
   core
@@ -21,11 +19,9 @@ export const lightTheme = CreateTheme(
 export const darkTheme = CreateTheme(
   {
     type: "dark",
-    theme: {
-      colors: {
-        text: "#fff",
-        background: "#000",
-      }
+    colors: {
+      text: "#fff",
+      background: "#000",
     }
   },
   core

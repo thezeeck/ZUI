@@ -1,12 +1,13 @@
-import "./styles.css";
 import { Avatar } from "./components/Avatar";
 import { Grid } from "./components/Grid";
 import { Card } from "./components/Card";
-import { darkTheme } from "./components/Theme/themes";
-import { lightTheme } from "./components/Theme/themes";
+import { darkTheme, lightTheme, CreateTheme } from "./components/Theme/themes";
 import { Theme, ThemeProvider, SetTheme, GetTheme } from "./components/Theme";
-import { CreateTheme } from "./components/Theme/themes";
 import { colorsSchema } from "./components/Theme/colorsSchema";
+import { Anchor } from "./components/Anchor";
+import { Container } from "./components/Container";
+import { Collapse } from "./components/Collapse";
+import { Text } from "./components/Text";
 
 const ZUI = {
   Avatar,
@@ -20,6 +21,10 @@ const ZUI = {
   colorsSchema,
   GetTheme,
   SetTheme,
+  Anchor,
+  Container,
+  Collapse,
+  Text,
 }
 
 export { 
@@ -34,6 +39,10 @@ export {
   colorsSchema,
   GetTheme,
   SetTheme,
+  Anchor,
+  Container,
+  Collapse,
+  Text,
 }
 
 export default ZUI;

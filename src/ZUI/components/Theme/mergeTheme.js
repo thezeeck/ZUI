@@ -1,15 +1,13 @@
 export const mergeTheme = (newTheme, baseTheme) => {
-  const type = newTheme.type ? newTheme.type : baseTheme.type ? baseTheme.type : "newTheme";
-  const colors = {...baseTheme?.theme?.colors, ...newTheme?.theme?.colors};
-  const avatarSize = {...baseTheme?.theme?.avatarSize, ...newTheme?.theme?.avatarSize}
-  const breakPoints = {...baseTheme?.theme?.breakPoints, ...newTheme?.theme?.breakPoints}
+  const name = newTheme.name ? newTheme.name : baseTheme.name ? baseTheme.name : "newTheme";
+  const colors = {...baseTheme.colors, ...newTheme.colors};
+  const avatarSize = {...baseTheme.avatarSize, ...newTheme.avatarSize}
+  const breakPoints = {...baseTheme.breakPoints, ...newTheme.breakPoints}
   
   return {
-    type,
-    theme: {
-      colors,
-      avatarSize,
-      breakPoints
-    }
+    name,
+    colors,
+    avatarSize,
+    breakPoints
   }
 }

@@ -1,20 +1,26 @@
+import { Link } from "react-router-dom";
+import { menu } from "../../constant/menu";
+import { Text, GetTheme } from "../../ZUI";
+
 export const Aside = () => {
+  const theme = GetTheme();
   return (
     <aside>
       <ul>
-        <li>
-          <h2>Layouts</h2>
-          <ul>
-            <li><a href="#gridWidget">Grid</a></li>
-          </ul>
-        </li>
-        <li>
-          <h2>Components</h2>
-          <ul>
-            <li><a href="#avatarWidget">Avatar</a></li>
-            <li><a href="#cardWidget">Avatar</a></li>
-          </ul>
-        </li>
+        {menu.map(item => (
+          <li key={`id${item.name}`}>
+            <h1>{item.name}</h1>
+            <ul>
+              {item.childs.sort().map((child, index) => (
+                <li key={index}>
+                  <Text textColor={theme.colors.text} decoration="none">
+                    <Link to={child.path}>{child.name}</Link>
+                  </Text>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
       </ul>
     </aside>
   )
