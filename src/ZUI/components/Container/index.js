@@ -15,5 +15,4 @@ Container.defaultProps = {
   alignItems: "flex-start",
   alignContent: "flex-start",
   flex: false,
-  display: "block",
 }

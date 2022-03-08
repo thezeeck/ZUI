@@ -1,5 +1,5 @@
-import { Avatar } from "../../ZUI";
-import { Layout } from "../Layout";
+import { Avatar } from "../ZUI";
+import { Layout } from "../components/Layout";
 
 export const AvatarContent = () => (
   <Layout>

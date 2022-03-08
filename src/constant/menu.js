@@ -1,6 +1,6 @@
-import { Home } from "../components/content/Home";
-import { AnchorContent } from "../components/content/Anchor";
-import { AvatarContent } from "../components/content/Avatar";
+import { Home } from "../content/Home";
+import { AnchorContent } from "../content/Anchor";
+import { AvatarContent } from "../content/Avatar";
 
 export const menu = [
   {

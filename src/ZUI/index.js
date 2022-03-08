@@ -8,6 +8,7 @@ import { Anchor } from "./components/Anchor";
 import { Container } from "./components/Container";
 import { Collapse } from "./components/Collapse";
 import { Text } from "./components/Text";
+import { hexToRgba } from "./utils";
 
 const ZUI = {
   Avatar,
@@ -25,6 +26,7 @@ const ZUI = {
   Container,
   Collapse,
   Text,
+  hexToRgba,
 }
 
 export { 
@@ -43,6 +45,7 @@ export {
   Container,
   Collapse,
   Text,
+  hexToRgba,
 }
 
 export default ZUI;

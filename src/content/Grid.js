@@ -1,4 +1,4 @@
-import { Grid, Card } from "../../../ZUI";
+import { Grid, Card } from "../ZUI";
 
 export const GridContent = () => {
   const grid1 = [];
