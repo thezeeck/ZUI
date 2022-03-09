@@ -1,4 +1,5 @@
 import { colorsSchema } from "./colorsSchema";
+import { hexToRgba } from "../../utils";
 
 export const core = {
   avatarSize: {
@@ -35,10 +36,10 @@ export const core = {
     primaryDark: colorsSchema.blue700,
     primaryShadow: colorsSchema.blue900,
 
-    secondaryLight: colorsSchema.orange300,
+    secondaryLight: colorsSchema.orange100,
     secondary: colorsSchema.orange500,
-    secondaryDark: colorsSchema.orange300,
-    secondaryShadow: colorsSchema.orange300,
+    secondaryDark: colorsSchema.orange700,
+    secondaryShadow: colorsSchema.orange900,
 
     successLight: colorsSchema.green300,
     success: colorsSchema.green500,
@@ -54,6 +55,11 @@ export const core = {
     error: colorsSchema.red500,
     errorDark: colorsSchema.red700,
     errorShadow: colorsSchema.red900,
+  },
+  shadows: {
+    gray: `0 .5rem .75rem ${hexToRgba(colorsSchema.gray100, .2)}`,
+    primary: `0 .5rem .75rem ${hexToRgba(colorsSchema.blue100, .2)}`,
+    secondary: `0 .5rem .75rem ${hexToRgba(colorsSchema.orange100, .2)}`,
   },
   name: "core",
 }

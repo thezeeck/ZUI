@@ -10,9 +10,20 @@ export const ContainerUI = styled.div`
     align-content: ${alignContent};
 
     > * {
-      padding: ${gap};
-      width: 100%;
+      margin: ${gap};
+      width: calc(100% - (${gap} * 2));
       box-sizing: border-box;
     }
-  `}
+  `};
+  padding: ${({gap}) => gap};
+  box-sizing: border-box;
+  ${({background}) => background && `
+    background: ${background}
+  `};
+  ${({radius}) => radius && `
+    border-radius: ${radius}
+  `};
+  ${({shadow, theme}) => shadow && `
+    box-shadow: ${theme.shadows[shadow]}
+  `};
 `;

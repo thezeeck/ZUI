@@ -1,11 +1,11 @@
-import { GetTheme, Container } from "../../ZUI";
+import { useGetTheme, Container } from "../../ZUI";
 import { Aside } from "../Aside";
 import { MainLayout } from "./styles";
 import { Header } from "../Header";
 
 
 export const Layout = ({ children }) => {
-  const userTheme = GetTheme();
+  const userTheme = useGetTheme();
   return (
     <MainLayout theme={userTheme}>
       <Header />

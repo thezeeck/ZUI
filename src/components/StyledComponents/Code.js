@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { GetTheme, hexToRgba } from "../../ZUI";
+import { useGetTheme, hexToRgba } from "../../ZUI";
 
 
 const CodeUI = styled.code`
   color: ${({colors}) => colors.primaryLight}};
-  font-size: .8rem;
+  font-size: .875rem;
   background-color: ${({colors}) => hexToRgba(colors.primaryLight, .2)}};
   display: inline-block;
   padding: .125rem .25rem;
@@ -12,7 +12,7 @@ const CodeUI = styled.code`
 `;
 
 export const Code = ({ children }) => {
-  const { colors } = GetTheme();
+  const { colors } = useGetTheme();
 
   return (
     <CodeUI colors={colors}>

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { ELinkUI } from "./styles";
-import { GetTheme } from "../../ZUI";
+import { useGetTheme } from "../../ZUI";
 
 export const ELink = ({children, to}) => {
-  const theme = GetTheme();
+  const theme = useGetTheme();
   return (
     <ELinkUI theme={theme}>
       <Link to={to}>{children}</Link>

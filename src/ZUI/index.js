@@ -2,7 +2,7 @@ import { Avatar } from "./components/Avatar";
 import { Grid } from "./components/Grid";
 import { Card } from "./components/Card";
 import { darkTheme, lightTheme, CreateTheme } from "./components/Theme/themes";
-import { Theme, ThemeProvider, SetTheme, GetTheme } from "./components/Theme";
+import { Theme, ThemeProvider, useSetTheme, useGetTheme } from "./components/Theme";
 import { colorsSchema } from "./components/Theme/colorsSchema";
 import { Anchor } from "./components/Anchor";
 import { Container } from "./components/Container";
@@ -20,8 +20,8 @@ const ZUI = {
   ThemeProvider,
   CreateTheme,
   colorsSchema,
-  GetTheme,
-  SetTheme,
+  useGetTheme,
+  useSetTheme,
   Anchor,
   Container,
   Collapse,
@@ -39,8 +39,8 @@ export {
   ThemeProvider,
   CreateTheme,
   colorsSchema,
-  GetTheme,
-  SetTheme,
+  useGetTheme,
+  useSetTheme,
   Anchor,
   Container,
   Collapse,

@@ -1,8 +1,11 @@
 import { ContainerUI } from "./styles";
+import { useGetTheme } from "../Theme";
 
 export const Container = props => {
+  const theme = useGetTheme();
+  console.log(theme);
   return (
-    <ContainerUI {...props}>
+    <ContainerUI {...props} theme={theme}>
       {props.children}
     </ContainerUI>
 )};
