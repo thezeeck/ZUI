@@ -1,9 +1,8 @@
 import { ContainerUI } from "./styles";
-import { useGetTheme } from "../Theme";
+import { useThemeContext } from "../Theme";
 
 export const Container = props => {
-  const theme = useGetTheme();
-  console.log(theme);
+  const { theme } = useThemeContext();
   return (
     <ContainerUI {...props} theme={theme}>
       {props.children}

@@ -1,23 +1,28 @@
 import { createContext, useContext, useState } from "react";
 import { core } from "./coreTheme";
 
-export const Theme = createContext(core);
+export const Theme = createContext();
 
-export const ThemeProvider = ({theme, children}) => {
-  const [userTheme, setTheme] = useState(theme);
+export const ThemeProvider = ({ theme, children }) => {
+  const currentTheme = useTheme(theme);
   return (
-    <Theme.Provider value={{userTheme, setTheme}}>
+    <Theme.Provider value={ currentTheme }>
       {children}
     </Theme.Provider>
   )
 };
 
-export const useGetTheme = () => {
-  const { userTheme } = useContext(Theme);
-  return userTheme;
+export const useThemeContext = () => {
+  return useContext(Theme);
 };
 
-export const useSetTheme = (newTheme) => {
-  const { setTheme } = useContext(Theme);
-  return setTheme(newTheme);
+function useTheme (userTheme) {
+  const [theme, setTheme] = useState(userTheme ? userTheme : core);
+
+  const setNewTheme = (theme, callback) => {
+    setTheme(theme);
+    if (callback) callback();
+  }
+
+  return { theme, setNewTheme };
 }

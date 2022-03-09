@@ -1,9 +1,9 @@
 import { menu } from "../../constant/menu";
-import { Text, useGetTheme } from "../../ZUI";
+import { Text, useThemeContext } from "../../ZUI";
 import { ELink } from "../Links";
 
 export const Aside = () => {
-  const theme = useGetTheme();
+  const { theme } = useThemeContext();
   return (
     <aside>
       <ul>

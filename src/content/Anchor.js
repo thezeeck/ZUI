@@ -1,9 +1,9 @@
-import { Anchor, Container, useGetTheme, hexToRgba } from "../ZUI";
+import { Anchor, Container, useThemeContext, hexToRgba } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, Code } from "../components/StyledComponents";
 
 export const AnchorContent = () => {
-  const theme = useGetTheme();
+  const { theme } = useThemeContext();
   return (
     <Layout>
       <H1>Anchor</H1>

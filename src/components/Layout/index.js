@@ -1,13 +1,13 @@
-import { useGetTheme, Container } from "../../ZUI";
+import { useThemeContext, Container } from "../../ZUI";
 import { Aside } from "../Aside";
 import { MainLayout } from "./styles";
 import { Header } from "../Header";
 
 
 export const Layout = ({ children }) => {
-  const userTheme = useGetTheme();
+  const { theme } = useThemeContext();
   return (
-    <MainLayout theme={userTheme}>
+    <MainLayout theme={theme}>
       <Header />
       <Aside />
       <main>

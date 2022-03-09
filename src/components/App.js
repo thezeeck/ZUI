@@ -1,13 +1,15 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import { ThemeProvider } from "../ZUI";
-import { theme } from "../styles/theme";
 import { Routes } from './Routes';
+import { userTheme } from '../styles/theme';
 
 export const App = () => {
   return (
-    <ThemeProvider theme={theme} >
+    <ThemeProvider value={userTheme}>
       <BrowserRouter>
-        <Routes />
+        <Switch>
+          <Routes />
+        </Switch>
       </BrowserRouter>
     </ThemeProvider>
   )

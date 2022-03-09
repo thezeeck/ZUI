@@ -1,8 +1,8 @@
-import { useGetTheme } from "../Theme";
+import { useThemeContext } from "../Theme";
 import { AvatarUI } from "./styles";
 
 export const Avatar = props => {
-  const theme = useGetTheme();
+  const { theme } = useThemeContext();
   const classList = props.className ? props.className.split(" ") : [];
   if (props.zoom) classList.push("zoom");
   return (

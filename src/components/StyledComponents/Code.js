@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useGetTheme, hexToRgba } from "../../ZUI";
+import { useThemeContext, hexToRgba } from "../../ZUI";
 
 
 const CodeUI = styled.code`
@@ -12,7 +12,8 @@ const CodeUI = styled.code`
 `;
 
 export const Code = ({ children }) => {
-  const { colors } = useGetTheme();
+  const { theme } = useThemeContext();
+  const { colors } = theme;
 
   return (
     <CodeUI colors={colors}>

@@ -1,5 +1,5 @@
 import { GridItem } from "./styles";
-import { useGetTheme } from "../Theme";
+import { useThemeContext } from "../Theme";
 
 export const Item = props => {
   const xs = props.xs;
@@ -7,7 +7,7 @@ export const Item = props => {
   const md = props.md ? props.md : sm;
   const lg = props.lg ? props.lg : md;
   const xl = props.xl ? props.xl : lg;
-  const theme = useGetTheme();
+  const { theme } = useThemeContext();
 
   return (
   <GridItem className="grid-item"
