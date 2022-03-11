@@ -6,6 +6,7 @@ import { Header } from "../Header";
 
 export const Layout = ({ children }) => {
   const { theme } = useThemeContext();
+  console.log("useThemeContext", theme);
   return (
     <MainLayout theme={theme}>
       <Header />

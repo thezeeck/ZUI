@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import { core } from "./coreTheme";
 
-export const Theme = createContext();
+export const Theme = createContext({theme: core});
 
 export const ThemeProvider = ({ theme, children }) => {
   const currentTheme = useTheme(theme);

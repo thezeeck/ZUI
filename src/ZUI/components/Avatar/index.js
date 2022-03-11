@@ -1,9 +1,9 @@
-import { useThemeContext } from "../Theme";
 import { AvatarUI } from "./styles";
+import { useThemeContext } from "../Theme";
 
 export const Avatar = props => {
-  const { theme } = useThemeContext();
   const classList = props.className ? props.className.split(" ") : [];
+  const { theme } = useThemeContext();
   if (props.zoom) classList.push("zoom");
   return (
     <AvatarUI {...props} textColor={props.textColor} theme={theme}>
@@ -28,7 +28,7 @@ Avatar.defaultProps = {
   // icon: "",
   // group: false,
   textAlt: "",
-  borderWeight: "normal",
+  borderWeight: "md",
   pointer: false,
   textColor: "inherit"
 }

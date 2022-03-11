@@ -2,24 +2,24 @@ import { colorsSchema } from "./colorsSchema";
 import { hexToRgba } from "../../utils";
 
 export const core = {
-  avatarSize: {
-    xs: "1rem",
-    sm: "2rem",
-    md: "3rem",
-    lg: "4rem",
-    xl: "5rem",
+  sizes: {
+    avatar_xs: "1rem",
+    avatar_sm: "2rem",
+    avatar_md: "3rem",
+    avatar_lg: "4rem",
+    avatar_xl: "5rem",
 
-    font_xs: "0.625rem",
-    font_sm: "1.25rem",
-    font_md: "1.875rem",
-    font_lg: "2.5rem",
-    font_xl: "3.125rem",
+    avatar_font_xs: "0.625rem",
+    avatar_font_sm: "1.25rem",
+    avatar_font_md: "1.875rem",
+    avatar_font_lg: "2.5rem",
+    avatar_font_xl: "3.125rem",
 
-    border_light: "0.0625rem",
-    border_normal: "0.125rem",
-    border_bold: "0.25rem",
-    border_extrabold: "0.375rem",
-    border_black: "0.5rem",
+    avatar_border_xs: "0.0625rem",
+    avatar_border_sm: "0.125rem",
+    avatar_border_md: "0.25rem",
+    avatar_border_lg: "0.375rem",
+    avatar_border_xl: "0.5rem",
   },
   breakPoints: {
     sm: "650px",
@@ -60,6 +60,13 @@ export const core = {
     gray: `0 .5rem .75rem ${hexToRgba(colorsSchema.gray100, .2)}`,
     primary: `0 .5rem .75rem ${hexToRgba(colorsSchema.blue100, .2)}`,
     secondary: `0 .5rem .75rem ${hexToRgba(colorsSchema.orange100, .2)}`,
+  },
+  transitions: {
+    slow: .75,
+    regular: .5,
+    fast: .25,
+
+    avatar: "regular",
   },
   name: "core",
 }

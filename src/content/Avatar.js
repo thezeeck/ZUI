@@ -86,7 +86,7 @@ export const AvatarContent = () => (
         bgColor="#7928ca"
         textAlt="Example of avatar"
         textColor="white"
-        borderWeight="normal"
+        borderWeight="sm"
       />
       <Avatar
         imgSrc="https://nextui.org/avatars/avatar-6.png"
@@ -97,7 +97,7 @@ export const AvatarContent = () => (
         zoom
         textAlt="Example of avatar"
         textColor="black"
-        borderWeight="black"
+        borderWeight="xl"
         pointer
         squared
       />

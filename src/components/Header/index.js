@@ -1,6 +1,7 @@
 import { img } from "../../constant";
 import { HeaderComponent } from "./styles";
 import { useThemeContext, darkTheme, lightTheme } from "../../ZUI";
+import { userTheme } from "../../styles/theme";
 
 export const Header = () => {
   const { theme, setNewTheme } = useThemeContext();
@@ -11,7 +12,10 @@ export const Header = () => {
         <img src={img.logo} alt="ZUI UI"/>
       </figure>
       <div>
-        <button onClick={() => { setNewTheme(name !== "light" ? lightTheme : darkTheme)}}>
+        <button onClick={() => { setNewTheme(
+            name === "userTheme" ? lightTheme :
+            name === "light" ? darkTheme : userTheme
+          )}}>
           Theme: { name }  
         </button>
       </div>
