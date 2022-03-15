@@ -6,14 +6,14 @@ import { userTheme } from '../styles/theme';
 export const App = () => {
   return (
     <>
-      {/* <ThemeProvider theme={userTheme}> */}
+      <ThemeProvider theme={userTheme}>
         <Styles />
         <BrowserRouter>
           <Switch>
             <Routes />
           </Switch>
         </BrowserRouter>
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </>
   )
 };

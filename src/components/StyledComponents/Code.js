@@ -3,9 +3,9 @@ import { useThemeContext, hexToRgba } from "../../ZUI";
 
 
 const CodeUI = styled.code`
-  color: ${({colors}) => colors.primaryLight}};
+  color: ${({colors}) => colors.primary_light}};
   font-size: .875rem;
-  background-color: ${({colors}) => hexToRgba(colors.primaryLight, .2)}};
+  background-color: ${({colors}) => hexToRgba(colors.primary_light, .2)}};
   display: inline-block;
   padding: .125rem .25rem;
   border-radius: .5rem;

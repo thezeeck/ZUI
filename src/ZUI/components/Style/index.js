@@ -9,12 +9,11 @@ export const Styles = () => {
 const CSS = createGlobalStyle`
   ${({theme}) => {
     let rules = "";
-    console.log(theme);
-    
+
     for (const key in theme) {
       if(typeof theme[key] !== "string") {
         for (const childKey in theme[key]) {
-          rules += `--${key}_${childKey}: ${theme[key][childKey]};`;
+          rules += `--ZUI-${key}_${childKey}: ${theme[key][childKey]};`;
         }
       }
     }
@@ -22,6 +21,10 @@ const CSS = createGlobalStyle`
     return (`
       :root {
         ${rules}
+      }
+
+      body {
+        font-family: var(--ZUI-fonts_sans);
       }
     `)
   }}
