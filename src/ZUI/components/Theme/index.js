@@ -12,12 +12,10 @@ export const ThemeProvider = ({ theme, children }) => {
   )
 };
 
-export const useThemeContext = () => {
-  return useContext(Theme);
-};
+export const useThemeContext = () => useContext(Theme);
 
-function useTheme (userTheme) {
-  const [theme, setTheme] = useState(userTheme ? userTheme : core);
+const useTheme = userTheme => {
+  const [theme, setTheme] = useState(userTheme || core);
 
   const setNewTheme = (theme, callback) => {
     setTheme(theme);

@@ -1,6 +1,6 @@
 import { Anchor, Container } from "../ZUI";
 import { Layout } from "../components/Layout";
-import { H1, Code } from "../components/StyledComponents";
+import { H1, Code, ExampleCode } from "../components/StyledComponents";
 
 export const AnchorContent = () => {
   return (
@@ -11,8 +11,6 @@ export const AnchorContent = () => {
         all links in their project in the same place or customize each element separately, this
         component renders an <Code>{`<a>`}</Code> HTML element.
       </p>
-      <Container icon="copy">
-        {"import { Anchor } from 'zeeck-ui';"}
-      </Container>
+      <ExampleCode icon="copy" code="import { Anchor } from 'zeeck-ui';" />
     </Layout>
 )}

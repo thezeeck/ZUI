@@ -30,5 +30,6 @@ Avatar.defaultProps = {
   textAlt: "",
   borderWeight: "md",
   pointer: false,
-  textColor: "inherit"
+  textColor: "inherit",
+  transition: "regular"
 }

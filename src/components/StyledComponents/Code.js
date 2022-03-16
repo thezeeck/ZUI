@@ -3,7 +3,7 @@ import { useThemeContext, hexToRgba } from "../../ZUI";
 
 
 const CodeUI = styled.code`
-  color: ${({colors}) => colors.primary_light}};
+  color: var(--ZUI-colors_primary_light);
   font-size: .875rem;
   background-color: ${({colors}) => hexToRgba(colors.primary_light, .2)}};
   display: inline-block;
@@ -14,6 +14,8 @@ const CodeUI = styled.code`
 export const Code = ({ children }) => {
   const { theme } = useThemeContext();
   const { colors } = theme;
+
+  console.log("colors", colors);
 
   return (
     <CodeUI colors={colors}>
