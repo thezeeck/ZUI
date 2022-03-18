@@ -20,8 +20,8 @@ export const ContainerUI = styled.div`
   ${({background}) => background && `
     background: ${background}
   `};
-  ${({radius}) => radius && `
-    border-radius: ${radius}
+  ${({radius, theme}) => radius && `
+    border-radius: ${theme.sizes["radius_" + radius]}
   `};
   ${({shadow, theme}) => shadow && `
     box-shadow: ${theme.shadows[shadow]}

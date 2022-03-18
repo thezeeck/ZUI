@@ -67,6 +67,12 @@ export const core = {
     font_md: "1.875rem",
     font_lg: "2.5rem",
     font_xl: "3.125rem",
+
+    radius_xs: ".25rem",
+    radius_sm: ".5rem",
+    radius_md: ".75rem",
+    radius_lg: "1rem",
+    radius_xl: "1.25rem",
   },
   transitions: {
     slow: ".75s",

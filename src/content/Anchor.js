@@ -11,6 +11,6 @@ export const AnchorContent = () => {
         all links in their project in the same place or customize each element separately, this
         component renders an <Code>{`<a>`}</Code> HTML element.
       </p>
-      <ExampleCode icon="copy" code="import { Anchor } from 'zeeck-ui';" />
+      <ExampleCode icon="copy" code="import { Anchor } from 'zeeck-ui' ;" />
     </Layout>
 )}
