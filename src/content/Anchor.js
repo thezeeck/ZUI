@@ -1,6 +1,6 @@
 import { Anchor } from "../ZUI";
 import { Layout } from "../components/Layout";
-import { H1, H2, Code, ExampleCode, HTMLCode } from "../components/StyledComponents";
+import { H1, H2, Code, ExampleCode, HTMLCode, Table, Row } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 
 export const AnchorContent = () => (
@@ -86,7 +86,7 @@ export const AnchorContent = () => (
 <Anchor href="#" box textColor="warning">
   Lorem ipsum dolor sit amet (Box)
 </Anchor>`} />
-      <H2>Variants</H2>
+      <H2>Icons</H2>
       <p>
         <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
       </p>
@@ -100,100 +100,44 @@ export const AnchorContent = () => (
   Lorem ipsum dolor sit amet (Icon back)
 </Anchor>`} />
       <H2>APIs</H2>
-      <table>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Accepted values</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <strong>textColor</strong>
-            </td>
-            <td>
-              <Code>string</Code>
-            </td>
-            <td>
-              <Anchor href="#anchorColors">LinkColors</Anchor>
-            </td>
-            <td>Change link color and background (if block was set)</td>
-            <td>
-              <Code>primary</Code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>href</strong>
-            </td>
-            <td>
-              <Code>string</Code>
-            </td>
-            <td>-</td>
-            <td>Link url</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>
-              <strong>icon</strong>
-            </td>
-            <td>
-              <Code>boolean</Code> <Code>string</Code>
-            </td>
-            <td>
-              <Code>true/false</Code>
-              <Anchor as={Link} to="/icons">Icons</Anchor>
-            </td>
-            <td>Show an icon</td>
-            <td>
-              <Code>false</Code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>decoration</strong>
-            </td>
-            <td>
-              <Code>boolean</Code>
-            </td>
-            <td>
-              <Code>true/false</Code>
-            </td>
-            <td>Display the underline text only in the hover status</td>
-            <td>
-              <Code>false</Code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>box</strong>
-            </td>
-            <td>
-              <Code>boolean</Code>
-            </td>
-            <td>
-              <Code>true/false</Code>
-            </td>
-            <td>Change the display to inline-block</td>
-            <td>
-              <Code>false</Code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>style</strong>
-            </td>
-            <td>-</td>
-            <td>Any valid CSS rule</td>
-            <td>Override Default CSS rules</td>
-            <td>-</td>
-          </tr>
-        </tbody>
-      </table>
+      <Table> 
+        <Row
+          attribute="box"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Change the display to inline-block"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="decoration"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Display the underline text only in the hover status"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="href"
+          type={<Code>string</Code>}
+          values="-"
+          description="Link url"
+          defaultValue="-" />
+        <Row
+          attribute="icon"
+          type={<><Code>boolean</Code> <Code>string</Code></>}
+          values={<><Code>true/false</Code> <Anchor as={Link} to="/icons">Icons</Anchor></>}
+          description="Show an icon"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="style"
+          type="-"
+          values="Any valid CSS rule"
+          description="Override Default CSS rules"
+          defaultValue="-" />
+        <Row
+          attribute="textColor"
+          type={<Code>string</Code>}
+          values={<Anchor href="#anchorColors">LinkColors</Anchor>}
+          description="Change font color"
+          defaultValue={<Code>inherit</Code>} />
+      </Table>
       <H2>Types</H2>
       <h3 id="anchorColors">textColor options</h3>
       <ExampleCode icon="copy" code={`const textColor =

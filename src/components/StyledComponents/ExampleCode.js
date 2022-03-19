@@ -25,7 +25,7 @@ export const ExampleCode = ({code, noCopy}) => {
 const styleCode = codes => codes.map((element, index) => {
   const words = /(abstract)|(arguments)|(await)|(boolean)|(break)|(byte)|(case)|(catch)|(char)|(class)|(const)|(continue)|(debugger)|(default)|(delete)|(do)|(double)|(else)|(enum)|(eval)|(export)|(extends)|(false)|(final)|(finally)|(float)|(for)|(function)|(goto)|(if)|(implements)|(import)|(in)|(instanceof)|(int)|(interface)|(let)|(long)|(native)|(new)|(null)|(package)|(private)|(protected)|(public)|(return)|(short)|(static)|(super)|(switch)|(synchronized)|(this)|(throw)|(throws)|(transient)|(true)|(try)|(typeof)|(var)|(void)|(volatile)|(while)|(with)|(yield)|(from)/g;
   const getColor = text => {
-    if (/[\[\]\(\){}\;=]/.test(element)) {
+    if (/[[]\(\){};=]/.test(element)) {
       return "gray500";
     } else if (/'(.*?)'|"(.*?)"/.test(element)) {
       return "green300";

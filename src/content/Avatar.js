@@ -1,6 +1,6 @@
 import { Avatar, Anchor, Grid } from "../ZUI";
 import { Layout } from "../components/Layout";
-import { H1, H2, Code, ExampleCode, HTMLCode } from "../components/StyledComponents";
+import { H1, H2, Code, ExampleCode, HTMLCode, Table, Row } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 import { img } from "../constant";
 
@@ -187,7 +187,7 @@ export const AvatarContent = () => (
       bgColor="error" zoom/>
   </Grid.Item>
 </Grid.Container>`} />
-      <H2>Zoom</H2>
+      <H2>Squared</H2>
       <Grid.Container>
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="secondary" zoom squared pointer/>
@@ -251,204 +251,117 @@ export const AvatarContent = () => (
     </Grid.Item>
   </Grid.Container>`} />
       <H2>APIs</H2>
-      <table>
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Type</th>
-            <th>Accepted values</th>
-            <th>Description</th>
-            <th>Default</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <strong>textColor</strong>
-            </td>
-            <td>
-              <Code>string</Code>
-            </td>
-            <td>
-              <Anchor href="#anchorColors">LinkColors</Anchor>
-            </td>
-            <td>Change link color and background (if block was set)</td>
-            <td>
-              <Code>primary</Code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>href</strong>
-            </td>
-            <td>
-              <Code>string</Code>
-            </td>
-            <td>-</td>
-            <td>Link url</td>
-            <td>-</td>
-          </tr>
-          <tr>
-            <td>
-              <strong>icon</strong>
-            </td>
-            <td>
-              <Code>boolean</Code> <Code>string</Code>
-            </td>
-            <td>
-              <Code>true/false</Code>
-              <Anchor as={Link} to="/icons">Icons</Anchor>
-            </td>
-            <td>Show an icon</td>
-            <td>
-              <Code>false</Code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>decoration</strong>
-            </td>
-            <td>
-              <Code>boolean</Code>
-            </td>
-            <td>
-              <Code>true/false</Code>
-            </td>
-            <td>Display the underline text only in the hover status</td>
-            <td>
-              <Code>false</Code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>box</strong>
-            </td>
-            <td>
-              <Code>boolean</Code>
-            </td>
-            <td>
-              <Code>true/false</Code>
-            </td>
-            <td>Change the display to inline-block</td>
-            <td>
-              <Code>false</Code>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <strong>style</strong>
-            </td>
-            <td>-</td>
-            <td>Any valid CSS rule</td>
-            <td>Override Default CSS rules</td>
-            <td>-</td>
-          </tr>
-        </tbody>
-      </table>
+      <Table>
+        <Row
+          attribute="bgColor"
+          type={<Code>string</Code>}
+          values={<Anchor href="#anchorColors">background colors</Anchor>}
+          description="Change the border color"
+          defaultValue={<><Code>transparent</Code> for avatars with the <strong>imgSrc</strong> property and <strong>textColor</strong> for text avatars</>} />
+        <Row
+          attribute="bordered"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Set the border property"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="borderWeight"
+          type={<Code>string</Code>}
+          values={<Anchor as={Link} to="#sizes">Sizes</Anchor>}
+          description="Set the border size"
+          defaultValue={<Code>md</Code>} />
+        <Row
+          attribute="icon"
+          type={<><Code>boolean</Code> <Code>string</Code></>}
+          values={<><Code>true/false</Code> <Anchor as={Link} to="/icons">Icons</Anchor></>}
+          description="Show an icon"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="imgSrc"
+          type={<Code>string</Code>}
+          values="-"
+          description="Image url"
+          defaultValue="-" />
+        <Row
+          attribute="pointer"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Change the cursor to pointer"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="size"
+          type={<Code>string</Code>}
+          values={<Anchor as={Link} to="#sizes">Sizes</Anchor>}
+          description="Display the underline text only in the hover status"
+          defaultValue={<Code>md</Code>} />
+        <Row
+          attribute="squared"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Change the border radius"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="style"
+          type="-"
+          values="Any valid CSS rule"
+          description="Override Default CSS rules"
+          defaultValue="-" />
+        <Row
+          attribute="text"
+          type={<Code>string</Code>}
+          values="-"
+          description="Display text"
+          defaultValue="-" />
+        <Row
+          attribute="textAlt"
+          type={<Code>string</Code>}
+          values="-"
+          description="Display text when the image is missing or loading"
+          defaultValue="-" />
+        <Row
+          attribute="textColor"
+          type={<Code>string</Code>}
+          values={<Anchor href="#textColors">text colors</Anchor>}
+          description="Change font color"
+          defaultValue={<Code>inherit</Code>} />
+        <Row
+          attribute="zoom"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Enable zoom property on avatar"
+          defaultValue={<Code>false</Code>} />
+      </Table>
       <H2>Types</H2>
-      <h3 id="anchorColors">textColor options</h3>
-      <ExampleCode icon="copy" code={`const textColor =
+      <h3 id="textColors">textColor options</h3>
+      <ExampleCode icon="copy" code={`const textColors =
   | 'text'
   | 'primary'
   | 'secondary'
   | 'success'
   | 'warning'
-  | 'error' ;
-`} noCopy />
+  | 'error' ;`} noCopy />
+      <h3 id="bgColor">bgColor options</h3>
+      <ExampleCode icon="copy" code={`const bgColor =
+  | 'text'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'warning'
+  | 'error',
+  | 'gradients_text'
+  | 'gradients_primary'
+  | 'gradients_secondary'
+  | 'gradients_success'
+  | 'gradients_warning'
+  | 'gradients_error' ;`} noCopy />
+      <h3 id="sizes">size and borderWeight options</h3>
+      <ExampleCode icon="copy" code={`const size =
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xg' ;`} noCopy />
       <h3 id="icons">Icons</h3>
       <Anchor as={Link} to="/icons">Icons</Anchor>
-    <h1 id="avatarWidget">Avatar</h1>
-    <section>
-      <Avatar
-        text="JS"
-        size="xs"
-        bgColor="#f1f1f1"
-        textColor="#000"
-        pointer
-        zoom
-      />
-      <Avatar
-        text="JS"
-        size="sm"
-        bgColor="#f1f1f1"
-        textColor="#000"
-        pointer
-        zoom
-      />
-      
-      <Avatar
-        text="LA"
-        size="lg"
-        textColor="#000"
-        bgColor="#c1c1c1"
-        className="lupita lupita-clase"
-      />
-      <Avatar
-        text="JS"
-        size="xl"
-        css={{"background-color": "red"}}
-        bgColor="#f1f1f1"
-        textColor="#000"
-        pointer
-        zoom
-      />
-    </section>
-    <section>
-      <Avatar
-        imgSrc="https://nextui.org/avatars/avatar-6.png"
-        size="xs"
-        css={{"background-color": "red"}}
-        bgColor="#f1f1f1"
-        textAlt="Example of avatar"
-        textColor="white"
-        borderWeight=".25rem"
-        pointer
-      />
-      <Avatar
-        text="JS"
-        size="sm"
-        bordered
-        bgColor="#dbc8f0"
-        zoom
-        squared
-        textAlt="Example of avatar"
-        textColor="#000"
-        borderWeight=".25rem"
-        pointer
-      />
-      <Avatar
-        imgSrc="https://pixy.org/src/21/219269.jpg"
-        size="md"
-        zoom
-        squared
-        textAlt="Example of avatar"
-        textColor="white"
-        borderWeight=".25rem"
-        pointer
-      />
-      <Avatar
-        imgSrc="https://nextui.org/avatars/avatar-6.png"
-        size="lg"
-        bordered
-        squared
-        bgColor="#7928ca"
-        textAlt="Example of avatar"
-        textColor="white"
-        borderWeight="sm"
-      />
-      <Avatar
-        imgSrc="https://nextui.org/avatars/avatar-6.png"
-        size="xl"
-        text="JS"
-        bordered
-        bgColor="linear-gradient(135deg, rgba(250,250,110,1) 0%, rgba(0,141,140,1) 100%)"
-        zoom
-        textAlt="Example of avatar"
-        textColor="black"
-        borderWeight="xl"
-        pointer
-        squared
-      />
-    </section>
   </Layout>
 )
