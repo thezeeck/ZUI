@@ -18,6 +18,8 @@ export const MainLayout = styled.section`
   }
 
   main {
-    flex: 1;
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 `;

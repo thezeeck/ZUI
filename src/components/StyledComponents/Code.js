@@ -15,8 +15,6 @@ export const Code = ({ children }) => {
   const { theme } = useThemeContext();
   const { colors } = theme;
 
-  console.log("colors", colors);
-
   return (
     <CodeUI colors={colors}>
       {children}

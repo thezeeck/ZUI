@@ -18,10 +18,10 @@ export const core = {
     primary_dark: colorsSchema.blue700,
     primary_shadow: colorsSchema.blue900,
 
-    secondary_Light: colorsSchema.orange100,
-    secondary: colorsSchema.orange500,
-    secondary_dark: colorsSchema.orange700,
-    secondary_shadow: colorsSchema.orange900,
+    secondary_Light: colorsSchema.purple300,
+    secondary: colorsSchema.purple500,
+    secondary_dark: colorsSchema.purple700,
+    secondary_shadow: colorsSchema.purple900,
 
     success_light: colorsSchema.green300,
     success: colorsSchema.green500,
@@ -82,6 +82,13 @@ export const core = {
   name: "core",
   fonts: {
     sans: "'Roboto', 'Ubuntu', sans-serif",
-    mono: "'Lucida Console', 'Liberation Mono', serif"
+    mono: "'Lucida Console', 'Liberation Mono', serif",
+  },
+  gradients: {
+    primary: "linear-gradient(135deg, var(--ZUI-colors_primary) 0%, var(--ZUI-colors_primary_shadow) 100%)",
+    secondary: "linear-gradient(135deg, var(--ZUI-colors_secondary) 0%, var(--ZUI-colors_secondary_shadow) 100%)",
+    success: "linear-gradient(135deg, var(--ZUI-colors_success) 0%, var(--ZUI-colors_success_shadow) 100%)",
+    warning: "linear-gradient(135deg, var(--ZUI-colors_warning) 0%, var(--ZUI-colors_warning_shadow) 100%)",
+    error: "linear-gradient(135deg, var(--ZUI-colors_error) 0%, var(--ZUI-colors_error_shadow) 100%)",
   }
 }

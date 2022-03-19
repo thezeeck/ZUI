@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { hexToRgba, gradientOrColor } from "../../utils";
 
 export const AvatarUI = styled.span`
   border: 0;
@@ -9,7 +10,7 @@ export const AvatarUI = styled.span`
   overflow: hidden;
   position: relative;
   border-radius: ${({squared}) => squared ? "33%" : "50%"};
-  transition: ${({transition}) => `all var(--ZUI-transition_${transition}) ease`};
+  transition: ${({transition}) => `all var(--ZUI-transitions_${transition}) ease`};
   font-size: ${({size}) => `var(--ZUI-sizes_font_${size})`};
   ${({pointer}) => pointer && `
     cursor: pointer;
@@ -28,7 +29,8 @@ export const AvatarUI = styled.span`
   }
 
   .background {
-    background: ${({bgColor}) => bgColor};
+    background: ${({bgColor, theme, bordered, imgSrc}) => 
+      !bordered && imgSrc ? "transparent" : bgColor ? gradientOrColor(bgColor) : hexToRgba(theme.colors.text, .1)};
     display: block;
     height: 100%;
     width: 100%;
@@ -72,6 +74,6 @@ export const AvatarUI = styled.span`
       color: ${textColor};
     `}
     transform: translate(-50%, -50%) scale(.8);
-    transition: ${({theme}) => `all ${theme.transitions[theme.transitions.avatar]}s ease`};
+    transition: ${({transition}) => `all var(--ZUI-transitions_${transition}) ease`};
   }
 `;

@@ -1,16 +1,15 @@
-import { AnchorUI } from "./styles"
+import { AnchorUI } from "./styles";
+import { useThemeContext } from "../Theme";
 
 export const Anchor = (props) => {
+  const { theme } = useThemeContext();
   return (
-  <AnchorUI href={props.link} {...props}>
+  <AnchorUI href={props.link} {...props} theme={theme}>
     {props.children}
   </AnchorUI>)
 }
 
 Anchor.defaultProps = {
-  textColor: "inherit",
   link: "#",
-  decoration: "none",
-  icon: false,
-  display: "inline"
+  icon: "false",
 }

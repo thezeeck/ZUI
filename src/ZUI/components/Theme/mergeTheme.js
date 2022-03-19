@@ -6,6 +6,7 @@ export const mergeTheme = (newTheme, baseTheme) => {
   const shadows = {...baseTheme.shadows, ...newTheme.shadows};
   const transitions = {...baseTheme.transitions, ...newTheme.transitions};
   const fonts = {...baseTheme.fonts, ...newTheme.fonts};
+  const gradients = {...baseTheme.gradients, ...newTheme.gradients};
   
   return {
     name,
@@ -14,6 +15,7 @@ export const mergeTheme = (newTheme, baseTheme) => {
     break_points,
     shadows,
     transitions,
-    fonts
+    fonts,
+    gradients,
   }
 }

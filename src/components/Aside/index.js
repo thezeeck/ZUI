@@ -1,6 +1,6 @@
 import { menu } from "../../constant/menu";
-import { Text, useThemeContext } from "../../ZUI";
-import { ELink } from "../Links";
+import { Text, useThemeContext, Anchor } from "../../ZUI";
+import { Link } from "react-router-dom";
 
 export const Aside = () => {
   const { theme } = useThemeContext();
@@ -14,7 +14,7 @@ export const Aside = () => {
               {item.childs.sort().map((child, index) => (
                 <li key={index}>
                   <Text textColor={theme.colors.text} decoration="none">
-                    <ELink to={child.path}>{child.name}</ELink>
+                    <Anchor as={Link} to={child.path}>{child.name}</Anchor>
                   </Text>
                 </li>
               ))}

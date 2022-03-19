@@ -26,3 +26,8 @@ export const hexToRgba = (color, opacity) => {
     return calculate(completeColor);
   }
 }
+
+export const gradientOrColor = color => {
+  if (/gradient/g.test(color)) return `var(--ZUI-${color})`;
+  else return `var(--ZUI-colors_${color})`;
+}

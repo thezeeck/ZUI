@@ -10,6 +10,7 @@ import { Collapse } from "./components/Collapse";
 import { Text } from "./components/Text";
 import { hexToRgba } from "./utils";
 import { Styles } from "./components/Style";
+import { Button } from "./components/Button";
 
 const ZUI = {
   Avatar,
@@ -28,6 +29,7 @@ const ZUI = {
   Text,
   hexToRgba,
   Styles,
+  Button,
 }
 
 export { 
@@ -47,6 +49,7 @@ export {
   Text,
   hexToRgba,
   Styles,
+  Button,
 }
 
 export default ZUI;

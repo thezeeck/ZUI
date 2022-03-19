@@ -4,9 +4,10 @@ import { useThemeContext } from "../Theme";
 export const Avatar = props => {
   const classList = props.className ? props.className.split(" ") : [];
   const { theme } = useThemeContext();
+  console.log("zoom", props.zoom);
   if (props.zoom) classList.push("zoom");
   return (
-    <AvatarUI {...props} textColor={props.textColor} theme={theme}>
+    <AvatarUI {...props} textColor={props.textColor} theme={theme} className={classList}>
       <span className="background"></span>
       {props.imgSrc &&
         <figure>
@@ -22,7 +23,6 @@ Avatar.defaultProps = {
   text: "",
   size: "md",
   bordered: false,
-  bgColor: "transparent",
   zoom: false,
   squared: false,
   // icon: "",

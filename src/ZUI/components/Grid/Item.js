@@ -22,7 +22,3 @@ export const Item = props => {
     {props.children}
   </GridItem>
 )};
-
-Item.defaultProps = {
-  xs: 12
-}

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const GridContainer = styled.ul`
   --gap: ${({gap}) => gap};
+  --width: auto;
   list-style: none;
   padding: var(--gap) calc(var(--gap) / 2);
   margin: 0;
@@ -16,29 +17,29 @@ export const GridContainer = styled.ul`
 `;
 
 export const GridItem = styled.li`
-  width: ${({xs}) => `calc((${xs} / 12) * 100%)`};
+  width: ${({xs}) => xs ? `calc((${xs} / 12) * 100%)` : "auto"};
   box-sizing: border-box;
   flex-grow: 0;
   padding: var(--gap) calc(var(--gap) / 2);
   display: ${({xs}) => xs === 0 ? "none" : "block"};
 
-  @media (min-width: ${({theme}) => theme.breakPoints.sm}) {
-    width: ${({sm}) => `calc((${sm} / 12) * 100%)`};
+  @media (min-width: ${({theme}) => theme.break_points.sm}) {
+    width: ${({sm}) => sm ? `calc((${sm} / 12) * 100%)` : "auto"};
     display: ${({sm}) => sm === 0 ? "none" : "block"};
   }
 
-  @media (min-width: ${({theme}) => theme.breakPoints.md}) {
-    width: ${({md}) => `calc((${md} / 12) * 100%)`};
+  @media (min-width: ${({theme}) => theme.break_points.md}) {
+    width: ${({md}) => md ? `calc((${md} / 12) * 100%)` : "auto"};
     display: ${({md}) => md === 0 ? "none" : "block"};
   }
 
-  @media (min-width: ${({theme}) => theme.breakPoints.lg}) {
-    width: ${({lg}) => `calc((${lg} / 12) * 100%)`};
+  @media (min-width: ${({theme}) => theme.break_points.lg}) {
+    width: ${({lg}) => lg ? `calc((${lg} / 12) * 100%)` : "auto"};
     display: ${({lg}) => lg === 0 ? "none" : "block"};
   }
 
-  @media (min-width: ${({theme}) => theme.breakPoints.xl}) {
-    width: ${({xl}) => `calc((${xl} / 12) * 100%)`};
+  @media (min-width: ${({theme}) => theme.break_points.xl}) {
+    width: ${({xl}) => xl ? `calc((${xl} / 12) * 100%)` : "auto"};
     display: ${({xl}) => xl === 0 ? "none" : "block"};
   }
 `;

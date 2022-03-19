@@ -1,7 +1,9 @@
+import { ButtonUI } from "./styles";
+
 export const Button = (props) => {
   return (
-    <button {...props}>
+    <ButtonUI {...props}>
       {props.children}
-    </button>
+    </ButtonUI>
   );
 }

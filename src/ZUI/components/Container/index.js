@@ -14,7 +14,7 @@ Container.defaultProps = {
   wrap: "nowrap",
   justify: "flex-start",
   direction: "row",
-  alignItems: "flex-start",
+  alignItems: "center",
   alignContent: "flex-start",
   flex: false,
 }
