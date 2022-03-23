@@ -20,8 +20,9 @@ const AnimationContainer = styled.span`
     width: 5%;
     height: 25%;
     background-color: #fff;
-    border-radius: var(--ZUI-shadows_radius_lg);
+    border-radius: var(--ZUI-sizes_radius_lg);
     position: absolute;
+    opacity: .5;
 
     &:nth-child(1) {
       transform: translate(700%, 150%);

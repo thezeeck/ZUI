@@ -1,4 +1,4 @@
-import { CreateTheme, darkTheme, hexToRgba, colorsSchema } from "../ZUI";
+import { CreateTheme, darkTheme } from "../ZUI";
 
 export const userTheme = CreateTheme({
   colors: {

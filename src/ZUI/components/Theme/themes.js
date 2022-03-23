@@ -1,6 +1,5 @@
 import { core } from "./coreTheme";
 import { mergeTheme } from "./mergeTheme";
-import { hexToRgba } from "../../utils";
 import { colorsSchema } from "./colorsSchema";
 
 export const CreateTheme = (theme, base) => {

@@ -54,36 +54,45 @@ const CSS = createGlobalStyle`
       @keyframes ZUI-loading-type3a {
         0% {
           transform: translate(700%, 150%);
+          opacity: .5;
         }
         50% {
           transform: translate(700%, 50%);
+          opacity: 1;
         }
         99% {
           transform: translate(700%, 150%);
+          opacity: .5;
         }
       }
 
       @keyframes ZUI-loading-type3b {
         0% {
           transform: translate(945%, 150%);
+          opacity: .5;
         }
         50% {
           transform: translate(945%, 50%);
+          opacity: 1;
         }
         99% {
           transform: translate(945%, 150%);
+          opacity: .5;
         }
       }
 
       @keyframes ZUI-loading-type3c {
         0% {
           transform: translate(1190%, 150%);
+          opacity: .5;
         }
         50% {
           transform: translate(1190%, 50%);
+          opacity: 1;
         }
         99% {
           transform: translate(1190%, 150%);
+          opacity: .5;
         }
       }
     `)

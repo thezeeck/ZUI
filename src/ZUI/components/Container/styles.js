@@ -10,18 +10,18 @@ export const ContainerUI = styled.div`
     align-content: ${alignContent};
 
     > * {
-      margin: var(--ZUI-shadows_${gap});
-      width: calc(100% - (var(--ZUI-shadows_${gap}) * 2));
+      margin: var(--ZUI-sizes_padding_${gap});
+      width: calc(100% - (var(--ZUI-sizes_padding_${gap}) * 2));
       box-sizing: border-box;
     }
   `};
-  padding: ${({gap}) => `var(--ZUI-shadows_${gap})`};
+  padding: ${({gap}) => `var(--ZUI-sizes_padding_${gap})`};
   box-sizing: border-box;
   ${({background}) => background && `
-    background: ${background}
+    background: var(--ZUI-colors_${background})
   `};
   ${({radius}) => radius && `
-    border-radius: var(--ZUI-shadows_${radius});
+    border-radius: var(--ZUI-sizes_radius_${radius});
   `};
   ${({shadow}) => shadow && `
     box-shadow: var(--ZUI-shadows_${shadow});

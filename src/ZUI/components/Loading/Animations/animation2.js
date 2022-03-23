@@ -20,7 +20,7 @@ const AnimationContainer = styled.span`
     width: 25%;
     height: 25%;
     background-color: #fff;
-    border-radius: var(--ZUI-shadows_radius_lg);
+    border-radius: var(--ZUI-sizes_radius_lg);
     position: absolute;
 
     &:nth-child(1) {

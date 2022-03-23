@@ -8,7 +8,7 @@ export const Container = props => {
 )}
 
 Container.defaultProps = {
-  gap: "1rem",
+  gap: 4,
   wrap: "wrap",
   justify: "flex-start",
   direction: "row",

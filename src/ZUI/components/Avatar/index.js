@@ -4,7 +4,6 @@ import { useThemeContext } from "../Theme";
 export const Avatar = props => {
   const classList = props.className ? props.className.split(" ") : [];
   const { theme } = useThemeContext();
-  console.log("zoom", props.zoom);
   if (props.zoom) classList.push("zoom");
   return (
     <AvatarUI {...props} textColor={props.textColor} theme={theme} className={classList}>

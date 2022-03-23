@@ -1,6 +1,6 @@
 import { Button, Anchor } from "../ZUI";
 import { Layout } from "../components/Layout";
-import { H1, H2, Code, ExampleCode, HTMLCode, Table, Row } from "../components/StyledComponents";
+import { H1, H2, Code, Table, Row, ExampleCode } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 
 export const ButtonContent = () => (
@@ -11,7 +11,7 @@ export const ButtonContent = () => (
         all buttons in their project in the same place or customize each element separately, this
         component renders an <Code>{`<button>`}</Code> HTML element.
       </p>
-      <ExampleCode icon="copy" code="import { Button } from 'zeeck-ui' ;" />
+      <ExampleCode lang="javascript">{`import { Button } from "zeeck-ui";`}</ExampleCode>
       <H2>Default</H2>
       <p>
         The default Button color it's the primary color defined in the theme config.
@@ -19,12 +19,12 @@ export const ButtonContent = () => (
       <p>
         <Button>Default</Button>
       </p>
-      <HTMLCode icon="copy" code={`<Button>Default</Button>;`} />
+      <ExampleCode>{`<Button>Disabled</Button>`}</ExampleCode>
       <H2>Disabled</H2>
       <p>
         <Button disabled>Disabled</Button>
       </p>
-      <HTMLCode icon="copy" code={`<Button disabled>Disabled</Button>;`} />
+      <ExampleCode>{`<Button disabled>Disabled</Button>`}</ExampleCode>
       <H2>Sizes</H2>
       <p>
         <Button size="xs">XS</Button>
@@ -44,12 +44,12 @@ export const ButtonContent = () => (
       <p>
         <Button auto>auto</Button>
       </p>
-      <HTMLCode icon="copy" code={`<Button size="xs">XS</Button>
+      <ExampleCode>{`<Button size="xs">XS</Button>
 <Button size="sm">SM</Button>
 <Button size="md">MD</Button>
 <Button size="lg">LG</Button>
 <Button size="xl">XL</Button>
-<Button auto>auto</Button>`} />
+<Button auto>auto</Button>`}</ExampleCode>
       <H2>Colors</H2>
       <p>
         <Button color="primary">Primary</Button>
@@ -69,12 +69,12 @@ export const ButtonContent = () => (
       <p>
         <Button color="gradients_primary">Gradient</Button>
       </p>
-      <HTMLCode icon="copy" code={`<Button color="primary">Primary</Button>
+      <ExampleCode>{`<Button color="primary">Primary</Button>
 <Button color="secondary">Secondary</Button>
 <Button color="success">Success</Button>
 <Button color="warning">Warning</Button>
 <Button color="error">Error</Button>
-<Button color="gradients_primary">Gradient</Button>`} />
+<Button color="gradients_primary">Gradient</Button>`}</ExampleCode>
       <H2>Shadow</H2>
       <p>
         <Button color="primary" shadow>Primary</Button>
@@ -94,12 +94,12 @@ export const ButtonContent = () => (
       <p>
         <Button color="gradients_primary" shadow>Gradient</Button>
       </p>
-      <HTMLCode icon="copy" code={`<Button color="primary">Primary</Button>
-<Button color="secondary">Secondary</Button>
-<Button color="success">Success</Button>
-<Button color="warning">Warning</Button>
-<Button color="error">Error</Button>
-<Button color="gradients_primary">Gradient</Button>`} />
+      <ExampleCode>{`<Button color="primary" shadow>Primary</Button>
+<Button color="secondary" shadow>Secondary</Button>
+<Button color="success" shadow>Success</Button>
+<Button color="warning" shadow>Warning</Button>
+<Button color="error" shadow>Error</Button>
+<Button color="gradients_primary" shadow>Gradient</Button>`}</ExampleCode>
       <H2>Loading</H2>
       <p>
         <Button color="primary" loading={1}>Primary</Button>
@@ -122,11 +122,11 @@ export const ButtonContent = () => (
       <p>
         <Button color="error" loading={3} size="xl">Error</Button>
       </p>
-      <HTMLCode icon="copy" code={`<Button color="primary" loading={1}>Primary</Button>
+      <ExampleCode>{`<Button color="primary" loading={1}>Primary</Button>
 <Button color="secondary" loading={2}>Secondary</Button>
 <Button color="success" loading={3}>Success</Button>
 <Button color="warning" loading={4}>Warning</Button>
-<Button color="error" loading={5}>Error</Button>`} />
+<Button color="error" loading={5}>Error</Button>`}</ExampleCode>
       <H2>Icons</H2>
       <p>
         <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
@@ -134,12 +134,12 @@ export const ButtonContent = () => (
       <p>
         <Anchor href="#" icon="back">Lorem ipsum dolor sit amet (Icon back)</Anchor>
       </p>
-      <HTMLCode icon="copy" code={`<Anchor href="#" icon>
+      <ExampleCode>{`<Anchor href="#" icon>
   Lorem ipsum dolor sit amet (Icon)
 </Anchor>
 <Anchor href="#" icon="back">
   Lorem ipsum dolor sit amet (Icon back)
-</Anchor>`} />
+</Anchor>`}</ExampleCode>
       <H2>APIs</H2>
       <Table>
         <Row
@@ -200,14 +200,14 @@ export const ButtonContent = () => (
       </Table>
       <H2>Types</H2>
       <h3 id="anchorColors">textColor options</h3>
-      <ExampleCode icon="copy" code={`const textColor =
+      <ExampleCode noCopy lang="javascript">{`const textColor =
   | 'text'
   | 'primary'
   | 'secondary'
   | 'success'
   | 'warning'
-  | 'error' ;
-`} noCopy />
+  | 'error';
+`}</ExampleCode>
       <h3 id="icons">Icons</h3>
       <Anchor as={Link} to="/icons">Icons</Anchor>
     </Layout>

@@ -1,6 +1,6 @@
 import { Avatar, Anchor, Grid } from "../ZUI";
 import { Layout } from "../components/Layout";
-import { H1, H2, Code, ExampleCode, HTMLCode, Table, Row } from "../components/StyledComponents";
+import { H1, H2, Code, Table, Row, ExampleCode } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 import { img } from "../constant";
 
@@ -10,7 +10,9 @@ export const AvatarContent = () => (
       <p>
         The Avatar <Code>{`<Avatar>`}</Code> component is used to represent an app user, and displays the profile picture, initials or an icon.
       </p>
-      <ExampleCode icon="copy" code="import { Avatar } from 'zeeck-ui' ;" />
+      <ExampleCode lang="javascript">
+        {`import { Avatar } from "zeeck-ui";`}
+      </ExampleCode>
       <H2>Default</H2>
       <p>
         The default Avatar can be used by passing an image url (<Code>imgSrc</Code>), text (<Code>text</Code>) or an icon (<Code>icon</Code>) .
@@ -18,7 +20,9 @@ export const AvatarContent = () => (
       <p>
         <Avatar text="JS" />
       </p>
-      <HTMLCode icon="copy" code={`<Avatar text="JS" />;`} />
+      <ExampleCode>
+        {`<Avatar text="JS" />`}
+      </ExampleCode>
       <H2>Sizes</H2>
       <Grid.Container>
         <Grid.Item>
@@ -37,7 +41,7 @@ export const AvatarContent = () => (
           <Avatar imgSrc={img.avatar01} size="xl" />
         </Grid.Item>
       </Grid.Container>
-      <HTMLCode icon="copy" code={`<Grid.Container>
+      <ExampleCode>{`<Grid.Container>
   <Grid.Item>
     <Avatar imgSrc="img.jpg" size="xs" />
   </Grid.Item>
@@ -53,7 +57,7 @@ export const AvatarContent = () => (
   <Grid.Item>
     <Avatar imgSrc="img.jpg" size="xl" />
   </Grid.Item>
-</Grid.Container>`} />
+</Grid.Container>`}</ExampleCode>
       <H2>Colors</H2>
       <Grid.Container>
         <Grid.Item>
@@ -75,7 +79,7 @@ export const AvatarContent = () => (
           <Avatar text="DC" bgColor="gradients_primary" />
         </Grid.Item>
       </Grid.Container>
-      <HTMLCode icon="copy" code={`<Grid.Container>
+      <ExampleCode>{`<Grid.Container>
   <Grid.Item>
     <Avatar text="OP" bgColor="primary" />
   </Grid.Item>
@@ -97,7 +101,7 @@ export const AvatarContent = () => (
   <Grid.Item>
     <Avatar text="DC" bgColor="gradient_primary" />
   </Grid.Item>
-</Grid.Container>`} />
+</Grid.Container>`}</ExampleCode>
       <H2>Border</H2>
       <Grid.Container>
         <Grid.Item>
@@ -116,7 +120,7 @@ export const AvatarContent = () => (
           <Avatar imgSrc={img.avatar01} bordered borderWeight="xl" bgColor="gradients_warning" />
         </Grid.Item>
       </Grid.Container>
-      <HTMLCode icon="copy" code={`<Grid.Container>
+      <ExampleCode>{`<Grid.Container>
   <Grid.Item>
     <Avatar
       imgSrc={img.avatar01}
@@ -147,7 +151,7 @@ export const AvatarContent = () => (
       bordered borderWeight="xl"
       bgColor="gradients_warning" />
   </Grid.Item>
-</Grid.Container>`} />
+</Grid.Container>`}</ExampleCode>
       <H2>Zoom</H2>
       <Grid.Container>
         <Grid.Item>
@@ -163,7 +167,7 @@ export const AvatarContent = () => (
           <Avatar imgSrc={img.avatar01} bordered borderWeight="lg" bgColor="error" zoom/>
         </Grid.Item>
       </Grid.Container>
-      <HTMLCode icon="copy" code={`<Grid.Container>
+      <ExampleCode>{`<Grid.Container>
   <Grid.Item>
     <Avatar
       imgSrc={img.avatar01}
@@ -186,7 +190,7 @@ export const AvatarContent = () => (
       bordered borderWeight="lg"
       bgColor="error" zoom/>
   </Grid.Item>
-</Grid.Container>`} />
+</Grid.Container>`}</ExampleCode>
       <H2>Squared</H2>
       <Grid.Container>
         <Grid.Item>
@@ -202,7 +206,7 @@ export const AvatarContent = () => (
           <Avatar imgSrc={img.avatar01} bordered borderWeight="lg" bgColor="gradients_secondary" squared/>
         </Grid.Item>
       </Grid.Container>
-      <HTMLCode icon="copy" code={`<Grid.Container>
+      <ExampleCode>{`<Grid.Container>
   <Grid.Item>
     <Avatar
       imgSrc={img.avatar01} pointer
@@ -226,7 +230,7 @@ export const AvatarContent = () => (
       bordered borderWeight="lg"
       bgColor="gradients_secondary" squared/>
   </Grid.Item>
-</Grid.Container>`} />
+</Grid.Container>`}</ExampleCode>
       <H2>Icons</H2>
       <Grid.Container>
         <Grid.Item>
@@ -239,17 +243,17 @@ export const AvatarContent = () => (
           <Avatar icon="link" bgColor="gradients_error"/>
         </Grid.Item>
       </Grid.Container>
-      <HTMLCode icon="copy" code={`<Grid.Container>
-    <Grid.Item>
-      <Avatar icon="link" bgColor="secondary"/>
-    </Grid.Item>
-    <Grid.Item>
-      <Avatar icon="link" zoom squared/>
-    </Grid.Item>
-    <Grid.Item>
-      <Avatar icon="link" bgColor="gradients_error"/>
-    </Grid.Item>
-  </Grid.Container>`} />
+      <ExampleCode>{`<Grid.Container>
+  <Grid.Item>
+    <Avatar icon="link" bgColor="secondary"/>
+  </Grid.Item>
+  <Grid.Item>
+    <Avatar icon="link" zoom squared/>
+  </Grid.Item>
+  <Grid.Item>
+    <Avatar icon="link" bgColor="gradients_error"/>
+  </Grid.Item>
+</Grid.Container>`}</ExampleCode>
       <H2>APIs</H2>
       <Table>
         <Row
@@ -333,15 +337,15 @@ export const AvatarContent = () => (
       </Table>
       <H2>Types</H2>
       <h3 id="textColors">textColor options</h3>
-      <ExampleCode icon="copy" code={`const textColors =
+      <ExampleCode noCopy lang="javascript">{`const textColors =
   | 'text'
   | 'primary'
   | 'secondary'
   | 'success'
   | 'warning'
-  | 'error' ;`} noCopy />
+  | 'error';`}</ExampleCode>
       <h3 id="bgColor">bgColor options</h3>
-      <ExampleCode icon="copy" code={`const bgColor =
+      <ExampleCode noCopy lang="javascript">{`const bgColor =
   | 'text'
   | 'primary'
   | 'secondary'
@@ -353,14 +357,14 @@ export const AvatarContent = () => (
   | 'gradients_secondary'
   | 'gradients_success'
   | 'gradients_warning'
-  | 'gradients_error' ;`} noCopy />
+  | 'gradients_error';`}</ExampleCode>
       <h3 id="sizes">size and borderWeight options</h3>
-      <ExampleCode icon="copy" code={`const size =
+      <ExampleCode noCopy lang="javascript">{`const size =
   | 'xs'
   | 'sm'
   | 'md'
   | 'lg'
-  | 'xg' ;`} noCopy />
+  | 'xg';`}</ExampleCode>
       <h3 id="icons">Icons</h3>
       <Anchor as={Link} to="/icons">Icons</Anchor>
   </Layout>

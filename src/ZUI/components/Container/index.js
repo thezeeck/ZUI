@@ -10,11 +10,11 @@ export const Container = props => {
 )};
 
 Container.defaultProps = {
-  gap: 1,
+  gap: 4,
   wrap: "nowrap",
   justify: "flex-start",
   direction: "row",
-  alignItems: "center",
+  alignItems: "flex-start",
   alignContent: "flex-start",
   flex: false,
 }

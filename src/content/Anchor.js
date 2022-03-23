@@ -1,6 +1,6 @@
 import { Anchor } from "../ZUI";
 import { Layout } from "../components/Layout";
-import { H1, H2, Code, ExampleCode, HTMLCode, Table, Row } from "../components/StyledComponents";
+import { H1, H2, Code, Table, Row, ExampleCode } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 
 export const AnchorContent = () => (
@@ -11,7 +11,9 @@ export const AnchorContent = () => (
         all links in their project in the same place or customize each element separately, this
         component renders an <Code>{`<a>`}</Code> HTML element.
       </p>
-      <ExampleCode icon="copy" code="import { Anchor } from 'zeeck-ui' ;" />
+      <ExampleCode lang='javascript'>
+        {`import { Anchor } from "zeeck-ui";`}
+      </ExampleCode>
       <H2>Default</H2>
       <p>
         The default Anchor color it's the primary color defined in the theme config.
@@ -19,9 +21,11 @@ export const AnchorContent = () => (
       <p>
         <Anchor link="#">Lorem ipsum dolor sit amet</Anchor>
       </p>
-      <HTMLCode icon="copy" code={`<Anchor link="#">
+      <ExampleCode>
+        {`<Anchor link="#">
   Lorem ipsum dolor sit amet
-</Anchor>;`} />
+</Anchor>;`}
+      </ExampleCode>
       <H2>Colors</H2>
       <p>
         <Anchor textColor="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
@@ -41,7 +45,8 @@ export const AnchorContent = () => (
       <p>
         <Anchor href="#">Lorem ipsum dolor sit amet (Default)</Anchor>
       </p>
-      <HTMLCode icon="copy" code={`<Anchor textColor="primary" href="#">
+      <ExampleCode>
+        {`<Anchor textColor="primary" href="#">
   Lorem ipsum dolor sit amet (Primary)
 </Anchor>
 <Anchor textColor="secondary" href="#">
@@ -58,7 +63,8 @@ export const AnchorContent = () => (
 </Anchor>
 <Anchor href="#">
   Lorem ipsum dolor sit amet (Default)
-</Anchor>`} />
+</Anchor>`}
+      </ExampleCode>
       <H2>Variants</H2>
       <h3>Underline</h3>
       <p>
@@ -67,12 +73,12 @@ export const AnchorContent = () => (
       <p>
         <Anchor href="#" decoration textColor="secondary">Lorem ipsum dolor sit amet (Decoration)</Anchor>
       </p>
-      <HTMLCode icon="copy" code={`<Anchor href="#" decoration>
+      <ExampleCode>{`<Anchor href="#" decoration>
   Lorem ipsum dolor sit amet (Decoration)
 </Anchor>
 <Anchor href="#" decoration textColor="secondary">
   Lorem ipsum dolor sit amet (Decoration)
-</Anchor>`} />
+</Anchor>`}</ExampleCode>
       <h3>Block</h3>
       <p>
         <Anchor href="#" box textColor="success">Lorem ipsum dolor sit amet (Box)</Anchor>
@@ -80,12 +86,12 @@ export const AnchorContent = () => (
       <p>
         <Anchor href="#" box textColor="warning">Lorem ipsum dolor sit amet (Box)</Anchor>
       </p>
-      <HTMLCode icon="copy" code={`<Anchor href="#" box textColor="success">
+      <ExampleCode>{`<Anchor href="#" box textColor="success">
   Lorem ipsum dolor sit amet (Box)
 </Anchor>
 <Anchor href="#" box textColor="warning">
   Lorem ipsum dolor sit amet (Box)
-</Anchor>`} />
+</Anchor>`}</ExampleCode>
       <H2>Icons</H2>
       <p>
         <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
@@ -93,12 +99,12 @@ export const AnchorContent = () => (
       <p>
         <Anchor href="#" icon="back">Lorem ipsum dolor sit amet (Icon back)</Anchor>
       </p>
-      <HTMLCode icon="copy" code={`<Anchor href="#" icon>
+      <ExampleCode>{`<Anchor href="#" icon>
   Lorem ipsum dolor sit amet (Icon)
 </Anchor>
 <Anchor href="#" icon="back">
   Lorem ipsum dolor sit amet (Icon back)
-</Anchor>`} />
+</Anchor>`}</ExampleCode>
       <H2>APIs</H2>
       <Table> 
         <Row
@@ -140,14 +146,15 @@ export const AnchorContent = () => (
       </Table>
       <H2>Types</H2>
       <h3 id="anchorColors">textColor options</h3>
-      <ExampleCode icon="copy" code={`const textColor =
+      <ExampleCode  lang='javascript' noCopy>
+      {`const textColor =
   | 'text'
   | 'primary'
   | 'secondary'
   | 'success'
   | 'warning'
-  | 'error' ;
-`} noCopy />
+  | 'error';
+`}</ExampleCode>
       <h3 id="icons">Icons</h3>
       <Anchor as={Link} to="/icons">Icons</Anchor>
     </Layout>

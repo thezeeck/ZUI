@@ -89,6 +89,7 @@ export const core = {
     radius_percentage_lg: "40%",
     radius_percentage_xl: "50%",
 
+    padding_0: "0px",
     padding_1: ".25rem",
     padding_2: ".5rem",
     padding_3: ".75rem",

@@ -11,7 +11,7 @@ export const Layout = ({ children }) => {
       <Header />
       <Aside />
       <main>
-        <Container flex direction="column" gap="1rem">
+        <Container flex direction="column" gap={4}>
           {children}
         </Container>
       </main>

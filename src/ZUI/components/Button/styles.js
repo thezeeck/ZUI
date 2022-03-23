@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { gradientOrColor } from "../../utils";
 
 export const ButtonUI = styled.button`
-  margin: ${({margin}) => margin};
+  ${({margin}) => margin && `margin: var(--ZUI-sizes_padding_${margin})`};
   width: auto;
   display: inline-block;
   border: 0 none;
@@ -32,7 +32,7 @@ export const ButtonUI = styled.button`
     height: calc(var(--ZUI-sizes_font_${sizes.weigth + 1}) + var(--ZUI-sizes_padding_${sizes.weigth}));
     `;
   }}
-  ${({color, theme, disabled, shadow}) => {
+  ${({color, theme, disabled}) => {
     let colors = {
       font: disabled ? theme.colors.gray : color === "transparent" ? theme.colors.primary : "#fff",
       bg: disabled ? theme.colors.gray_light : color === "transparent" ? "transparent" : gradientOrColor(color),
@@ -41,13 +41,14 @@ export const ButtonUI = styled.button`
     return `
       background: ${colors.bg};
       color: ${colors.font};
-      box-shadow: ${shadow ? "var(--ZUI-shadows_" + color.replace("gradients_", "") + ")" : "none"}
     `;
   }};
+  ${({color, shadow}) => shadow && `
+    box-shadow: var(--ZUI-shadows_${color.replace("gradients_", "")}) ;
+  `};
 
   :hover {
     ${({disabled, loading}) => {
-      console.log("disabled", disabled, "loading", loading);
       if (disabled !== undefined || loading !== undefined) return "opacity: 1;"
       return "opacity: .8;";
     }}
