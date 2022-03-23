@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const GridContainer = styled.ul`
-  --gap: ${({gap}) => gap};
+  --gap: ${({gap}) => `var(--ZUI-shadows_${gap})`};
   --width: auto;
   list-style: none;
   padding: var(--gap) calc(var(--gap) / 2);

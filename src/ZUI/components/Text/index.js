@@ -9,7 +9,6 @@ export const Text = props => {
 }
 
 Text.defaultProps = {
-  textColor: "inherit",
   decoration: "none",
   icon: false,
   display: "inline",

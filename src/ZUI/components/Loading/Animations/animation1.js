@@ -18,7 +18,7 @@ const AnimationContainer = styled.span`
     width: 25%;
     height: 25%;
     background-color: #fff;
-    border-radius: 1rem;
+    border-radius: var(--ZUI-shadows_radius_lg);
     animation: 2s ease 0s infinite normal none running ZUI-loading-type1;
     transform: translate(0px, 150%);
   }

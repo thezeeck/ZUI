@@ -9,7 +9,7 @@ export const AvatarUI = styled.span`
   height: ${({size}) => `var(--ZUI-sizes_avatar_${size})`};
   overflow: hidden;
   position: relative;
-  border-radius: ${({squared}) => squared ? "33%" : "50%"};
+  border-radius: ${({squared}) => squared ? "var(--ZUI-sizes_radius_percentage_md)" : "var(--ZUI-sizes_radius_percentage_xl)"};
   transition: ${({transition}) => `all var(--ZUI-transitions_${transition}) ease`};
   font-size: ${({size}) => `var(--ZUI-sizes_font_${size})`};
   ${({pointer}) => pointer && `
@@ -43,7 +43,7 @@ export const AvatarUI = styled.span`
     top: 0;
     overflow: hidden;
     transition: all .3s ease;
-    border-radius: ${({squared}) => squared ? "33%" : "50%"};
+    border-radius: ${({squared}) => squared ? "var(--ZUI-sizes_radius_percentage_md)" : "var(--ZUI-sizes_radius_percentage_xl)"};
     box-sizing: border-box;
 
     img {

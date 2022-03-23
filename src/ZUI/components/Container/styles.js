@@ -10,20 +10,20 @@ export const ContainerUI = styled.div`
     align-content: ${alignContent};
 
     > * {
-      margin: ${gap};
-      width: calc(100% - (${gap} * 2));
+      margin: var(--ZUI-shadows_${gap});
+      width: calc(100% - (var(--ZUI-shadows_${gap}) * 2));
       box-sizing: border-box;
     }
   `};
-  padding: ${({gap}) => gap};
+  padding: ${({gap}) => `var(--ZUI-shadows_${gap})`};
   box-sizing: border-box;
   ${({background}) => background && `
     background: ${background}
   `};
-  ${({radius, theme}) => radius && `
-    border-radius: ${theme.sizes["radius_" + radius]}
+  ${({radius}) => radius && `
+    border-radius: var(--ZUI-shadows_${radius});
   `};
-  ${({shadow, theme}) => shadow && `
-    box-shadow: ${theme.shadows[shadow]}
+  ${({shadow}) => shadow && `
+    box-shadow: var(--ZUI-shadows_${shadow});
   `};
 `;

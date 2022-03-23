@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Animation3 = () => (
-  <AnimationContainer>
+  <AnimationContainer >
     <span></span>
     <span></span>
     <span></span>
@@ -20,7 +20,7 @@ const AnimationContainer = styled.span`
     width: 5%;
     height: 25%;
     background-color: #fff;
-    border-radius: 1rem;
+    border-radius: var(--ZUI-shadows_radius_lg);
     position: absolute;
 
     &:nth-child(1) {

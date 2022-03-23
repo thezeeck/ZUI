@@ -83,6 +83,12 @@ export const core = {
     radius_lg: "1rem",
     radius_xl: "1.25rem",
 
+    radius_percentage_xs: "10%",
+    radius_percentage_sm: "20%",
+    radius_percentage_md: "30%",
+    radius_percentage_lg: "40%",
+    radius_percentage_xl: "50%",
+
     padding_1: ".25rem",
     padding_2: ".5rem",
     padding_3: ".75rem",
