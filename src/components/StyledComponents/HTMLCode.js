@@ -18,6 +18,7 @@ export const HTMLCode = ({code}) => {
       <Button
         style={{margin: "0 0 0 auto", width: "max-content"}}
         onClick={handleClick}
+        size="xs"
       >copy</Button>
     </Container>)
 }

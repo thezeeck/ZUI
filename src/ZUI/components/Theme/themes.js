@@ -24,10 +24,11 @@ export const darkTheme = CreateTheme(
     colors: {
       text: "#fff",
       background: "#000",
+      gray_light: colorsSchema.gray200,
+      gray: colorsSchema.gray500,
+      gray_dark: colorsSchema.gray700,
+      gray_shadow: colorsSchema.gray900,
     },
-    shadows: {
-      primary: `0 .5rem .75rem ${hexToRgba(colorsSchema.blue200, .2)}`,
-    }
   },
   core
 )

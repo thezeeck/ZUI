@@ -19,15 +19,12 @@ export const Avatar = props => {
 }
 
 Avatar.defaultProps = {
-  imgSrc: "",
-  text: "",
   size: "md",
   bordered: false,
   zoom: false,
   squared: false,
   // icon: "",
   // group: false,
-  textAlt: "",
   borderWeight: "md",
   pointer: false,
   textColor: "inherit",

@@ -1,6 +1,7 @@
 import { Home } from "../content/Home";
 import { AnchorContent } from "../content/Anchor";
 import { AvatarContent } from "../content/Avatar";
+import { ButtonContent } from "../content/Button";
 
 export const menu = [
   {
@@ -26,7 +27,11 @@ export const menu = [
         path: "/avatar",
         component: AvatarContent
       },
-      // "Button",
+      {
+        name: "Button",
+        path: "/button",
+        component: ButtonContent
+      },
       // "Button group",
       // "Card",
       // "Pagination",

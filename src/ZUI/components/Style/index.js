@@ -26,6 +26,66 @@ const CSS = createGlobalStyle`
       body {
         font-family: var(--ZUI-fonts_sans);
       }
+
+      @keyframes ZUI-loading-type1 {
+        0% {
+          transform: translate(0px, 150%);
+        }
+        50% {
+          transform: translate(300%, 150%);
+        }
+        99% {
+          transform: translate(0px, 150%);
+        }
+      }
+
+      @keyframes ZUI-loading-type2 {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: .2;
+        }
+        99% {
+          opacity: .9;
+        }
+      }
+
+      @keyframes ZUI-loading-type3a {
+        0% {
+          transform: translate(700%, 150%);
+        }
+        50% {
+          transform: translate(700%, 50%);
+        }
+        99% {
+          transform: translate(700%, 150%);
+        }
+      }
+
+      @keyframes ZUI-loading-type3b {
+        0% {
+          transform: translate(945%, 150%);
+        }
+        50% {
+          transform: translate(945%, 50%);
+        }
+        99% {
+          transform: translate(945%, 150%);
+        }
+      }
+
+      @keyframes ZUI-loading-type3c {
+        0% {
+          transform: translate(1190%, 150%);
+        }
+        50% {
+          transform: translate(1190%, 50%);
+        }
+        99% {
+          transform: translate(1190%, 150%);
+        }
+      }
     `)
   }}
 `;
