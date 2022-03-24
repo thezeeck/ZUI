@@ -127,6 +127,33 @@ export const ButtonContent = () => (
 <Button color="success" loading={3}>Success</Button>
 <Button color="warning" loading={4}>Warning</Button>
 <Button color="error" loading={5}>Error</Button>`}</ExampleCode>
+      <H2>Variants</H2>
+      <p>
+        <Button>filled</Button>
+      </p>
+      <p>
+        <Button variant="outlined">outlined</Button>
+      </p>
+      <p>
+        <Button color="primary" loading={3} size="xs">Primary</Button>
+      </p>
+      <p>
+        <Button color="secondary" loading={3} size="sm">Secondary</Button>
+      </p>
+      <p>
+        <Button color="success" loading={3} size="md">Success</Button>
+      </p>
+      <p>
+        <Button color="warning" loading={3} size="lg">Warning</Button>
+      </p>
+      <p>
+        <Button color="error" loading={3} size="xl">Error</Button>
+      </p>
+      <ExampleCode>{`<Button color="primary" loading={1}>Primary</Button>
+<Button color="secondary" loading={2}>Secondary</Button>
+<Button color="success" loading={3}>Success</Button>
+<Button color="warning" loading={4}>Warning</Button>
+<Button color="error" loading={5}>Error</Button>`}</ExampleCode>
       <H2>Icons</H2>
       <p>
         <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
