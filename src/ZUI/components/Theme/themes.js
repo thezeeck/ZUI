@@ -23,10 +23,12 @@ export const darkTheme = CreateTheme(
     colors: {
       text: "#fff",
       background: "#000",
-      gray_light: colorsSchema.gray200,
       gray: colorsSchema.gray500,
-      gray_dark: colorsSchema.gray700,
-      gray_shadow: colorsSchema.gray900,
+      gray_1: colorsSchema.gray900,
+      gray_2: colorsSchema.gray700,
+      gray_3: colorsSchema.gray500,
+      gray_4: colorsSchema.gray300,
+      gray_5: colorsSchema.gray100,
     },
   },
   core

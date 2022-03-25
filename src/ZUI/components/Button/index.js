@@ -5,19 +5,32 @@ import { Loading } from "../Loading";
 export const Button = (props) => {
   const { theme } = useThemeContext();
   return (
-    <ButtonUI {...props} theme={theme}>
-      {props.loading ? <Loading loading={props.loading} /> : <ButtonContent icon={props.icon}>{props.children}</ButtonContent>}
+    <ButtonUI {...props} theme={theme} disabled={props.loading}>
+      {props.loading ?
+        <Loading loading={props.loading} /> :
+        <ButtonContent
+          size={props.size}
+          rounded={props.rounded}
+          icon={props.icon}
+          variant={props.variant}>{props.children}</ButtonContent>}
     </ButtonUI>
   );
 }
 
-const ButtonContent = ({children, icon}) => {
-  if (icon) return <ButtonContentUI><span>{children}</span><i>icon</i></ButtonContentUI>
-  return <ButtonContentUI><span>{children}</span></ButtonContentUI>
+const ButtonContent = ({children, icon, size, rounded, variant}) => {
+  if (icon) return <ButtonContentUI
+    size={size}
+    rounded={rounded}
+    variant={variant}><span>{children}</span><i>icon</i></ButtonContentUI>
+  return <ButtonContentUI
+    size={size}
+    rounded={rounded}
+    variant={variant}><span>{children}</span></ButtonContentUI>
 }
 
 Button.defaultProps = {
   size: "md",
   color: "primary",
   variant: "filled",
+  rounded: false,
 }

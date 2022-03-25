@@ -25,12 +25,12 @@ Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Or
 
 .hljs,
 .hljs-subst {
-  color: var(--ZUI-colors_primary_light);
+  color: var(--ZUI-colors_primary_1);
 }
 
 .hljs-template-tag,
 .hljs-tag {
-  color: var(--ZUI-colors_gray_dark);
+  color: var(--ZUI-colors_gray_3);
 }
 
 .hljs-string {

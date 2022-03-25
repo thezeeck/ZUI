@@ -108,19 +108,23 @@ export const ButtonContent = () => (
         <Button color="secondary" loading={2}>secondary</Button>
       </p>
       <p>
-        <Button color="primary" loading={3} size="xs">Primary</Button>
+        <Button color="success" loading={3}>Success</Button>
+      </p>
+      <ExampleCode>{`<Button color="primary" loading={1}>Primary</Button>
+<Button color="secondary" loading={2}>secondary</Button>
+<Button color="success" loading={3}>Success</Button>`}</ExampleCode>
+      <H2>Rounded</H2>
+      <p>
+        <Button margin={2} color="gradients_secondary" rounded>filled</Button>
       </p>
       <p>
-        <Button color="secondary" loading={3} size="sm">Secondary</Button>
+        <Button margin={2} variant="outlined" color="success" rounded>outlined</Button>
       </p>
       <p>
-        <Button color="success" loading={3} size="md">Success</Button>
+        <Button margin={2} variant="flat" color="warning" rounded>text</Button>
       </p>
       <p>
-        <Button color="warning" loading={3} size="lg">Warning</Button>
-      </p>
-      <p>
-        <Button color="error" loading={3} size="xl">Error</Button>
+        <Button margin={2} variant="shadow" color="error" rounded>text</Button>
       </p>
       <ExampleCode>{`<Button color="primary" loading={1}>Primary</Button>
 <Button color="secondary" loading={2}>Secondary</Button>
@@ -129,25 +133,24 @@ export const ButtonContent = () => (
 <Button color="error" loading={5}>Error</Button>`}</ExampleCode>
       <H2>Variants</H2>
       <p>
-        <Button>filled</Button>
+        <Button margin={2}>filled</Button>
+        <Button margin={2} color="gradients_secondary">filled</Button>
       </p>
       <p>
-        <Button variant="outlined">outlined</Button>
+        <Button margin={2} variant="outlined" color="secondary">outlined</Button>
+        <Button margin={2} variant="outlined" color="gradients_success">outlined</Button>
       </p>
       <p>
-        <Button color="primary" loading={3} size="xs">Primary</Button>
+        <Button margin={2} variant="text" color="success">text</Button>
+        <Button margin={2} variant="text" color="gradients_warning">text</Button>
       </p>
       <p>
-        <Button color="secondary" loading={3} size="sm">Secondary</Button>
+        <Button margin={2} variant="flat" color="success">text</Button>
+        <Button margin={2} variant="flat" color="gradients_warning">text</Button>
       </p>
       <p>
-        <Button color="success" loading={3} size="md">Success</Button>
-      </p>
-      <p>
-        <Button color="warning" loading={3} size="lg">Warning</Button>
-      </p>
-      <p>
-        <Button color="error" loading={3} size="xl">Error</Button>
+        <Button margin={2} variant="shadow" color="warning">text</Button>
+        <Button margin={2} variant="shadow" color="gradients_error">text</Button>
       </p>
       <ExampleCode>{`<Button color="primary" loading={1}>Primary</Button>
 <Button color="secondary" loading={2}>Secondary</Button>
@@ -199,6 +202,12 @@ export const ButtonContent = () => (
           values={<Anchor as={Link} to="#sizes">Sizes</Anchor>}
           description="Display the underline text only in the hover status"
           defaultValue={<Code>md</Code>} />
+        <Row
+          attribute="variant"
+          type={<Code>string</Code>}
+          values={<Anchor as={Link} to="#variants">Variant</Anchor>}
+          description="Change the button style"
+          defaultValue={<Code>filled</Code>} />
         {/* 
         <Row
           attribute="decoration"
