@@ -2,48 +2,31 @@ import styled from "styled-components";
 import { gradientOrColor } from "../../utils";
 
 const calculateSizes = (size, auto) => {
-  if (size === "xs") return `
-    --ZUI-button-font-size: var(--ZUI-sizes_font_1);
-    --ZUI-button-min-width: ${auto ? "auto" : "var(--ZUI-sizes_space_2)"};
-    --ZUI-button-border-radius: var(--ZUI-sizes_radius_xs);
-    --ZUI-button-line-height: calc(var(--ZUI-sizes_font_2) - (var(--ZUI-sizes_padding_2) * 2));
-    --ZUI-button-height: calc(var(--ZUI-sizes_font_2) + var(--ZUI-sizes_padding_2));`;
-  if (size === "sm") return `
-    --ZUI-button-font-size: var(--ZUI-sizes_font_2);
-    --ZUI-button-min-width: ${auto ? "auto" : "var(--ZUI-sizes_space_4)"};
-    --ZUI-button-border-radius: var(--ZUI-sizes_radius_sm);
-    --ZUI-button-line-height: calc(var(--ZUI-sizes_font_3) - (var(--ZUI-sizes_padding_3) * 2));
-    --ZUI-button-height: calc(var(--ZUI-sizes_font_3) + var(--ZUI-sizes_padding_3));`;
-  if (size === "lg") return `
-    --ZUI-button-font-size: var(--ZUI-sizes_font_3);
-    --ZUI-button-min-width: ${auto ? "auto" : "var(--ZUI-sizes_space_8)"};
-    --ZUI-button-border-radius: var(--ZUI-sizes_radius_md);
-    --ZUI-button-line-height: calc(var(--ZUI-sizes_font_4) - (var(--ZUI-sizes_padding_4) * 2));
-    --ZUI-button-height: calc(var(--ZUI-sizes_font_4) + var(--ZUI-sizes_padding_4));`;
-  if (size === "xl") return `
-    --ZUI-button-font-size: var(--ZUI-sizes_font_4);
-    --ZUI-button-min-width: ${auto ? "auto" : "var(--ZUI-sizes_space_10)"};
-    --ZUI-button-border-radius: var(--ZUI-sizes_radius_lg);
-    --ZUI-button-line-height: calc(var(--ZUI-sizes_font_5) - (var(--ZUI-sizes_padding_5) * 2));
-    --ZUI-button-height: calc(var(--ZUI-sizes_font_5) + var(--ZUI-sizes_padding_5));`;
+  let sizes = {};
+  if (size === "xs") sizes = {fs: 1, sp: 2, rd: "xs", wd: 2};
+  if (size === "sm") sizes = {fs: 2, sp: 3, rd: "sm", wd: 4};
+  if (size === "md") sizes = {fs: 3, sp: 4, rd: "md", wd: 6};
+  if (size === "lg") sizes = {fs: 3, sp: 4, rd: "md", wd: 8};
+  if (size === "xl") sizes = {fs: 4, sp: 5, rd: "lg", wd: 10};
+
   return `
-    --ZUI-button-font-size: var(--ZUI-sizes_font_3);
-    --ZUI-button-min-width: ${auto ? "auto" : "var(--ZUI-sizes_space_6)"};
-    --ZUI-button-border-radius: var(--ZUI-sizes_radius_md);
-    --ZUI-button-line-height: calc(var(--ZUI-sizes_font_4) - (var(--ZUI-sizes_padding_4) * 2));
-    --ZUI-button-height: calc(var(--ZUI-sizes_font_4) + var(--ZUI-sizes_padding_4));`;
+    --ZUI-button-font-size: var(--ZUI-sizes_font_${sizes.fs});
+    --ZUI-button-min-width: ${auto ? "auto" : "var(--ZUI-sizes_space_" + sizes.wd + ")"};
+    --ZUI-button-border-radius: var(--ZUI-sizes_radius_${sizes.rd});
+    --ZUI-button-line-height: calc(var(--ZUI-sizes_font_${sizes.sp}) - (var(--ZUI-sizes_padding_${sizes.sp}) * 2));
+    --ZUI-button-height: calc(var(--ZUI-sizes_font_${sizes.sp}) + var(--ZUI-sizes_padding_${sizes.sp}));`;
 }
 
-const defineColors = ({color, theme, disabled}) => {
+const defineColors = ({color, disabled}) => {
   if (disabled) {
     return {
-      font: theme.colors.gray,
-      bg: theme.colors.gray_light,
+      font: "gray",
+      bg: "gray_light",
     }
   }
   return {
-    font: "#fff",
-    bg: gradientOrColor(color),
+    font: `${color.replace("gradients_", "")}_light`,
+    bg: color,
   }
   
 }
@@ -57,7 +40,7 @@ export const ButtonUI = styled.button`
   ${({margin}) => margin && `margin: var(--ZUI-sizes_padding_${margin})`};
   width: auto;
   display: inline-block;
-  border: 0 none;
+  border: ${({color}) => /gradient/g.test(color) ? "0 none" : "2px solid"};
   padding: 0;
   position: relative;
   cursor: ${({disabled}) => disabled ? "not-allowed" : "pointer"};
@@ -70,14 +53,14 @@ export const ButtonUI = styled.button`
     const colors = defineColors({color, theme, disabled});
     if (variant === "outlined") {
       return `
-        background: ${colors.bg};
-        color: ${colors.font};
+        background: transparent;
+        color: var(--ZUI-colors_${color.replace("gradients_", "")});
       `;
     }
     return `
-      background: ${colors.bg};
-      color: ${colors.font};
-      border-color: ${colors.bg};
+      background: ${ /gradient/g.test(color) ? "var(--ZUI-" + colors.bg + ")" : "var(--ZUI-colors_" + colors.bg + ")"};
+      color: var(--ZUI-colors_${colors.font});
+      border-color: var(--ZUI-colors_${colors.bg.replace("gradients_", "")});
     `;
   }};
   ${({color, shadow}) => shadow && `
@@ -102,5 +85,4 @@ export const ButtonContentUI = styled.span`
   justify-content: center;
   align-items: center;
   background-color: var(--content-bg);
-  
 `;
