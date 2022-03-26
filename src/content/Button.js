@@ -191,6 +191,24 @@ export const ButtonContent = () => (
           description="Change the status button"
           defaultValue={<Code>false</Code>} />
         <Row
+          attribute="icon"
+          type={<><Code>boolean</Code> <Code>string</Code></>}
+          values={<><Code>true/false</Code> <Anchor as={Link} to="/icons">Icons</Anchor></>}
+          description="Show an icon"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="loading"
+          type={<Code>number</Code>}
+          values="1,2,3"
+          description="Show the loading animation"
+          defaultValue={<Code>undefined</Code>} />
+        <Row
+          attribute="rounded"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Change the button border radius"
+          defaultValue={<Code>false</Code>} />
+        <Row
           attribute="shadow"
           type={<Code>boolean</Code>}
           values={<Code>true/false</Code>}
@@ -208,42 +226,29 @@ export const ButtonContent = () => (
           values={<Anchor as={Link} to="#variants">Variant</Anchor>}
           description="Change the button style"
           defaultValue={<Code>filled</Code>} />
-        {/* 
-        <Row
-          attribute="decoration"
-          type={<Code>boolean</Code>}
-          values={<Code>true/false</Code>}
-          description="Display the underline text only in the hover status"
-          defaultValue={<Code>false</Code>} />
-        <Row
-          attribute="href"
-          type={<Code>string</Code>}
-          values="-"
-          description="Link url"
-          defaultValue="-" />
-        <Row
-          attribute="icon"
-          type={<><Code>boolean</Code> <Code>string</Code></>}
-          values={<><Code>true/false</Code> <Anchor as={Link} to="/icons">Icons</Anchor></>}
-          description="Show an icon"
-          defaultValue={<Code>false</Code>} />
-        <Row
-          attribute="style"
-          type="-"
-          values="Any valid CSS rule"
-          description="Override Default CSS rules"
-          defaultValue="-" /> */}
       </Table>
       <H2>Types</H2>
-      <h3 id="anchorColors">textColor options</h3>
-      <ExampleCode noCopy lang="javascript">{`const textColor =
-  | 'text'
+      <h3 id="anchorColors">Button colors options</h3>
+      <ExampleCode noCopy lang="javascript">{`const buttonColor =
   | 'primary'
   | 'secondary'
   | 'success'
   | 'warning'
-  | 'error';
-`}</ExampleCode>
+  | 'error';`}</ExampleCode>
+      <h3 id="sizes">Button sizes</h3>
+      <ExampleCode noCopy lang="javascript">{`const size =
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xg';`}</ExampleCode>
+      <h3 id="sizes">Button variant</h3>
+      <ExampleCode noCopy lang="javascript">{`const size =
+  | 'filled'
+  | 'outlined'
+  | 'text'
+  | 'flat'
+  | 'shadow';`}</ExampleCode>
       <h3 id="icons">Icons</h3>
       <Anchor as={Link} to="/icons">Icons</Anchor>
     </Layout>
