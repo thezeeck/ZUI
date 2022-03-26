@@ -25,16 +25,16 @@ Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Or
 
 .hljs,
 .hljs-subst {
-  color: var(--ZUI-colors_primary_1);
+  color: var(--ZUI-colors_success_4);
 }
 
 .hljs-template-tag,
 .hljs-tag {
-  color: var(--ZUI-colors_gray_3);
+  color: var(--ZUI-colors_gray);
 }
 
 .hljs-string {
-  color: var(--ZUI-colors_success);
+  color: var(--ZUI-colors_warning_4);
 }
 
 .hljs-title,
@@ -47,7 +47,7 @@ Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Or
 .hljs-addition,
 .hljs-variable,
 .hljs-template-variable {
-  color: var(--ZUI-colors_secondary);
+  color: var(--ZUI-colors_secondary_2);
 }
 
 .hljs-comment,

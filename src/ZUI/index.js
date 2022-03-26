@@ -5,7 +5,7 @@ import { darkTheme, lightTheme, CreateTheme } from "./components/Theme/themes";
 import { Theme, ThemeProvider, useThemeContext } from "./components/Theme";
 import { colorsSchema } from "./components/Theme/colorsSchema";
 import { Anchor } from "./components/Anchor";
-import { Container } from "./components/Container";
+import { Container, Row } from "./components/Container";
 import { Collapse } from "./components/Collapse";
 import { Text } from "./components/Text";
 import { hexToRgba } from "./utils";
@@ -32,6 +32,7 @@ const ZUI = {
   Styles,
   Button,
   Loading,
+  Row,
 }
 
 export { 
@@ -53,6 +54,7 @@ export {
   Styles,
   Button,
   Loading,
+  Row,
 }
 
 export default ZUI;

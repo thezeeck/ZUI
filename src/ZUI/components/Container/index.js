@@ -1,4 +1,4 @@
-import { ContainerUI } from "./styles";
+import { ContainerUI, RowUI } from "./styles";
 import { useThemeContext } from "../Theme";
 
 export const Container = props => {
@@ -9,6 +9,14 @@ export const Container = props => {
     </ContainerUI>
 )};
 
+export const Row = props => {
+  const { theme } = useThemeContext();
+  return (
+    <RowUI {...props} theme={theme}>
+      {props.children}
+    </RowUI>
+)};
+
 Container.defaultProps = {
   gap: 4,
   wrap: "nowrap",
@@ -17,4 +25,5 @@ Container.defaultProps = {
   alignItems: "flex-start",
   alignContent: "flex-start",
   flex: false,
+  size: 5,
 }
