@@ -26,7 +26,13 @@ export const Group = (props) => {
   const childrenWithState = Children.map(props.children, child => {
     indexLoop++;
     initialState[indexLoop] = indexLoop === props.expanded;
-    return cloneElement(child, {state, handleClick, id: indexLoop, animated: props.animated, gap: props.gap});
+    return cloneElement(child, {
+      state,
+      handleClick,
+      id: indexLoop,
+      animated: props.animated,
+      gap: props.gap
+    });
   }); 
   
   
