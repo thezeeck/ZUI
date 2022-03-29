@@ -1,27 +1,38 @@
+import { Collapse, Container } from "../ZUI";
 import { Anchor } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 import { Types } from "../components/StyledComponents/types";
 
-export const AnchorContent = () => (
+export const CollapseContent = () => (
     <Layout>
-      <H1>Anchor</H1>
+      <H1>Collapse</H1>
       <p>
         Anchors <Code>{`<Anchor>`}</Code> component brings to the developers the possibility to customize
         all links in their project in the same place or customize each element separately, this
         component renders an <Code>{`<a>`}</Code> HTML element.
       </p>
       <ExampleCode lang='javascript'>
-        {`import { Anchor } from "zeeck-ui";`}
+        {`import { Collapse } from "zeeck-ui";`}
       </ExampleCode>
       <H2>Default</H2>
       <p>
         The default Anchor color it's the primary color defined in the theme config.
       </p>
-      <p>
-        <Anchor link="#">Lorem ipsum dolor sit amet</Anchor>
-      </p>
+      <Container>
+        <Collapse.Group>
+          <Collapse.Item>
+            1 Lorem ipsum dolor sit amet
+          </Collapse.Item>
+          <Collapse.Item>
+            2 Lorem ipsum dolor sit amet
+          </Collapse.Item>
+          <Collapse.Item>
+            3 Lorem ipsum dolor sit amet
+          </Collapse.Item>
+        </Collapse.Group>
+      </Container>
       <ExampleCode>
         {`<p>
   <Anchor link="#">

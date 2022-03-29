@@ -2,6 +2,7 @@ import { Home } from "../content/Home";
 import { AnchorContent } from "../content/Anchor";
 import { AvatarContent } from "../content/Avatar";
 import { ButtonContent } from "../content/Button";
+import { CollapseContent } from "../content/Collapse";
 
 export const menu = [
   {
@@ -31,6 +32,11 @@ export const menu = [
         name: "Button",
         path: "/button",
         component: ButtonContent
+      },
+      {
+        name: "Collapse",
+        path: "/collapse",
+        component: CollapseContent
       },
       // "Button group",
       // "Card",
