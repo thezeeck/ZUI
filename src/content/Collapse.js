@@ -21,17 +21,31 @@ export const CollapseContent = () => (
         The default Anchor color it's the primary color defined in the theme config.
       </p>
       <Container>
-        <Collapse.Group>
-          <Collapse.Item>
+        <Collapse>
+          <Collapse.Item title="Title A">
             1 Lorem ipsum dolor sit amet
           </Collapse.Item>
-          <Collapse.Item>
+          <Collapse.Item title="Title B">
             2 Lorem ipsum dolor sit amet
           </Collapse.Item>
-          <Collapse.Item>
+          <Collapse.Item title="Title C">
             3 Lorem ipsum dolor sit amet
           </Collapse.Item>
-        </Collapse.Group>
+        </Collapse>
+      </Container>
+      -----
+      <Container>
+        <Collapse>
+          <Collapse.Item title="Title A">
+            1 Lorem ipsum dolor sit amet
+          </Collapse.Item>
+          <Collapse.Item title="Title B">
+            2 Lorem ipsum dolor sit amet
+          </Collapse.Item>
+          <Collapse.Item title="Title C">
+            3 Lorem ipsum dolor sit amet
+          </Collapse.Item>
+        </Collapse>
       </Container>
       <ExampleCode>
         {`<p>

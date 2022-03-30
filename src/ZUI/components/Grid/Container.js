@@ -1,17 +1,17 @@
 import { GridContainer } from "./styles"
 
-export const Container = props => {
+export const Grid = props => {
   return (
   <GridContainer {...props}>
     {props.children}
   </GridContainer>
 )}
 
-Container.defaultProps = {
+Grid.defaultProps = {
   gap: 4,
   wrap: "wrap",
   justify: "flex-start",
   direction: "row",
-  alignItems: "flex-start",
-  alignContent: "flex-start",
+  alignItems: "center",
+  alignContent: "center",
 }

@@ -1,7 +1,6 @@
 import { Item } from "./Items";
-import { Group } from "./Group";
+import { Collapse } from "./Group";
 
-export const Collapse = {
-  Group,
-  Item
-}
+Collapse.Item = Item;
+
+export default Collapse;

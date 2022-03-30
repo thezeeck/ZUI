@@ -9,13 +9,11 @@ export const Container = props => {
     </ContainerUI>
 )};
 
-export const Row = props => {
-  const { theme } = useThemeContext();
-  return (
-    <RowUI {...props} theme={theme}>
+Container.Row = props => (
+    <RowUI {...props}>
       {props.children}
     </RowUI>
-)};
+);
 
 Container.defaultProps = {
   gap: 4,

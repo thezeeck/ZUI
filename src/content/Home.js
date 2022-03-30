@@ -1,8 +1,5 @@
-import { Avatar, Anchor, Grid } from "../ZUI";
 import { Layout } from "../components/Layout";
-import { H1, H2, Code, Table, Row, ExampleCode } from "../components/StyledComponents";
-import { Link } from "react-router-dom";
-import { img } from "../constant";
+import { H1, H2, Code, ExampleCode } from "../components/StyledComponents";
 
 export const Home = () => (
   <Layout>

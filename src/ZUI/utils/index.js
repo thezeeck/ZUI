@@ -31,3 +31,8 @@ export const gradientOrColor = color => {
   if (/gradient/g.test(color)) return `var(--ZUI-${color})`;
   else return `var(--ZUI-colors_${color})`;
 }
+
+export const randomId = component => {
+  const characters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+  return `ZUI-${component}_${Date.now()}${characters[Math.floor(Math.random() * characters.length)]}`;
+}

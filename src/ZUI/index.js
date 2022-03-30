@@ -1,60 +1,20 @@
-import { Avatar } from "./components/Avatar";
-import { Grid } from "./components/Grid";
-import { Card } from "./components/Card";
-import { darkTheme, lightTheme, CreateTheme } from "./components/Theme/themes";
-import { Theme, ThemeProvider, useThemeContext } from "./components/Theme";
-import { colorsSchema } from "./components/Theme/colorsSchema";
-import { Anchor } from "./components/Anchor";
-import { Container, Row } from "./components/Container";
-import { Collapse } from "./components/Collapse";
-import { Text } from "./components/Text";
-import { hexToRgba } from "./utils";
-import { Styles } from "./components/Style";
-import { Button } from "./components/Button";
-import { Loading } from "./components/Loading";
-
-const ZUI = {
-  Avatar,
-  Grid,
-  Card,
+export { Avatar } from "./components/Avatar";
+export { default as Grid } from "./components/Grid";
+export { Card } from "./components/Card";
+export {
   darkTheme,
   lightTheme,
+  CreateTheme,
   Theme,
   ThemeProvider,
-  CreateTheme,
-  colorsSchema,
   useThemeContext,
-  Anchor,
-  Container,
-  Collapse,
-  Text,
-  hexToRgba,
-  Styles,
-  Button,
-  Loading,
-  Row,
-}
-
-export { 
-  Avatar,
-  Grid,
-  Card,
-  darkTheme,
-  lightTheme,
-  Theme,
-  ThemeProvider,
-  CreateTheme,
-  colorsSchema,
-  useThemeContext,
-  Anchor,
-  Container,
-  Collapse,
-  Text,
-  hexToRgba,
-  Styles,
-  Button,
-  Loading,
-  Row,
-}
-
-export default ZUI;
+  colorsSchema
+} from "./components/Theme";
+export { Anchor } from "./components/Anchor";
+export { Container } from "./components/Container";
+export { default as Collapse } from "./components/Collapse";
+export { Text } from "./components/Text";
+export { hexToRgba } from "./utils";
+export { Styles } from "./components/Style";
+export { Button } from "./components/Button";
+export { Loading } from "./components/Loading";
