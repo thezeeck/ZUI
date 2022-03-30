@@ -1,18 +1,16 @@
 import { ItemContent, ItemUI, ItemTitle } from "./styles";
 import { useRef } from "react";
 import { useCollapseContext } from "./context";
-import { randomId } from "../../utils";
 
 export const Item = (props) => {
   const headerRef = useRef();
   const { state, setNewState } = useCollapseContext();
-  const itemId = randomId("Collapse_Item");
-  const isExpanded = state.expanded.some(id => id === itemId);
+  const isExpanded = state.expanded.some(id => id === props.id);
   console.log(state);
   const handleKey = event => {
     if (event.code === "Space" || event.code === "Enter") {
       event.preventDefault();
-      setNewState(itemId);
+      setNewState(props.id);
       return false;
     }
   }
@@ -25,7 +23,7 @@ export const Item = (props) => {
         aria-expanded={isExpanded}
         aria-disabled={props.disabled}
         data-state={isExpanded ? "open" : "closed"}
-        onClick={() => {setNewState(itemId)}}
+        onClick={() => {setNewState(props.id)}}
         onKeyUp={(event) => {handleKey(event)}}
         ref={headerRef}>
         <h3>{props.title}<span>X</span></h3>

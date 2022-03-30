@@ -1,8 +1,13 @@
-import { useState, Children, cloneElement } from "react";
+import { Children, cloneElement } from "react";
 import { GroupUI } from "./styles";
 import { CollapseProvider } from "./context";
 
 export const Collapse = (props) => {
+  let indexLoop = 0;
+  const childrenWithState = Children.map(props.children, child => {
+    indexLoop++;
+    return cloneElement(child, {id: indexLoop});
+  }); 
   return (
     <CollapseProvider state={{
       expanded: [],
@@ -10,7 +15,7 @@ export const Collapse = (props) => {
       gap: props.gap,
       accordion: props.accordion,
     }}>
-      <GroupUI {...props}>{props.children}</GroupUI>
+      <GroupUI {...props}>{childrenWithState}</GroupUI>
     </CollapseProvider>
   )
 };
