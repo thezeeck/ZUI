@@ -1,4 +1,4 @@
-import { Collapse, Container } from "../ZUI";
+import { Collapse, Container, Avatar } from "../ZUI";
 import { Anchor } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode } from "../components/StyledComponents";
@@ -9,103 +9,163 @@ export const CollapseContent = () => (
     <Layout>
       <H1>Collapse</H1>
       <p>
-        Anchors <Code>{`<Anchor>`}</Code> component brings to the developers the possibility to customize
-        all links in their project in the same place or customize each element separately, this
-        component renders an <Code>{`<a>`}</Code> HTML element.
+        The collapse <Code>Collapse</Code> component allows the user to show and hide portions of content in the application.
       </p>
       <ExampleCode lang='javascript'>
         {`import { Collapse } from "zeeck-ui";`}
       </ExampleCode>
-      <H2>Default</H2>
+      <H2>Basic collapse</H2>
       <p>
-        The default Anchor color it's the primary color defined in the theme config.
+        All collapse <Code>Collapse</Code> component needs at least one Item <Code>Collapse.Item</Code>.
       </p>
       <Container>
         <Collapse>
           <Collapse.Item title="Title A">
             1 Lorem ipsum dolor sit amet
           </Collapse.Item>
+        </Collapse>
+      </Container>
+      <ExampleCode>
+        {`<Collapse>
+  <Collapse.Item title="Title A">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
+      <H2>Disable accordion property</H2>
+      <p>If you disable the accordion <Code>accordion</Code> property you can show multiple items at the same time</p>
+      <Container>
+        <Collapse accordion={false}>
+          <Collapse.Item title="Title A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
           <Collapse.Item title="Title B">
-            2 Lorem ipsum dolor sit amet
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Collapse.Item>
           <Collapse.Item title="Title C">
-            3 Lorem ipsum dolor sit amet
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Collapse.Item>
         </Collapse>
       </Container>
-      -----
+      <ExampleCode>
+        {`<Collapse accordion={false}>
+  <Collapse.Item title="Title A">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
+      <H2>Initial expanded</H2>
+      <p>You can set a expanded <Code>expanded</Code> item by default.</p>
+      <Container>
+        <Collapse expanded={1}>
+          <Collapse.Item title="Title A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title B">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title C">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
+      <ExampleCode>
+        {`<Collapse expanded={1}>
+  <Collapse.Item title="Title A">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
+      <H2>Subtitle</H2>
+      <p>You can set a subtitle <Code>subtitle</Code> that will appear below the title.</p>
       <Container>
         <Collapse>
-          <Collapse.Item title="Title A">
-            1 Lorem ipsum dolor sit amet
+          <Collapse.Item title="Title A" subTitle="Subtitle A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Collapse.Item>
-          <Collapse.Item title="Title B">
-            2 Lorem ipsum dolor sit amet
+          <Collapse.Item title="Title B" subTitle="Subtitle B">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Collapse.Item>
-          <Collapse.Item title="Title C">
-            3 Lorem ipsum dolor sit amet
+          <Collapse.Item title="Title C" subTitle="Subtitle C">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Collapse.Item>
         </Collapse>
       </Container>
       <ExampleCode>
-        {`<p>
-  <Anchor link="#">
-    Lorem ipsum dolor sit amet
-  </Anchor>
-</p>`}
+        {`<Collapse expanded={1}>
+  <Collapse.Item title="Title A" subTitle="Subtitle A">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B" subTitle="Subtitle B">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C" subTitle="Subtitle C">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
       </ExampleCode>
-      <H2>Colors</H2>
-      <p>
-        <Anchor textColor="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="secondary" href="#">Lorem ipsum dolor sit amet (Secondary)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="success" href="#">Lorem ipsum dolor sit amet (Success)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="warning" href="#">Lorem ipsum dolor sit amet (Warning)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="error" href="#">Lorem ipsum dolor sit amet (Error)</Anchor>
-      </p>
-      <p>
-        <Anchor href="#">Lorem ipsum dolor sit amet (Default)</Anchor>
-      </p>
+      <H2>Filled background and shadow</H2>
+      <p>You can change the collapse <Code>collapse</Code> component style setting the filled <Code>filled</Code> property.</p>
+      <Container>
+        <Collapse filled>
+          <Collapse.Item title="Title A" subTitle="Subtitle A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title B" subTitle="Subtitle B">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title C" subTitle="Subtitle C">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
       <ExampleCode>
-        {`<p>
-  <Anchor textColor="primary" href="#">
-    Lorem ipsum dolor sit amet (Primary)
-  </Anchor>
-</p>
-<p>
-  <Anchor textColor="secondary" href="#">
-    Lorem ipsum dolor sit amet (Secondary)
-  </Anchor>
-</p>
-<p>
-  <Anchor textColor="success" href="#">
-    Lorem ipsum dolor sit amet (Success)
-  </Anchor>
-</p>
-<p>
-  <Anchor textColor="warning" href="#">
-    Lorem ipsum dolor sit amet (Warning)
-  </Anchor>
-</p>
-<p>
-  <Anchor textColor="error" href="#">
-    Lorem ipsum dolor sit amet (Error)
-  </Anchor>
-</p>
-<p>
-  <Anchor href="#">
-    Lorem ipsum dolor sit amet (Default)
-  </Anchor>
-</p>`}
+        {`<Collapse expanded={1}>
+  <Collapse.Item title="Title A" subTitle="Subtitle A">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B" subTitle="Subtitle B">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C" subTitle="Subtitle C">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
       </ExampleCode>
-      <H2>Variants</H2>
+      <Container>
+        <Collapse>
+          <Collapse.Item title="Title A" subTitle="Subtitle A" sideContent={<Avatar text="JS" />}>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Quis ipsum suspendisse ultrices gravida dictum. Amet mattis vulputate enim nulla. Gravida arcu ac tortor dignissim convallis aenean et. Arcu non sodales neque sodales ut. Nam libero justo laoreet sit amet cursus sit amet. Senectus et netus et malesuada fames. Leo a diam sollicitudin tempor id. Amet justo donec enim diam vulputate ut pharetra sit amet. Fermentum iaculis eu non diam. Praesent semper feugiat nibh sed.
+            </p>
+          </Collapse.Item>
+          <Collapse.Item title="Title B">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p>
+              Luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Quis ipsum suspendisse ultrices gravida dictum. Amet mattis vulputate enim nulla. Gravida arcu ac tortor dignissim convallis aenean et. Arcu non sodales neque sodales ut. Nam libero justo laoreet sit amet cursus sit amet. Senectus et netus et malesuada fames. Leo a diam sollicitudin tempor id. Amet justo donec enim diam vulputate ut pharetra sit amet. Fermentum iaculis eu non diam. Praesent semper feugiat nibh sed.
+            </p>
+          </Collapse.Item>
+          <Collapse.Item title="Title C">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </Collapse.Item>
+        </Collapse>
+      </Container>
       <h3>Underline</h3>
       <p>
         <Anchor href="#" decoration>Lorem ipsum dolor sit amet (Decoration)</Anchor>

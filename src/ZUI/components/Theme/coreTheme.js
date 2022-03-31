@@ -62,12 +62,12 @@ export const core = {
     lg: "0 .75rem 1rem",
     xl: "0 1rem 1.5rem",
 
-    gray: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.gray500, .7)}`,
-    primary: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.blue500, .7)}`,
-    secondary: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.purple500, .7)}`,
-    success: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.green500, .7)}`,
-    warning: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.yellow500, .7)}`,
-    error: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.red500, .7)}`,
+    gray: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.gray500, .5)}`,
+    primary: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.blue500, .5)}`,
+    secondary: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.purple500, .5)}`,
+    success: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.green500, .5)}`,
+    warning: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.yellow500, .5)}`,
+    error: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.red500, .5)}`,
   },
   sizes: {
     avatar_xs: "1rem",

@@ -18,3 +18,4 @@ export { hexToRgba } from "./utils";
 export { Styles } from "./components/Style";
 export { Button } from "./components/Button";
 export { Loading } from "./components/Loading";
+export { Icon } from "./components/Icons";

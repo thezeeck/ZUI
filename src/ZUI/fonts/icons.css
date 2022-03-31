@@ -1,0 +1,20 @@
+.ZUI-icon {
+  font-style: normal;
+  font-family: 'zui_ui';
+}
+
+.ZUI-chevron-down::before {
+  content: "\010a";
+}
+
+.ZUI-chevron-left::before {
+  content: "\011a";
+}
+
+.ZUI-chevron-right::before {
+  content: "\012a";
+}
+
+.ZUI-chevron-up::before {
+  content: "\014a";
+}

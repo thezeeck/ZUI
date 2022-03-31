@@ -1,5 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 import { useThemeContext } from "../Theme";
+import icons_eot from "../../fonts/zui_ui_icon.eot";
+import icons_svg from "../../fonts/zui_ui_icon.svg";
+import icons_ttf from "../../fonts/zui_ui_icon.ttf";
+import icons_woff from "../../fonts/zui_ui_icon.woff";
+import icons_woff2 from "../../fonts/zui_ui_icon.woff2";
+import "../../fonts/icons.css";
+
 
 export const Styles = () => {
   const { theme } = useThemeContext();
@@ -21,6 +28,16 @@ const CSS = createGlobalStyle`
     return (`
       :root {
         ${rules}
+      }
+
+      @font-face {
+          font-family: 'zui_ui';
+          src:  url('${icons_woff2}') format('woff2'),
+                url('${icons_woff}') format('woff'),
+                url('${icons_ttf}') format('truetype'),
+                url('${icons_svg}"#webfont"}') format('svg');
+          font-weight: normal;
+          font-style: normal;
       }
 
       body {

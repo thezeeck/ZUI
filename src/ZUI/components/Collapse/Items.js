@@ -1,12 +1,14 @@
 import { ItemContent, ItemUI, ItemTitle } from "./styles";
 import { useRef } from "react";
 import { useCollapseContext } from "./context";
+import { Icon } from "../Icons";
+import { useThemeContext } from "../Theme";
 
 export const Item = (props) => {
   const headerRef = useRef();
   const { state, setNewState } = useCollapseContext();
   const isExpanded = state.expanded.some(id => id === props.id);
-  console.log(state);
+  const { theme } = useThemeContext();
   const handleKey = event => {
     if (event.code === "Space" || event.code === "Enter") {
       event.preventDefault();
@@ -25,8 +27,13 @@ export const Item = (props) => {
         data-state={isExpanded ? "open" : "closed"}
         onClick={() => {setNewState(props.id)}}
         onKeyUp={(event) => {handleKey(event)}}
-        ref={headerRef}>
-        <h3>{props.title}<span>X</span></h3>
+        className={isExpanded && "open"}
+        ref={headerRef}
+        theme={theme}>
+        {props.sideContent && <section>{props.sideContent}</section>}
+        <h3>{props.title}</h3>
+        {props.subTitle && <h4>{props.subTitle}</h4>}
+        <div><Icon name="chevron-down" /></div>
       </ItemTitle>
       <ItemContent className={isExpanded && "open"}>
         <div>

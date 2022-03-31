@@ -16,18 +16,18 @@ export const useCollapseContext = () => useContext(CollapseState);
 const useCollapse = thisCollapse => {
   const [state, setState] = useState(thisCollapse);
 
-  const setNewState = (item, callback) => {
+  const setNewState = item => {
     const newState = {...state};
+    console.log(newState);
     if (state.accordion) {
       if (state.expanded[0] === item) newState.expanded.splice(0, 1, false);
       else  newState.expanded.splice(0, 1, item);
     } else {
       const idIndex = state.expanded.findIndex(id => id === item);
-      if(idIndex > 0) newState.expanded.splice(idIndex, 1);
-      else newState.push(item);
+      if(idIndex >= 0) newState.expanded.splice(idIndex, 1);
+      else newState.expanded.push(item);
     }
     setState({...state, ...newState});
-    if (callback) callback();
   }
 
   return { state, setNewState };
