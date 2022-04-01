@@ -18,7 +18,7 @@ export const Item = (props) => {
   }
 
   return (
-    <ItemUI {...props}>
+    <ItemUI {...props} theme={theme} variant={state.variant}>
       <ItemTitle
         tabIndex="0"
         role="button"
@@ -33,7 +33,7 @@ export const Item = (props) => {
         {props.sideContent && <section>{props.sideContent}</section>}
         <h3>{props.title}</h3>
         {props.subTitle && <h4>{props.subTitle}</h4>}
-        <div><Icon name="chevron-down" /></div>
+        <div><Icon name={props.icon} /></div>
       </ItemTitle>
       <ItemContent className={isExpanded && "open"}>
         <div>
@@ -43,3 +43,7 @@ export const Item = (props) => {
     </ItemUI>
   );
 };
+
+Item.defaultProps = {
+  icon: "chevron-right",
+}

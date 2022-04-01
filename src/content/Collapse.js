@@ -4,6 +4,7 @@ import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 import { Types } from "../components/StyledComponents/types";
+import { img } from "../constant";
 
 export const CollapseContent = () => (
     <Layout>
@@ -116,34 +117,106 @@ export const CollapseContent = () => (
   </Collapse.Item>
 </Collapse>`}
       </ExampleCode>
-      <H2>Filled background and shadow</H2>
-      <p>You can change the collapse <Code>collapse</Code> component style setting the filled <Code>filled</Code> property.</p>
+      <H2>Variants</H2>
+      <h3>Filled</h3>
       <Container>
-        <Collapse filled>
-          <Collapse.Item title="Title A" subTitle="Subtitle A">
+        <Collapse variant="filled">
+          <Collapse.Item title="Title A">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Collapse.Item>
-          <Collapse.Item title="Title B" subTitle="Subtitle B">
+          <Collapse.Item title="Title B">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Collapse.Item>
-          <Collapse.Item title="Title C" subTitle="Subtitle C">
+          <Collapse.Item title="Title C">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Collapse.Item>
         </Collapse>
       </Container>
       <ExampleCode>
-        {`<Collapse expanded={1}>
-  <Collapse.Item title="Title A" subTitle="Subtitle A">
+        {`<Collapse variant="filled">
+  <Collapse.Item title="Title A">
     ... your content ...
   </Collapse.Item>
-  <Collapse.Item title="Title B" subTitle="Subtitle B">
+  <Collapse.Item title="Title B">
     ... your content ...
   </Collapse.Item>
-  <Collapse.Item title="Title C" subTitle="Subtitle C">
+  <Collapse.Item title="Title C">
     ... your content ...
   </Collapse.Item>
 </Collapse>`}
       </ExampleCode>
+      <h3>Bordered</h3>
+      <Container>
+        <Collapse variant="bordered">
+          <Collapse.Item title="Title A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title B">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title C">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
+      <ExampleCode>
+        {`<Collapse variant="bordered">
+  <Collapse.Item title="Title A">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
+      <h3>Splitted</h3>
+      <Container>
+        <Collapse variant="splitted">
+          <Collapse.Item title="Title A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title B">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title C">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
+      <ExampleCode>
+        {`<Collapse variant="splitted">
+  <Collapse.Item title="Title A">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
+      <H2>Custom arrow</H2>
+      <p>You can set a custom icon with the property <Code>icon</Code>.</p>
+      <Container>
+        <Collapse>
+          <Collapse.Item title="Title A" icon="chevron-left">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
+      <ExampleCode>
+        {`<Collapse>
+  <Collapse.Item title="Title A" icon="chevron-left">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
+      <H2>Content side</H2>
+      <p>You can set content at the left of the title with the property <Code>sideContent</Code>.</p>
       <Container>
         <Collapse>
           <Collapse.Item title="Title A" subTitle="Subtitle A" sideContent={<Avatar text="JS" />}>
@@ -151,21 +224,27 @@ export const CollapseContent = () => (
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Quis ipsum suspendisse ultrices gravida dictum. Amet mattis vulputate enim nulla. Gravida arcu ac tortor dignissim convallis aenean et. Arcu non sodales neque sodales ut. Nam libero justo laoreet sit amet cursus sit amet. Senectus et netus et malesuada fames. Leo a diam sollicitudin tempor id. Amet justo donec enim diam vulputate ut pharetra sit amet. Fermentum iaculis eu non diam. Praesent semper feugiat nibh sed.
             </p>
           </Collapse.Item>
-          <Collapse.Item title="Title B">
+          <Collapse.Item title="Title A" subTitle="Subtitle A" sideContent={<Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="secondary" zoom squared pointer/>}>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-            <p>
-              Luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Quis ipsum suspendisse ultrices gravida dictum. Amet mattis vulputate enim nulla. Gravida arcu ac tortor dignissim convallis aenean et. Arcu non sodales neque sodales ut. Nam libero justo laoreet sit amet cursus sit amet. Senectus et netus et malesuada fames. Leo a diam sollicitudin tempor id. Amet justo donec enim diam vulputate ut pharetra sit amet. Fermentum iaculis eu non diam. Praesent semper feugiat nibh sed.
-            </p>
-          </Collapse.Item>
-          <Collapse.Item title="Title C">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Quis ipsum suspendisse ultrices gravida dictum. Amet mattis vulputate enim nulla. Gravida arcu ac tortor dignissim convallis aenean et. Arcu non sodales neque sodales ut. Nam libero justo laoreet sit amet cursus sit amet. Senectus et netus et malesuada fames. Leo a diam sollicitudin tempor id. Amet justo donec enim diam vulputate ut pharetra sit amet. Fermentum iaculis eu non diam. Praesent semper feugiat nibh sed.
             </p>
           </Collapse.Item>
         </Collapse>
       </Container>
+      <ExampleCode>
+        {`<Collapse>
+  <Collapse.Item title="Title A" subTitle="Subtitle A" sideContent={<Avatar text="JS" />}>
+    <p>
+      ... your content ...
+    </p>
+  </Collapse.Item>
+  <Collapse.Item title="Title A" subTitle="Subtitle A" sideContent={<Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="secondary" zoom squared pointer/>}>
+    <p>
+      ... your content ...
+    </p>
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
       <h3>Underline</h3>
       <p>
         <Anchor href="#" decoration>Lorem ipsum dolor sit amet (Decoration)</Anchor>

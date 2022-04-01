@@ -24,7 +24,7 @@ export const AvatarContent = () => (
         {`<Avatar text="JS" />`}
       </ExampleCode>
       <H2>Sizes</H2>
-      <Grid.Container>
+      <Grid>
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} size="xs" />
         </Grid.Item>
@@ -40,8 +40,8 @@ export const AvatarContent = () => (
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} size="xl" />
         </Grid.Item>
-      </Grid.Container>
-      <ExampleCode>{`<Grid.Container>
+      </Grid>
+      <ExampleCode>{`<Grid>
   <Grid.Item>
     <Avatar imgSrc="img.jpg" size="xs" />
   </Grid.Item>
@@ -57,9 +57,9 @@ export const AvatarContent = () => (
   <Grid.Item>
     <Avatar imgSrc="img.jpg" size="xl" />
   </Grid.Item>
-</Grid.Container>`}</ExampleCode>
+</Grid>`}</ExampleCode>
       <H2>Colors</H2>
-      <Grid.Container>
+      <Grid>
         <Grid.Item>
           <Avatar text="OP" bgColor="primary" />
         </Grid.Item>
@@ -78,8 +78,8 @@ export const AvatarContent = () => (
         <Grid.Item>
           <Avatar text="DC" bgColor="gradients_primary" />
         </Grid.Item>
-      </Grid.Container>
-      <ExampleCode>{`<Grid.Container>
+      </Grid>
+      <ExampleCode>{`<Grid>
   <Grid.Item>
     <Avatar text="OP" bgColor="primary" />
   </Grid.Item>
@@ -101,9 +101,9 @@ export const AvatarContent = () => (
   <Grid.Item>
     <Avatar text="DC" bgColor="gradient_primary" />
   </Grid.Item>
-</Grid.Container>`}</ExampleCode>
+</Grid>`}</ExampleCode>
       <H2>Border</H2>
-      <Grid.Container>
+      <Grid>
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="xs" bgColor="primary"/>
         </Grid.Item>
@@ -119,8 +119,8 @@ export const AvatarContent = () => (
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="xl" bgColor="gradients_warning" />
         </Grid.Item>
-      </Grid.Container>
-      <ExampleCode>{`<Grid.Container>
+      </Grid>
+      <ExampleCode>{`<Grid>
   <Grid.Item>
     <Avatar
       imgSrc={img.avatar01}
@@ -151,9 +151,9 @@ export const AvatarContent = () => (
       bordered borderWeight="xl"
       bgColor="gradients_warning" />
   </Grid.Item>
-</Grid.Container>`}</ExampleCode>
+</Grid>`}</ExampleCode>
       <H2>Zoom</H2>
-      <Grid.Container>
+      <Grid>
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="error" zoom/>
         </Grid.Item>
@@ -166,8 +166,8 @@ export const AvatarContent = () => (
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="lg" bgColor="error" zoom/>
         </Grid.Item>
-      </Grid.Container>
-      <ExampleCode>{`<Grid.Container>
+      </Grid>
+      <ExampleCode>{`<Grid>
   <Grid.Item>
     <Avatar
       imgSrc={img.avatar01}
@@ -190,9 +190,9 @@ export const AvatarContent = () => (
       bordered borderWeight="lg"
       bgColor="error" zoom/>
   </Grid.Item>
-</Grid.Container>`}</ExampleCode>
+</Grid>`}</ExampleCode>
       <H2>Squared</H2>
-      <Grid.Container>
+      <Grid>
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="secondary" zoom squared pointer/>
         </Grid.Item>
@@ -205,8 +205,8 @@ export const AvatarContent = () => (
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="lg" bgColor="gradients_secondary" squared/>
         </Grid.Item>
-      </Grid.Container>
-      <ExampleCode>{`<Grid.Container>
+      </Grid>
+      <ExampleCode>{`<Grid>
   <Grid.Item>
     <Avatar
       imgSrc={img.avatar01} pointer
@@ -230,9 +230,9 @@ export const AvatarContent = () => (
       bordered borderWeight="lg"
       bgColor="gradients_secondary" squared/>
   </Grid.Item>
-</Grid.Container>`}</ExampleCode>
+</Grid>`}</ExampleCode>
       <H2>Icons</H2>
-      <Grid.Container>
+      <Grid>
         <Grid.Item>
           <Avatar icon="link" bgColor="secondary"/>
         </Grid.Item>
@@ -242,8 +242,8 @@ export const AvatarContent = () => (
         <Grid.Item>
           <Avatar icon="link" bgColor="gradients_error"/>
         </Grid.Item>
-      </Grid.Container>
-      <ExampleCode>{`<Grid.Container>
+      </Grid>
+      <ExampleCode>{`<Grid>
   <Grid.Item>
     <Avatar icon="link" bgColor="secondary"/>
   </Grid.Item>
@@ -253,7 +253,7 @@ export const AvatarContent = () => (
   <Grid.Item>
     <Avatar icon="link" bgColor="gradients_error"/>
   </Grid.Item>
-</Grid.Container>`}</ExampleCode>
+</Grid>`}</ExampleCode>
       <H2>APIs</H2>
       <Table>
         <Row

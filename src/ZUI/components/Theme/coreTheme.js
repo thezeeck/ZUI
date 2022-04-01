@@ -76,7 +76,7 @@ export const core = {
     avatar_lg: "4rem",
     avatar_xl: "5rem",
 
-    border_xs: ".0625rem",
+    border_xs: ".063rem",
     border_sm: ".125rem",
     border_md: ".25rem",
     border_lg: ".375rem",

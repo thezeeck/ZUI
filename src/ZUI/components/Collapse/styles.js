@@ -1,24 +1,44 @@
 import styled from "styled-components";
 import { hexToRgba } from "../../utils";
+import { colorsSchema } from "../Theme";
 
 export const GroupUI = styled.div`
+  --border-width: ${({variant}) => variant === "splitted" ? 0 : "var(--ZUI-sizes_border_xs)"};
   width: 100%;
-  ${({filled, theme}) => {
-    return filled && `
-      background-color: ${hexToRgba(theme.colors.gray_3, .1)};
-      border-radius: var(--ZUI-sizes_radius_lg);
-      padding: var(--ZUI-sizes_padding_4);
-      box-sizing: border-box;
-      box-shadow: var(--ZUI-shadows_gray);
-      margin-bottom: var(--ZUI-sizes_padding_4);`
+  ${({variant, theme}) => {
+    if (variant === "filled") {
+      return `
+        background-color: ${hexToRgba(theme.colors.gray_3, .1)};
+        border-radius: var(--ZUI-sizes_radius_lg);
+        padding: var(--ZUI-sizes_padding_4);
+        box-sizing: border-box;
+        box-shadow: var(--ZUI-shadows_gray);
+        margin-bottom: var(--ZUI-sizes_padding_4);`
+    }
+    if (variant === "bordered") {
+      return `
+        border-radius: var(--ZUI-sizes_radius_lg);
+        padding: var(--ZUI-sizes_padding_4);
+        box-sizing: border-box;
+        border: var(--ZUI-sizes_border_xs) solid ${hexToRgba(theme.colors.text, .3)};`
+    }
   }}
-
-  > section:not(:last-child) {
-    border-bottom: 1px solid ${({theme}) => hexToRgba(theme.colors.text, .3)};
-  }
 `;
 
-export const ItemUI = styled.section``;
+export const ItemUI = styled.section`
+  ${({variant, theme}) => variant === "splitted" && `
+        background-color: ${hexToRgba(theme.colors.gray_3, .1)};
+        border-radius: var(--ZUI-sizes_radius_lg);
+        padding: var(--ZUI-sizes_padding_4);
+        box-sizing: border-box;
+        box-shadow: var(--ZUI-shadows_sm) ${hexToRgba(colorsSchema.gray500, .5)};
+        margin-bottom: var(--ZUI-sizes_padding_4);`
+  }
+
+  &:not(:last-child) {
+    border-bottom: var(--border-width) solid ${({theme}) => hexToRgba(theme.colors.text, .3)};
+  }
+`;
 
 export const ItemContent = styled.section`
   max-height: 0;
@@ -81,7 +101,7 @@ export const ItemTitle = styled.div`
 
   &.open {
     > div > span {
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
   }
 `;

@@ -35,7 +35,7 @@ export const RowUI = styled.section`
     }
     return `
       width: ${width};
-      ${width === "auto" && "max-width: fit-content;"}
+      ${width === "auto" ? "max-width: fit-content;" : "overflow: auto;"}
     `;
   }};
   box-sizing: border-box;
