@@ -245,23 +245,28 @@ export const CollapseContent = () => (
   </Collapse.Item>
 </Collapse>`}
       </ExampleCode>
-      <h3>Underline</h3>
-      <p>
-        <Anchor href="#" decoration>Lorem ipsum dolor sit amet (Decoration)</Anchor>
-      </p>
-      <p>
-        <Anchor href="#" decoration textColor="secondary">Lorem ipsum dolor sit amet (Decoration)</Anchor>
-      </p>
-      <ExampleCode>{`<p>
-  <Anchor href="#" decoration>
-    Lorem ipsum dolor sit amet (Decoration)
-  </Anchor>
-</p>
-<p>
-  <Anchor href="#" decoration textColor="secondary">
-    Lorem ipsum dolor sit amet (Decoration)
-  </Anchor>
-</p>`}</ExampleCode>
+      <H2>Disable divider</H2>
+      <p>You can remove the line between items changing to false the <Code>divider</Code> property.</p>
+      <Container>
+        <Collapse divider={false}>
+          <Collapse.Item title="Title A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title B">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title C">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
+      <ExampleCode>
+        {`<Collapse>
+  <Collapse.Item title="Title A" icon="chevron-left">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
       <h3>Block</h3>
       <p>
         <Anchor href="#" box textColor="success">Lorem ipsum dolor sit amet (Box)</Anchor>

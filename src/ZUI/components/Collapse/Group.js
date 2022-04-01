@@ -18,6 +18,7 @@ export const Collapse = (props) => {
       gap: props.gap,
       accordion: props.accordion,
       variant: props.variant,
+      divider: props.divider,
     }}>
       <GroupUI {...props} theme={theme}>{childrenWithState}</GroupUI>
     </CollapseProvider>
@@ -28,7 +29,7 @@ Collapse.defaultProps = {
   accordion: true,
   animated: false,
   gap: 4,
-  divider: false,
+  divider: true,
   variant: "transparent",
   borderWeight: "md",
   expanded: 0,

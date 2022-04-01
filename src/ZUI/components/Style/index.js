@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 import { useThemeContext } from "../Theme";
-import icons_eot from "../../fonts/zui_ui_icon.eot";
 import icons_svg from "../../fonts/zui_ui_icon.svg";
 import icons_ttf from "../../fonts/zui_ui_icon.ttf";
 import icons_woff from "../../fonts/zui_ui_icon.woff";

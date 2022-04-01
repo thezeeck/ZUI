@@ -18,7 +18,7 @@ export const Item = (props) => {
   }
 
   return (
-    <ItemUI {...props} theme={theme} variant={state.variant}>
+    <ItemUI {...props} theme={theme} variant={state.variant} divider={state.divider}>
       <ItemTitle
         tabIndex="0"
         role="button"

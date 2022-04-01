@@ -3,7 +3,6 @@ import { hexToRgba } from "../../utils";
 import { colorsSchema } from "../Theme";
 
 export const GroupUI = styled.div`
-  --border-width: ${({variant}) => variant === "splitted" ? 0 : "var(--ZUI-sizes_border_xs)"};
   width: 100%;
   ${({variant, theme}) => {
     if (variant === "filled") {
@@ -36,7 +35,8 @@ export const ItemUI = styled.section`
   }
 
   &:not(:last-child) {
-    border-bottom: var(--border-width) solid ${({theme}) => hexToRgba(theme.colors.text, .3)};
+    border-bottom: ${({variant, theme, divider}) => (variant === "splitted" || !divider) ?
+      "0 none" :`var(--ZUI-sizes_border_xs) solid ${hexToRgba(theme.colors.text, .3)}`}
   }
 `;
 
