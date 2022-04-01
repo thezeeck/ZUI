@@ -1,23 +1,22 @@
 import { Collapse, Container, Avatar } from "../ZUI";
 import { Anchor } from "../ZUI";
 import { Layout } from "../components/Layout";
-import { H1, H2, Code, Table, Row, ExampleCode } from "../components/StyledComponents";
+import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
-import { Types } from "../components/StyledComponents/types";
 import { img } from "../constant";
 
 export const CollapseContent = () => (
     <Layout>
       <H1>Collapse</H1>
       <p>
-        The collapse <Code>Collapse</Code> component allows the user to show and hide portions of content in the application.
+        The <Code>Collapse</Code> component allows the user to show and hide portions of content in the application.
       </p>
       <ExampleCode lang='javascript'>
         {`import { Collapse } from "zeeck-ui";`}
       </ExampleCode>
       <H2>Basic collapse</H2>
       <p>
-        All collapse <Code>Collapse</Code> component needs at least one Item <Code>Collapse.Item</Code>.
+        All <Code>Collapse</Code> component needs at least one <Code>Collapse.Item</Code>.
       </p>
       <Container>
         <Collapse>
@@ -34,7 +33,7 @@ export const CollapseContent = () => (
 </Collapse>`}
       </ExampleCode>
       <H2>Disable accordion property</H2>
-      <p>If you disable the accordion <Code>accordion</Code> property you can show multiple items at the same time</p>
+      <p>If you disable the <Code>accordion</Code> property you can show multiple items at the same time</p>
       <Container>
         <Collapse accordion={false}>
           <Collapse.Item title="Title A">
@@ -62,7 +61,7 @@ export const CollapseContent = () => (
 </Collapse>`}
       </ExampleCode>
       <H2>Initial expanded</H2>
-      <p>You can set a expanded <Code>expanded</Code> item by default.</p>
+      <p>You can set a <Code>expanded</Code> item by default.</p>
       <Container>
         <Collapse expanded={1}>
           <Collapse.Item title="Title A">
@@ -90,7 +89,7 @@ export const CollapseContent = () => (
 </Collapse>`}
       </ExampleCode>
       <H2>Subtitle</H2>
-      <p>You can set a subtitle <Code>subtitle</Code> that will appear below the title.</p>
+      <p>You can set a <Code>subtitle</Code> that will appear below the title.</p>
       <Container>
         <Collapse>
           <Collapse.Item title="Title A" subTitle="Subtitle A">
@@ -261,79 +260,175 @@ export const CollapseContent = () => (
         </Collapse>
       </Container>
       <ExampleCode>
-        {`<Collapse>
-  <Collapse.Item title="Title A" icon="chevron-left">
+        {`<Collapse divider={false}>
+  <Collapse.Item title="Title A">
+  ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C">
     ... your content ...
   </Collapse.Item>
 </Collapse>`}
       </ExampleCode>
-      <h3>Block</h3>
-      <p>
-        <Anchor href="#" box textColor="success">Lorem ipsum dolor sit amet (Box)</Anchor>
-      </p>
-      <p>
-        <Anchor href="#" box textColor="warning">Lorem ipsum dolor sit amet (Box)</Anchor>
-      </p>
-      <ExampleCode>{`<Anchor href="#" box textColor="success">
-  Lorem ipsum dolor sit amet (Box)
-</Anchor>
-<Anchor href="#" box textColor="warning">
-  Lorem ipsum dolor sit amet (Box)
-</Anchor>`}</ExampleCode>
-      <H2>Icons</H2>
-      <p>
-        <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
-      </p>
-      <p>
-        <Anchor href="#" icon="back">Lorem ipsum dolor sit amet (Icon back)</Anchor>
-      </p>
-      <ExampleCode>{`<Anchor href="#" icon>
-  Lorem ipsum dolor sit amet (Icon)
-</Anchor>
-<Anchor href="#" icon="back">
-  Lorem ipsum dolor sit amet (Icon back)
-</Anchor>`}</ExampleCode>
+      <H2>Divider weight</H2>
+      <p>You can change the weight line between items changing the <Code>dividerWeight</Code> property.</p>
+      <Container>
+        <Collapse dividerWeight="md">
+          <Collapse.Item title="Title A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title B">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
+      <Container>
+        <Collapse dividerWeight="xl" variant="bordered">
+          <Collapse.Item title="Title A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title B">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
+      <ExampleCode>
+        {`<Collapse divider={false}>
+  <Collapse.Item title="Title A">
+  ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
+      <H2>Disable item</H2>
+      <p>You can disable items setting the <Code>disable</Code> property in the item.</p>
+      <Container>
+        <Collapse>
+          <Collapse.Item title="Title A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title B" disabled>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title C">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
+      <ExampleCode>
+        {`<Collapse>
+  <Collapse.Item title="Title A">
+  ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B" disabled>
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
+      <H2>Animation</H2>
+      <p>You can disable the animations with the <Code>animation</Code> property.</p>
+      <Container>
+        <Collapse animation={false}>
+          <Collapse.Item title="Title A">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title B">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+          <Collapse.Item title="Title C">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Collapse.Item>
+        </Collapse>
+      </Container>
+      <ExampleCode>
+        {`<Collapse animation={false}>
+  <Collapse.Item title="Title A">
+  ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title B">
+    ... your content ...
+  </Collapse.Item>
+  <Collapse.Item title="Title C">
+    ... your content ...
+  </Collapse.Item>
+</Collapse>`}
+      </ExampleCode>
       <H2>Props</H2>
-      <Table> 
+      <Table>
         <Row
-          attribute="box"
+          attribute="animation"
           type={<Code>boolean</Code>}
           values={<Code>true/false</Code>}
-          description="Change the display to inline-block"
+          description="Remove the animations"
           defaultValue={<Code>false</Code>} />
         <Row
-          attribute="decoration"
+          attribute="accordion"
           type={<Code>boolean</Code>}
           values={<Code>true/false</Code>}
-          description="Display the underline text only in the hover status"
+          description="Allow displaying more than one open item at the same time"
+          defaultValue={<Code>true</Code>} />
+        <Row
+          attribute="disable"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Disable item"
           defaultValue={<Code>false</Code>} />
         <Row
-          attribute="href"
+          attribute="divider"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Removes the border between elements"
+          defaultValue={<Code>true</Code>} />
+        <Row
+          attribute="dividerWeight"
           type={<Code>string</Code>}
-          values="-"
-          description="Link url"
+          values={<Anchor href="#weights">Weights</Anchor>}
+          description="Change the weight in the border between elements"
+          defaultValue={<Code>xs</Code>} />
+        <Row
+          attribute="expanded"
+          type={<Code>number</Code>}
+          values={"Must be the index number of the item (the count starts with 1)"}
+          description="Shows an item open by default"
           defaultValue="-" />
         <Row
           attribute="icon"
-          type={<><Code>boolean</Code> <Code>string</Code></>}
-          values={<><Code>true/false</Code> <Anchor as={Link} to="/icons">Icons</Anchor></>}
+          type={<Code>string</Code>}
+          values={<Anchor as={Link} to="/icons">Icons</Anchor>}
           description="Show an icon"
           defaultValue={<Code>false</Code>} />
         <Row
-          attribute="style"
-          type="-"
-          values="Any valid CSS rule"
-          description="Override Default CSS rules"
+          attribute="sideContent"
+          type={<Code>ReactNode</Code>}
+          values="-"
+          description="Left content"
           defaultValue="-" />
         <Row
-          attribute="textColor"
+          attribute="subtitle"
           type={<Code>string</Code>}
-          values={<Anchor href="#anchorColors">LinkColors</Anchor>}
-          description="Change font color"
-          defaultValue={<Code>inherit</Code>} />
+          values="-"
+          description="Subtitle"
+          defaultValue="-" />
+        <Row
+          attribute="variant"
+          type={<Code>variants</Code>}
+          values={<Anchor href="#variants">Variants</Anchor>}
+          description="Change the visual style"
+          defaultValue={<Code>default</Code>} />
       </Table>
       <H2>Types</H2>
-      <Types.Colors title="textColor options" constName="linkColors" id="anchorColors" />
+      <Types title="variant options" constName="collapseVariants" id="variants"/>
+      <Types title="weight options" constName="weights" id="weights"/>
       <h3 id="icons">Icons</h3>
       <Anchor as={Link} to="/icons">Icons</Anchor>
     </Layout>

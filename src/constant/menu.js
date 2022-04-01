@@ -3,6 +3,7 @@ import { AnchorContent } from "../content/Anchor";
 import { AvatarContent } from "../content/Avatar";
 import { ButtonContent } from "../content/Button";
 import { CollapseContent } from "../content/Collapse";
+import { CardContent } from "../content/Card";
 
 export const menu = [
   {
@@ -34,14 +35,17 @@ export const menu = [
         component: ButtonContent
       },
       {
+        name: "Card",
+        path: "/card",
+        component: CardContent
+      },
+      {
         name: "Collapse",
         path: "/collapse",
         component: CollapseContent
       },
       // "Button group",
-      // "Card",
       // "Pagination",
-      // "Collapse",
       // "Icons",
       // "Input",
       // "Autocomplete",

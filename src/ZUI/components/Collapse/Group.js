@@ -14,11 +14,12 @@ export const Collapse = (props) => {
   return (
     <CollapseProvider state={{
       expanded: props.expanded ? [props.expanded] : [],
-      animated: props.animated,
+      animation: props.animation,
       gap: props.gap,
       accordion: props.accordion,
       variant: props.variant,
       divider: props.divider,
+      dividerWeight: props.dividerWeight,
     }}>
       <GroupUI {...props} theme={theme}>{childrenWithState}</GroupUI>
     </CollapseProvider>
@@ -27,10 +28,10 @@ export const Collapse = (props) => {
 
 Collapse.defaultProps = {
   accordion: true,
-  animated: false,
+  animation: true,
   gap: 4,
   divider: true,
   variant: "transparent",
-  borderWeight: "md",
+  dividerWeight: "xs",
   expanded: 0,
 }

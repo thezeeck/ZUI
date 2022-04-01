@@ -18,7 +18,6 @@ const useCollapse = thisCollapse => {
 
   const setNewState = item => {
     const newState = {...state};
-    console.log(newState);
     if (state.accordion) {
       if (state.expanded[0] === item) newState.expanded.splice(0, 1, false);
       else  newState.expanded.splice(0, 1, item);

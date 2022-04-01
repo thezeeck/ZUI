@@ -4,7 +4,7 @@ import { colorsSchema } from "../Theme";
 
 export const GroupUI = styled.div`
   width: 100%;
-  ${({variant, theme}) => {
+  ${({variant, theme, dividerWeight}) => {
     if (variant === "filled") {
       return `
         background-color: ${hexToRgba(theme.colors.gray_3, .1)};
@@ -19,7 +19,7 @@ export const GroupUI = styled.div`
         border-radius: var(--ZUI-sizes_radius_lg);
         padding: var(--ZUI-sizes_padding_4);
         box-sizing: border-box;
-        border: var(--ZUI-sizes_border_xs) solid ${hexToRgba(theme.colors.text, .3)};`
+        border: var(--ZUI-sizes_border_${dividerWeight}) solid ${hexToRgba(theme.colors.text, .3)};`
     }
   }}
 `;
@@ -35,15 +35,15 @@ export const ItemUI = styled.section`
   }
 
   &:not(:last-child) {
-    border-bottom: ${({variant, theme, divider}) => (variant === "splitted" || !divider) ?
-      "0 none" :`var(--ZUI-sizes_border_xs) solid ${hexToRgba(theme.colors.text, .3)}`}
+    border-bottom: ${({variant, theme, divider, dividerWeight}) => (variant === "splitted" || !divider) ?
+      "0 none" :`var(--ZUI-sizes_border_${dividerWeight}) solid ${hexToRgba(theme.colors.text, .3)}`}
   }
 `;
 
 export const ItemContent = styled.section`
   max-height: 0;
   overflow: hidden;
-  transition: all var(--ZUI-transitions_regular) cubic-bezier(0, 1, 0, 1);
+  ${({animation}) => animation && "transition: all var(--ZUI-transitions_regular) cubic-bezier(0, 1, 0, 1);"}
 
   > div {
     padding: var(--ZUI-sizes_padding_4);
@@ -51,12 +51,13 @@ export const ItemContent = styled.section`
 
   &.open {
     max-height: 99rem;
-    transition: all var(--ZUI-transitions_regular) ease-in-out;
+    ${({animation}) => animation && "transition: all var(--ZUI-transitions_regular) ease-in-out;"}
   }
 `;
 
 export const ItemTitle = styled.div`
-  cursor: pointer;
+  cursor: ${({disabled}) => disabled ? "not-allowed" : "pointer"};
+  ${({disabled}) => disabled && `opacity: .2;`}
   display: grid;
   grid-gap: 0;
   grid-template-columns: auto 1fr auto;
@@ -95,7 +96,7 @@ export const ItemTitle = styled.div`
     grid-row: 1/3;
 
     > span {
-      transition: all var(--ZUI-transitions_fast) ease;
+      ${({animation}) => animation && "transition: all var(--ZUI-transitions_fast) ease;"}
     }
   }
 

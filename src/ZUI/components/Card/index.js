@@ -12,7 +12,7 @@ export const Card = props => {
 }
 
 Card.defaultProps = {
-  radius: ".5rem",
+  radius: "md",
   imgSrc: "",
   text: "",
   bordered: false,

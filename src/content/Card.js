@@ -1,32 +1,25 @@
-import { Anchor } from "../ZUI";
+import { Anchor, Card } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 
-export const AnchorContent = () => (
+export const CardContent = () => (
   <Layout>
-    <H1>Anchor</H1>
+    <H1>Card</H1>
     <p>
-      Anchors <Code>{`<Anchor>`}</Code> component brings to the developers the possibility to customize
-      all links in their project in the same place or customize each element separately, this
-      component renders an <Code>{`<a>`}</Code> HTML element.
+      Cards <Code>Card</Code> can be used to display simple content like text or images, you can also use layouts for complex content.
     </p>
     <ExampleCode lang='javascript'>
-      {`import { Anchor } from "zeeck-ui";`}
+      {`import { Card } from "zeeck-ui";`}
     </ExampleCode>
-    <H2>Default</H2>
-    <p>
-      The default Anchor color it's the primary color defined in the theme config.
-    </p>
-    <p>
-      <Anchor link="#">Lorem ipsum dolor sit amet</Anchor>
-    </p>
+    <H2>Basic card</H2>
+    <Card>
+      <p>Text card</p>
+    </Card>
     <ExampleCode>
-      {`<p>
-  <Anchor link="#">
-    Lorem ipsum dolor sit amet
-  </Anchor>
-</p>`}
+      {`<Card>
+  <p>Text card</p>
+</Card>`}
     </ExampleCode>
     <H2>Colors</H2>
     <p>
