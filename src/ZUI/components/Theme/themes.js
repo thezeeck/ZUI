@@ -22,7 +22,7 @@ export const darkTheme = CreateTheme(
     name: "dark",
     colors: {
       text: "#fff",
-      background: "#000",
+      background: "#24242D",
       gray: colorsSchema.gray500,
       gray_1: colorsSchema.gray900,
       gray_2: colorsSchema.gray700,
