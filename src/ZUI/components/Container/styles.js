@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const ContainerUI = styled.div`
-  --gap: ${({gap}) => `var(--ZUI-sizes_padding_${gap})`};
   display: ${({flex, display}) => display ? display : flex ? "flex" : "block"};
   ${({flex, wrap, justify, direction, alignItems, alignContent, gap}) => flex && `
     flex-wrap:  ${wrap};
@@ -10,7 +9,7 @@ export const ContainerUI = styled.div`
     align-items: ${alignItems};
     align-content: ${alignContent};
   `};
-  padding: var(--gap);
+  padding: ${({gap}) => `var(--ZUI-sizes_padding_${gap})`};
   box-sizing: border-box;
   ${({background}) => background && `
     background: var(--ZUI-colors_${background})
@@ -19,14 +18,17 @@ export const ContainerUI = styled.div`
     border-radius: var(--ZUI-sizes_radius_${radius});
   `};
   ${({shadow}) => shadow && `
-    box-shadow: var(--ZUI-shadows_${shadow});
+    box-shadow: var(--ZUI-shadows_${shadow}_xl);
   `};
   width: 100%;
 `;
 
 export const RowUI = styled.section`
-  ${({size}) => {
+  ${({size, state}) => {
     let width;
+    console.log(state.gap);
+    
+    if (state.direction === "column") return "width: 100%;"
     if (typeof size === "number" && size <= 12) width = `calc((${size} / 12) * 100%)`;
     else if (size === "auto") width = "auto";
     else {
@@ -38,5 +40,8 @@ export const RowUI = styled.section`
       ${width === "auto" ? "max-width: fit-content;" : "overflow: auto;"}
     `;
   }};
+  margin: ${({state}) => state.direction === "column" ?
+    `0 0 var(--ZUI-sizes_padding_${state.gap})` :
+    `0 var(--ZUI-sizes_padding_${state.gap}) var(--ZUI-sizes_padding_${state.gap})`};
   box-sizing: border-box;
 `;

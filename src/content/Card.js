@@ -1,26 +1,57 @@
-import { Anchor, Card } from "../ZUI";
+import { Anchor, Card, Container } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 
 export const CardContent = () => (
   <Layout>
-    <H1>Card</H1>
-    <p>
-      Cards <Code>Card</Code> can be used to display simple content like text or images, you can also use layouts for complex content.
-    </p>
-    <ExampleCode lang='javascript'>
-      {`import { Card } from "zeeck-ui";`}
-    </ExampleCode>
-    <H2>Basic card</H2>
-    <Card>
-      <p>Text card</p>
-    </Card>
-    <ExampleCode>
-      {`<Card>
+    <Container.Row>
+      <H1>Card</H1>
+    </Container.Row>
+    <Container.Row>
+      <p>
+        Cards <Code>Card</Code> can be used to display simple content like text or images, you can also use layouts for complex content.
+      </p>
+    </Container.Row>
+    <Container.Row>
+      <ExampleCode lang='javascript'>
+        {`import { Card } from "zeeck-ui";`}
+      </ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <H2>Basic card</H2>
+    </Container.Row>
+    <Container.Row>
+      <Card>
+        <p>Text card</p>
+      </Card>
+    </Container.Row>
+    <Container.Row>
+      <ExampleCode>
+        {`<Card>
   <p>Text card</p>
 </Card>`}
-    </ExampleCode>
+      </ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    
+    
+    
+    
     <H2>Colors</H2>
     <p>
       <Anchor textColor="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>

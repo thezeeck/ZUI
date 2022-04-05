@@ -1,26 +1,6 @@
-import { CardUI } from "./styles";
+import { Card } from "./Card";
+import { Header } from "./Header";
 
-export const Card = props => {
-  const classList = props.className ? props.className.split(" ") : [];
-  if (props.zoom) classList.push("zoom");
-  classList.push("card")
-  return (
-    <CardUI {...props}>
-      {props.children}
-    </CardUI>
-  )
-}
+Card.Header = Header;
 
-Card.defaultProps = {
-  radius: "md",
-  imgSrc: "",
-  text: "",
-  bordered: false,
-  bgcolor: "#fff",
-  zoom: false,
-  // icon: "",
-  textAlt: "",
-  textColor: "inherit",
-  borderWeight: "normal",
-  pointer: false,
-}
+export default Card;

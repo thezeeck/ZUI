@@ -2,11 +2,9 @@ import { AvatarUI } from "./styles";
 import { useThemeContext } from "../Theme";
 
 export const Avatar = props => {
-  const classList = props.className ? props.className.split(" ") : [];
   const { theme } = useThemeContext();
-  if (props.zoom) classList.push("zoom");
   return (
-    <AvatarUI {...props} textColor={props.textColor} theme={theme} className={classList}>
+    <AvatarUI {...props} textColor={props.textColor} theme={theme}>
       <span className="background"></span>
       {props.imgSrc &&
         <figure>

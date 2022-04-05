@@ -1,6 +1,6 @@
 export { Avatar } from "./components/Avatar";
 export { default as Grid } from "./components/Grid";
-export { Card } from "./components/Card";
+export { default as Card } from "./components/Card";
 export {
   darkTheme,
   lightTheme,
@@ -11,7 +11,7 @@ export {
   colorsSchema
 } from "./components/Theme";
 export { Anchor } from "./components/Anchor";
-export { Container } from "./components/Container";
+export { default as Container } from "./components/Container";
 export { default as Collapse } from "./components/Collapse";
 export { Text } from "./components/Text";
 export { hexToRgba } from "./utils";

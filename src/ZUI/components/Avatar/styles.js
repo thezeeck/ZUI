@@ -15,18 +15,6 @@ export const AvatarUI = styled.span`
   ${({pointer}) => pointer && `
     cursor: pointer;
   `}
-  
-
-  &.zoom:hover {
-
-    figure {
-      transform: scale(1.2);
-    }
-
-    .text {
-      transform: translate(-50%, -50%) scale(1);
-    }
-  }
 
   .background {
     background: ${({bgColor, theme, bordered, imgSrc}) => 
@@ -45,6 +33,10 @@ export const AvatarUI = styled.span`
     transition: all .3s ease;
     border-radius: ${({squared}) => squared ? "var(--ZUI-sizes_radius_percentage_md)" : "var(--ZUI-sizes_radius_percentage_xl)"};
     box-sizing: border-box;
+
+    &:hover {
+      ${({zoom}) => zoom && `transform: scale(1.2);`}
+    }
 
     img {
       width: 100%;
@@ -75,5 +67,9 @@ export const AvatarUI = styled.span`
     `}
     transform: translate(-50%, -50%) scale(.8);
     transition: ${({transition}) => `all var(--ZUI-transitions_${transition}) ease`};
+
+    &:hover {
+      ${({zoom}) => zoom && `translate(-50%, -50%) scale(1);`}
+    }
   }
 `;

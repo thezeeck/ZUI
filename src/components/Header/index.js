@@ -12,10 +12,7 @@ export const Header = () => {
         <img src={img.logo} alt="ZUI UI"/>
       </figure>
       <div>
-        <button onClick={() => { setNewTheme(
-            name === "userTheme" ? lightTheme :
-            name === "light" ? darkTheme : userTheme
-          )}}>
+        <button onClick={() => { setNewTheme(name === "userTheme" ? lightTheme : userTheme)}}>
           Theme: { name }  
         </button>
       </div>
