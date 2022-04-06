@@ -127,7 +127,7 @@ export const AnchorContent = () => (
         <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
       </p>
       <p>
-        <Anchor href="#" icon="back">Lorem ipsum dolor sit amet (Icon back)</Anchor>
+        <Anchor href="#" icon="chevron-left">Lorem ipsum dolor sit amet (Icon back)</Anchor>
       </p>
       <ExampleCode>
         {`<p>

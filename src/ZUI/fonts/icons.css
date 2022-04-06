@@ -18,3 +18,7 @@
 .ZUI-chevron-up::before {
   content: "\014a";
 }
+
+.ZUI-link::before {
+  content: "\015a";
+}

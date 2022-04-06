@@ -1,31 +1,33 @@
-import { ButtonUI, ButtonContentUI } from "./styles";
+import { ButtonUI, ButtonContentUI, IconWrapper } from "./styles";
 import { useThemeContext } from "../Theme";
 import { Loading } from "../Loading";
+import { Icon } from "../Icons";
 
 export const Button = (props) => {
   const { theme } = useThemeContext();
+  const calculateIconsSize = () => {
+    if (props.size === "xs") return "xs";
+    if (props.size === "sm") return "sm";
+    if (props.size === "lg") return "md";
+    if (props.size === "xl") return "lg";
+    else return "md"
+  }
+  
   return (
     <ButtonUI {...props} theme={theme} disabled={props.disabled}>
       {props.loading ?
         <Loading loading={props.loading} /> :
-        <ButtonContent
+        <ButtonContentUI
           size={props.size}
           rounded={props.rounded}
-          icon={props.icon}
-          variant={props.variant}>{props.children}</ButtonContent>}
+          variant={props.variant}>
+            <span>{props.children}</span>
+            {props.icon && <IconWrapper>
+              <Icon name={props.icon} size={calculateIconsSize()}/>
+            </IconWrapper>}
+        </ButtonContentUI>}
     </ButtonUI>
   );
-}
-
-const ButtonContent = ({children, icon, size, rounded, variant}) => {
-  if (icon) return <ButtonContentUI
-    size={size}
-    rounded={rounded}
-    variant={variant}><span>{children}</span><i>icon</i></ButtonContentUI>
-  return <ButtonContentUI
-    size={size}
-    rounded={rounded}
-    variant={variant}><span>{children}</span></ButtonContentUI>
 }
 
 Button.defaultProps = {

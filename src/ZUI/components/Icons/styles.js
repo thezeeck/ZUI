@@ -7,9 +7,10 @@ export const IconContainer = styled.span`
     let fontSize;
     if (size === "xs") fontSize = 1;
     if (size === "sm") fontSize = 2;
+    if (size === "md") fontSize = 3;
     if (size === "lg") fontSize = 4;
     if (size === "xl") fontSize = 6;
-    else fontSize = 3;
+    
     return `
       width: var(--ZUI-sizes_font_${fontSize});
       font-size: var(--ZUI-sizes_font_${fontSize});

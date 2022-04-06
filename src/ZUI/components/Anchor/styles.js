@@ -24,3 +24,7 @@ export const AnchorUI = styled.a`
     `}
   }
 `;
+
+export const IconWrapper = styled.span`
+  margin-left: var(--ZUI-sizes_padding_2);
+`;

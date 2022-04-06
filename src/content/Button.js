@@ -194,95 +194,96 @@ export const ButtonContent = () => (
     <Container.Row>
       <H2>Icons</H2>
       <p>
-        <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
+        <Button icon="link">Icon link</Button>
       </p>
       <p>
-        <Anchor href="#" icon="back">Lorem ipsum dolor sit amet (Icon back)</Anchor>
+        <Button
+          color="success"
+          icon="chevron-right"
+          size="xl"
+          variant="outlined">
+          Icon chevron-right
+        </Button>
       </p>
-      <ExampleCode>{`<Anchor href="#" icon>
-  Lorem ipsum dolor sit amet (Icon)
-</Anchor>
-<Anchor href="#" icon="back">
-  Lorem ipsum dolor sit amet (Icon back)
-</Anchor>`}</ExampleCode>
+      <ExampleCode>{`<p>
+  <Button icon="link">Icon link</Button>
+  <Button
+    color="success"
+    icon="chevron-right"
+    size="xl"
+    variant="outlined">
+      Icon chevron-right
+  </Button>
+</p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      
+      <H2>APIs</H2>
+      <Table>
+        <Row
+          attribute="auto"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Remove the min-width attribute"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="color"
+          type={<Code>string</Code>}
+          values={<Anchor href="#colors">Button Colors</Anchor>}
+          description="Change the button color"
+          defaultValue={<Code>primary</Code>} />
+        <Row
+          attribute="disabled"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Change the status button"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="icon"
+          type={<Code>string</Code>}
+          values={<Anchor as={Link} to="/icons">Icons</Anchor>}
+          description="Show an icon"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="loading"
+          type={<Code>number</Code>}
+          values="1,2,3"
+          description="Show the loading animation"
+          defaultValue={<Code>undefined</Code>} />
+        <Row
+          attribute="rounded"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Change the button border radius"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="shadow"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Add a shadow bellow of the button"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="size"
+          type={<Code>string</Code>}
+          values={<Anchor href="#sizes">Sizes</Anchor>}
+          description="Display the underline text only in the hover status"
+          defaultValue={<Code>md</Code>} />
+        <Row
+          attribute="variant"
+          type={<Code>string</Code>}
+          values={<Anchor href="#variants">Variant</Anchor>}
+          description="Change the button style"
+          defaultValue={<Code>filled</Code>} />
+      </Table>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Types</H2>
+      <Types title="Button colors options" constName="colors" id="colors"/>
+      <Types title="Button sizes" constName="weights" id="sizes"/>
+      <Types title="Button variants" constName="buttonVariants" id="variants"/>
     </Container.Row>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <H2>APIs</H2>
-    <Table>
-      <Row
-        attribute="auto"
-        type={<Code>boolean</Code>}
-        values={<Code>true/false</Code>}
-        description="Remove the min-width attribute"
-        defaultValue={<Code>false</Code>} />
-      <Row
-        attribute="color"
-        type={<Code>string</Code>}
-        values={<Anchor href="#colors">Button Colors</Anchor>}
-        description="Change the button color"
-        defaultValue={<Code>primary</Code>} />
-      <Row
-        attribute="disabled"
-        type={<Code>boolean</Code>}
-        values={<Code>true/false</Code>}
-        description="Change the status button"
-        defaultValue={<Code>false</Code>} />
-      <Row
-        attribute="icon"
-        type={<Code>string</Code>}
-        values={<Anchor as={Link} to="/icons">Icons</Anchor>}
-        description="Show an icon"
-        defaultValue={<Code>false</Code>} />
-      <Row
-        attribute="loading"
-        type={<Code>number</Code>}
-        values="1,2,3"
-        description="Show the loading animation"
-        defaultValue={<Code>undefined</Code>} />
-      <Row
-        attribute="rounded"
-        type={<Code>boolean</Code>}
-        values={<Code>true/false</Code>}
-        description="Change the button border radius"
-        defaultValue={<Code>false</Code>} />
-      <Row
-        attribute="shadow"
-        type={<Code>boolean</Code>}
-        values={<Code>true/false</Code>}
-        description="Add a shadow bellow of the button"
-        defaultValue={<Code>false</Code>} />
-      <Row
-        attribute="size"
-        type={<Code>string</Code>}
-        values={<Anchor href="#sizes">Sizes</Anchor>}
-        description="Display the underline text only in the hover status"
-        defaultValue={<Code>md</Code>} />
-      <Row
-        attribute="variant"
-        type={<Code>string</Code>}
-        values={<Anchor href="#variants">Variant</Anchor>}
-        description="Change the button style"
-        defaultValue={<Code>filled</Code>} />
-    </Table>
-    <H2>Types</H2>
-    <Types title="Button colors options" constName="colors" id="colors"/>
-    <Types title="Button sizes" constName="weights" id="sizes"/>
-    <Types title="Button variants" constName="buttonVariants" id="variants"/>
-    <h3 id="icons">Icons</h3>
-    <Anchor as={Link} to="/icons">Icons</Anchor>
+    <Container.Row>
+      <h3 id="icons">Icons</h3>
+      <Anchor as={Link} to="/icons">Icons</Anchor>
+    </Container.Row>
   </Layout>
 );

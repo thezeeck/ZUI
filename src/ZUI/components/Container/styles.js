@@ -26,7 +26,6 @@ export const ContainerUI = styled.div`
 export const RowUI = styled.section`
   ${({size, state}) => {
     let width;
-    console.log(state.gap);
     
     if (state.direction === "column") return "width: 100%;"
     if (typeof size === "number" && size <= 12) width = `calc((${size} / 12) * 100%)`;

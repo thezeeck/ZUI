@@ -43,7 +43,7 @@ const TableUI = styled.table`
   border-collapse: collapse;
 
   tr > th {
-    background-color: ${({theme}) => hexToRgba(theme.colors.gray600, .1)};
+    background-color: ${({theme}) => hexToRgba(theme.colors.gray900, .4)};
     padding: .5rem 1rem;
   }
 
@@ -58,6 +58,6 @@ const TableUI = styled.table`
 
 const TR = styled.tr`
   > td {
-    padding: 1rem;
+    padding: var(--ZUI-sizes_padding_3) var(--ZUI-sizes_padding_4);
   }
 `;

@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { hexToRgba } from "../../utils";
 
 const defineColors = ({color, disabled, loading}) => {
-  console.log("disabled", disabled);
   if (disabled && !loading) {
     return {
       font: "gray_2",
@@ -80,13 +79,13 @@ export const ButtonUI = styled.button`
     `;
   }};
   ${({color, shadow}) => shadow && `
-    box-shadow: var(--ZUI-shadows_${color.replace("gradients_", "")}) ;
+    box-shadow: var(--ZUI-shadows_${color.replace("gradients_", "")}_sm) ;
   `};
 
   :hover {
     ${({disabled, loading, variant, color, theme}) => {
       const colors = defineColors({color, theme, disabled, loading});
-      if (disabled !== undefined || loading !== undefined) return "opacity: 1;";
+      if (disabled || loading ) return "opacity: 1;";
       if (variant === "shadow") {
         return `
           background: ${/gradient/g.test(color) ?
@@ -119,4 +118,8 @@ export const ButtonContentUI = styled.span`
   :hover {
     ${({variant}) => variant === "shadow" && `background: transparent`}
   }
+`;
+
+export const IconWrapper = styled.span`
+  margin-left: var(--ZUI-sizes_padding_2);
 `;

@@ -62,6 +62,13 @@ export const core = {
     lg: "0 .5rem 1rem",
     xl: "0 .75rem 2rem",
 
+    gray_sm: `var(--ZUI-shadows_sm) ${hexToRgba(colorsSchema.gray500, .5)}`,
+    primary_sm: `var(--ZUI-shadows_sm) ${hexToRgba(colorsSchema.blue500, .5)}`,
+    secondary_sm: `var(--ZUI-shadows_sm) ${hexToRgba(colorsSchema.purple500, .5)}`,
+    success_sm: `var(--ZUI-shadows_sm) ${hexToRgba(colorsSchema.green500, .5)}`,
+    warning_sm: `var(--ZUI-shadows_sm) ${hexToRgba(colorsSchema.yellow500, .5)}`,
+    error_sm: `var(--ZUI-shadows_sm) ${hexToRgba(colorsSchema.red500, .5)}`,
+
     gray: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.gray900, .25)}`,
     primary: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.blue900, .25)}`,
     secondary: `var(--ZUI-shadows_md) ${hexToRgba(colorsSchema.purple900, .25)}`,
