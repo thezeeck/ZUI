@@ -5,7 +5,7 @@ import { Loading } from "../Loading";
 export const Button = (props) => {
   const { theme } = useThemeContext();
   return (
-    <ButtonUI {...props} theme={theme} disabled={props.loading}>
+    <ButtonUI {...props} theme={theme} disabled={props.disabled}>
       {props.loading ?
         <Loading loading={props.loading} /> :
         <ButtonContent
@@ -33,4 +33,5 @@ Button.defaultProps = {
   color: "primary",
   variant: "filled",
   rounded: false,
+  disabled: false,
 }

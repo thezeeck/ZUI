@@ -11,18 +11,18 @@ export const AvatarUI = styled.span`
   position: relative;
   border-radius: ${({squared}) => squared ? "var(--ZUI-sizes_radius_percentage_md)" : "var(--ZUI-sizes_radius_percentage_xl)"};
   transition: ${({transition}) => `all var(--ZUI-transitions_${transition}) ease`};
-  font-size: ${({size}) => `var(--ZUI-sizes_font_${size})`};
+  font-size: ${({size}) => {
+    let fontSize;
+    if (size === "xs") fontSize = 1;
+    if (size === "sm") fontSize = 2;
+    if (size === "md") fontSize = 3;
+    if (size === "lg") fontSize = 4;
+    if (size === "xl") fontSize = 5;
+    return `var(--ZUI-sizes_font_${fontSize})`
+  }};
   ${({pointer}) => pointer && `
     cursor: pointer;
   `}
-
-  .background {
-    background: ${({bgColor, theme, bordered, imgSrc}) => 
-      !bordered && imgSrc ? "transparent" : bgColor ? gradientOrColor(bgColor) : hexToRgba(theme.colors.text, .1)};
-    display: block;
-    height: 100%;
-    width: 100%;
-  }
 
   figure {
     line-height: 0;
@@ -65,11 +65,29 @@ export const AvatarUI = styled.span`
     ${({textColor}) => textColor && `
       color: ${textColor};
     `}
-    transform: translate(-50%, -50%) scale(.8);
+    transform: translate(-50%, -50%);
     transition: ${({transition}) => `all var(--ZUI-transitions_${transition}) ease`};
 
-    &:hover {
-      ${({zoom}) => zoom && `translate(-50%, -50%) scale(1);`}
+    &.icon {
+      transform: translate(-50%, -50%) scale(1.2);
     }
   }
+
+  &:hover {
+    .text {
+      ${({zoom}) => zoom && `transform: translate(-50%, -50%) scale(1.5);`}
+
+      &.icon {
+        ${({zoom}) => zoom && `transform: translate(-50%, -50%) scale(2);`}
+      }
+    }
+  }
+`;
+
+export const Background = styled.span`
+  background: ${({bgColor, theme, bordered, imgSrc}) => 
+    !bordered && imgSrc ? "transparent" : bgColor ? gradientOrColor(bgColor) : hexToRgba(theme.colors.text, .1)};
+  display: block;
+  height: 100%;
+  width: 100%;
 `;

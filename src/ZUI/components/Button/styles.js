@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { hexToRgba } from "../../utils";
 
 const defineColors = ({color, disabled, loading}) => {
+  console.log("disabled", disabled);
   if (disabled && !loading) {
     return {
       font: "gray",

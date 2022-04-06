@@ -1,30 +1,57 @@
-import { Button, Anchor } from "../ZUI";
+import { Button, Anchor, Container } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 
 export const ButtonContent = () => (
   <Layout>
-    <H1>Button</H1>
-    <p>
-      Button <Code>{`<Button>`}</Code> component brings to the developers the possibility to customize
-      all buttons in their project in the same place or customize each element separately, this
-      component renders an <Code>{`<button>`}</Code> HTML element.
-    </p>
-    <ExampleCode lang="javascript">{`import { Button } from "zeeck-ui";`}</ExampleCode>
-    <H2>Default</H2>
-    <p>
-      The default Button color it's the primary color defined in the theme config.
-    </p>
-    <p>
-      <Button>Default</Button>
-    </p>
-    <ExampleCode>{`<Button>Disabled</Button>`}</ExampleCode>
-    <H2>Disabled</H2>
-    <p>
-      <Button disabled>Disabled</Button>
-    </p>
-    <ExampleCode>{`<Button disabled>Disabled</Button>`}</ExampleCode>
+    <Container.Row>
+      <H1>Button</H1>
+      <p>
+        Button <Code>{`<Button>`}</Code> component brings to the developers the possibility to customize
+        all buttons in their project in the same place or customize each element separately, this
+        component renders an <Code>{`<button>`}</Code> HTML element.
+      </p>
+      <ExampleCode lang="javascript">{`import { Button } from "zeeck-ui";`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <H2>Default</H2>
+      <p>
+        The default Button color it's the primary color defined in the theme config.
+      </p>
+      <p>
+        <Button>Default</Button>
+      </p>
+      <ExampleCode>{`<Button>Disabled</Button>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <H2>Disabled</H2>
+      <p>
+        <Button disabled>Disabled</Button>
+      </p>
+      <ExampleCode>{`<Button disabled>Disabled</Button>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    
+    
+    
     <H2>Sizes</H2>
     <p>
       <Button size="xs">XS</Button>
