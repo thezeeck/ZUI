@@ -22,181 +22,205 @@ export const ButtonContent = () => (
       <p>
         <Button>Default</Button>
       </p>
-      <ExampleCode>{`<Button>Disabled</Button>`}</ExampleCode>
+      <ExampleCode>{`<div>
+  <Button>Disabled</Button>
+</div>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
       <H2>Disabled</H2>
       <p>
         <Button disabled>Disabled</Button>
       </p>
-      <ExampleCode>{`<Button disabled>Disabled</Button>`}</ExampleCode>
+      <ExampleCode>{`<div>
+  <Button disabled>Disabled</Button>
+</div>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Sizes</H2>
+      <p>
+        <Button size="xs">XS</Button>
+      </p>
+      <p>
+        <Button size="sm">SM</Button>
+      </p>
+      <p>
+        <Button size="md">MD</Button>
+      </p>
+      <p>
+        <Button size="lg">LG</Button>
+      </p>
+      <p>
+        <Button size="xl">XL</Button>
+      </p>
+      <p>
+        <Button auto>auto</Button>
+      </p>
+      <ExampleCode>{`<p>
+  <Button size="xs">XS</Button>
+  <Button size="sm">SM</Button>
+  <Button size="md">MD</Button>
+  <Button size="lg">LG</Button>
+  <Button size="xl">XL</Button>
+  <Button auto>auto</Button>
+</p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Colors</H2>
+      <p>
+        <Button color="primary">Primary</Button>
+      </p>
+      <p>
+        <Button color="secondary">Secondary</Button>
+      </p>
+      <p>
+        <Button color="success">Success</Button>
+      </p>
+      <p>
+        <Button color="warning">Warning</Button>
+      </p>
+      <p>
+        <Button color="error">Error</Button>
+      </p>
+      <p>
+        <Button color="gradients_primary">Gradient</Button>
+      </p>
+      <ExampleCode>{`<p>
+  <Button color="primary">Primary</Button>
+  <Button color="secondary">Secondary</Button>
+  <Button color="success">Success</Button>
+  <Button color="warning">Warning</Button>
+  <Button color="error">Error</Button>
+  <Button color="gradients_primary">Gradient</Button>
+</p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Shadow</H2>
+      <p>
+        <Button color="primary" shadow>Primary</Button>
+      </p>
+      <p>
+        <Button color="secondary" shadow>Secondary</Button>
+      </p>
+      <p>
+        <Button color="success" shadow>Success</Button>
+      </p>
+      <p>
+        <Button color="warning" shadow>Warning</Button>
+      </p>
+      <p>
+        <Button color="error" shadow>Error</Button>
+      </p>
+      <p>
+        <Button color="gradients_primary" shadow>Gradient</Button>
+      </p>
+      <ExampleCode>{`<p>
+  <Button color="primary" shadow>Primary</Button>
+  <Button color="secondary" shadow>Secondary</Button>
+  <Button color="success" shadow>Success</Button>
+  <Button color="warning" shadow>Warning</Button>
+  <Button color="error" shadow>Error</Button>
+  <Button color="gradients_primary" shadow>Gradient</Button>      
+</p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Loading</H2>
+      <p>
+        <Button color="primary" loading={1}>Primary</Button>
+      </p>
+      <p>
+        <Button color="secondary" loading={2}>secondary</Button>
+      </p>
+      <p>
+        <Button color="success" loading={3}>Success</Button>
+      </p>
+      <ExampleCode>{`<p>
+  <Button color="primary" loading={1}>Primary</Button>
+  <Button color="secondary" loading={2}>secondary</Button>
+  <Button color="success" loading={3}>Success</Button>
+</p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Rounded</H2>
+        <p>
+          <Button margin={2} color="gradients_secondary" rounded>filled</Button>
+        </p>
+        <p>
+          <Button margin={2} variant="outlined" color="success" rounded>outlined</Button>
+        </p>
+        <p>
+          <Button margin={2} variant="flat" color="warning" rounded>text</Button>
+        </p>
+        <p>
+          <Button margin={2} variant="shadow" color="error" rounded>text</Button>
+        </p>
+        <ExampleCode>{`<p>
+  <Button color="primary" loading={1}>Primary</Button>
+  <Button color="secondary" loading={2}>Secondary</Button>
+  <Button color="success" loading={3}>Success</Button>
+  <Button color="warning" loading={4}>Warning</Button>
+  <Button color="error" loading={5}>Error</Button>
+</p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Variants</H2>
+      <p>
+        <Button margin={2}>filled</Button>
+        <Button margin={2} color="gradients_secondary">filled</Button>
+      </p>
+      <p>
+        <Button margin={2} variant="outlined" color="secondary">outlined</Button>
+        <Button margin={2} variant="outlined" color="gradients_success">outlined</Button>
+      </p>
+      <p>
+        <Button margin={2} variant="text" color="success">text</Button>
+        <Button margin={2} variant="text" color="gradients_warning">text</Button>
+      </p>
+      <p>
+        <Button margin={2} variant="flat" color="success">text</Button>
+        <Button margin={2} variant="flat" color="gradients_warning">text</Button>
+      </p>
+      <p>
+        <Button margin={2} variant="shadow" color="warning">text</Button>
+        <Button margin={2} variant="shadow" color="gradients_error">text</Button>
+      </p>
+      <ExampleCode>{`<p>
+  <Button color="primary" loading={1}>Primary</Button>
+  <Button color="secondary" loading={2}>Secondary</Button>
+  <Button color="success" loading={3}>Success</Button>
+  <Button color="warning" loading={4}>Warning</Button>
+  <Button color="error" loading={5}>Error</Button>
+</p>`}</ExampleCode>
     </Container.Row>
-    
-    
-    
-    <H2>Sizes</H2>
-    <p>
-      <Button size="xs">XS</Button>
-    </p>
-    <p>
-      <Button size="sm">SM</Button>
-    </p>
-    <p>
-      <Button size="md">MD</Button>
-    </p>
-    <p>
-      <Button size="lg">LG</Button>
-    </p>
-    <p>
-      <Button size="xl">XL</Button>
-    </p>
-    <p>
-      <Button auto>auto</Button>
-    </p>
-    <ExampleCode>{`<Button size="xs">XS</Button>
-<Button size="sm">SM</Button>
-<Button size="md">MD</Button>
-<Button size="lg">LG</Button>
-<Button size="xl">XL</Button>
-<Button auto>auto</Button>`}</ExampleCode>
-    <H2>Colors</H2>
-    <p>
-      <Button color="primary">Primary</Button>
-    </p>
-    <p>
-      <Button color="secondary">Secondary</Button>
-    </p>
-    <p>
-      <Button color="success">Success</Button>
-    </p>
-    <p>
-      <Button color="warning">Warning</Button>
-    </p>
-    <p>
-      <Button color="error">Error</Button>
-    </p>
-    <p>
-      <Button color="gradients_primary">Gradient</Button>
-    </p>
-    <ExampleCode>{`<Button color="primary">Primary</Button>
-<Button color="secondary">Secondary</Button>
-<Button color="success">Success</Button>
-<Button color="warning">Warning</Button>
-<Button color="error">Error</Button>
-<Button color="gradients_primary">Gradient</Button>`}</ExampleCode>
-    <H2>Shadow</H2>
-    <p>
-      <Button color="primary" shadow>Primary</Button>
-    </p>
-    <p>
-      <Button color="secondary" shadow>Secondary</Button>
-    </p>
-    <p>
-      <Button color="success" shadow>Success</Button>
-    </p>
-    <p>
-      <Button color="warning" shadow>Warning</Button>
-    </p>
-    <p>
-      <Button color="error" shadow>Error</Button>
-    </p>
-    <p>
-      <Button color="gradients_primary" shadow>Gradient</Button>
-    </p>
-    <ExampleCode>{`<Button color="primary" shadow>Primary</Button>
-<Button color="secondary" shadow>Secondary</Button>
-<Button color="success" shadow>Success</Button>
-<Button color="warning" shadow>Warning</Button>
-<Button color="error" shadow>Error</Button>
-<Button color="gradients_primary" shadow>Gradient</Button>`}</ExampleCode>
-    <H2>Loading</H2>
-    <p>
-      <Button color="primary" loading={1}>Primary</Button>
-    </p>
-    <p>
-      <Button color="secondary" loading={2}>secondary</Button>
-    </p>
-    <p>
-      <Button color="success" loading={3}>Success</Button>
-    </p>
-    <ExampleCode>{`<Button color="primary" loading={1}>Primary</Button>
-<Button color="secondary" loading={2}>secondary</Button>
-<Button color="success" loading={3}>Success</Button>`}</ExampleCode>
-    <H2>Rounded</H2>
-    <p>
-      <Button margin={2} color="gradients_secondary" rounded>filled</Button>
-    </p>
-    <p>
-      <Button margin={2} variant="outlined" color="success" rounded>outlined</Button>
-    </p>
-    <p>
-      <Button margin={2} variant="flat" color="warning" rounded>text</Button>
-    </p>
-    <p>
-      <Button margin={2} variant="shadow" color="error" rounded>text</Button>
-    </p>
-    <ExampleCode>{`<Button color="primary" loading={1}>Primary</Button>
-<Button color="secondary" loading={2}>Secondary</Button>
-<Button color="success" loading={3}>Success</Button>
-<Button color="warning" loading={4}>Warning</Button>
-<Button color="error" loading={5}>Error</Button>`}</ExampleCode>
-    <H2>Variants</H2>
-    <p>
-      <Button margin={2}>filled</Button>
-      <Button margin={2} color="gradients_secondary">filled</Button>
-    </p>
-    <p>
-      <Button margin={2} variant="outlined" color="secondary">outlined</Button>
-      <Button margin={2} variant="outlined" color="gradients_success">outlined</Button>
-    </p>
-    <p>
-      <Button margin={2} variant="text" color="success">text</Button>
-      <Button margin={2} variant="text" color="gradients_warning">text</Button>
-    </p>
-    <p>
-      <Button margin={2} variant="flat" color="success">text</Button>
-      <Button margin={2} variant="flat" color="gradients_warning">text</Button>
-    </p>
-    <p>
-      <Button margin={2} variant="shadow" color="warning">text</Button>
-      <Button margin={2} variant="shadow" color="gradients_error">text</Button>
-    </p>
-    <ExampleCode>{`<Button color="primary" loading={1}>Primary</Button>
-<Button color="secondary" loading={2}>Secondary</Button>
-<Button color="success" loading={3}>Success</Button>
-<Button color="warning" loading={4}>Warning</Button>
-<Button color="error" loading={5}>Error</Button>`}</ExampleCode>
-    <H2>Icons</H2>
-    <p>
-      <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
-    </p>
-    <p>
-      <Anchor href="#" icon="back">Lorem ipsum dolor sit amet (Icon back)</Anchor>
-    </p>
-    <ExampleCode>{`<Anchor href="#" icon>
+    <Container.Row>
+      <H2>Icons</H2>
+      <p>
+        <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
+      </p>
+      <p>
+        <Anchor href="#" icon="back">Lorem ipsum dolor sit amet (Icon back)</Anchor>
+      </p>
+      <ExampleCode>{`<Anchor href="#" icon>
   Lorem ipsum dolor sit amet (Icon)
 </Anchor>
 <Anchor href="#" icon="back">
   Lorem ipsum dolor sit amet (Icon back)
 </Anchor>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <H2>APIs</H2>
     <Table>
       <Row

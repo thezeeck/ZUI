@@ -24,7 +24,9 @@ export const AvatarContent = () => (
         <Avatar text="JS" />
       </p>
       <ExampleCode>
-        {`<Avatar text="JS" />`}
+        {`<div>
+  <Avatar text="JS" />
+</div>`}
       </ExampleCode>
     </Container.Row>
     <Container.Row>

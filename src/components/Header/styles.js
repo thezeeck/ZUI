@@ -1,14 +1,10 @@
 import styled from "styled-components";
 
-export const HeaderComponent = styled.header`
-  display: flex;
+export const LogoSize = styled.figure`
+  width: 6.25rem;
+  margin: 1rem;
 
-  #logo {
-    width: 6.25rem;
-    margin: 1rem;
-
-    img {
-      width: 100%;
-    }
+  img {
+    width: 100%;
   }
 `;

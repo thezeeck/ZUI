@@ -5,8 +5,8 @@ const defineColors = ({color, disabled, loading}) => {
   console.log("disabled", disabled);
   if (disabled && !loading) {
     return {
-      font: "gray",
-      bg: "gray_4",
+      font: "gray_2",
+      bg: "gray_1",
     }
   }
   return {

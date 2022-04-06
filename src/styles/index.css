@@ -30,7 +30,7 @@ Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Or
 
 .hljs-template-tag,
 .hljs-tag {
-  color: var(--ZUI-colors_gray);
+  color: var(--ZUI-colors_primary_4);
 }
 
 .hljs-string {

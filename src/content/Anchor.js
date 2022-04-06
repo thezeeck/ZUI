@@ -57,28 +57,23 @@ export const AnchorContent = () => (
   <Anchor textColor="primary" href="#">
     Lorem ipsum dolor sit amet (Primary)
   </Anchor>
-</p>
-<p>
+  <br />
   <Anchor textColor="secondary" href="#">
     Lorem ipsum dolor sit amet (Secondary)
   </Anchor>
-</p>
-<p>
+  <br />
   <Anchor textColor="success" href="#">
     Lorem ipsum dolor sit amet (Success)
   </Anchor>
-</p>
-<p>
+  <br />
   <Anchor textColor="warning" href="#">
     Lorem ipsum dolor sit amet (Warning)
   </Anchor>
-</p>
-<p>
+  <br />
   <Anchor textColor="error" href="#">
     Lorem ipsum dolor sit amet (Error)
   </Anchor>
-</p>
-<p>
+  <br />
   <Anchor href="#">
     Lorem ipsum dolor sit amet (Default)
   </Anchor>
@@ -100,8 +95,7 @@ export const AnchorContent = () => (
   <Anchor href="#" decoration>
     Lorem ipsum dolor sit amet (Decoration)
   </Anchor>
-</p>
-<p>
+  <br />
   <Anchor href="#" decoration textColor="secondary">
     Lorem ipsum dolor sit amet (Decoration)
   </Anchor>
@@ -117,12 +111,14 @@ export const AnchorContent = () => (
         <Anchor href="#" box textColor="warning">Lorem ipsum dolor sit amet (Box)</Anchor>
       </p>
       <ExampleCode>
-        {`<Anchor href="#" box textColor="success">
-  Lorem ipsum dolor sit amet (Box)
-</Anchor>
-<Anchor href="#" box textColor="warning">
-  Lorem ipsum dolor sit amet (Box)
-</Anchor>`}
+        {`<p>
+  <Anchor href="#" box textColor="success">
+    Lorem ipsum dolor sit amet (Box)
+  </Anchor>
+  <Anchor href="#" box textColor="warning">
+    Lorem ipsum dolor sit amet (Box)
+  </Anchor>
+</p>`}
       </ExampleCode>
     </Container.Row>
     <Container.Row>
@@ -134,12 +130,15 @@ export const AnchorContent = () => (
         <Anchor href="#" icon="back">Lorem ipsum dolor sit amet (Icon back)</Anchor>
       </p>
       <ExampleCode>
-        {`<Anchor href="#" icon>
-  Lorem ipsum dolor sit amet (Icon)
-</Anchor>
-<Anchor href="#" icon="back">
-  Lorem ipsum dolor sit amet (Icon back)
-</Anchor>`}
+        {`<p>
+  <Anchor href="#" icon>
+    Lorem ipsum dolor sit amet (Icon)
+  </Anchor>
+  <br />
+  <Anchor href="#" icon="back">
+    Lorem ipsum dolor sit amet (Icon back)
+  </Anchor>
+</p>`}
       </ExampleCode>
     </Container.Row>
     <Container.Row>
