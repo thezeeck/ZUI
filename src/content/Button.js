@@ -28,6 +28,7 @@ export const ButtonContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Disabled</H2>
+      <p>You set a non usable <Code>Button</Code> with the <Code>disabled</Code> property.</p>
       <p>
         <Button disabled>Disabled</Button>
       </p>
@@ -37,6 +38,7 @@ export const ButtonContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Sizes</H2>
+      <p>The <Code>Button</Code> component has 6 differents sizes.</p>
       <p>
         <Button size="xs">XS</Button>
       </p>
@@ -66,6 +68,7 @@ export const ButtonContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Colors</H2>
+      <p>The <Code>color</Code> property supports 5 solid colors variants and 5 differents gradients.</p>
       <p>
         <Button color="primary">Primary</Button>
       </p>
@@ -95,6 +98,7 @@ export const ButtonContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Shadow</H2>
+      <p>You can set a shadow for the <Code>Button</Code> component, this change depends of the <Code>color</Code> property, and disappears if the button it's disable.</p>
       <p>
         <Button color="primary" shadow>Primary</Button>
       </p>
@@ -124,6 +128,7 @@ export const ButtonContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Loading</H2>
+      <p>The <Code>loading</Code> state removes the content button and you can choose 3 different animations.</p>
       <p>
         <Button color="primary" loading={1}>Primary</Button>
       </p>
@@ -141,19 +146,20 @@ export const ButtonContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Rounded</H2>
-        <p>
-          <Button margin={2} color="gradients_secondary" rounded>filled</Button>
-        </p>
-        <p>
-          <Button margin={2} variant="outlined" color="success" rounded>outlined</Button>
-        </p>
-        <p>
-          <Button margin={2} variant="flat" color="warning" rounded>text</Button>
-        </p>
-        <p>
-          <Button margin={2} variant="shadow" color="error" rounded>text</Button>
-        </p>
-        <ExampleCode>{`<p>
+      <p>The <Code>rounded</Code> property change the radius angles.</p>
+      <p>
+        <Button margin={2} color="gradients_secondary" rounded>filled</Button>
+      </p>
+      <p>
+        <Button margin={2} variant="outlined" color="success" rounded>outlined</Button>
+      </p>
+      <p>
+        <Button margin={2} variant="flat" color="warning" rounded>text</Button>
+      </p>
+      <p>
+        <Button margin={2} variant="shadow" color="error" rounded>text</Button>
+      </p>
+      <ExampleCode>{`<p>
   <Button color="primary" loading={1}>Primary</Button>
   <Button color="secondary" loading={2}>Secondary</Button>
   <Button color="success" loading={3}>Success</Button>
@@ -163,6 +169,7 @@ export const ButtonContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Variants</H2>
+      <p>The <Code>Button</Code> component has 5 different styles.</p>
       <p>
         <Button margin={2}>filled</Button>
         <Button margin={2} color="gradients_secondary">filled</Button>
@@ -193,6 +200,7 @@ export const ButtonContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Icons</H2>
+      <p><strong>ZEECK-UI</strong> provides an icon collection and you can set any of them as a part of the button content.</p>
       <p>
         <Button icon="link">Icon link</Button>
       </p>
@@ -202,7 +210,6 @@ export const ButtonContent = () => (
           icon="chevron-right"
           size="xl"
           variant="outlined">
-          Icon chevron-right
         </Button>
       </p>
       <ExampleCode>{`<p>
@@ -212,12 +219,11 @@ export const ButtonContent = () => (
     icon="chevron-right"
     size="xl"
     variant="outlined">
-      Icon chevron-right
   </Button>
 </p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      <H2>APIs</H2>
+      <H2>Props</H2>
       <Table>
         <Row
           attribute="auto"

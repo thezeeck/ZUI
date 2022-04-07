@@ -146,10 +146,10 @@ export const core = {
     mono: "'Lucida Console', 'Liberation Mono', serif",
   },
   gradients: {
-    primary: "linear-gradient(135deg, var(--ZUI-colors_primary) 0%, var(--ZUI-colors_primary_5) 100%)",
-    secondary: "linear-gradient(135deg, var(--ZUI-colors_secondary) 0%, var(--ZUI-colors_secondary_5) 100%)",
-    success: "linear-gradient(135deg, var(--ZUI-colors_success) 0%, var(--ZUI-colors_success_5) 100%)",
-    warning: "linear-gradient(135deg, var(--ZUI-colors_warning) 0%, var(--ZUI-colors_warning_5) 100%)",
-    error: "linear-gradient(135deg, var(--ZUI-colors_error) 0%, var(--ZUI-colors_error_5) 100%)",
+    primary: "linear-gradient(135deg, var(--ZUI-colors_primary_3) 0%, var(--ZUI-colors_primary_4) 100%)",
+    secondary: "linear-gradient(135deg, var(--ZUI-colors_secondary_3) 0%, var(--ZUI-colors_secondary_4) 100%)",
+    success: "linear-gradient(135deg, var(--ZUI-colors_success_3) 0%, var(--ZUI-colors_success_4) 100%)",
+    warning: "linear-gradient(135deg, var(--ZUI-colors_warning_3) 0%, var(--ZUI-colors_warning_4) 100%)",
+    error: "linear-gradient(135deg, var(--ZUI-colors_error_3) 0%, var(--ZUI-colors_error_4) 100%)",
   }
 }

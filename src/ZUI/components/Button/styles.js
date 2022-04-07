@@ -4,7 +4,7 @@ import { hexToRgba } from "../../utils";
 const defineColors = ({color, disabled, loading}) => {
   if (disabled && !loading) {
     return {
-      font: "gray_2",
+      font: "gray_3",
       bg: "gray_1",
     }
   }

@@ -47,7 +47,7 @@ Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Or
 .hljs-addition,
 .hljs-variable,
 .hljs-template-variable {
-  color: var(--ZUI-colors_secondary_2);
+  color: var(--ZUI-colors_secondary_3);
 }
 
 .hljs-comment,

@@ -27,6 +27,7 @@ export const CardContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Variants</H2>
+      <p>The <Code>Card</Code> component has 3 different styles.</p>
       <Card variant="shadow" style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
         <p>Shadow Card</p>
       </Card>
@@ -57,69 +58,102 @@ export const CardContent = () => (
 </Grid>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      
-    </Container.Row>
-    <Container.Row>
-      
-    </Container.Row>
-    <Container.Row>
-      
-    </Container.Row>
-    <Container.Row>
-      
-    </Container.Row>
-    <Container.Row>
       <H2>Colors</H2>
-      <p>
-        <Anchor textColor="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="secondary" href="#">Lorem ipsum dolor sit amet (Secondary)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="success" href="#">Lorem ipsum dolor sit amet (Success)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="warning" href="#">Lorem ipsum dolor sit amet (Warning)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="error" href="#">Lorem ipsum dolor sit amet (Error)</Anchor>
-      </p>
-      <p>
-        <Anchor href="#">Lorem ipsum dolor sit amet (Default)</Anchor>
-      </p>
+      <p>You can change the color background with the <Code>color</Code> property, this configuration also change the font to white.</p>
+      <Card color="primary" style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
+        <p>Primary color Card</p>
+      </Card>
+      <Card color="secondary" style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
+        <p>Primary color Card</p>
+      </Card>
+      <Card color="success" style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
+        <p>Primary color Card</p>
+      </Card>
+      <Card color="warning" style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
+        <p>Primary color Card</p>
+      </Card>
+      <Card color="error" style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
+        <p>Primary color Card</p>
+      </Card>
       <ExampleCode>
-        {`<p>
-  <Anchor textColor="primary" href="#">
-    Lorem ipsum dolor sit amet (Primary)
-  </Anchor>
-</p>
-<p>
-  <Anchor textColor="secondary" href="#">
-    Lorem ipsum dolor sit amet (Secondary)
-  </Anchor>
-</p>
-<p>
-  <Anchor textColor="success" href="#">
-    Lorem ipsum dolor sit amet (Success)
-  </Anchor>
-</p>
-<p>
-  <Anchor textColor="warning" href="#">
-    Lorem ipsum dolor sit amet (Warning)
-  </Anchor>
-</p>
-<p>
-  <Anchor textColor="error" href="#">
-    Lorem ipsum dolor sit amet (Error)
-  </Anchor>
-</p>
-<p>
-  <Anchor href="#">
-    Lorem ipsum dolor sit amet (Default)
-  </Anchor>
-</p>`}
-    </ExampleCode>
+          {`<Grid>
+  <Grid.Item>
+    <Card color="primary">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card color="secondary">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card color="success">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card color="warning">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card color="error">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+</Grid>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <H2>Header component</H2>
+      <p>This component can be used for set a card title.</p>
+      <Card>
+        <Card.Header>
+          Card title
+        </Card.Header>
+        Card content
+      </Card>
+    </Container.Row>
+    <Container.Row>
+      <H2>Footer component</H2>
+      <p>This component is designed to add a footer card.</p>
+      <Card>
+        Card content
+        <Card.Footer>
+          Card title
+        </Card.Footer>
+      </Card>
+    </Container.Row>
+    <Container.Row>
+      <H2>Body component</H2>
+      <p>This component can be used to add styles and custom behaviors, is not required but can help to maintain a cleaner code.</p>
+      <Card>
+        <Card.Header>
+          Card title
+        </Card.Header>
+        <Card.Body>
+          Card content
+        </Card.Body>
+        <Card.Footer>
+          Card title
+        </Card.Footer>
+      </Card>
+    </Container.Row>
+    <Container.Row>
+      <H2>Header and Footer variants</H2>
+      <p>The <Code>Header</Code> and <Code>Footer</Code> components has 3 differents styles.</p>
+      <Card bordered>
+        <Card.Header>
+          Card title
+        </Card.Header>
+        Card content
+        <Card.Footer>
+          Card title
+        </Card.Footer>
+      </Card>
+    </Container.Row>
+    <Container.Row>
+      
     </Container.Row>
     <Container.Row>
       

@@ -31,6 +31,7 @@ export const AvatarContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Sizes</H2>
+      <p>The <Code>Avatar</Code> component has 5 different sizes.</p>
       <Grid>
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} size="xs" />
@@ -68,6 +69,7 @@ export const AvatarContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Colors</H2>
+      <p>The <Code>color</Code> property change the border and background colors.</p>
       <Grid>
         <Grid.Item>
           <Avatar text="OP" bgColor="primary" />
@@ -114,6 +116,7 @@ export const AvatarContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Border</H2>
+      <p>You can set a border with the <Code>bordered</Code> property and change the weight with the <Code>borderWeight</Code>, but this feature is only for avatars with images.</p>
       <Grid>
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="xs" bgColor="primary"/>
@@ -166,6 +169,7 @@ export const AvatarContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Zoom</H2>
+      <p>You can enable a zoom animation with the <Code>zoom</Code> property for the hover state.</p>
       <Grid>
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="error" zoom/>
@@ -207,6 +211,7 @@ export const AvatarContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Squared</H2>
+      <p>The <Code>Avatar</Code> component has two different shapes, the circle for default and square for round angles, you just need add the <Code>squared</Code> property.</p>
       <Grid>
         <Grid.Item>
           <Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="secondary" zoom squared pointer/>
@@ -249,6 +254,7 @@ export const AvatarContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Icons</H2>
+      <p><strong>ZEECK-UI</strong> do not provide a default user icon, but you can set a custom icon instead.</p>
       <Grid>
         <Grid.Item>
           <Avatar icon="chevron-right" bgColor="secondary" />
@@ -273,7 +279,7 @@ export const AvatarContent = () => (
 </Grid>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      <H2>APIs</H2>
+      <H2>Props</H2>
       <Table>
         <Row
           attribute="bgColor"

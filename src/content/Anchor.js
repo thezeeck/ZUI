@@ -34,6 +34,7 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Colors</H2>
+      <p>You can change the Anchor <Code>color</Code> with the <Code>textColor</Code> property</p>
       <p>
         <Anchor textColor="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
       </p>
@@ -82,9 +83,11 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Variants</H2>
+      <p>You can change the default look with the <Code>decoration</Code> and <Code>Block</Code> properties.</p>
     </Container.Row>
     <Container.Row>
       <h3>Underline</h3>
+      <p>Adds an underline style only in the hover state.</p>
       <p>
         <Anchor href="#" decoration>Lorem ipsum dolor sit amet (Decoration)</Anchor>
       </p>
@@ -104,6 +107,7 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <h3>Block</h3>
+      <p>Adds a background color in the hover state and also change the display inline to inline-block.</p>
       <p>
         <Anchor href="#" box textColor="success">Lorem ipsum dolor sit amet (Box)</Anchor>
       </p>
@@ -123,6 +127,7 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Icons</H2>
+      <p>You can add the default icon setting the <Code>icon</Code> property and also you can add a custom icon changing the <Code>icon</Code> property value.</p>
       <p>
         <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
       </p>
