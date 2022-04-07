@@ -14,12 +14,9 @@ export const Card = props => {
 Card.defaultProps = {
   radius: "md",
   imgSrc: "",
-  text: "",
-  bordered: false,
-  // icon: "",
   textAlt: "",
-  textColor: "inherit",
-  borderWeight: "normal",
   pointer: false,
-  variant: "gray",
+  variant: "shadow",
+  gap: 4,
+  color: "gray",
 }

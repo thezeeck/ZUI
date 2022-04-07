@@ -18,7 +18,7 @@ const defineColors = ({color, disabled, loading}) => {
 export const ButtonUI = styled.button`
   --content-bg: ${({color, variant}) => (/gradient/g.test(color) && (variant === "outlined" || variant === "shadow")) ?
     "var(--ZUI-colors_background)" : "transparent"};
-  ${({margin}) => margin && `margin: 0 var(--ZUI-sizes_padding_${margin})`};
+  ${({margin}) => margin && `margin: 0 var(--ZUI-sizes_spacing_${margin})`};
   width: auto;
   display: inline-block;
   border: ${({color}) => /gradient/g.test(color) ? "0 none" : "var(--ZUI-sizes_border_sm) solid"};
@@ -35,8 +35,8 @@ export const ButtonUI = styled.button`
       font-size: var(--ZUI-sizes_font_${sizes.fs});
       min-width: ${auto ? "auto" : "var(--ZUI-sizes_space_" + sizes.wd + ")"};
       border-radius: var(--ZUI-sizes_radius_${rounded ? "xl" : sizes.rd});
-      line-height: calc(var(--ZUI-sizes_font_${sizes.sp}) - (var(--ZUI-sizes_padding_${sizes.sp}) * 2));
-      height: calc(var(--ZUI-sizes_font_${sizes.sp}) + var(--ZUI-sizes_padding_${sizes.sp}));`
+      line-height: calc(var(--ZUI-sizes_font_${sizes.sp}) - (var(--ZUI-sizes_spacing_${sizes.sp}) * 2));
+      height: calc(var(--ZUI-sizes_font_${sizes.sp}) + var(--ZUI-sizes_spacing_${sizes.sp}));`
   }}
   ${({color, theme, disabled, variant, loading}) => {
     const colors = defineColors({color, theme, disabled, loading});
@@ -105,7 +105,7 @@ export const ButtonContentUI = styled.span`
   justify-content: center;
   align-items: center;
   background-color: var(--content-bg);
-  padding: var(--ZUI-sizes_padding_2);
+  padding: var(--ZUI-sizes_spacing_2);
   height: 100%;
   box-sizing: border-box;
   border-radius: ${({size}) => {
@@ -121,5 +121,5 @@ export const ButtonContentUI = styled.span`
 `;
 
 export const IconWrapper = styled.span`
-  margin-left: var(--ZUI-sizes_padding_2);
+  margin-left: var(--ZUI-sizes_spacing_2);
 `;

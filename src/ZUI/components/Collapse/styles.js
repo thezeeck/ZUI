@@ -9,15 +9,15 @@ export const GroupUI = styled.div`
       return `
         background-color: ${hexToRgba(theme.colors.gray_3, .1)};
         border-radius: var(--ZUI-sizes_radius_lg);
-        padding: var(--ZUI-sizes_padding_4);
+        padding: var(--ZUI-sizes_spacing_4);
         box-sizing: border-box;
         box-shadow: var(--ZUI-shadows_gray);
-        margin-bottom: var(--ZUI-sizes_padding_4);`
+        margin-bottom: var(--ZUI-sizes_spacing_4);`
     }
     if (variant === "bordered") {
       return `
         border-radius: var(--ZUI-sizes_radius_lg);
-        padding: var(--ZUI-sizes_padding_4);
+        padding: var(--ZUI-sizes_spacing_4);
         box-sizing: border-box;
         border: var(--ZUI-sizes_border_${dividerWeight}) solid ${hexToRgba(theme.colors.text, .3)};`
     }
@@ -28,10 +28,10 @@ export const ItemUI = styled.section`
   ${({variant, theme}) => variant === "splitted" && `
         background-color: ${hexToRgba(theme.colors.gray_3, .1)};
         border-radius: var(--ZUI-sizes_radius_lg);
-        padding: var(--ZUI-sizes_padding_4);
+        padding: var(--ZUI-sizes_spacing_4);
         box-sizing: border-box;
         box-shadow: var(--ZUI-shadows_sm) ${hexToRgba(colorsSchema.gray500, .5)};
-        margin-bottom: var(--ZUI-sizes_padding_4);`
+        margin-bottom: var(--ZUI-sizes_spacing_4);`
   }
 
   &:not(:last-child) {
@@ -46,7 +46,7 @@ export const ItemContent = styled.section`
   ${({animation}) => animation && "transition: all var(--ZUI-transitions_regular) cubic-bezier(0, 1, 0, 1);"}
 
   > div {
-    padding: var(--ZUI-sizes_padding_4);
+    padding: var(--ZUI-sizes_spacing_4);
   }
 
   &.open {
@@ -61,11 +61,11 @@ export const ItemTitle = styled.div`
   display: grid;
   grid-gap: 0;
   grid-template-columns: auto 1fr auto;
-  padding: var(--ZUI-sizes_padding_4);
+  padding: var(--ZUI-sizes_spacing_4);
 
   :focus-visible {
     outline: currentcolor none medium;
-    box-shadow: 0 0 0 calc(var(--ZUI-sizes_padding_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_padding_1) var(--ZUI-colors_primary);
+    box-shadow: 0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_primary);
   }
 
   > h3 {
@@ -87,11 +87,11 @@ export const ItemTitle = styled.div`
   > section {
     grid-column: 1;
     grid-row: 1/3;
-    padding-right: var(--ZUI-sizes_padding_3);
+    padding-right: var(--ZUI-sizes_spacing_3);
   }
 
   > div {
-    margin-left: var(--ZUI-sizes_padding_3);
+    margin-left: var(--ZUI-sizes_spacing_3);
     grid-column: 3;
     grid-row: 1/3;
 

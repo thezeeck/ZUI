@@ -7,26 +7,18 @@ export const CardContent = () => (
   <Layout>
     <Container.Row>
       <H1>Card</H1>
-    </Container.Row>
-    <Container.Row>
       <p>
         Cards <Code>Card</Code> can be used to display simple content like text or images, you can also use layouts for complex content.
       </p>
-    </Container.Row>
-    <Container.Row>
       <ExampleCode lang='javascript'>
         {`import { Card } from "zeeck-ui";`}
       </ExampleCode>
     </Container.Row>
     <Container.Row>
       <H2>Basic card</H2>
-    </Container.Row>
-    <Container.Row>
-      <Card>
+      <Card style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
         <p>Text card</p>
       </Card>
-    </Container.Row>
-    <Container.Row>
       <ExampleCode>
         {`<Card>
   <p>Text card</p>
@@ -34,7 +26,35 @@ export const CardContent = () => (
       </ExampleCode>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Variants</H2>
+      <Card variant="shadow" style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
+        <p>Shadow Card</p>
+      </Card>
+      <Card variant="bordered" style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
+        <p>Bordered Card</p>
+      </Card>
+      <br />
+      <Card variant="dense" style={{marginBottom: "var(--ZUI-sizes_spacing_5)"}}>
+        <p>Dense Card</p>
+      </Card>
+      <ExampleCode>
+        {`<Grid>
+  <Grid.Item>
+    <Card variant="shadow">
+      <p>Text card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card variant="bordered">
+      <p>Text card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card variant="dense">
+      <p>Text card</p>
+    </Card>
+  </Grid.Item>
+</Grid>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
       
@@ -48,31 +68,28 @@ export const CardContent = () => (
     <Container.Row>
       
     </Container.Row>
-    
-    
-    
-    
-    <H2>Colors</H2>
-    <p>
-      <Anchor textColor="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
-    </p>
-    <p>
-      <Anchor textColor="secondary" href="#">Lorem ipsum dolor sit amet (Secondary)</Anchor>
-    </p>
-    <p>
-      <Anchor textColor="success" href="#">Lorem ipsum dolor sit amet (Success)</Anchor>
-    </p>
-    <p>
-      <Anchor textColor="warning" href="#">Lorem ipsum dolor sit amet (Warning)</Anchor>
-    </p>
-    <p>
-      <Anchor textColor="error" href="#">Lorem ipsum dolor sit amet (Error)</Anchor>
-    </p>
-    <p>
-      <Anchor href="#">Lorem ipsum dolor sit amet (Default)</Anchor>
-    </p>
-    <ExampleCode>
-      {`<p>
+    <Container.Row>
+      <H2>Colors</H2>
+      <p>
+        <Anchor textColor="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
+      </p>
+      <p>
+        <Anchor textColor="secondary" href="#">Lorem ipsum dolor sit amet (Secondary)</Anchor>
+      </p>
+      <p>
+        <Anchor textColor="success" href="#">Lorem ipsum dolor sit amet (Success)</Anchor>
+      </p>
+      <p>
+        <Anchor textColor="warning" href="#">Lorem ipsum dolor sit amet (Warning)</Anchor>
+      </p>
+      <p>
+        <Anchor textColor="error" href="#">Lorem ipsum dolor sit amet (Error)</Anchor>
+      </p>
+      <p>
+        <Anchor href="#">Lorem ipsum dolor sit amet (Default)</Anchor>
+      </p>
+      <ExampleCode>
+        {`<p>
   <Anchor textColor="primary" href="#">
     Lorem ipsum dolor sit amet (Primary)
   </Anchor>
@@ -103,6 +120,24 @@ export const CardContent = () => (
   </Anchor>
 </p>`}
     </ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    <Container.Row>
+      
+    </Container.Row>
+    
+    
+    
+    
+    
     <H2>Variants</H2>
     <h3>Underline</h3>
     <p>

@@ -9,7 +9,7 @@ export const ContainerUI = styled.div`
     align-items: ${alignItems};
     align-content: ${alignContent};
   `};
-  padding: ${({gap}) => `var(--ZUI-sizes_padding_${gap})`};
+  padding: ${({gap}) => `var(--ZUI-sizes_spacing_${gap})`};
   box-sizing: border-box;
   ${({background}) => background && `
     background: var(--ZUI-colors_${background})
@@ -40,7 +40,7 @@ export const RowUI = styled.section`
     `;
   }};
   margin: ${({state}) => state.direction === "column" ?
-    `0 0 var(--ZUI-sizes_padding_${state.gap})` :
-    `0 var(--ZUI-sizes_padding_${state.gap}) var(--ZUI-sizes_padding_${state.gap})`};
+    `0 0 var(--ZUI-sizes_spacing_${state.gap})` :
+    `0 var(--ZUI-sizes_spacing_${state.gap}) var(--ZUI-sizes_spacing_${state.gap})`};
   box-sizing: border-box;
 `;

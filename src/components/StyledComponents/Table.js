@@ -58,6 +58,6 @@ const TableUI = styled.table`
 
 const TR = styled.tr`
   > td {
-    padding: var(--ZUI-sizes_padding_3) var(--ZUI-sizes_padding_4);
+    padding: var(--ZUI-sizes_spacing_3) var(--ZUI-sizes_spacing_4);
   }
 `;
