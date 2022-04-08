@@ -1,22 +1,10 @@
-import { CardUI } from "./styles";
+import { CardUI, ContentUI } from "./styles";
 import { useThemeContext } from "../Theme";
 import { CardProvider } from "./context";
 import { Cover } from "./Cover";
 
 export const Card = props => {
   const { theme } = useThemeContext();
-  const setCover = () => {
-    if (typeof props.cover === "string") return (
-      <Cover>
-        <img src={props.cover} alt="cover" />
-      </Cover>
-    );
-    return (
-      <Cover>
-        {props.cover}
-      </Cover>
-    )
-  }
 
   return (
     <CardProvider state={{
@@ -26,8 +14,10 @@ export const Card = props => {
       color: props.color,
     }}>
       <CardUI {...props} theme={theme}>
-        {props.cover && setCover()}
-        {props.children}
+        {props.cover && <Cover content={props.cover} />}
+        <ContentUI>
+          {props.children}
+        </ContentUI>
       </CardUI>
     </CardProvider>
   )

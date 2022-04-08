@@ -27,10 +27,10 @@ export const ButtonUI = styled.button`
   ${({size, auto, rounded}) => {
     let sizes = {};
     if (size === "xs") sizes = {fs: 1, sp: 2, rd: "xs", wd: 2};
-    if (size === "sm") sizes = {fs: 2, sp: 3, rd: "sm", wd: 4};
-    if (size === "md") sizes = {fs: 3, sp: 4, rd: "md", wd: 6};
-    if (size === "lg") sizes = {fs: 3, sp: 4, rd: "md", wd: 8};
-    if (size === "xl") sizes = {fs: 4, sp: 5, rd: "lg", wd: 10};
+    else if (size === "sm") sizes = {fs: 2, sp: 3, rd: "sm", wd: 4};
+    else if (size === "lg") sizes = {fs: 3, sp: 4, rd: "md", wd: 8};
+    else if (size === "xl") sizes = {fs: 4, sp: 5, rd: "lg", wd: 10};
+    else sizes = {fs: 3, sp: 4, rd: "md", wd: 6};
     return `
       font-size: var(--ZUI-sizes_font_${sizes.fs});
       min-width: ${auto ? "auto" : "var(--ZUI-sizes_space_" + sizes.wd + ")"};
@@ -111,9 +111,9 @@ export const ButtonContentUI = styled.span`
   border-radius: ${({size}) => {
     if (size === "xs") return "var(--ZUI-sizes_radius_xs)";
     if (size === "sm") return "var(--ZUI-sizes_radius_sm)";
-    if (size === "md") return "var(--ZUI-sizes_radius_md)";
     if (size === "lg") return "var(--ZUI-sizes_radius_md)";
     if (size === "xl") return "var(--ZUI-sizes_radius_lg)";
+    return "var(--ZUI-sizes_radius_md)";
   }};
   :hover {
     ${({variant}) => variant === "shadow" && `background: transparent`}

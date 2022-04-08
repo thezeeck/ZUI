@@ -1,9 +1,20 @@
-// import { useCardContext } from "./context";
+import { CoverUI, CoverFigure, CoverCustomContent } from "./styles";
 
-export const Cover = props => {
-  // const { state } = useCardContext();
+export const Cover = ({ content }) => {
+  const setCover = () => {
+    if (typeof content === "string") return (
+      <CoverFigure>
+        <img src={content} alt="cover" />
+      </CoverFigure>
+    );
+    return (
+      <CoverCustomContent>
+        {content}
+      </CoverCustomContent>
+    )
+  }
   
   return (
-    <div>This is the cover</div>
+    <CoverUI>{setCover()}</CoverUI>
   )
 };

@@ -1,6 +1,7 @@
 export { Avatar } from "./components/Avatar";
 export { default as Grid } from "./components/Grid";
 export { default as Card } from "./components/Card";
+export { default as Tabs } from "./components/Tabs";
 export {
   darkTheme,
   lightTheme,

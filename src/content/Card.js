@@ -1,4 +1,4 @@
-import { Anchor, Card, Container, Grid } from "../ZUI";
+import { Anchor, Card, Container, Grid, Tabs } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
@@ -111,66 +111,90 @@ export const CardContent = () => (
       <Grid>
         <Grid.Item xs={4}>
           <Card cover={images.cover01}>
-            <Card.Header>
-              <h2>Some cool content</h2>
-              <h3>Big title</h3>
-            </Card.Header>
-            <Card.Body>
-              <p>Card content description</p>
+            <Card.Body >
+              <h3 style={{
+                fontSize: ".75rem",
+                opacity: .5,
+              }}>Some cool content</h3>
+              <h1 style={{
+                marginTop: 0,
+                fontSize: "3rem",
+              }}>Big title</h1>
             </Card.Body>
           </Card>
         </Grid.Item>
         <Grid.Item xs={4}>
           <Card cover="https://www.webivm.com/wp-content/uploads/2016/12/Free-Stock-Images.jpg">
-            <Card.Header>
-              <h2>Some cool content</h2>
-              <h3>Big title</h3>
-            </Card.Header>
-            <Card.Body>
-              <p>Card content description</p>
+            <Card.Body style={{ textAlign: "center", textShadow: "0px 0px 8px black" }}>
+              <h2>Big title</h2>
+              <h3>Medium sub title</h3>
             </Card.Body>
           </Card>
         </Grid.Item>
         <Grid.Item xs={4}>
-          <Card cover>
-            <Card.Header>
-              <h2>Some cool content</h2>
-              <h3>Big title</h3>
-            </Card.Header>
+          <Card cover={<div style={{
+            background: `linear-gradient(45deg, #d53369 0%, #daae51 100%)`,
+            height: "100%"
+          }}>
+            <img style={{
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "90%"
+            }} src={images.cover02} alt="cover"/>
+          </div>}>
             <Card.Body>
-              <p>Card content description</p>
+              <h2 style={{textAlign: "right", margin: "3rem 0 4rem auto", maxWidth: "50%"}}>Some cool title</h2>
             </Card.Body>
           </Card>
         </Grid.Item>
       </Grid>
-      <ExampleCode>
-          {`<Grid>
-  <Grid.Item>
-    <Card color="primary">
-      <p>Primary color Card</p>
-    </Card>
-  </Grid.Item>
-  <Grid.Item>
-    <Card color="secondary">
-      <p>Primary color Card</p>
-    </Card>
-  </Grid.Item>
-  <Grid.Item>
-    <Card color="success">
-      <p>Primary color Card</p>
-    </Card>
-  </Grid.Item>
-  <Grid.Item>
-    <Card color="warning">
-      <p>Primary color Card</p>
-    </Card>
-  </Grid.Item>
-  <Grid.Item>
-    <Card color="error">
-      <p>Primary color Card</p>
-    </Card>
-  </Grid.Item>
-</Grid>`}</ExampleCode>
+      <Tabs>
+        <Tabs.Tab title="Card 1">
+          <ExampleCode>
+            {`<Card cover={images.cover01}>
+  <Card.Body >
+    <h3 style={{
+      fontSize: ".75rem",
+      opacity: .5,
+    }}>Some cool content</h3>
+    <h1 style={{
+      marginTop: 0,
+      fontSize: "3rem",
+    }}>Big title</h1>
+  </Card.Body>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+        <Tabs.Tab title="Card 2">
+          <ExampleCode>
+            {`<Card cover="https://www.webivm.com/wp-content/uploads/2016/12/Free-Stock-Images.jpg">
+  <Card.Body style={{ textAlign: "center", textShadow: "0px 0px 8px black" }}>
+    <h2>Big title</h2>
+    <h3>Medium sub title</h3>
+  </Card.Body>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+        <Tabs.Tab title="Card 3">
+          <ExampleCode>
+            {`<Card cover={<div style={{
+  background: "linear-gradient(45deg, #d53369 0%, #daae51 100%)",
+  height: "100%"
+}}>
+  <img style={{
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    width: "90%"
+  }} src={images.cover02} alt="cover picture"/>
+</div>}>
+  <Card.Body>
+    <h2 style={{textAlign: "right", margin: "3rem 0 4rem auto", maxWidth: "50%"}}>
+      Some cool title
+    </h2>
+  </Card.Body>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+      </Tabs>
     </Container.Row>
     <Container.Row>
       <H2>Header component</H2>
@@ -212,40 +236,139 @@ export const CardContent = () => (
       <p>The <Code>Header</Code> and <Code>Footer</Code> components has 3 differents styles.</p>
     </Container.Row>
     <Container.Row>
-      <h3>Transparent</h3>
-      <Card>
-        <Card.Header>
-          Card title
-        </Card.Header>
-        Card content
-        <Card.Footer>
-          Card title
-        </Card.Footer>
-      </Card>      
+      <Grid>
+        <Grid.Item xs={4}>
+          <h3>Transparent</h3>
+          <Card>
+            <Card.Header>
+              Card title
+            </Card.Header>
+            <Card.Body>
+              Card content
+            </Card.Body>
+            <Card.Footer>
+              Card title
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={4}>
+          <h3>Bordered</h3>
+          <Card bordered>
+            <Card.Header>
+              Card title
+            </Card.Header>
+            <Card.Body>
+              Card content
+            </Card.Body>
+            <Card.Footer>
+              Card title
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={4}>
+          <h3>Ghost</h3>
+          <Card ghost>
+            <Card.Header>
+              Card title
+            </Card.Header>
+            <Card.Body>
+              Card content
+            </Card.Body>
+            <Card.Footer>
+              Card title
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={4}>
+          <Card cover={images.cover01}>
+            <Card.Header>
+              Card title
+            </Card.Header>
+            <Card.Body>
+              Card content
+            </Card.Body>
+            <Card.Footer>
+              Card title
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={4}>
+          <Card bordered cover={images.cover01}>
+            <Card.Header>
+              Card title
+            </Card.Header>
+            <Card.Body>
+              Card content
+            </Card.Body>
+            <Card.Footer>
+              Card title
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={4}>
+          <Card ghost cover={images.cover01}>
+            <Card.Header>
+              Card title
+            </Card.Header>
+            <Card.Body>
+              Card content
+            </Card.Body>
+            <Card.Footer>
+              Card title
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+      </Grid>
+      <Tabs>
+        <Tabs.Tab title="Transparent">
+          <ExampleCode>
+            {`<Card>
+  <Card.Header>
+    Card title
+  </Card.Header>
+  <Card.Body>
+    Card content
+  </Card.Body>
+  <Card.Footer>
+    Card title
+  </Card.Footer>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+        <Tabs.Tab title="Bordered">
+          <ExampleCode>
+            {`<Card bordered>
+  <Card.Header>
+    Card title
+  </Card.Header>
+  <Card.Body>
+    Card content
+  </Card.Body>
+  <Card.Footer>
+    Card title
+  </Card.Footer>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+        <Tabs.Tab title="Ghost">
+          <ExampleCode>
+            {`<Card ghost>
+  <Card.Header>
+    Card title
+  </Card.Header>
+  <Card.Body>
+    Card content
+  </Card.Body>
+  <Card.Footer>
+    Card title
+  </Card.Footer>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+      </Tabs>
     </Container.Row>
     <Container.Row>
-      <h3>Bordered</h3>
-      <Card bordered>
-        <Card.Header>
-          Card title
-        </Card.Header>
-        Card content
-        <Card.Footer>
-          Card title
-        </Card.Footer>
-      </Card>
+      
     </Container.Row>
     <Container.Row>
-      <h3>Ghost</h3>
-      <Card ghost>
-        <Card.Header>
-          Card title
-        </Card.Header>
-        Card content
-        <Card.Footer>
-          Card title
-        </Card.Footer>
-      </Card>
+      
     </Container.Row>
     <Container.Row>
       

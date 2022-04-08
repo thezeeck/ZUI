@@ -44,3 +44,33 @@ export const FooterUI = styled.footer`
     if (state.ghost) return `background-color: ${hexToRgba(theme.colors.gray_5, .05)}`
   }}
 `;
+
+export const CoverUI = styled.section`
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+`;
+
+export const ContentUI = styled.div`
+  z-index: 1;
+  position: relative;
+`;
+
+export const CoverFigure = styled.figure`
+  margin: 0;
+  line-height: 0;
+	height: 100%;
+	width: 100%;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`;
+
+export const CoverCustomContent = styled.div`
+  height: 100%;
+`;
