@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { hexToRgba } from "../../utils";
 
 export const CardUI = styled.div`
   padding: ${({gap}) => `var(--ZUI-sizes_spacing_${gap})`};
@@ -21,16 +22,25 @@ export const CardUI = styled.div`
     }
   }}
   ${({pointer}) => pointer && `cursor: pointer;`}
+  overflow: hidden;
+  position: relative;
 `;
 
 export const HeaderUI = styled.header`
   margin: ${({state}) => `calc(var(--ZUI-sizes_spacing_${state.gap}) * -1) calc(var(--ZUI-sizes_spacing_${state.gap}) * -1) var(--ZUI-sizes_spacing_${state.gap + 1})`};
   padding: ${({state}) => `var(--ZUI-sizes_spacing_${state.gap})`};
-  ${({state}) => state.bordered && `border-bottom: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${state.color}_3);`}
+  ${({state, theme}) => {
+    if (state.bordered) return `border-bottom: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${state.color}_3);`;
+    if (state.ghost) return `background-color: ${hexToRgba(theme.colors.gray_5, .05)}`
+  }}
+
 `;
 
 export const FooterUI = styled.footer`
   margin: ${({state}) => `var(--ZUI-sizes_spacing_${state.gap + 1}) calc(var(--ZUI-sizes_spacing_${state.gap}) * -1) calc(var(--ZUI-sizes_spacing_${state.gap}) * -1)`};
   padding: ${({state}) => `var(--ZUI-sizes_spacing_${state.gap})`};
-  ${({state}) => state.bordered && `border-top: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${state.color}_3);`}
+  ${({state, theme}) => {
+    if (state.bordered) return `border-top: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${state.color}_3);`;
+    if (state.ghost) return `background-color: ${hexToRgba(theme.colors.gray_5, .05)}`
+  }}
 `;

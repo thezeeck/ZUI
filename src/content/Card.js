@@ -1,7 +1,8 @@
-import { Anchor, Card, Container } from "../ZUI";
+import { Anchor, Card, Container, Grid } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
+import { images } from "../img";
 
 export const CardContent = () => (
   <Layout>
@@ -105,6 +106,73 @@ export const CardContent = () => (
 </Grid>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
+      <H2>Cover</H2>
+      <p>You can set some content as a background of the <Code>card</Code>, the <Code>cover</Code> property allows you to set an image or other component as background</p>
+      <Grid>
+        <Grid.Item xs={4}>
+          <Card cover={images.cover01}>
+            <Card.Header>
+              <h2>Some cool content</h2>
+              <h3>Big title</h3>
+            </Card.Header>
+            <Card.Body>
+              <p>Card content description</p>
+            </Card.Body>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={4}>
+          <Card cover="https://www.webivm.com/wp-content/uploads/2016/12/Free-Stock-Images.jpg">
+            <Card.Header>
+              <h2>Some cool content</h2>
+              <h3>Big title</h3>
+            </Card.Header>
+            <Card.Body>
+              <p>Card content description</p>
+            </Card.Body>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={4}>
+          <Card cover>
+            <Card.Header>
+              <h2>Some cool content</h2>
+              <h3>Big title</h3>
+            </Card.Header>
+            <Card.Body>
+              <p>Card content description</p>
+            </Card.Body>
+          </Card>
+        </Grid.Item>
+      </Grid>
+      <ExampleCode>
+          {`<Grid>
+  <Grid.Item>
+    <Card color="primary">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card color="secondary">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card color="success">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card color="warning">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+  <Grid.Item>
+    <Card color="error">
+      <p>Primary color Card</p>
+    </Card>
+  </Grid.Item>
+</Grid>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
       <H2>Header component</H2>
       <p>This component can be used for set a card title.</p>
       <Card>
@@ -142,6 +210,21 @@ export const CardContent = () => (
     <Container.Row>
       <H2>Header and Footer variants</H2>
       <p>The <Code>Header</Code> and <Code>Footer</Code> components has 3 differents styles.</p>
+    </Container.Row>
+    <Container.Row>
+      <h3>Transparent</h3>
+      <Card>
+        <Card.Header>
+          Card title
+        </Card.Header>
+        Card content
+        <Card.Footer>
+          Card title
+        </Card.Footer>
+      </Card>      
+    </Container.Row>
+    <Container.Row>
+      <h3>Bordered</h3>
       <Card bordered>
         <Card.Header>
           Card title
@@ -153,13 +236,16 @@ export const CardContent = () => (
       </Card>
     </Container.Row>
     <Container.Row>
-      
-    </Container.Row>
-    <Container.Row>
-      
-    </Container.Row>
-    <Container.Row>
-      
+      <h3>Ghost</h3>
+      <Card ghost>
+        <Card.Header>
+          Card title
+        </Card.Header>
+        Card content
+        <Card.Footer>
+          Card title
+        </Card.Footer>
+      </Card>
     </Container.Row>
     <Container.Row>
       

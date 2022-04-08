@@ -1,10 +1,12 @@
 import { HeaderUI } from "./styles";
 import { useCardContext } from "./context";
+import { useThemeContext } from "../Theme";
 
 export const Header = props => {
   const { state } = useCardContext();
-  if (state.bordered) console.log("bordered true");
+  const { theme } = useThemeContext();
+  
   return (
-    <HeaderUI {...props} state={state}>{props.children}</HeaderUI>
+    <HeaderUI {...props} state={state} theme={theme}>{props.children}</HeaderUI>
   )
 };
