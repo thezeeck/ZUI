@@ -514,63 +514,64 @@ export const CardContent = () => (
     <Container.Row>
       <H2>Props</H2>
       <p>
-        variant, color, cover, bordered, ghost, clickable, ghostColor, ghostOpacity, borderedWeigth, borderedColor
+        , , , , , borderedWeigth, borderedColor
       </p>
       <Table> 
         <Row
-          attribute="box"
+          attribute="bordered"
           type={<Code>boolean</Code>}
           values={<Code>true/false</Code>}
-          description="Change the display to inline-block"
+          description="Change the card styles"
           defaultValue={<Code>false</Code>} />
         <Row
-          attribute="decoration"
+          attribute="clickable"
           type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Adds animations to hover and active states"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="color"
+          type={<Code>string</Code>}
+          values={<Anchor href="#colors">colors</Anchor>}
+          description="Change the card style"
+          defaultValue={<Code>shadow</Code>} />
+        <Row
+          attribute="cover"
+          type={<><Code>string</Code> <Code>ReactNode</Code></>}
+          values="-"
+          description="Set the cover card section"
+          defaultValue="-" />
+        <Row
+          attribute="ghost"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Change the card styles"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="ghostColor"
+          type={<Code>string</Code>}
           values={<Code>true/false</Code>}
           description="Display the underline text only in the hover status"
           defaultValue={<Code>false</Code>} />
         <Row
-          attribute="href"
-          type={<Code>string</Code>}
-          values="-"
-          description="Link url"
-          defaultValue="-" />
-        <Row
-          attribute="icon"
-          type={<><Code>boolean</Code> <Code>string</Code></>}
-          values={<><Code>true/false</Code> <Anchor as={Link} to="/icons">Icons</Anchor></>}
-          description="Show an icon"
-          defaultValue={<Code>false</Code>} />
-        <Row
-          attribute="style"
-          type="-"
-          values="Any valid CSS rule"
-          description="Override Default CSS rules"
-          defaultValue="-" />
+          attribute="ghostOpacity"
+          type={<Code>number</Code>}
+          values="Any number between 0 and 1"
+          description="Change the Header and Footter opacity background"
+          defaultValue={<Code>.1</Code>} />
         <Row
           attribute="variant"
           type={<Code>string</Code>}
-          values={<Anchor href="#variantColors">variantColor</Anchor>}
+          values={<Anchor href="#variants">variants</Anchor>}
           description="Change the card style"
           defaultValue={<Code>shadow</Code>} />
       </Table>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Types</H2>
+      <Types title="Color cards" constName="variants" id="colors" />
+      <Types title="Card variants" constName="cardsVariants" id="variants" />
+      <Types title="Colors options" constName="allColors" id="colorOptions" />
     </Container.Row>
-    <Container.Row>
-      
-    </Container.Row>
-    
-    
-    
-    
-    
-    
-    
-    <H2>Types</H2>
-    <Types title="textColor options" constName="colors" id="anchorColors" />
-    <h3 id="icons">Icons</h3>
-    <Anchor as={Link} to="/icons">Icons</Anchor>
   </Layout>
 );
