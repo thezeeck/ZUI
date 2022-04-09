@@ -12,6 +12,8 @@ export const Card = props => {
       bordered: props.bordered,
       ghost: props.ghost,
       color: props.color,
+      ghostColor: props.ghostColor,
+      ghostOpacity: props.ghostOpacity,
     }}>
       <CardUI {...props} theme={theme}>
         {props.cover && <Cover content={props.cover} />}
@@ -33,4 +35,6 @@ Card.defaultProps = {
   color: "gray",
   bordered: false,
   ghost: false,
+  ghostColor: "gray_5",
+  ghostOpacity: .1,
 }

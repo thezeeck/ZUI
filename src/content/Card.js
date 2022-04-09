@@ -1,4 +1,4 @@
-import { Anchor, Card, Container, Grid, Tabs } from "../ZUI";
+import { Anchor, Card, Container, Grid, Tabs, Button } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
 import { Link } from "react-router-dom";
@@ -365,7 +365,195 @@ export const CardContent = () => (
       </Tabs>
     </Container.Row>
     <Container.Row>
-      
+      <H2>Clickable</H2>
+      <Grid>
+        <Grid.Item xs={3}>
+          <Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
+          cover={<div style={{
+            background: "var(--ZUI-gradients_primary_warning)",
+            height: "100%"
+          }}></div>}>
+            <Card.Body>
+              <div style={{height: "4rem"}}></div>
+            </Card.Body>
+            <Card.Footer>
+              <Container gap={0} justify="space-between" alignItems="center" flex>
+                <span>$10.00</span>
+                <Button auto variant="flat" color="success">Buy</Button>
+              </Container>
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={3}>
+        <Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
+          cover={<div style={{
+            background: "var(--ZUI-gradients_success_error)",
+            height: "100%"
+          }}></div>}>
+            <Card.Body>
+              <div style={{height: "4rem"}}></div>
+            </Card.Body>
+            <Card.Footer>
+              <Container gap={0} justify="space-between" alignItems="center" flex>
+                <span>$10.00</span>
+                <Button auto variant="flat" color="success">Buy</Button>
+              </Container>
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={3}>
+          <Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
+            cover={<div style={{
+              background: "var(--ZUI-gradients_primary_secondary)",
+              height: "100%"
+            }}></div>}>
+            <Card.Body>
+              <div style={{height: "4rem"}}></div>
+            </Card.Body>
+            <Card.Footer>
+              <Container gap={0} justify="space-between" alignItems="center" flex>
+                <span>$10.00</span>
+                <Button auto variant="flat" color="success">Buy</Button>
+              </Container>
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+        <Grid.Item xs={3}>
+          <Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
+            cover={<div style={{
+              background: "var(--ZUI-gradients_error_warning)",
+              height: "100%"
+            }}></div>}>
+            <Card.Body>
+              <div style={{height: "4rem"}}></div>
+            </Card.Body>
+            <Card.Footer>
+              <Container gap={0} justify="space-between" alignItems="center" flex>
+                <span>$10.00</span>
+                <Button auto variant="flat" color="success">Buy</Button>
+              </Container>
+            </Card.Footer>
+          </Card>
+        </Grid.Item>
+      </Grid>
+      <Tabs>
+        <Tabs.Tab title="Card 1">
+          <ExampleCode>
+            {`<Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
+  cover={<div style={{
+    background: "var(--ZUI-gradients_primary_warning)",
+    height: "100%"
+  }}></div>}>
+  <Card.Body>
+    <div style={{height: "4rem"}}></div>
+  </Card.Body>
+  <Card.Footer>
+    <Container gap={0} justify="space-between" alignItems="center" flex>
+      <span>$10.00</span>
+      <Button auto variant="flat" color="success">Buy</Button>
+    </Container>
+  </Card.Footer>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+        <Tabs.Tab title="Card 2">
+          <ExampleCode>
+            {`<Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
+  cover={<div style={{
+    background: "var(--ZUI-gradients_success_error)",
+    height: "100%"
+  }}></div>}>
+  <Card.Body>
+    <div style={{height: "4rem"}}></div>
+  </Card.Body>
+  <Card.Footer>
+    <Container gap={0} justify="space-between" alignItems="center" flex>
+      <span>$10.00</span>
+      <Button auto variant="flat" color="success">Buy</Button>
+    </Container>
+  </Card.Footer>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+        <Tabs.Tab title="Card 3">
+          <ExampleCode>
+            {`<Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
+  cover={<div style={{
+    background: "var(--ZUI-gradients_primary_secondary)",
+    height: "100%"
+  }}></div>}>
+  <Card.Body>
+    <div style={{height: "4rem"}}></div>
+  </Card.Body>
+  <Card.Footer>
+    <Container gap={0} justify="space-between" alignItems="center" flex>
+      <span>$10.00</span>
+      <Button auto variant="flat" color="success">Buy</Button>
+    </Container>
+  </Card.Footer>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+        <Tabs.Tab title="Card 4">
+          <ExampleCode>
+            {`<Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
+  cover={<div style={{
+    background: "var(--ZUI-gradients_error_warning)",
+    height: "100%"
+  }}></div>}>
+  <Card.Body>
+    <div style={{height: "4rem"}}></div>
+  </Card.Body>
+  <Card.Footer>
+    <Container gap={0} justify="space-between" alignItems="center" flex>
+      <span>$10.00</span>
+      <Button auto variant="flat" color="success">Buy</Button>
+    </Container>
+  </Card.Footer>
+</Card>`}</ExampleCode>
+        </Tabs.Tab>
+      </Tabs>
+    </Container.Row>
+    <Container.Row>
+      <H2>Props</H2>
+      <p>
+        variant, color, cover, bordered, ghost, clickable, ghostColor, ghostOpacity, borderedWeigth, borderedColor
+      </p>
+      <Table> 
+        <Row
+          attribute="box"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Change the display to inline-block"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="decoration"
+          type={<Code>boolean</Code>}
+          values={<Code>true/false</Code>}
+          description="Display the underline text only in the hover status"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="href"
+          type={<Code>string</Code>}
+          values="-"
+          description="Link url"
+          defaultValue="-" />
+        <Row
+          attribute="icon"
+          type={<><Code>boolean</Code> <Code>string</Code></>}
+          values={<><Code>true/false</Code> <Anchor as={Link} to="/icons">Icons</Anchor></>}
+          description="Show an icon"
+          defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="style"
+          type="-"
+          values="Any valid CSS rule"
+          description="Override Default CSS rules"
+          defaultValue="-" />
+        <Row
+          attribute="variant"
+          type={<Code>string</Code>}
+          values={<Anchor href="#variantColors">variantColor</Anchor>}
+          description="Change the card style"
+          defaultValue={<Code>shadow</Code>} />
+      </Table>
     </Container.Row>
     <Container.Row>
       
@@ -373,97 +561,13 @@ export const CardContent = () => (
     <Container.Row>
       
     </Container.Row>
-    <Container.Row>
-      
-    </Container.Row>
     
     
     
     
     
-    <H2>Variants</H2>
-    <h3>Underline</h3>
-    <p>
-      <Anchor href="#" decoration>Lorem ipsum dolor sit amet (Decoration)</Anchor>
-    </p>
-    <p>
-      <Anchor href="#" decoration textColor="secondary">Lorem ipsum dolor sit amet (Decoration)</Anchor>
-    </p>
-    <ExampleCode>{`<p>
-  <Anchor href="#" decoration>
-    Lorem ipsum dolor sit amet (Decoration)
-  </Anchor>
-</p>
-<p>
-  <Anchor href="#" decoration textColor="secondary">
-    Lorem ipsum dolor sit amet (Decoration)
-  </Anchor>
-</p>`}</ExampleCode>
-    <h3>Block</h3>
-    <p>
-      <Anchor href="#" box textColor="success">Lorem ipsum dolor sit amet (Box)</Anchor>
-    </p>
-    <p>
-      <Anchor href="#" box textColor="warning">Lorem ipsum dolor sit amet (Box)</Anchor>
-    </p>
-    <ExampleCode>{`<Anchor href="#" box textColor="success">
-  Lorem ipsum dolor sit amet (Box)
-</Anchor>
-<Anchor href="#" box textColor="warning">
-  Lorem ipsum dolor sit amet (Box)
-</Anchor>`}</ExampleCode>
-    <H2>Icons</H2>
-    <p>
-      <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
-    </p>
-    <p>
-      <Anchor href="#" icon="back">Lorem ipsum dolor sit amet (Icon back)</Anchor>
-    </p>
-    <ExampleCode>{`<Anchor href="#" icon>
-  Lorem ipsum dolor sit amet (Icon)
-</Anchor>
-<Anchor href="#" icon="back">
-  Lorem ipsum dolor sit amet (Icon back)
-</Anchor>`}</ExampleCode>
-    <H2>Props</H2>
-    <Table> 
-      <Row
-        attribute="box"
-        type={<Code>boolean</Code>}
-        values={<Code>true/false</Code>}
-        description="Change the display to inline-block"
-        defaultValue={<Code>false</Code>} />
-      <Row
-        attribute="decoration"
-        type={<Code>boolean</Code>}
-        values={<Code>true/false</Code>}
-        description="Display the underline text only in the hover status"
-        defaultValue={<Code>false</Code>} />
-      <Row
-        attribute="href"
-        type={<Code>string</Code>}
-        values="-"
-        description="Link url"
-        defaultValue="-" />
-      <Row
-        attribute="icon"
-        type={<><Code>boolean</Code> <Code>string</Code></>}
-        values={<><Code>true/false</Code> <Anchor as={Link} to="/icons">Icons</Anchor></>}
-        description="Show an icon"
-        defaultValue={<Code>false</Code>} />
-      <Row
-        attribute="style"
-        type="-"
-        values="Any valid CSS rule"
-        description="Override Default CSS rules"
-        defaultValue="-" />
-      <Row
-        attribute="textColor"
-        type={<Code>string</Code>}
-        values={<Anchor href="#anchorColors">LinkColors</Anchor>}
-        description="Change font color"
-        defaultValue={<Code>inherit</Code>} />
-    </Table>
+    
+    
     <H2>Types</H2>
     <Types title="textColor options" constName="colors" id="anchorColors" />
     <h3 id="icons">Icons</h3>

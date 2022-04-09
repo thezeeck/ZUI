@@ -24,6 +24,13 @@ export const CardUI = styled.div`
   ${({pointer}) => pointer && `cursor: pointer;`}
   overflow: hidden;
   position: relative;
+  transition: all var(--ZUI-transitions_fast) ease;
+
+  &:hover {
+    ${({clickable}) => clickable && `
+      transform: translate(var(--ZUI-sizes_spacing_0), calc(var(--ZUI-sizes_spacing_2) * -1));
+      cursor: pointer;`}
+  }
 `;
 
 export const HeaderUI = styled.header`
@@ -31,7 +38,7 @@ export const HeaderUI = styled.header`
   padding: ${({state}) => `var(--ZUI-sizes_spacing_${state.gap})`};
   ${({state, theme}) => {
     if (state.bordered) return `border-bottom: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${state.color}_3);`;
-    if (state.ghost) return `background-color: ${hexToRgba(theme.colors.gray_5, .05)}`
+    if (state.ghost) return `background-color: ${hexToRgba(theme.colors[state.ghostColor], state.ghostOpacity)}`
   }}
 
 `;
@@ -41,7 +48,7 @@ export const FooterUI = styled.footer`
   padding: ${({state}) => `var(--ZUI-sizes_spacing_${state.gap})`};
   ${({state, theme}) => {
     if (state.bordered) return `border-top: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${state.color}_3);`;
-    if (state.ghost) return `background-color: ${hexToRgba(theme.colors.gray_5, .05)}`
+    if (state.ghost) return `background-color: ${hexToRgba(theme.colors[state.ghostColor], state.ghostOpacity)}`
   }}
 `;
 

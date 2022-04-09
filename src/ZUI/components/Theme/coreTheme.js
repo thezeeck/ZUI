@@ -151,5 +151,30 @@ export const core = {
     success: "linear-gradient(135deg, var(--ZUI-colors_success_3) 0%, var(--ZUI-colors_success_4) 100%)",
     warning: "linear-gradient(135deg, var(--ZUI-colors_warning_3) 0%, var(--ZUI-colors_warning_4) 100%)",
     error: "linear-gradient(135deg, var(--ZUI-colors_error_3) 0%, var(--ZUI-colors_error_4) 100%)",
+
+    primary_success: "linear-gradient(45deg, var(--ZUI-colors_primary) 0%, var(--ZUI-colors_success_4) 100%)",
+    primary_secondary: "linear-gradient(45deg, var(--ZUI-colors_primary) 0%, var(--ZUI-colors_secondary_4) 100%)",
+    primary_warning: "linear-gradient(45deg, var(--ZUI-colors_primary) 0%, var(--ZUI-colors_warning_4) 100%)",
+    primary_error: "linear-gradient(45deg, var(--ZUI-colors_primary) 0%, var(--ZUI-colors_error_4) 100%)",
+
+    secondary_primary: "linear-gradient(45deg, var(--ZUI-colors_secondary) 0%, var(--ZUI-colors_primary_4) 100%)",
+    secondary_success: "linear-gradient(45deg, var(--ZUI-colors_secondary) 0%, var(--ZUI-colors_success_4) 100%)",
+    secondary_warning: "linear-gradient(45deg, var(--ZUI-colors_secondary) 0%, var(--ZUI-colors_warning_4) 100%)",
+    secondary_error: "linear-gradient(45deg, var(--ZUI-colors_secondary) 0%, var(--ZUI-colors_error_4) 100%)",
+    
+    success_primary: "linear-gradient(45deg, var(--ZUI-colors_success) 0%, var(--ZUI-colors_primary_4) 100%)",
+    success_secondary: "linear-gradient(45deg, var(--ZUI-colors_success) 0%, var(--ZUI-colors_secondary_4) 100%)",
+    success_warning: "linear-gradient(45deg, var(--ZUI-colors_success) 0%, var(--ZUI-colors_warning_4) 100%)",
+    success_error: "linear-gradient(45deg, var(--ZUI-colors_success) 0%, var(--ZUI-colors_error_4) 100%)",
+    
+    warning_primary: "linear-gradient(45deg, var(--ZUI-colors_warning) 0%, var(--ZUI-colors_primary_4) 100%)",
+    warning_secondary: "linear-gradient(45deg, var(--ZUI-colors_warning) 0%, var(--ZUI-colors_secondary_4) 100%)",
+    warning_success: "linear-gradient(45deg, var(--ZUI-colors_warning) 0%, var(--ZUI-colors_success_4) 100%)",
+    warning_error: "linear-gradient(45deg, var(--ZUI-colors_warning) 0%, var(--ZUI-colors_error_4) 100%)",
+
+    error_primary: "linear-gradient(45deg, var(--ZUI-colors_error) 0%, var(--ZUI-colors_primary_4) 100%)",
+    error_secondary: "linear-gradient(45deg, var(--ZUI-colors_error) 0%, var(--ZUI-colors_secondary_4) 100%)",
+    error_success: "linear-gradient(45deg, var(--ZUI-colors_error) 0%, var(--ZUI-colors_success_4) 100%)",
+    error_warning: "linear-gradient(45deg, var(--ZUI-colors_error) 0%, var(--ZUI-colors_warning_4) 100%)",
   }
 }

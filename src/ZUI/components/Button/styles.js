@@ -23,7 +23,7 @@ export const ButtonUI = styled.button`
   display: inline-block;
   border: ${({color}) => /gradient/g.test(color) ? "0 none" : "var(--ZUI-sizes_border_sm) solid"};
   padding: 0;
-  cursor: ${({disabled}) => disabled ? "not-allowed" : "pointer"};
+  cursor: ${({disabled, loading}) => disabled || loading ? "not-allowed" : "pointer"};
   ${({size, auto, rounded}) => {
     let sizes = {};
     if (size === "xs") sizes = {fs: 1, sp: 2, rd: "xs", wd: 2};
@@ -82,7 +82,7 @@ export const ButtonUI = styled.button`
     box-shadow: var(--ZUI-shadows_${color.replace("gradients_", "")}_sm) ;
   `};
 
-  :hover {
+  &:hover {
     ${({disabled, loading, variant, color, theme}) => {
       const colors = defineColors({color, theme, disabled, loading});
       if (disabled || loading ) return "opacity: 1;";
@@ -96,6 +96,12 @@ export const ButtonUI = styled.button`
         `
       }
       return "opacity: .8;";
+    }}
+  }
+
+  &:active {
+    ${({disabled, loading}) => {
+      if (!disabled && !loading ) return "transform: scale(.9);";
     }}
   }
 `;

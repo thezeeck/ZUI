@@ -148,54 +148,58 @@ export const ButtonContent = () => (
       <H2>Rounded</H2>
       <p>The <Code>rounded</Code> property change the radius angles.</p>
       <p>
-        <Button margin={2} color="gradients_secondary" rounded>filled</Button>
+        <Button color="gradients_secondary" rounded>filled</Button>
       </p>
       <p>
-        <Button margin={2} variant="outlined" color="success" rounded>outlined</Button>
+        <Button variant="outlined" color="success" rounded>outlined</Button>
       </p>
       <p>
-        <Button margin={2} variant="flat" color="warning" rounded>text</Button>
+        <Button variant="flat" color="warning" rounded>text</Button>
       </p>
       <p>
-        <Button margin={2} variant="shadow" color="error" rounded>text</Button>
+        <Button variant="shadow" color="error" rounded>text</Button>
       </p>
       <ExampleCode>{`<p>
-  <Button color="primary" loading={1}>Primary</Button>
-  <Button color="secondary" loading={2}>Secondary</Button>
-  <Button color="success" loading={3}>Success</Button>
-  <Button color="warning" loading={4}>Warning</Button>
-  <Button color="error" loading={5}>Error</Button>
+  <Button color="gradients_secondary" rounded>filled</Button>
+  <Button variant="outlined" color="success" rounded>outlined</Button>
+  <Button variant="flat" color="warning" rounded>text</Button>
+  <Button variant="shadow" color="error" rounded>text</Button>
 </p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
       <H2>Variants</H2>
       <p>The <Code>Button</Code> component has 5 different styles.</p>
       <p>
-        <Button margin={2}>filled</Button>
+        <Button>filled</Button>
         <Button margin={2} color="gradients_secondary">filled</Button>
       </p>
       <p>
-        <Button margin={2} variant="outlined" color="secondary">outlined</Button>
-        <Button margin={2} variant="outlined" color="gradients_success">outlined</Button>
+        <Button variant="outlined" color="secondary">outlined</Button>
+        <Button variant="outlined" color="gradients_success">outlined</Button>
       </p>
       <p>
-        <Button margin={2} variant="text" color="success">text</Button>
-        <Button margin={2} variant="text" color="gradients_warning">text</Button>
+        <Button variant="text" color="success">text</Button>
+        <Button variant="text" color="gradients_warning">text</Button>
       </p>
       <p>
-        <Button margin={2} variant="flat" color="success">text</Button>
-        <Button margin={2} variant="flat" color="gradients_warning">text</Button>
+        <Button variant="flat" color="success">text</Button>
+        <Button variant="flat" color="gradients_warning">text</Button>
       </p>
       <p>
-        <Button margin={2} variant="shadow" color="warning">text</Button>
-        <Button margin={2} variant="shadow" color="gradients_error">text</Button>
+        <Button variant="shadow" color="warning">text</Button>
+        <Button variant="shadow" color="gradients_error">text</Button>
       </p>
       <ExampleCode>{`<p>
-  <Button color="primary" loading={1}>Primary</Button>
-  <Button color="secondary" loading={2}>Secondary</Button>
-  <Button color="success" loading={3}>Success</Button>
-  <Button color="warning" loading={4}>Warning</Button>
-  <Button color="error" loading={5}>Error</Button>
+  <Button>filled</Button>
+  <Button color="gradients_secondary">filled</Button>
+  <Button variant="outlined" color="secondary">outlined</Button>
+  <Button variant="outlined" color="gradients_success">outlined</Button>
+  <Button variant="text" color="success">text</Button>
+  <Button variant="text" color="gradients_warning">text</Button>
+  <Button variant="flat" color="success">text</Button>
+  <Button variant="flat" color="gradients_warning">text</Button>
+  <Button variant="shadow" color="warning">text</Button>
+  <Button variant="shadow" color="gradients_error">text</Button>
 </p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
