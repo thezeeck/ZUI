@@ -6,10 +6,10 @@ export const Avatar = props => {
   const { theme } = useThemeContext();
   return (
     <AvatarUI {...props} textColor={props.textColor} theme={theme}>
-      <Background theme={theme} {...props}></Background>
-      {props.imgSrc &&
+      <Background theme={theme} bg_color={props.bg_color} bordered={props.bordered} img_src={props.img_src}></Background>
+      {props.img_src &&
         <figure>
-          <img src={props.imgSrc} alt={props.textAlt}/>
+          <img src={props.img_src} alt={props.textAlt}/>
         </figure>}
       {props.text && <span className="text" {...props}>{props.text}</span>}
       {props.icon !== "" && <span className="text icon" {...props}><Icon name={props.icon}/></span>}
@@ -19,13 +19,9 @@ export const Avatar = props => {
 
 Avatar.defaultProps = {
   size: "md",
-  bordered: false,
-  zoom: false,
-  squared: false,
   icon: "",
   // group: false,
-  borderWeight: "md",
-  pointer: false,
-  textColor: "inherit",
+  border_weight: "md",
+  text_color: "inherit",
   transition: "regular"
 }

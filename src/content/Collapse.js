@@ -7,47 +7,51 @@ import { img } from "../constant";
 
 export const CollapseContent = () => (
     <Layout>
-      <H1>Collapse</H1>
-      <p>
-        The <Code>Collapse</Code> component allows the user to show and hide portions of content in the application.
-      </p>
-      <ExampleCode lang='javascript'>
-        {`import { Collapse } from "zeeck-ui";`}
-      </ExampleCode>
-      <H2>Basic collapse</H2>
-      <p>
-        All <Code>Collapse</Code> component needs at least one <Code>Collapse.Item</Code>.
-      </p>
-      <Container>
-        <Collapse>
-          <Collapse.Item title="Title A">
-            1 Lorem ipsum dolor sit amet
-          </Collapse.Item>
-        </Collapse>
-      </Container>
-      <ExampleCode>
-        {`<Collapse>
+      <Container.Row>
+        <H1>Collapse</H1>
+        <p>
+          The <Code>Collapse</Code> component allows the user to show and hide portions of content in the application.
+        </p>
+        <ExampleCode lang='javascript'>
+          {`import { Collapse } from "zeeck-ui";`}
+        </ExampleCode>
+      </Container.Row>
+      <Container.Row>
+        <H2>Basic collapse</H2>
+        <p>
+          All <Code>Collapse</Code> component needs at least one <Code>Collapse.Item</Code>.
+        </p>
+        <Container>
+          <Collapse>
+            <Collapse.Item title="Title A">
+              1 Lorem ipsum dolor sit amet
+            </Collapse.Item>
+          </Collapse>
+        </Container>
+        <ExampleCode>
+          {`<Collapse>
   <Collapse.Item title="Title A">
     ... your content ...
   </Collapse.Item>
-</Collapse>`}
-      </ExampleCode>
-      <H2>Disable accordion property</H2>
-      <p>If you disable the <Code>accordion</Code> property you can show multiple items at the same time</p>
-      <Container>
-        <Collapse accordion={false}>
-          <Collapse.Item title="Title A">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Collapse.Item>
-          <Collapse.Item title="Title B">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Collapse.Item>
-          <Collapse.Item title="Title C">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Collapse.Item>
-        </Collapse>
-      </Container>
-      <ExampleCode>
+</Collapse>`}</ExampleCode>
+      </Container.Row>
+      <Container.Row>
+        <H2>Disable accordion property</H2>
+        <p>If you disable the <Code>accordion</Code> property you can show multiple items at the same time</p>
+        <Container>
+          <Collapse accordion={false}>
+            <Collapse.Item title="Title A">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Collapse.Item>
+            <Collapse.Item title="Title B">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Collapse.Item>
+            <Collapse.Item title="Title C">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Collapse.Item>
+          </Collapse>
+        </Container>
+        <ExampleCode>
         {`<Collapse accordion={false}>
   <Collapse.Item title="Title A">
     ... your content ...
@@ -58,25 +62,26 @@ export const CollapseContent = () => (
   <Collapse.Item title="Title C">
     ... your content ...
   </Collapse.Item>
-</Collapse>`}
-      </ExampleCode>
-      <H2>Initial expanded</H2>
-      <p>You can set a <Code>expanded</Code> item by default.</p>
-      <Container>
-        <Collapse expanded={1}>
-          <Collapse.Item title="Title A">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Collapse.Item>
-          <Collapse.Item title="Title B">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Collapse.Item>
-          <Collapse.Item title="Title C">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Collapse.Item>
-        </Collapse>
-      </Container>
-      <ExampleCode>
-        {`<Collapse expanded={1}>
+</Collapse>`}</ExampleCode>
+      </Container.Row>
+      <Container.Row>
+        <H2>Initial expanded</H2>
+        <p>You can set a <Code>expanded</Code> item by default.</p>
+        <Container>
+          <Collapse expanded={1}>
+            <Collapse.Item title="Title A">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Collapse.Item>
+            <Collapse.Item title="Title B">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Collapse.Item>
+            <Collapse.Item title="Title C">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </Collapse.Item>
+          </Collapse>
+        </Container>
+        <ExampleCode>
+          {`<Collapse expanded={1}>
   <Collapse.Item title="Title A">
     ... your content ...
   </Collapse.Item>
@@ -86,8 +91,24 @@ export const CollapseContent = () => (
   <Collapse.Item title="Title C">
     ... your content ...
   </Collapse.Item>
-</Collapse>`}
-      </ExampleCode>
+</Collapse>`}</ExampleCode>
+      </Container.Row>
+      <Container.Row>
+        
+      </Container.Row>
+      <Container.Row>
+        
+      </Container.Row>
+      <Container.Row>
+        
+      </Container.Row>
+      <Container.Row>
+        
+      </Container.Row>
+      
+      
+      
+      
       <H2>Subtitle</H2>
       <p>You can set a <Code>subtitle</Code> that will appear below the title.</p>
       <Container>
@@ -223,7 +244,7 @@ export const CollapseContent = () => (
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Quis ipsum suspendisse ultrices gravida dictum. Amet mattis vulputate enim nulla. Gravida arcu ac tortor dignissim convallis aenean et. Arcu non sodales neque sodales ut. Nam libero justo laoreet sit amet cursus sit amet. Senectus et netus et malesuada fames. Leo a diam sollicitudin tempor id. Amet justo donec enim diam vulputate ut pharetra sit amet. Fermentum iaculis eu non diam. Praesent semper feugiat nibh sed.
             </p>
           </Collapse.Item>
-          <Collapse.Item title="Title A" subTitle="Subtitle A" sideContent={<Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="secondary" zoom squared pointer/>}>
+          <Collapse.Item title="Title A" subTitle="Subtitle A" sideContent={<Avatar img_src={img.avatar01} bordered border_weight="sm" bg_color="secondary" zoom squared pointer/>}>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor purus. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Quis ipsum suspendisse ultrices gravida dictum. Amet mattis vulputate enim nulla. Gravida arcu ac tortor dignissim convallis aenean et. Arcu non sodales neque sodales ut. Nam libero justo laoreet sit amet cursus sit amet. Senectus et netus et malesuada fames. Leo a diam sollicitudin tempor id. Amet justo donec enim diam vulputate ut pharetra sit amet. Fermentum iaculis eu non diam. Praesent semper feugiat nibh sed.
             </p>
@@ -237,7 +258,7 @@ export const CollapseContent = () => (
       ... your content ...
     </p>
   </Collapse.Item>
-  <Collapse.Item title="Title A" subTitle="Subtitle A" sideContent={<Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="secondary" zoom squared pointer/>}>
+  <Collapse.Item title="Title A" subTitle="Subtitle A" sideContent={<Avatar img_src={img.avatar01} bordered border_weight="sm" bg_color="secondary" zoom squared pointer/>}>
     <p>
       ... your content ...
     </p>

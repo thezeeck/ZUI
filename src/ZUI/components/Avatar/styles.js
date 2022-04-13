@@ -44,11 +44,11 @@ export const AvatarUI = styled.span`
       object-fit: cover;
     }
 
-    ${({bordered, borderWeight}) => bordered ? `
-      width: calc(100% - (var(--ZUI-sizes_border_${borderWeight}) * 2));
-      height: calc(100% - (var(--ZUI-sizes_border_${borderWeight}) * 2));
+    ${({bordered, border_weight}) => bordered ? `
+      width: calc(100% - (var(--ZUI-sizes_border_${border_weight}) * 2));
+      height: calc(100% - (var(--ZUI-sizes_border_${border_weight}) * 2));
       border: .125rem solid var(--ZUI-colors_background);
-      margin: var(--ZUI-sizes_border_${borderWeight});
+      margin: var(--ZUI-sizes_border_${border_weight});
     ` : `
       width: 100%;
       height: 100%;
@@ -85,8 +85,8 @@ export const AvatarUI = styled.span`
 `;
 
 export const Background = styled.span`
-  background: ${({bgColor, theme, bordered, imgSrc}) => 
-    !bordered && imgSrc ? "transparent" : bgColor ? gradientOrColor(bgColor) : hexToRgba(theme.colors.text, .1)};
+  background: ${({bg_color, theme, bordered, img_src}) => 
+    !bordered && img_src ? "transparent" : bg_color ? gradientOrColor(bg_color) : hexToRgba(theme.colors.text, .1)};
   display: block;
   height: 100%;
   width: 100%;
