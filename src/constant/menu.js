@@ -4,6 +4,7 @@ import { AvatarContent } from "../content/Avatar";
 import { ButtonContent } from "../content/Button";
 import { CollapseContent } from "../content/Collapse";
 import { CardContent } from "../content/Card";
+import { InputContent } from "../content/Input";
 
 export const menu = [
   {
@@ -44,10 +45,15 @@ export const menu = [
         path: "/collapse",
         component: CollapseContent
       },
+      {
+        name: "Input",
+        path: "/input",
+        component: InputContent
+      }
       // "Button group",
       // "Pagination",
       // "Icons",
-      // "Input",
+      // "",
       // "Autocomplete",
       // "Textarea",
       // "Checkbox",

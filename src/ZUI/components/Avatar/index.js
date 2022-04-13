@@ -11,8 +11,8 @@ export const Avatar = props => {
         <figure>
           <img src={props.img_src} alt={props.textAlt}/>
         </figure>}
-      {props.text && <span className="text" {...props}>{props.text}</span>}
-      {props.icon !== "" && <span className="text icon" {...props}><Icon name={props.icon}/></span>}
+      {props.text && <span className="text">{props.text}</span>}
+      {props.icon !== "" && <span className="text icon"><Icon name={props.icon}/></span>}
     </AvatarUI>
   )
 }
