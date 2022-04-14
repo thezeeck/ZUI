@@ -39,7 +39,7 @@ export const MainComponent = () => {
       <p>Then, you can use those components in your project like:</p>
       <ExampleCode>{`<Grid.Container>
   <Grid.Item>
-    <Avatar text="OP" bgColor="primary" />
+    <Avatar text="OP" bg_color="primary" />
   </Grid.Item>
   <Grid.Item>
     <Anchor href="#" box>

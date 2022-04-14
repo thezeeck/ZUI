@@ -29,14 +29,11 @@ export const Card = props => {
 
 Card.defaultProps = {
   radius: "md",
-  imgSrc: "",
+  img_src: "",
   textAlt: "",
-  pointer: false,
   variant: "shadow",
   gap: 4,
   color: "gray",
-  bordered: false,
-  ghost: false,
   ghostColor: "gray_5",
   ghostOpacity: .1,
   borderedWeigth: "sm",

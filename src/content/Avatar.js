@@ -18,7 +18,7 @@ export const AvatarContent = () => (
     <Container.Row>
       <H2>Default</H2>
       <p>
-        The default Avatar can be used by passing an image url (<Code>imgSrc</Code>), text (<Code>text</Code>) or an icon (<Code>icon</Code>) .
+        The default Avatar can be used by passing an image url (<Code>img_src</Code>), text (<Code>text</Code>) or an icon (<Code>icon</Code>) .
       </p>
       <p>
         <Avatar text="JS" />
@@ -34,36 +34,36 @@ export const AvatarContent = () => (
       <p>The <Code>Avatar</Code> component has 5 different sizes.</p>
       <Grid>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} size="xs" />
+          <Avatar img_src={img.avatar01} size="xs" />
         </Grid.Item>
         <Grid.Item>
           <Avatar text="JS" size="sm" />
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} size="md" />
+          <Avatar img_src={img.avatar01} size="md" />
         </Grid.Item>
         <Grid.Item>
           <Avatar text="UI" size="lg" />
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} size="xl" />
+          <Avatar img_src={img.avatar01} size="xl" />
         </Grid.Item>
       </Grid>
       <ExampleCode>{`<Grid>
   <Grid.Item>
-    <Avatar imgSrc="img.jpg" size="xs" />
+    <Avatar img_src="img.jpg" size="xs" />
   </Grid.Item>
   <Grid.Item>
     <Avatar text="JS" size="sm" />
   </Grid.Item>
   <Grid.Item>
-    <Avatar imgSrc="img.jpg" size="md" />
+    <Avatar img_src="img.jpg" size="md" />
   </Grid.Item>
   <Grid.Item>
     <Avatar text="UI" size="lg" />
   </Grid.Item>
   <Grid.Item>
-    <Avatar imgSrc="img.jpg" size="xl" />
+    <Avatar img_src="img.jpg" size="xl" />
   </Grid.Item>
 </Grid>`}</ExampleCode>
     </Container.Row>
@@ -72,98 +72,98 @@ export const AvatarContent = () => (
       <p>The <Code>color</Code> property change the border and background colors.</p>
       <Grid>
         <Grid.Item>
-          <Avatar text="OP" bgColor="primary" />
+          <Avatar text="OP" bg_color="primary" />
         </Grid.Item>
         <Grid.Item>
-          <Avatar text="MN" bgColor="secondary" />
+          <Avatar text="MN" bg_color="secondary" />
         </Grid.Item>
         <Grid.Item>
-          <Avatar text="GA" bgColor="success" />
+          <Avatar text="GA" bg_color="success" />
         </Grid.Item>
         <Grid.Item>
-          <Avatar text="WM" bgColor="warning" />
+          <Avatar text="WM" bg_color="warning" />
         </Grid.Item>
         <Grid.Item>
-          <Avatar text="DC" bgColor="error" />
+          <Avatar text="DC" bg_color="error" />
         </Grid.Item>
         <Grid.Item>
-          <Avatar text="DC" bgColor="gradients_primary" />
+          <Avatar text="DC" bg_color="gradients_primary" />
         </Grid.Item>
       </Grid>
       <ExampleCode>{`<Grid>
   <Grid.Item>
-    <Avatar text="OP" bgColor="primary" />
+    <Avatar text="OP" bg_color="primary" />
   </Grid.Item>
   <Grid.Item>
-    <Avatar text="MN" bgColor="secondary" />
+    <Avatar text="MN" bg_color="secondary" />
   </Grid.Item>
   <Grid.Item>
-    <Avatar text="GA" bgColor="success" />
+    <Avatar text="GA" bg_color="success" />
   </Grid.Item>
   <Grid.Item>
-    <Avatar text="WM" bgColor="warning" />
+    <Avatar text="WM" bg_color="warning" />
   </Grid.Item>
   <Grid.Item>
-    <Avatar text="DC" bgColor="error" />
+    <Avatar text="DC" bg_color="error" />
   </Grid.Item>
   <Grid.Item>
-    <Avatar text="DC" bgColor="error" />
+    <Avatar text="DC" bg_color="error" />
   </Grid.Item>
   <Grid.Item>
-    <Avatar text="DC" bgColor="gradient_primary" />
+    <Avatar text="DC" bg_color="gradient_primary" />
   </Grid.Item>
 </Grid>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
       <H2>Border</H2>
-      <p>You can set a border with the <Code>bordered</Code> property and change the weight with the <Code>borderWeight</Code>, but this feature is only for avatars with images.</p>
+      <p>You can set a border with the <Code>bordered</Code> property and change the weight with the <Code>border_weight</Code>, but this feature is only for avatars with images.</p>
       <Grid>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} bordered borderWeight="xs" bgColor="primary"/>
+          <Avatar img_src={img.avatar01} bordered border_weight="xs" bg_color="primary"/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="primary"/>
+          <Avatar img_src={img.avatar01} bordered border_weight="sm" bg_color="primary"/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} bordered borderWeight="md" bgColor="primary"/>
+          <Avatar img_src={img.avatar01} bordered border_weight="md" bg_color="primary"/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} bordered borderWeight="lg" bgColor="primary"/>
+          <Avatar img_src={img.avatar01} bordered border_weight="lg" bg_color="primary"/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} bordered borderWeight="xl" bgColor="gradients_warning" />
+          <Avatar img_src={img.avatar01} bordered border_weight="xl" bg_color="gradients_warning" />
         </Grid.Item>
       </Grid>
       <ExampleCode>{`<Grid>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01}
-      bordered borderWeight="xs"
-      bgColor="primary"/>
+      img_src={img.avatar01}
+      bordered border_weight="xs"
+      bg_color="primary"/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01} 
-      bordered borderWeight="sm"
-      bgColor="primary"/>
+      img_src={img.avatar01} 
+      bordered border_weight="sm"
+      bg_color="primary"/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01}
-      bordered borderWeight="md"
-      bgColor="primary"/>
+      img_src={img.avatar01}
+      bordered border_weight="md"
+      bg_color="primary"/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01}
-      bordered borderWeight="lg"
-      bgColor="primary"/>
+      img_src={img.avatar01}
+      bordered border_weight="lg"
+      bg_color="primary"/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01}
-      bordered borderWeight="xl"
-      bgColor="gradients_warning" />
+      img_src={img.avatar01}
+      bordered border_weight="xl"
+      bg_color="gradients_warning" />
   </Grid.Item>
 </Grid>`}</ExampleCode>
     </Container.Row>
@@ -172,40 +172,40 @@ export const AvatarContent = () => (
       <p>You can enable a zoom animation with the <Code>zoom</Code> property for the hover state.</p>
       <Grid>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="error" zoom/>
+          <Avatar img_src={img.avatar01} bordered border_weight="sm" bg_color="error" zoom/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} zoom/>
+          <Avatar img_src={img.avatar01} zoom/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar text="UI" bordered borderWeight="md" bgColor="primary" zoom/>
+          <Avatar text="UI" bordered border_weight="md" bg_color="primary" zoom/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} bordered borderWeight="lg" bgColor="error" zoom/>
+          <Avatar img_src={img.avatar01} bordered border_weight="lg" bg_color="error" zoom/>
         </Grid.Item>
       </Grid>
       <ExampleCode>{`<Grid>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01}
-      bordered borderWeight="sm"
-      bgColor="error" zoom/>
+      img_src={img.avatar01}
+      bordered border_weight="sm"
+      bg_color="error" zoom/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01} zoom/>
+      img_src={img.avatar01} zoom/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
       text="UI"
-      bordered borderWeight="md"
-      bgColor="primary" zoom/>
+      bordered border_weight="md"
+      bg_color="primary" zoom/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01}
-      bordered borderWeight="lg"
-      bgColor="error" zoom/>
+      img_src={img.avatar01}
+      bordered border_weight="lg"
+      bg_color="error" zoom/>
   </Grid.Item>
 </Grid>`}</ExampleCode>
     </Container.Row>
@@ -214,41 +214,41 @@ export const AvatarContent = () => (
       <p>The <Code>Avatar</Code> component has two different shapes, the circle for default and square for round angles, you just need add the <Code>squared</Code> property.</p>
       <Grid>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} bordered borderWeight="sm" bgColor="secondary" zoom squared pointer/>
+          <Avatar img_src={img.avatar01} bordered border_weight="sm" bg_color="secondary" zoom squared pointer/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} zoom squared/>
+          <Avatar img_src={img.avatar01} zoom squared/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar text="UI" bordered borderWeight="md" bgColor="secondary" zoom squared/>
+          <Avatar text="UI" bordered border_weight="md" bg_color="secondary" zoom squared/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar imgSrc={img.avatar01} bordered borderWeight="lg" bgColor="gradients_secondary" squared/>
+          <Avatar img_src={img.avatar01} bordered border_weight="lg" bg_color="gradients_secondary" squared/>
         </Grid.Item>
       </Grid>
       <ExampleCode>{`<Grid>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01} pointer
-      bordered borderWeight="sm"
-      bgColor="secondary" zoom squared/>
+      img_src={img.avatar01} pointer
+      bordered border_weight="sm"
+      bg_color="secondary" zoom squared/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01}
+      img_src={img.avatar01}
       zoom squared/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
       text="UI"
-      bordered borderWeight="md"
-      bgColor="secondary" zoom squared/>
+      bordered border_weight="md"
+      bg_color="secondary" zoom squared/>
   </Grid.Item>
   <Grid.Item>
     <Avatar
-      imgSrc={img.avatar01}
-      bordered borderWeight="lg"
-      bgColor="gradients_secondary" squared/>
+      img_src={img.avatar01}
+      bordered border_weight="lg"
+      bg_color="gradients_secondary" squared/>
   </Grid.Item>
 </Grid>`}</ExampleCode>
     </Container.Row>
@@ -257,24 +257,24 @@ export const AvatarContent = () => (
       <p><strong>ZEECK-UI</strong> do not provide a default user icon, but you can set a custom icon instead.</p>
       <Grid>
         <Grid.Item>
-          <Avatar icon="chevron-right" bgColor="secondary" />
+          <Avatar icon="chevron-right" bg_color="secondary" />
         </Grid.Item>
         <Grid.Item>
           <Avatar icon="chevron-left" zoom squared/>
         </Grid.Item>
         <Grid.Item>
-          <Avatar icon="chevron-down" bgColor="gradients_error"/>
+          <Avatar icon="chevron-down" bg_color="gradients_error"/>
         </Grid.Item>
       </Grid>
       <ExampleCode>{`<Grid>
   <Grid.Item>
-    <Avatar icon="link" bgColor="secondary"/>
+    <Avatar icon="link" bg_color="secondary"/>
   </Grid.Item>
   <Grid.Item>
     <Avatar icon="link" zoom squared/>
   </Grid.Item>
   <Grid.Item>
-    <Avatar icon="link" bgColor="gradients_error"/>
+    <Avatar icon="link" bg_color="gradients_error"/>
   </Grid.Item>
 </Grid>`}</ExampleCode>
     </Container.Row>
@@ -282,7 +282,7 @@ export const AvatarContent = () => (
       <H2>Props</H2>
       <Table>
         <Row
-          attribute="bgColor"
+          attribute="bg_color"
           type={<Code>string</Code>}
           values={<Anchor href="#anchorColors">background colors</Anchor>}
           description="Change the border color"
@@ -294,7 +294,7 @@ export const AvatarContent = () => (
           description="Set the border property"
           defaultValue={<Code>false</Code>} />
         <Row
-          attribute="borderWeight"
+          attribute="border_weight"
           type={<Code>string</Code>}
           values={<Anchor as={Link} to="#sizes">Sizes</Anchor>}
           description="Set the border size"
@@ -306,7 +306,7 @@ export const AvatarContent = () => (
           description="Show an icon"
           defaultValue={"-"} />
         <Row
-          attribute="imgSrc"
+          attribute="img_src"
           type={<Code>string</Code>}
           values="-"
           description="Image url"
@@ -358,8 +358,8 @@ export const AvatarContent = () => (
     <Container.Row>
       <H2>Types</H2>
       <Types title="textColor options" constName="colors" id="textColors"/>
-      <Types title="bgColor options" constName="backgrounds" id="bgColor"/>
-      <Types title="size and borderWeight options" constName="weights" id="sizes"/>
+      <Types title="bg_color options" constName="backgrounds" id="bg_color"/>
+      <Types title="size and border_weight options" constName="weights" id="sizes"/>
     </Container.Row>
     <Container.Row>
       <h3 id="icons">Icons</h3>
