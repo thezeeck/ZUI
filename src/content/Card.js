@@ -1,7 +1,6 @@
 import { Anchor, Card, Container, Grid, Tabs, Button } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
-import { Link } from "react-router-dom";
 import { images } from "../img";
 
 export const CardContent = () => (

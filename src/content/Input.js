@@ -1,7 +1,6 @@
-import { Anchor, Container, Input } from "../ZUI";
+import { Anchor, Container, Input, Button } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
-import { Link } from "react-router-dom";
 
 export const InputContent = () => (
   <Layout>
@@ -21,7 +20,7 @@ export const InputContent = () => (
         The default <Code>Input</Code> is type text and is editable.
       </p>
       <p>
-        <Input />
+        <Input label="Input text" placeholder="text"/> <Button>text</Button>
       </p>
       <ExampleCode>
         {`<p>
