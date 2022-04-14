@@ -37,7 +37,7 @@ export const HeaderUI = styled.header`
   margin: ${({state}) => `calc(var(--ZUI-sizes_spacing_${state.gap}) * -1) calc(var(--ZUI-sizes_spacing_${state.gap}) * -1) var(--ZUI-sizes_spacing_${state.gap + 1})`};
   padding: ${({state}) => `var(--ZUI-sizes_spacing_${state.gap})`};
   ${({state, theme}) => {
-    if (state.bordered) return `border-bottom: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${state.color}_3);`;
+    if (state.bordered) return `border-bottom: var(--ZUI-sizes_border_${state.borderedWeigth}) solid var(--ZUI-colors_${state.borderedColor});`;
     if (state.ghost) return `background-color: ${hexToRgba(theme.colors[state.ghostColor], state.ghostOpacity)}`
   }}
 
@@ -47,7 +47,7 @@ export const FooterUI = styled.footer`
   margin: ${({state}) => `var(--ZUI-sizes_spacing_${state.gap + 1}) calc(var(--ZUI-sizes_spacing_${state.gap}) * -1) calc(var(--ZUI-sizes_spacing_${state.gap}) * -1)`};
   padding: ${({state}) => `var(--ZUI-sizes_spacing_${state.gap})`};
   ${({state, theme}) => {
-    if (state.bordered) return `border-top: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${state.color}_3);`;
+    if (state.bordered) return `border-top: var(--ZUI-sizes_border_${state.borderedWeigth}) solid var(--ZUI-colors_${state.borderedColor});`;
     if (state.ghost) return `background-color: ${hexToRgba(theme.colors[state.ghostColor], state.ghostOpacity)}`
   }}
 `;

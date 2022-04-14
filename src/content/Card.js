@@ -385,11 +385,11 @@ export const CardContent = () => (
           </Card>
         </Grid.Item>
         <Grid.Item xs={3}>
-        <Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
-          cover={<div style={{
-            background: "var(--ZUI-gradients_success_error)",
-            height: "100%"
-          }}></div>}>
+          <Card clickable ghost ghostColor="gray_1" ghostOpacity={.75}
+            cover={<div style={{
+              background: "var(--ZUI-gradients_success_error)",
+              height: "100%"
+            }}></div>}>
             <Card.Body>
               <div style={{height: "4rem"}}></div>
             </Card.Body>
@@ -513,9 +513,6 @@ export const CardContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Props</H2>
-      <p>
-        , , , , , borderedWeigth, borderedColor
-      </p>
       <Table> 
         <Row
           attribute="bordered"
@@ -523,6 +520,18 @@ export const CardContent = () => (
           values={<Code>true/false</Code>}
           description="Change the card styles"
           defaultValue={<Code>false</Code>} />
+        <Row
+          attribute="borderedColor"
+          type={<Code>string</Code>}
+          values={<Anchor href="#borderSize">Border sizes</Anchor>}
+          description="Change the Header and Footter border size"
+          defaultValue={<Code>sm</Code>} />
+        <Row
+          attribute="borderedWeigth"
+          type={<Code>string</Code>}
+          values={<Anchor href="#colorOptions">Colors options</Anchor>}
+          description="Change the Header and Footter border color"
+          defaultValue={<Code>gray_3</Code>} />
         <Row
           attribute="clickable"
           type={<Code>boolean</Code>}
@@ -550,9 +559,9 @@ export const CardContent = () => (
         <Row
           attribute="ghostColor"
           type={<Code>string</Code>}
-          values={<Code>true/false</Code>}
-          description="Display the underline text only in the hover status"
-          defaultValue={<Code>false</Code>} />
+          values={<Anchor href="#colorOptions">Colors options</Anchor>}
+          description="Change the background color of the Header and Footer"
+          defaultValue={<Code>gray_5</Code>} />
         <Row
           attribute="ghostOpacity"
           type={<Code>number</Code>}
@@ -570,6 +579,7 @@ export const CardContent = () => (
     <Container.Row>
       <H2>Types</H2>
       <Types title="Color cards" constName="variants" id="colors" />
+      <Types title="Border options" constName="weights" id="borderSize" />
       <Types title="Card variants" constName="cardsVariants" id="variants" />
       <Types title="Colors options" constName="allColors" id="colorOptions" />
     </Container.Row>
