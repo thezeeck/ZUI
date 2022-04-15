@@ -23,6 +23,7 @@ export const ButtonUI = styled.button`
   display: inline-block;
   border: ${({color}) => /gradient/g.test(color) ? "0 none" : "var(--ZUI-sizes_border_sm) solid"};
   padding: 0;
+  transition: all var(--ZUI-transitions_fast) ease;
   cursor: ${({disabled, loading}) => disabled || loading ? "not-allowed" : "pointer"};
   ${({size, auto, rounded}) => {
     let sizes = {};
@@ -81,6 +82,11 @@ export const ButtonUI = styled.button`
   ${({color, shadow}) => shadow && `
     box-shadow: var(--ZUI-shadows_${color.replace("gradients_", "")}_sm) ;
   `};
+
+  &:focus-visible {
+    outline: currentcolor none medium;
+    box-shadow: ${({color}) => `0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_${color.replace("gradients_", "")})`};
+  }
 
   &:hover {
     ${({disabled, loading, variant, color, theme}) => {

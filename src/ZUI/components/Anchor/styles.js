@@ -23,6 +23,11 @@ export const AnchorUI = styled.a`
       border-radius: var(--ZUI-sizes_radius_sm);
     `}
   }
+
+  &:focus-visible {
+    outline: currentcolor none medium;
+    box-shadow: ${({textColor}) => `0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_${textColor.replace("gradients_", "")})`};
+  }
 `;
 
 export const IconWrapper = styled.span`

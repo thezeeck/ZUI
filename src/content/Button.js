@@ -175,19 +175,19 @@ export const ButtonContent = () => (
       </p>
       <p>
         <Button variant="outlined" color="secondary">outlined</Button>
-        <Button variant="outlined" color="gradients_success">outlined</Button>
+        <Button margin={2} variant="outlined" color="gradients_success">outlined</Button>
       </p>
       <p>
         <Button variant="text" color="success">text</Button>
-        <Button variant="text" color="gradients_warning">text</Button>
+        <Button margin={2} variant="text" color="gradients_warning">text</Button>
       </p>
       <p>
         <Button variant="flat" color="success">text</Button>
-        <Button variant="flat" color="gradients_warning">text</Button>
+        <Button margin={2} variant="flat" color="gradients_warning">text</Button>
       </p>
       <p>
         <Button variant="shadow" color="warning">text</Button>
-        <Button variant="shadow" color="gradients_error">text</Button>
+        <Button margin={2} variant="shadow" color="gradients_error">text</Button>
       </p>
       <ExampleCode>{`<p>
   <Button>filled</Button>

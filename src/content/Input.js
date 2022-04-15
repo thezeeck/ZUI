@@ -20,15 +20,23 @@ export const InputContent = () => (
         The default <Code>Input</Code> is type text and is editable.
       </p>
       <p>
-        <Input label="Input text" placeholder="text"/> <Button>text</Button>
+        <Input label="Input text" placeholder="text"/>
       </p>
       <ExampleCode>
         {`<p>
-  <Anchor link="#">
-    Lorem ipsum dolor sit amet
-  </Anchor>
+  <Input label="Input text" placeholder="text"/>
 </p>`}
       </ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <H2>Disabled</H2>
+      <p>You set a non editable <Code>Input</Code> with the <Code>disabled</Code> property.</p>
+      <p>
+        <Input disabled value="Disabled Input" />
+      </p>
+      <ExampleCode>{`<div>
+  <Button disabled>Disabled</Button>
+</div>`}</ExampleCode>
     </Container.Row>
     {/* <Container.Row>
       <H2>Colors</H2>

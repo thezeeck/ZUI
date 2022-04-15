@@ -1,11 +1,9 @@
 import { InputContainer } from "./style"
 
 export const Input = props => {
-  if (!props.label) console.error("The label property is missing");
-
   return (
     <InputContainer {...props}>
-      <input placeholder={props.placeholder} type={props.type} value={props.value} />
+      <input placeholder={props.placeholder} type={props.type} value={props.value} disabled={props.disabled} />
       {props.label && <span>{props.label}</span>}
     </InputContainer>
   );
@@ -14,5 +12,6 @@ export const Input = props => {
 Input.defaultProps = {
   type: "text",
   variant: "shadow",
-  color: "gray"
+  color: "gray",
+  disabled: false,
 }
