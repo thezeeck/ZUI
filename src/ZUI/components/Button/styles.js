@@ -23,21 +23,24 @@ export const ButtonUI = styled.button`
   display: inline-block;
   border: ${({color}) => /gradient/g.test(color) ? "0 none" : "var(--ZUI-sizes_border_sm) solid"};
   padding: 0;
+  vertical-align: middle;
   transition: all var(--ZUI-transitions_fast) ease;
+  font-weight: bold;
+  font-family: var(--ZUI-fonts-sans);
   cursor: ${({disabled, loading}) => disabled || loading ? "not-allowed" : "pointer"};
   ${({size, auto, rounded}) => {
     let sizes = {};
-    if (size === "xs") sizes = {fs: 1, sp: 2, rd: "xs", wd: 2};
-    else if (size === "sm") sizes = {fs: 2, sp: 3, rd: "sm", wd: 4};
-    else if (size === "lg") sizes = {fs: 3, sp: 4, rd: "md", wd: 8};
-    else if (size === "xl") sizes = {fs: 4, sp: 5, rd: "lg", wd: 10};
-    else sizes = {fs: 3, sp: 4, rd: "md", wd: 6};
+    if (size === "xs") sizes = {fs: 1, rd: "xs", wd: 2};
+    else if (size === "sm") sizes = {fs: 2, rd: "sm", wd: 4};
+    else if (size === "lg") sizes = {fs: 3, rd: "md", wd: 8};
+    else if (size === "xl") sizes = {fs: 4, rd: "lg", wd: 10};
+    else sizes = {fs: 3, rd: "md", wd: 6};
     return `
       font-size: var(--ZUI-sizes_font_${sizes.fs});
       min-width: ${auto ? "auto" : "var(--ZUI-sizes_space_" + sizes.wd + ")"};
       border-radius: var(--ZUI-sizes_radius_${rounded ? "xl" : sizes.rd});
-      line-height: calc(var(--ZUI-sizes_font_${sizes.sp}) - (var(--ZUI-sizes_spacing_${sizes.sp}) * 2));
-      height: calc(var(--ZUI-sizes_font_${sizes.sp}) + var(--ZUI-sizes_spacing_${sizes.sp}));`
+      line-height: var(--ZUI-sizes_button_height_${size});
+      height: var(--ZUI-sizes_button_height_${size});`
   }}
   ${({color, theme, disabled, variant, loading}) => {
     const colors = defineColors({color, theme, disabled, loading});
@@ -117,7 +120,7 @@ export const ButtonContentUI = styled.span`
   justify-content: center;
   align-items: center;
   background-color: var(--content-bg);
-  padding: var(--ZUI-sizes_spacing_2);
+  padding: 0 var(--ZUI-sizes_spacing_4);
   height: 100%;
   box-sizing: border-box;
   border-radius: ${({size}) => {

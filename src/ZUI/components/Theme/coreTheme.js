@@ -90,14 +90,20 @@ export const core = {
     avatar_lg: "4rem",
     avatar_xl: "5rem",
 
-    border_xs: ".063rem",
+    border_xs: ".0625rem",
     border_sm: ".125rem",
     border_md: ".25rem",
     border_lg: ".375rem",
     border_xl: ".5rem",
 
+    button_height_xs: "1.25rem",
+    button_height_sm: "1.5rem",
+    button_height_md: "2.25rem",
+    button_height_lg: "3rem",
+    button_height_xl: "4rem",
+
     font_1: ".75rem",
-    font_2: ".85rem",
+    font_2: ".875rem",
     font_3: "1rem",
     font_4: "1.5rem",
     font_5: "2.5rem",

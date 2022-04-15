@@ -20,7 +20,7 @@ export const InputContent = () => (
         The default <Code>Input</Code> is type text and is editable.
       </p>
       <p>
-        <Input label="Input text" placeholder="text"/>
+        <Input placeholder="Input text" />
       </p>
       <ExampleCode>
         {`<p>
@@ -34,9 +34,44 @@ export const InputContent = () => (
       <p>
         <Input disabled value="Disabled Input" />
       </p>
-      <ExampleCode>{`<div>
-  <Button disabled>Disabled</Button>
-</div>`}</ExampleCode>
+      <ExampleCode>{`<p>
+  <Input disabled value="Disabled Input" />
+</p>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+    <H2>Sizes</H2>
+      <p>The <Code>Button</Code> component has 5 differents sizes.</p>
+      <p>
+        <Input size="xs" label="Input text" /> <Button size="xs">XS</Button>
+      </p>
+      <p>
+        <Input size="sm" label="Input text" /> <Button size="sm">SM</Button>
+      </p>
+      <p>
+        <Input size="md" label="Input text" /> <Button size="md">MD</Button>
+      </p>
+      <p>
+        <Input size="lg" label="Input text" /> <Button size="lg">LG</Button>
+      </p>
+      <p>
+        <Input size="xl" label="Input text" /> <Button size="xl">XL</Button>
+      </p>
+
+      <p>
+        <Input size="xs" placeholder="Input" /> <Button size="xs">XS</Button>
+      </p>
+      <p>
+        <Input size="sm" placeholder="Input" /> <Button size="sm">SM</Button>
+      </p>
+      <p>
+        <Input size="md" placeholder="Input" /> <Button size="md">MD</Button>
+      </p>
+      <p>
+        <Input size="lg" placeholder="Input" /> <Button size="lg">LG</Button>
+      </p>
+      <p>
+        <Input size="xl" placeholder="Input" /> <Button size="xl">XL</Button>
+      </p>
     </Container.Row>
     {/* <Container.Row>
       <H2>Colors</H2>

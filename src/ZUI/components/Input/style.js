@@ -1,47 +1,40 @@
 import styled from "styled-components";
 
 export const InputContainer = styled.label`
-  position: relative;
   display: inline-block;
   cursor: pointer;
+  vertical-align: bottom;
 
   > input {
     background: var(--ZUI-colors_gray_1);
-    padding: var(--ZUI-sizes_spacing_3) var(--ZUI-sizes_spacing_3) 0;
-    border-radius: var(--ZUI-sizes_radius_md);
-    font-size: var(--ZUI-sizes_font_3);
-    line-height: calc(var(--ZUI-sizes_font_4) - (var(--ZUI-sizes_spacing_4) * 2));
-    height: calc(var(--ZUI-sizes_font_4) + var(--ZUI-sizes_spacing_4));
+    padding: 0 var(--ZUI-sizes_spacing_3);
+    display: inline-block;
     box-sizing: border-box;
+    transition: all var(--ZUI-transitions_fast);
+    ${({size, rounded}) => {
+      let sizes = {};
+      if (size === "xs") sizes = {fs: 1, rd: "xs", wd: 4};
+      else if (size === "sm") sizes = {fs: 2, rd: "sm", wd: 5};
+      else if (size === "lg") sizes = {fs: 3, rd: "md", wd: 8};
+      else if (size === "xl") sizes = {fs: 4, rd: "lg", wd: 10};
+      else sizes = {fs: 3, rd: "md", wd: 6};
+      return `
+        font-size: var(--ZUI-sizes_font_${sizes.fs});
+        width: var(--ZUI-sizes_space_${sizes.wd});
+        border-radius: var(--ZUI-sizes_radius_${rounded ? "xl" : sizes.rd});
+        height: var(--ZUI-sizes_button_height_${size});`
+    }}
     ${({color, variant}) => {
       if (variant === "shadow") {
         return `
-          border: var(--ZUI-sizes_border_xs) solid var(--ZUI-colors_gray_1);`
+          border: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_gray_3);`
       }
     }};
     color: var(--ZUI-colors_text);
 
-    &::placeholder {
+    /* &::placeholder {
       color: transparent;
-    }
-    
-    & + span {
-      position: absolute;
-      left: var(--ZUI-sizes_spacing_3);
-      top: var(--ZUI-sizes_spacing_3);
-      margin-top: calc(var(--ZUI-sizes_border_xs) * -1);
-      opacity: .5;
-      transition: all var(--ZUI-transitions_fast) ease;
-      user-select: none;
-      font-weight: bold;
-    }
-
-    &:not(:placeholder-shown) + span,
-    &:focus + span {
-      top: var(--ZUI-sizes_spacing_1);
-      opacity: 1;
-      font-size: .6rem;
-    }
+    } */
 
     &:focus-visible {
       outline: currentcolor none medium;
@@ -54,4 +47,9 @@ export const InputContainer = styled.label`
       user-select: none;
     }
   }
+`;
+
+export const LabelUI = styled.span`
+  margin-bottom: var(--ZUI-sizes_spacing_4);
+  display: inline-block;
 `;
