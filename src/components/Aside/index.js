@@ -13,7 +13,7 @@ export const Aside = () => {
             <ul>
               {item.childs.sort().map((child, index) => (
                 <li key={index}>
-                  <Text textColor={theme.colors.text} decoration="none">
+                  <Text text_color={theme.colors.text} decoration="none">
                     <Anchor as={Link} to={child.path}>{child.name}</Anchor>
                   </Text>
                 </li>

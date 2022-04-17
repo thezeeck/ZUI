@@ -13,5 +13,5 @@ export const Anchor = (props) => {
 
 Anchor.defaultProps = {
   link: "#",
-  textColor: "primary"
+  text_color: "primary"
 }

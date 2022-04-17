@@ -34,44 +34,44 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Colors</H2>
-      <p>You can change the Anchor <Code>color</Code> with the <Code>textColor</Code> property</p>
+      <p>You can change the Anchor <Code>color</Code> with the <Code>text_color</Code> property</p>
       <p>
-        <Anchor textColor="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
+        <Anchor text_color="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
       </p>
       <p>
-        <Anchor textColor="secondary" href="#">Lorem ipsum dolor sit amet (Secondary)</Anchor>
+        <Anchor text_color="secondary" href="#">Lorem ipsum dolor sit amet (Secondary)</Anchor>
       </p>
       <p>
-        <Anchor textColor="success" href="#">Lorem ipsum dolor sit amet (Success)</Anchor>
+        <Anchor text_color="success" href="#">Lorem ipsum dolor sit amet (Success)</Anchor>
       </p>
       <p>
-        <Anchor textColor="warning" href="#">Lorem ipsum dolor sit amet (Warning)</Anchor>
+        <Anchor text_color="warning" href="#">Lorem ipsum dolor sit amet (Warning)</Anchor>
       </p>
       <p>
-        <Anchor textColor="error" href="#">Lorem ipsum dolor sit amet (Error)</Anchor>
+        <Anchor text_color="error" href="#">Lorem ipsum dolor sit amet (Error)</Anchor>
       </p>
       <p>
         <Anchor href="#">Lorem ipsum dolor sit amet (Default)</Anchor>
       </p>
       <ExampleCode>
         {`<p>
-  <Anchor textColor="primary" href="#">
+  <Anchor text_color="primary" href="#">
     Lorem ipsum dolor sit amet (Primary)
   </Anchor>
   <br />
-  <Anchor textColor="secondary" href="#">
+  <Anchor text_color="secondary" href="#">
     Lorem ipsum dolor sit amet (Secondary)
   </Anchor>
   <br />
-  <Anchor textColor="success" href="#">
+  <Anchor text_color="success" href="#">
     Lorem ipsum dolor sit amet (Success)
   </Anchor>
   <br />
-  <Anchor textColor="warning" href="#">
+  <Anchor text_color="warning" href="#">
     Lorem ipsum dolor sit amet (Warning)
   </Anchor>
   <br />
-  <Anchor textColor="error" href="#">
+  <Anchor text_color="error" href="#">
     Lorem ipsum dolor sit amet (Error)
   </Anchor>
   <br />
@@ -92,14 +92,14 @@ export const AnchorContent = () => (
         <Anchor href="#" decoration>Lorem ipsum dolor sit amet (Decoration)</Anchor>
       </p>
       <p>
-        <Anchor href="#" decoration textColor="secondary">Lorem ipsum dolor sit amet (Decoration)</Anchor>
+        <Anchor href="#" decoration text_color="secondary">Lorem ipsum dolor sit amet (Decoration)</Anchor>
       </p>
       <ExampleCode>{`<p>
   <Anchor href="#" decoration>
     Lorem ipsum dolor sit amet (Decoration)
   </Anchor>
   <br />
-  <Anchor href="#" decoration textColor="secondary">
+  <Anchor href="#" decoration text_color="secondary">
     Lorem ipsum dolor sit amet (Decoration)
   </Anchor>
 </p>`}
@@ -109,17 +109,17 @@ export const AnchorContent = () => (
       <h3>Block</h3>
       <p>Adds a background color in the hover state and also change the display inline to inline-block.</p>
       <p>
-        <Anchor href="#" box textColor="success">Lorem ipsum dolor sit amet (Box)</Anchor>
+        <Anchor href="#" box text_color="success">Lorem ipsum dolor sit amet (Box)</Anchor>
       </p>
       <p>
-        <Anchor href="#" box textColor="warning">Lorem ipsum dolor sit amet (Box)</Anchor>
+        <Anchor href="#" box text_color="warning">Lorem ipsum dolor sit amet (Box)</Anchor>
       </p>
       <ExampleCode>
         {`<p>
-  <Anchor href="#" box textColor="success">
+  <Anchor href="#" box text_color="success">
     Lorem ipsum dolor sit amet (Box)
   </Anchor>
-  <Anchor href="#" box textColor="warning">
+  <Anchor href="#" box text_color="warning">
     Lorem ipsum dolor sit amet (Box)
   </Anchor>
 </p>`}
@@ -180,7 +180,7 @@ export const AnchorContent = () => (
           description="Override Default CSS rules"
           defaultValue="-" />
         <Row
-          attribute="textColor"
+          attribute="text_color"
           type={<Code>string</Code>}
           values={<Anchor href="#anchorColors">LinkColors</Anchor>}
           description="Change font color"
@@ -189,7 +189,7 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Types</H2>
-      <Types title="textColor options" constName="colors" id="anchorColors" />
+      <Types title="text_color options" constName="colors" id="anchorColors" />
     </Container.Row>
     <Container.Row>
       <h3 id="icons">Icons</h3>

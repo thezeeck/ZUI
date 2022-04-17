@@ -2,14 +2,12 @@ import { InputContainer, LabelUI } from "./style"
 
 export const Input = props => {
   return (
-    <InputContainer {...props}>
+    <InputContainer
+      color={props.color}
+      size={props.size}
+      variant={props.variant} >
       {props.label && <><LabelUI>{props.label}</LabelUI><br /></>}
-      <input
-        placeholder={props.placeholder ? props.placeholder : props.label}
-        type={props.type}
-        value={props.value}
-        disabled={props.disabled}
-        color={props.color} />
+      <input {...props} placeholder={props.placeholder ? props.placeholder : props.label} />
     </InputContainer>
   );
 }

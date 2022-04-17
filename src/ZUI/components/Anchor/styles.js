@@ -3,7 +3,7 @@ import { hexToRgba } from "../../utils";
 
 export const AnchorUI = styled.a`
   text-decoration: none;
-  color: ${({textColor}) => textColor ? `var(--ZUI-colors_${textColor})` : "var(--ZUI-colors_primary)"};
+  color: ${({text_color}) => text_color ? `var(--ZUI-colors_${text_color})` : "var(--ZUI-colors_primary)"};
   ${({box}) => box && `
     display: inline-block;
     padding: var(--ZUI-sizes_border_sm) var(--ZUI-sizes_border_lg);
@@ -13,12 +13,12 @@ export const AnchorUI = styled.a`
 
   &:hover {
     text-decoration: ${({decoration}) => decoration ? "underline" : "none"};
-    color: ${({textColor, theme}) => textColor ?
-      hexToRgba(theme.colors[textColor], .8) :
+    color: ${({text_color, theme}) => text_color ?
+      hexToRgba(theme.colors[text_color], .8) :
       hexToRgba(theme.colors.primary,  .8)};
-    ${({box, textColor, theme}) => box && `
-      background-color: ${textColor ?
-        hexToRgba(theme.colors[textColor], .2) :
+    ${({box, text_color, theme}) => box && `
+      background-color: ${text_color ?
+        hexToRgba(theme.colors[text_color], .2) :
         hexToRgba(theme.colors.primary,  .2)};
       border-radius: var(--ZUI-sizes_radius_sm);
     `}
@@ -26,7 +26,7 @@ export const AnchorUI = styled.a`
 
   &:focus-visible {
     outline: currentcolor none medium;
-    box-shadow: ${({textColor}) => `0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_${textColor.replace("gradients_", "")})`};
+    box-shadow: ${({text_color}) => `0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_${text_color.replace("gradients_", "")})`};
   }
 `;
 

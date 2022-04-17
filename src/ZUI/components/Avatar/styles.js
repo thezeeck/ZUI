@@ -62,8 +62,8 @@ export const AvatarUI = styled.span`
     left: 50%;
     top: 50%;
     text-align: center;
-    ${({textColor}) => textColor && `
-      color: ${textColor};
+    ${({text_color}) => text_color && `
+      color: ${text_color};
     `}
     transform: translate(-50%, -50%);
     transition: ${({transition}) => `all var(--ZUI-transitions_${transition}) ease`};

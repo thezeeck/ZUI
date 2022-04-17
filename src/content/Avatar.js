@@ -342,9 +342,9 @@ export const AvatarContent = () => (
           description="Display text when the image is missing or loading"
           defaultValue="-" />
         <Row
-          attribute="textColor"
+          attribute="text_color"
           type={<Code>string</Code>}
-          values={<Anchor href="#textColors">text colors</Anchor>}
+          values={<Anchor href="#text_colors">text colors</Anchor>}
           description="Change font color"
           defaultValue={<Code>inherit</Code>} />
         <Row
@@ -357,7 +357,7 @@ export const AvatarContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Types</H2>
-      <Types title="textColor options" constName="colors" id="textColors"/>
+      <Types title="text_color options" constName="colors" id="text_colors"/>
       <Types title="bg_color options" constName="backgrounds" id="bg_color"/>
       <Types title="size and border_weight options" constName="weights" id="sizes"/>
     </Container.Row>

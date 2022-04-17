@@ -2,7 +2,10 @@ import { Anchor, Container, Input, Button, Grid } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
 
-export const InputContent = () => (
+export const InputContent = () => {
+  let value = "value";
+
+  return (
   <Layout>
     <Container.Row>
       <H1>Input</H1>
@@ -156,21 +159,22 @@ export const InputContent = () => (
 </Grid>`}
       </ExampleCode>
     </Container.Row>
+    <Input color="primary" placeholder="Input" variant="underline" onChange={e => console.log(e)} value={value} />
     {/* <Container.Row>
       <h3>Block</h3>
       <p>Adds a background color in the hover state and also change the display inline to inline-block.</p>
       <p>
-        <Anchor href="#" box textColor="success">Lorem ipsum dolor sit amet (Box)</Anchor>
+        <Anchor href="#" box text_color="success">Lorem ipsum dolor sit amet (Box)</Anchor>
       </p>
       <p>
-        <Anchor href="#" box textColor="warning">Lorem ipsum dolor sit amet (Box)</Anchor>
+        <Anchor href="#" box text_color="warning">Lorem ipsum dolor sit amet (Box)</Anchor>
       </p>
       <ExampleCode>
         {`<p>
-  <Anchor href="#" box textColor="success">
+  <Anchor href="#" box text_color="success">
     Lorem ipsum dolor sit amet (Box)
   </Anchor>
-  <Anchor href="#" box textColor="warning">
+  <Anchor href="#" box text_color="warning">
     Lorem ipsum dolor sit amet (Box)
   </Anchor>
 </p>`}
@@ -231,7 +235,7 @@ export const InputContent = () => (
           description="Override Default CSS rules"
           defaultValue="-" />
         <Row
-          attribute="textColor"
+          attribute="text_color"
           type={<Code>string</Code>}
           values={<Anchor href="#anchorColors">LinkColors</Anchor>}
           description="Change font color"
@@ -240,11 +244,11 @@ export const InputContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Types</H2>
-      <Types title="textColor options" constName="colors" id="anchorColors" />
+      <Types title="text_color options" constName="colors" id="anchorColors" />
     </Container.Row>
     <Container.Row>
       <h3 id="icons">Icons</h3>
       <Anchor as={Link} to="/icons">Icons</Anchor>
     </Container.Row> */}
   </Layout>
-);
+)};

@@ -5,7 +5,7 @@ import { Icon } from "../Icons";
 export const Avatar = props => {
   const { theme } = useThemeContext();
   return (
-    <AvatarUI {...props} textColor={props.textColor} theme={theme}>
+    <AvatarUI {...props} text_color={props.text_color} theme={theme}>
       <Background theme={theme} bg_color={props.bg_color} bordered={props.bordered} img_src={props.img_src}></Background>
       {props.img_src &&
         <figure>
