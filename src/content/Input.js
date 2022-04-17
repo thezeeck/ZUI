@@ -1,4 +1,4 @@
-import { Anchor, Container, Input, Button } from "../ZUI";
+import { Anchor, Container, Input, Button, Grid } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
 
@@ -41,112 +41,122 @@ export const InputContent = () => (
     <Container.Row>
     <H2>Sizes</H2>
       <p>The <Code>Button</Code> component has 5 differents sizes.</p>
-      <p>
-        <Input size="xs" label="Input text" /> <Button size="xs">XS</Button>
-      </p>
-      <p>
-        <Input size="sm" label="Input text" /> <Button size="sm">SM</Button>
-      </p>
-      <p>
-        <Input size="md" label="Input text" /> <Button size="md">MD</Button>
-      </p>
-      <p>
-        <Input size="lg" label="Input text" /> <Button size="lg">LG</Button>
-      </p>
-      <p>
-        <Input size="xl" label="Input text" /> <Button size="xl">XL</Button>
-      </p>
-
-      <p>
-        <Input size="xs" placeholder="Input" /> <Button size="xs">XS</Button>
-      </p>
-      <p>
-        <Input size="sm" placeholder="Input" /> <Button size="sm">SM</Button>
-      </p>
-      <p>
-        <Input size="md" placeholder="Input" /> <Button size="md">MD</Button>
-      </p>
-      <p>
-        <Input size="lg" placeholder="Input" /> <Button size="lg">LG</Button>
-      </p>
-      <p>
-        <Input size="xl" placeholder="Input" /> <Button size="xl">XL</Button>
-      </p>
+      <Grid direction="column" align_items="flex_start">
+        <Grid.Item xs={12}>
+          <Input size="xs" placeholder="Input" />
+        </Grid.Item>
+        <Grid.Item xs={12}>
+          <Input size="sm" placeholder="Input" />
+        </Grid.Item>
+        <Grid.Item xs={12}>
+          <Input size="md" placeholder="Input" />
+        </Grid.Item>
+        <Grid.Item xs={12}>
+          <Input size="lg" placeholder="Input" />
+        </Grid.Item>
+        <Grid.Item xs={12}>
+          <Input size="xl" placeholder="Input" />
+        </Grid.Item>
+      </Grid>
+      <ExampleCode>{`<Grid direction="column" align_items="flex_start">
+  <Grid.Item xs={12}>
+    <Input size="xs" placeholder="Input" />
+  </Grid.Item>
+  <Grid.Item xs={12}>
+    <Input size="sm" placeholder="Input" />
+  </Grid.Item>
+  <Grid.Item xs={12}>
+    <Input size="md" placeholder="Input" />
+  </Grid.Item>
+  <Grid.Item xs={12}>
+    <Input size="lg" placeholder="Input" />
+  </Grid.Item>
+  <Grid.Item xs={12}>
+    <Input size="xl" placeholder="Input" />
+  </Grid.Item>
+</Grid>`}</ExampleCode>
     </Container.Row>
-    {/* <Container.Row>
+    <Container.Row>
       <H2>Colors</H2>
-      <p>You can change the Anchor <Code>color</Code> with the <Code>textColor</Code> property</p>
-      <p>
-        <Anchor textColor="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="secondary" href="#">Lorem ipsum dolor sit amet (Secondary)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="success" href="#">Lorem ipsum dolor sit amet (Success)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="warning" href="#">Lorem ipsum dolor sit amet (Warning)</Anchor>
-      </p>
-      <p>
-        <Anchor textColor="error" href="#">Lorem ipsum dolor sit amet (Error)</Anchor>
-      </p>
-      <p>
-        <Anchor href="#">Lorem ipsum dolor sit amet (Default)</Anchor>
-      </p>
+      <p>You can change the <Code>Input</Code> color with the <Code>color</Code> property</p>
+      <Grid direction="column" align_items="flex_start">
+        <Grid.Item xs={12}>
+          <Input color="primary" placeholder="Input" />
+        </Grid.Item>
+        <Grid.Item xs={12}>
+          <Input color="secondary" placeholder="Input" />
+        </Grid.Item>
+        <Grid.Item xs={12}>
+          <Input color="success" placeholder="Input" />
+        </Grid.Item>
+        <Grid.Item xs={12}>
+          <Input color="warning" placeholder="Input" />
+        </Grid.Item>
+        <Grid.Item xs={12}>
+          <Input color="error" placeholder="Input" />
+        </Grid.Item>
+        <Grid.Item xs={12}>
+          <Input color="gray" placeholder="Input" />
+        </Grid.Item>
+      </Grid>
       <ExampleCode>
-        {`<p>
-  <Anchor textColor="primary" href="#">
-    Lorem ipsum dolor sit amet (Primary)
-  </Anchor>
-  <br />
-  <Anchor textColor="secondary" href="#">
-    Lorem ipsum dolor sit amet (Secondary)
-  </Anchor>
-  <br />
-  <Anchor textColor="success" href="#">
-    Lorem ipsum dolor sit amet (Success)
-  </Anchor>
-  <br />
-  <Anchor textColor="warning" href="#">
-    Lorem ipsum dolor sit amet (Warning)
-  </Anchor>
-  <br />
-  <Anchor textColor="error" href="#">
-    Lorem ipsum dolor sit amet (Error)
-  </Anchor>
-  <br />
-  <Anchor href="#">
-    Lorem ipsum dolor sit amet (Default)
-  </Anchor>
-</p>`}
+        {`<Grid direction="column" align_items="flex_start">
+  <Grid.Item xs={12}>
+    <Input color="primary" placeholder="Input" />
+  </Grid.Item>
+  <Grid.Item xs={12}>
+    <Input color="secondary" placeholder="Input" />
+  </Grid.Item>
+  <Grid.Item xs={12}>
+    <Input color="success" placeholder="Input" />
+  </Grid.Item>
+  <Grid.Item xs={12}>
+    <Input color="warning" placeholder="Input" />
+  </Grid.Item>
+  <Grid.Item xs={12}>
+    <Input color="error" placeholder="Input" />
+  </Grid.Item>
+  <Grid.Item xs={12}>
+    <Input color="gray" placeholder="Input" />
+  </Grid.Item>
+</Grid>`}
       </ExampleCode>
     </Container.Row>
     <Container.Row>
       <H2>Variants</H2>
-      <p>You can change the default look with the <Code>decoration</Code> and <Code>Block</Code> properties.</p>
+      <p>You can change the default look with the <Code>variant</Code> property.</p>
     </Container.Row>
     <Container.Row>
-      <h3>Underline</h3>
-      <p>Adds an underline style only in the hover state.</p>
-      <p>
-        <Anchor href="#" decoration>Lorem ipsum dolor sit amet (Decoration)</Anchor>
-      </p>
-      <p>
-        <Anchor href="#" decoration textColor="secondary">Lorem ipsum dolor sit amet (Decoration)</Anchor>
-      </p>
-      <ExampleCode>{`<p>
-  <Anchor href="#" decoration>
-    Lorem ipsum dolor sit amet (Decoration)
-  </Anchor>
-  <br />
-  <Anchor href="#" decoration textColor="secondary">
-    Lorem ipsum dolor sit amet (Decoration)
-  </Anchor>
-</p>`}
+      <h3>Rounded</h3>
+      <p>Adds a rounded shape to the <Code>Input</Code> component.</p>
+      <Grid direction="column" align_items="flex_start">
+        <Grid.Item xs={12}>
+          <Input color="primary" placeholder="Input" variant="rounded" />
+        </Grid.Item>
+      </Grid>
+      <ExampleCode>{`<Grid direction="column" align_items="flex_start">
+  <Grid.Item xs={12}>
+    <Input color="primary" placeholder="Input" variant="rounded" />
+  </Grid.Item>
+</Grid>`}
       </ExampleCode>
     </Container.Row>
     <Container.Row>
+      <h3>Underline</h3>
+      <p>Removes the radius of the corners and also the borders with the exception of the bottom border.</p>
+      <Grid direction="column" align_items="flex_start">
+        <Grid.Item xs={12}>
+          <Input color="primary" placeholder="Input" variant="underline" />
+        </Grid.Item>
+      </Grid>
+      <ExampleCode>{`<Grid direction="column" align_items="flex_start">
+  <Grid.Item xs={12}>
+    <Input color="primary" placeholder="Input" variant="rounded" />
+  </Grid.Item>
+</Grid>`}
+      </ExampleCode>
+    </Container.Row>
+    {/* <Container.Row>
       <h3>Block</h3>
       <p>Adds a background color in the hover state and also change the display inline to inline-block.</p>
       <p>

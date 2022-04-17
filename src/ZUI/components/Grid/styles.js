@@ -10,8 +10,8 @@ export const GridContainer = styled.ul`
   flex-wrap: ${({wrap}) => wrap};
   justify-content: ${({justify}) => justify};
   flex-direction: ${({direction}) => direction};
-  align-items: ${({alignItems}) => alignItems};
-  align-content: ${({alignContent}) => alignContent};
+  align-items: ${({align_items}) => align_items};
+  align-content: ${({align_content}) => align_content};
   width: 100%;
   box-sizing: border-box;
 `;

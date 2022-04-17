@@ -12,6 +12,6 @@ Grid.defaultProps = {
   wrap: "wrap",
   justify: "flex-start",
   direction: "row",
-  alignItems: "center",
-  alignContent: "center",
+  align_items: "center",
+  align_content: "center",
 }
