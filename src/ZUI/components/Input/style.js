@@ -4,10 +4,43 @@ export const InputContainer = styled.label`
   display: inline-block;
   cursor: pointer;
   vertical-align: bottom;
+  width: min-content;
+`;
+
+export const LabelUI = styled.span`
+  margin-bottom: var(--ZUI-sizes_spacing_2);
+  display: inline-block;
+  width: 100%;
+
+  &::after {
+    ${({is_required}) => is_required && `
+      content: "*";
+      margin-left: var(--ZUI-sizes_spacing_2);
+      color: var(--ZUI-colors_error)
+    `}
+  }
+`;
+
+export const ErrorMessage = styled.span`
+  color: var(--ZUI-colors_error);
+  display: inline-block;
+  width: 100%;
+  margin-top: var(--ZUI-sizes_spacing_2);
+`;
+
+export const InputWrapper = styled.span`
+  position: relative;
+  display: inline-block;
+
+  > span {
+    position: absolute;
+    left: var(--ZUI-sizes_spacing_3);
+    top: var(--ZUI-sizes_spacing_2);
+  }
 
   > input {
     background: var(--ZUI-colors_gray_1);
-    padding: 0 var(--ZUI-sizes_spacing_3);
+    padding: ${({icon}) => icon ? `0 var(--ZUI-sizes_spacing_3) 0 var(--ZUI-sizes_spacing_6)` :`0 var(--ZUI-sizes_spacing_3)`};
     display: inline-block;
     box-sizing: border-box;
     transition: all var(--ZUI-transitions_fast);
@@ -57,24 +90,16 @@ export const InputContainer = styled.label`
       user-select: none;
     }
 
-    &:invalid {
-      ${({is_required}) => is_required && `
-        border-color: var(--ZUI-colors_error);
-        color: var(--ZUI-colors_error);
-      `}
+    &[error="true"] {
+      border-color: var(--ZUI-colors_error);
+      color: var(--ZUI-colors_error);
+
+      &:focus,
+      &:focus-visible {
+        outline: currentcolor none medium;
+        box-shadow: 0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_error);
+        ${({variant, color}) => variant === "shadow" && `background: var(--ZUI-colors_${color}_1);`}
+      }
     }
-  }
-`;
-
-export const LabelUI = styled.span`
-  margin-bottom: var(--ZUI-sizes_spacing_2);
-  display: inline-block;
-
-  &::after {
-    ${({is_required}) => is_required && `
-      content: "*";
-      margin-left: var(--ZUI-sizes_spacing_2);
-      color: var(--ZUI-colors_error)
-    `}
   }
 `;

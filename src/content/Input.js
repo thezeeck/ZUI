@@ -4,11 +4,11 @@ import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/Styl
 import { useState } from "react";
 
 export const InputContent = () => {
-  let [inputValue, setInputValue] = useState("Required input");
-
-  const changeValue = e => {
-    setInputValue(e.target.value);
-  }
+  let [inputState, setInputState] = useState({
+    value: "Required input",
+    error: false,
+  });
+  const changeValue = e => setInputState({value: e.target.value, error: e.target.value === ""});
 
   return (
   <Layout>
@@ -177,13 +177,52 @@ export const InputContent = () => {
 </Grid>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
-      <H2>Validation</H2>
+      <H2>Required</H2>
       <p>You can set a required <Code>Input</Code> with the <Code>required</Code> property, also you can set a custom error message.</p>
       <p>
-        <Input required value={inputValue} onChange={changeValue} label="Required input" />
+        <Input 
+          label="Required input"
+          required
+          value={inputState.value}
+          onChange={changeValue} />
       </p>
       <ExampleCode>{`<p>
-  <Input disabled value="Disabled Input" />
+  <Input 
+    label="Required input"
+    required
+    value={inputValue}
+</p>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <H2>Input state</H2>
+      <p>If the <Code>Input</Code> field is not valid you can set the <Code>error</Code> property as <Code>true</Code> and also you can set a custom error message.</p>
+      <p>
+        <Input 
+          label="Required input"
+          required
+          error_message="This input is required"
+          error={true} />
+      </p>
+      <ExampleCode>{`<p>
+  <Input 
+    label="Required input"
+    required
+    error_message="This input is required"
+    error={true} />
+</p>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <H2>Icons</H2>
+      <p>You can set a custom icon with the property <Code>icon</Code>.</p>
+      <p>
+        <Input 
+          label="Icon input"
+          icon="link" />
+      </p>
+      <ExampleCode>{`<p>
+  <Input 
+    label="Icon input"
+    icon="link" />
 </p>`}</ExampleCode>
     </Container.Row>
     {/* <Container.Row>

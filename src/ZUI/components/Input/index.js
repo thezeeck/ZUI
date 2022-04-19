@@ -1,27 +1,30 @@
-import { InputContainer, LabelUI } from "./style";
-import { useState } from "react";
+import { InputContainer, LabelUI, ErrorMessage, InputWrapper } from "./style";
+import { Icon } from "../Icons";
 
 export const Input = props => {
-  const [isValid, setIsValid] = useState(props.required && !props.value);
-
-  console.log(props.required, props.value);
-
-  console.log(isValid);
-
+  
+  if (props.icon) {
+    console.log(props.icon);
+  }
+  
   return (
-    <InputContainer
+  <InputContainer>
+    {props.label && <LabelUI is_required={props.required}>{props.label}</LabelUI>}
+    <InputWrapper
       color={props.color}
       size={props.size}
-      variant={props.variant} >
-      {props.label && <><LabelUI is_required={props.required}>{props.label}</LabelUI><br /></>}
+      variant={props.variant}
+      icon={props.icon} >
       <input
         {...props}
         placeholder={props.placeholder ? props.placeholder : props.label}
-        required={props.required} />
-      {isValid && <span>Error!</span>}
-    </InputContainer>
-  );
-}
+        required={props.required}
+        error={props.error.toString()} />
+      {props.icon && <Icon name={props.icon} />}
+    </InputWrapper>
+    {props.error && <ErrorMessage>{props.error_message}</ErrorMessage>}
+  </InputContainer>
+)};
 
 Input.defaultProps = {
   type: "text",
@@ -30,4 +33,6 @@ Input.defaultProps = {
   disabled: false,
   size: "md",
   required: false,
+  error: false,
+  error_message: ""
 }
