@@ -1,9 +1,14 @@
 import { Anchor, Container, Input, Button, Grid } from "../ZUI";
 import { Layout } from "../components/Layout";
 import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
+import { useState } from "react";
 
 export const InputContent = () => {
-  let value = "value";
+  let [inputValue, setInputValue] = useState("Required input");
+
+  const changeValue = e => {
+    setInputValue(e.target.value);
+  }
 
   return (
   <Layout>
@@ -134,32 +139,53 @@ export const InputContent = () => {
       <p>Adds a rounded shape to the <Code>Input</Code> component.</p>
       <Grid direction="column" align_items="flex_start">
         <Grid.Item xs={12}>
-          <Input color="primary" placeholder="Input" variant="rounded" />
+          <Input placeholder="Input" variant="rounded" />
         </Grid.Item>
       </Grid>
       <ExampleCode>{`<Grid direction="column" align_items="flex_start">
   <Grid.Item xs={12}>
-    <Input color="primary" placeholder="Input" variant="rounded" />
+    <Input placeholder="Input" variant="rounded" />
   </Grid.Item>
-</Grid>`}
-      </ExampleCode>
+</Grid>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
       <h3>Underline</h3>
       <p>Removes the radius of the corners and also the borders with the exception of the bottom border.</p>
       <Grid direction="column" align_items="flex_start">
         <Grid.Item xs={12}>
-          <Input color="primary" placeholder="Input" variant="underline" />
+          <Input placeholder="Input" variant="underline" />
+        </Grid.Item>
+      </Grid>
+      <ExampleCode>{`<Grid direction="column" align_items="flex_start">
+  <Grid.Item xs={12}>
+    <Input placeholder="Input" variant="rounded" />
+  </Grid.Item>
+</Grid>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <h3>Shadow</h3>
+      <p>Removes the border and change the background on focus state.</p>
+      <Grid direction="column" align_items="flex_start">
+        <Grid.Item xs={12}>
+          <Input color="primary" placeholder="Input" variant="shadow" />
         </Grid.Item>
       </Grid>
       <ExampleCode>{`<Grid direction="column" align_items="flex_start">
   <Grid.Item xs={12}>
     <Input color="primary" placeholder="Input" variant="rounded" />
   </Grid.Item>
-</Grid>`}
-      </ExampleCode>
+</Grid>`}</ExampleCode>
     </Container.Row>
-    <Input color="primary" placeholder="Input" variant="underline" onChange={e => console.log(e)} value={value} />
+    <Container.Row>
+      <H2>Validation</H2>
+      <p>You can set a required <Code>Input</Code> with the <Code>required</Code> property, also you can set a custom error message.</p>
+      <p>
+        <Input required value={inputValue} onChange={changeValue} label="Required input" />
+      </p>
+      <ExampleCode>{`<p>
+  <Input disabled value="Disabled Input" />
+</p>`}</ExampleCode>
+    </Container.Row>
     {/* <Container.Row>
       <h3>Block</h3>
       <p>Adds a background color in the hover state and also change the display inline to inline-block.</p>

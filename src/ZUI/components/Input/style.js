@@ -30,11 +30,12 @@ export const InputContainer = styled.label`
         height: var(--ZUI-sizes_button_height_${size});`
     }}
     ${({color, variant}) => {
-      if (variant === "shadow" || variant === "rounded") return `border: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${color}_3);`
+      if (variant === "default" || variant === "rounded") return `border: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${color}_3);`
       if (variant === "underline") return `
         border-width: 0 0 var(--ZUI-sizes_border_sm);
         border-style: solid;
         border-color: var(--ZUI-colors_${color}_3);`
+      if (variant === "shadow") return `border: var(--ZUI-sizes_border_sm) solid transparent;`
     }};
     color: ${({color}) => `var(--ZUI-colors_${color}_5)`};
 
@@ -43,9 +44,11 @@ export const InputContainer = styled.label`
       opacity: .5;
     }
 
+    &:focus,
     &:focus-visible {
       outline: currentcolor none medium;
       box-shadow: ${({color}) => `0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_${color === "gray" ? "primary" : color})`};
+      ${({variant, color}) => variant === "shadow" && `background: var(--ZUI-colors_${color}_1);`}
     }
 
     &:disabled {
@@ -53,10 +56,25 @@ export const InputContainer = styled.label`
       cursor: not-allowed;
       user-select: none;
     }
+
+    &:invalid {
+      ${({is_required}) => is_required && `
+        border-color: var(--ZUI-colors_error);
+        color: var(--ZUI-colors_error);
+      `}
+    }
   }
 `;
 
 export const LabelUI = styled.span`
-  margin-bottom: var(--ZUI-sizes_spacing_4);
+  margin-bottom: var(--ZUI-sizes_spacing_2);
   display: inline-block;
+
+  &::after {
+    ${({is_required}) => is_required && `
+      content: "*";
+      margin-left: var(--ZUI-sizes_spacing_2);
+      color: var(--ZUI-colors_error)
+    `}
+  }
 `;
