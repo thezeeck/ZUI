@@ -22,3 +22,15 @@
 .ZUI-link::before {
   content: "\015a";
 }
+
+.ZUI-user::before {
+  content: "\016a";
+}
+
+.ZUI-close::before {
+  content: "\017a";
+}
+
+.ZUI-secure::before {
+  content: "\018a";
+}

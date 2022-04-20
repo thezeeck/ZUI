@@ -34,13 +34,18 @@ export const InputWrapper = styled.span`
 
   > span {
     position: absolute;
-    left: var(--ZUI-sizes_spacing_3);
     top: var(--ZUI-sizes_spacing_2);
+    ${({type}) => type === "password" ? `right: var(--ZUI-sizes_spacing_3);` : "left: var(--ZUI-sizes_spacing_3);"
+    }}
   }
 
   > input {
     background: var(--ZUI-colors_gray_1);
-    padding: ${({icon}) => icon ? `0 var(--ZUI-sizes_spacing_3) 0 var(--ZUI-sizes_spacing_6)` :`0 var(--ZUI-sizes_spacing_3)`};
+    padding: ${({icon, type}) => {
+      if (type === "password") return "0 var(--ZUI-sizes_spacing_6) 0 var(--ZUI-sizes_spacing_3)";
+      if (icon) return "0 var(--ZUI-sizes_spacing_3) 0 var(--ZUI-sizes_spacing_6)";
+      return "0 var(--ZUI-sizes_spacing_3)";
+    }};
     display: inline-block;
     box-sizing: border-box;
     transition: all var(--ZUI-transitions_fast);

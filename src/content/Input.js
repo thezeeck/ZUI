@@ -225,6 +225,19 @@ export const InputContent = () => {
     icon="link" />
 </p>`}</ExampleCode>
     </Container.Row>
+    <Container.Row>
+      <H2>Password input</H2>
+      <p>You can set a custom icon with the property <Code>icon</Code>.</p>
+      <p>
+        <Input.Password 
+          label="Password input" />
+      </p>
+      <ExampleCode>{`<p>
+  <Input 
+    label="Icon input"
+    icon="link" />
+</p>`}</ExampleCode>
+    </Container.Row>
     {/* <Container.Row>
       <h3>Block</h3>
       <p>Adds a background color in the hover state and also change the display inline to inline-block.</p>

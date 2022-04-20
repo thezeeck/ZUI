@@ -20,4 +20,4 @@ export { Styles } from "./components/Style";
 export { Button } from "./components/Button";
 export { Loading } from "./components/Loading";
 export { Icon } from "./components/Icons";
-export { Input } from "./components/Input";
+export { default as Input } from "./components/Input";
