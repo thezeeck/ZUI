@@ -11,12 +11,13 @@ export const Password = props => {
       size={props.size}
       variant={props.variant}
       icon={props.icon}
-      type={props.type} >
+      type="password" >
       <input
         {...props}
         placeholder={props.placeholder ? props.placeholder : props.label}
         required={props.required}
-        error={props.error.toString()} />
+        error={props.error.toString()}
+        type="password" />
       {props.icon && <Icon name={props.icon} />}
     </InputWrapper>
     {props.error && <ErrorMessage>{props.error_message}</ErrorMessage>}
@@ -24,7 +25,6 @@ export const Password = props => {
 )};
 
 Password.defaultProps = {
-  type: "password",
   variant: "default",
   color: "gray",
   disabled: false,

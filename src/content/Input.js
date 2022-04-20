@@ -229,13 +229,25 @@ export const InputContent = () => {
       <H2>Password input</H2>
       <p>You can set a custom icon with the property <Code>icon</Code>.</p>
       <p>
-        <Input.Password 
-          label="Password input" />
+        <Input.Password label="Password input" />
+      </p>
+      <p>
+        <Input.Password size="xs" label="Password input" />
+      </p>
+      <p>
+        <Input.Password label="Password input" />
+      </p>
+      <p>
+        <Input.Password label="Password input" />
+      </p>
+      <p>
+        <Input.Password label="Password input" />
+      </p>
+      <p>
+        <Input.Password label="Password input" />
       </p>
       <ExampleCode>{`<p>
-  <Input 
-    label="Icon input"
-    icon="link" />
+  <Input.Password label="Password input" />
 </p>`}</ExampleCode>
     </Container.Row>
     {/* <Container.Row>
