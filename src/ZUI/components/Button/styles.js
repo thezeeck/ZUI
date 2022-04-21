@@ -26,7 +26,7 @@ export const ButtonUI = styled.button`
   vertical-align: middle;
   transition: all var(--ZUI-transitions_fast) ease;
   font-weight: bold;
-  font-family: var(--ZUI-fonts-sans);
+  font-family: var(--ZUI-fonts_sans);
   cursor: ${({disabled, loading}) => disabled || loading ? "not-allowed" : "pointer"};
   ${({size, auto, rounded}) => {
     let sizes = {};

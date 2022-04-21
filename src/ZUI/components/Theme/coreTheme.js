@@ -128,6 +128,8 @@ export const core = {
     spacing_4: "1rem",
     spacing_5: "1.5rem",
     spacing_6: "2rem",
+    spacing_7: "2.5rem",
+    spacing_8: "3rem",
 
     space_0: "0rem",
     space_1: "2rem",

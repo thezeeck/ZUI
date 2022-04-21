@@ -1,5 +1,18 @@
 import styled from "styled-components";
 
+const calculateTopPosition = size => {
+  let topSize;
+  if (size === "xs") topSize = 0;
+  if (size === "sm") topSize = 1;
+  if (size === "md") topSize = 2;
+  if (size === "lg") topSize = 2;
+  if (size === "xl") topSize = 3;
+
+  console.log("size", size, "top", topSize);
+  
+  return `var(--ZUI-sizes_spacing_${topSize})`;
+}
+
 export const InputContainer = styled.label`
   display: inline-block;
   cursor: pointer;
@@ -34,15 +47,25 @@ export const InputWrapper = styled.span`
 
   > span {
     position: absolute;
-    top: var(--ZUI-sizes_spacing_2);
-    ${({type}) => type === "password" ? `right: var(--ZUI-sizes_spacing_3);` : "left: var(--ZUI-sizes_spacing_3);"
-    }}
+    top: ${({size}) => calculateTopPosition(size)};
+    left: var(--ZUI-sizes_spacing_3);
+  }
+
+  > button {
+    position: absolute;
+    width: auto;
+    min-width: auto;
+    top: 0;
+    background-color: transparent;
+    border: 0 none;
+    color: var(--ZUI-colors_text);
+    right: 0;
   }
 
   > input {
     background: var(--ZUI-colors_gray_1);
     padding: ${({icon, type}) => {
-      if (type === "password") return "0 var(--ZUI-sizes_spacing_6) 0 var(--ZUI-sizes_spacing_3)";
+      if (type === "password") return "0 var(--ZUI-sizes_spacing_8) 0 var(--ZUI-sizes_spacing_3)";
       if (icon) return "0 var(--ZUI-sizes_spacing_3) 0 var(--ZUI-sizes_spacing_6)";
       return "0 var(--ZUI-sizes_spacing_3)";
     }};

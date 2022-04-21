@@ -218,6 +218,21 @@ export const InputContent = () => {
         <Input 
           label="Icon input"
           icon="link" />
+        <Input 
+          label="Icon input"
+          icon="link" size="xs" />
+        <Input 
+          label="Icon input"
+          icon="link" size="sm" />
+        <Input 
+          label="Icon input"
+          icon="link" size="md" />
+        <Input 
+          label="Icon input"
+          icon="link" size="lg" />
+        <Input 
+          label="Icon input"
+          icon="link" size="xl" />
       </p>
       <ExampleCode>{`<p>
   <Input 
