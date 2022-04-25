@@ -14,8 +14,6 @@ export const Input = props => {
     if (props.size === "xl") iconSize = "lg";
     else iconSize = "md";
 
-    console.log("icon size:", iconSize);
-
     return iconSize;
     
     

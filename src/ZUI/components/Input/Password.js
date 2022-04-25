@@ -1,7 +1,6 @@
 import { Input } from "./Input";
 
 export const Password = props => {
-  console.log(props.type);
   return (
   <Input {...props} />
 )};

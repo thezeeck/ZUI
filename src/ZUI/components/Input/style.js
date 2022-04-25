@@ -7,8 +7,6 @@ const calculateTopPosition = size => {
   if (size === "md") topSize = 2;
   if (size === "lg") topSize = 2;
   if (size === "xl") topSize = 3;
-
-  console.log("size", size, "top", topSize);
   
   return `var(--ZUI-sizes_spacing_${topSize})`;
 }
