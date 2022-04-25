@@ -41,6 +41,8 @@ const CSS = createGlobalStyle`
 
       body {
         font-family: var(--ZUI-fonts_sans);
+        background-color: var(--ZUI-colors_background);
+        color: var(--ZUI-colors_text);
       }
 
       @keyframes ZUI-loading-type1 {
