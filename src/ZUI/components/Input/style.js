@@ -11,6 +11,12 @@ const calculateTopPosition = size => {
   return `var(--ZUI-sizes_spacing_${topSize})`;
 }
 
+const calculateIconPadding = size => {
+  if (size === "lg") return [4, 8];
+  if (size === "xl") return [5, 10];
+  else return [3, 6];
+}
+
 export const InputContainer = styled.label`
   display: inline-block;
   cursor: pointer;
@@ -39,32 +45,53 @@ export const ErrorMessage = styled.span`
   margin-top: var(--ZUI-sizes_spacing_2);
 `;
 
+export const HelpMessage = styled.span`
+  display: inline-block;
+  width: 100%;
+  margin-top: var(--ZUI-sizes_spacing_2);
+`;
+
 export const InputWrapper = styled.span`
   position: relative;
   display: inline-block;
 
   > span {
     position: absolute;
-    top: ${({size}) => calculateTopPosition(size)};
-    left: var(--ZUI-sizes_spacing_3);
+    top: var(--ZUI-sizes_border_sm);
+    left: var(--ZUI-sizes_border_sm);
+    height: calc(100% - (var(--ZUI-sizes_border_sm) * 2));
+    width: ${({size}) => `calc(var(--ZUI-sizes_spacing_${calculateIconPadding(size)[1]}) - var(--ZUI-sizes_border_sm))`};
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   > button {
     position: absolute;
-    width: auto;
-    min-width: auto;
-    top: 0;
+    top: var(--ZUI-sizes_border_sm);
+    height: calc(100% - (var(--ZUI-sizes_border_sm) * 2));
+    width: ${({size}) => `calc(var(--ZUI-sizes_spacing_${calculateIconPadding(size)[1]}) - var(--ZUI-sizes_border_sm))`};
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: transparent;
     border: 0 none;
     color: var(--ZUI-colors_text);
-    right: 0;
+    right: var(--ZUI-sizes_border_sm);
+    padding: 0;
+
+    > span {
+      padding: 0;
+    }
   }
 
   > input {
     background: var(--ZUI-colors_gray_1);
-    padding: ${({icon, type}) => {
-      if (type === "password") return "0 var(--ZUI-sizes_spacing_8) 0 var(--ZUI-sizes_spacing_3)";
-      if (icon) return "0 var(--ZUI-sizes_spacing_3) 0 var(--ZUI-sizes_spacing_6)";
+    padding: ${({icon, is_password, size}) => {
+      const padding = calculateIconPadding(size);
+      if (is_password) return `0 var(--ZUI-sizes_spacing_${padding[1]}) 0 var(--ZUI-sizes_spacing_${padding[0]})`;
+      if (icon) return `0 var(--ZUI-sizes_spacing_${padding[0]}) 0 var(--ZUI-sizes_spacing_${padding[1]}) `;
       return "0 var(--ZUI-sizes_spacing_3)";
     }};
     display: inline-block;

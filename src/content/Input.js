@@ -8,7 +8,13 @@ export const InputContent = () => {
     value: "Required input",
     error: false,
   });
+  let [inputClear, setInputClear] = useState("Test value");
+
   const changeValue = e => setInputState({value: e.target.value, error: e.target.value === ""});
+  const changeClear = e => {
+    setInputClear(e.target.value);
+    console.log("input change");
+  };
 
   return (
   <Layout>
@@ -215,54 +221,40 @@ export const InputContent = () => {
       <H2>Icons</H2>
       <p>You can set a custom icon with the property <Code>icon</Code>.</p>
       <p>
-        <Input 
-          label="Icon input"
-          icon="link" />
-        <Input 
-          label="Icon input"
-          icon="link" size="xs" />
-        <Input 
-          label="Icon input"
-          icon="link" size="sm" />
-        <Input 
-          label="Icon input"
-          icon="link" size="md" />
-        <Input 
-          label="Icon input"
-          icon="link" size="lg" />
-        <Input 
-          label="Icon input"
-          icon="link" size="xl" />
+        <Input label="Icon input" icon="link" />
       </p>
       <ExampleCode>{`<p>
-  <Input 
-    label="Icon input"
-    icon="link" />
+  <Input label="Icon input" icon="link" />
 </p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>
       <H2>Password input</H2>
-      <p>You can set a custom icon with the property <Code>icon</Code>.</p>
-      <p>
-        <Input.Password label="Password input" />
-      </p>
-      <p>
-        <Input.Password size="xs" label="Password input" />
-      </p>
-      <p>
-        <Input.Password label="Password input" />
-      </p>
-      <p>
-        <Input.Password label="Password input" />
-      </p>
-      <p>
-        <Input.Password label="Password input" />
-      </p>
+      <p>The input <Code>Input.Password</Code> has an additional function that allows the user to display the entered password.</p>
       <p>
         <Input.Password label="Password input" />
       </p>
       <ExampleCode>{`<p>
   <Input.Password label="Password input" />
+</p>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <H2>Additional help text</H2>
+      <p>You can add a help message to the <Code>Input</Code> with the property <Code>help_text</Code>.</p>
+      <p>
+        <Input help_text="Please enter a valid email" type="email" label="test@test.com" />
+      </p>
+      <ExampleCode>{`<p>
+  <Input help_text="Please enter a valid email" type="email" label="test@test.com" />
+</p>`}</ExampleCode>
+    </Container.Row>
+    <Container.Row>
+      <H2>Clearable</H2>
+      <p>You allow to the user clear the <Code>Input</Code> with the <Code>clearable</Code> property.</p>
+      <p>
+        <Input label="Clearable input" clearable onChange={changeClear} value={inputClear}/>
+      </p>
+      <ExampleCode>{`<p>
+  <Input help_text="Please enter a valid email" type="email" label="test@test.com" />
 </p>`}</ExampleCode>
     </Container.Row>
     {/* <Container.Row>

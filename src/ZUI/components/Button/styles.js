@@ -136,5 +136,5 @@ export const ButtonContentUI = styled.span`
 `;
 
 export const IconWrapper = styled.span`
-  margin-left: var(--ZUI-sizes_spacing_2);
+  margin-left: ${({haveChildren}) => haveChildren ? "var(--ZUI-sizes_spacing_2)" : 0 };
 `;

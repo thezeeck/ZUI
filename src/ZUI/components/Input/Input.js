@@ -1,47 +1,49 @@
-import { InputContainer, LabelUI, ErrorMessage, InputWrapper } from "./style";
+import { InputContainer, LabelUI, ErrorMessage, InputWrapper, HelpMessage } from "./style";
 import { Icon } from "../Icons";
 import { Button } from "../Button";
+import { useRef, useState } from "react";
 
 export const Input = props => {
   const inputProps = {...props};
+  const inputRef = useRef(null);
   delete inputProps.is_password;
   delete inputProps.error;
-  const calculateIconsSize = () => {
-    let iconSize;
-    if (props.size === "xs") iconSize = "xs";
-    if (props.size === "sm") iconSize = "sm";
-    if (props.size === "lg") iconSize = "md";
-    if (props.size === "xl") iconSize = "lg";
-    else iconSize = "md";
+  delete inputProps.isPasswordVisible;
+  delete inputProps.handleButtonClick;
+  delete inputProps.help_text;
+  delete inputProps.clearable;
 
-    return iconSize;
-    
-    
-    // if (props.size === "xs") return "xs";
-    // if (props.size === "sm") return "sm";
-    // if (props.size === "lg") return "md";
-    // if (props.size === "xl") return "lg";
-    // else return "md"
+  const handleClear = () => {
+    inputRef.current.value = "";
+    if (props.onChange) {
+      
+    }
   }
 
   return (
-  <InputContainer>
-    {props.label && <LabelUI is_required={props.required}>{props.label}</LabelUI>}
-    <InputWrapper
-      color={props.color}
-      size={props.size}
-      variant={props.variant}
-      icon={props.icon}
-      type={props.type} >
-      <input
-        {...inputProps}
-        placeholder={props.placeholder ? props.placeholder : props.label} />
-      {(props.icon && props.is_password) && <Button size={props.size}><Icon name={props.icon} /></Button>}
-      {(props.icon && !props.is_password) && <Icon name={props.icon} size={calculateIconsSize()} />}
-    </InputWrapper>
-    {props.error && <ErrorMessage>{props.error_message}</ErrorMessage>}
-  </InputContainer>
-)};
+    <InputContainer>
+      {props.label && <LabelUI is_required={props.required}>{props.label}</LabelUI>}
+      <InputWrapper
+        color={props.color}
+        size={props.size}
+        variant={props.variant}
+        icon={props.icon}
+        type={props.type}
+        is_password={props.is_password} >
+        <input
+          {...inputProps}
+          placeholder={props.placeholder ? props.placeholder : props.label}
+          type={props.isPasswordVisible ? "text" : props.type}
+          ref={inputRef} />
+        {(props.clearable) && <Button icon="close" size={props.size} onClick={handleClear} ></Button>}
+        {(props.icon && props.is_password) && <Button icon={props.icon} size={props.size} onClick={props.handleButtonClick} ></Button>}
+        {(props.icon && !props.is_password) && <Icon name={props.icon} size={props.size} />}
+      </InputWrapper>
+      {props.help_text && <HelpMessage>{props.help_text}</HelpMessage>}
+      {props.error && <ErrorMessage>{props.error_message}</ErrorMessage>}
+    </InputContainer>
+  )
+};
 
 Input.defaultProps = {
   type: "text",
@@ -53,4 +55,5 @@ Input.defaultProps = {
   error: false,
   error_message: "",
   is_password: false,
+  clearable: false,
 }
