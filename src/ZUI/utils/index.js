@@ -1,6 +1,13 @@
+/**
+ * It takes a hex color and an opacity value and returns a string with the rgba value.
+ * @param color - the hex color you want to convert
+ * @param opacity - a decimal number between 0 and 1
+ * @returns A string rgba color.
+ */
+
 export const hexToRgba = (color, opacity) => {
   const newColor = color.substring(1);
-  const calculate = (hex) => {
+  const calculate = hex => {
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
     const b = parseInt(hex.substring(4, 6), 16);
@@ -17,22 +24,21 @@ export const hexToRgba = (color, opacity) => {
     return "red";
   }
   
-  if (newColor.length === 6) {
-    return calculate(newColor, opacity);
-  } else {
-    const completeColor = newColor.split("").reduce((acc, curr) => {
-      acc += curr.repeat(2); return acc;
-    }, "");
-    return calculate(completeColor);
-  }
+  if (newColor.length === 6) return calculate(newColor);
+  
+  const completeColor = newColor.split("").reduce((acc, curr) => {
+    acc += curr.repeat(2); return acc;
+  }, "");
+
+  return calculate(completeColor);
 }
+
+/**
+ * If the color is a gradient, return the gradient variable, otherwise return the color variable.
+ * @returns A string.
+ */
 
 export const gradientOrColor = color => {
   if (/gradient/g.test(color)) return `var(--ZUI-${color})`;
   else return `var(--ZUI-colors_${color})`;
-}
-
-export const randomId = component => {
-  const characters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-  return `ZUI-${component}_${Date.now()}${characters[Math.floor(Math.random() * characters.length)]}`;
 }
