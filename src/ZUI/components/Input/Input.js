@@ -1,10 +1,16 @@
-import { InputContainer, LabelUI, ErrorMessage, InputWrapper, HelpMessage } from "./style";
+import {
+  InputContainer,
+  LabelUI,
+  ErrorMessage,
+  InputWrapper,
+  HelpMessage,
+} from "./style";
 import { Icon } from "../Icons";
 import { Button } from "../Button";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
-export const Input = props => {
-  const inputProps = {...props};
+export const Input = (props) => {
+  const inputProps = { ...props };
   const inputRef = useRef(null);
   delete inputProps.is_password;
   delete inputProps.error;
@@ -16,33 +22,46 @@ export const Input = props => {
   const handleClear = () => {
     inputRef.current.value = "";
     if (props.onChange) {
-      
     }
-  }
+  };
 
   return (
     <InputContainer>
-      {props.label && <LabelUI is_required={props.required}>{props.label}</LabelUI>}
+      {props.label && (
+        <LabelUI is_required={props.required}>{props.label}</LabelUI>
+      )}
       <InputWrapper
         color={props.color}
         size={props.size}
         variant={props.variant}
         icon={props.icon}
         type={props.type}
-        is_password={props.is_password} >
+        is_password={props.is_password}
+      >
         <input
           {...inputProps}
           placeholder={props.placeholder ? props.placeholder : props.label}
           type={props.isPasswordVisible ? "text" : props.type}
-          ref={inputRef} />
-        {(props.clearable) && <Button icon="close" size={props.size} onClick={handleClear} ></Button>}
-        {(props.icon && props.is_password) && <Button icon={props.icon} size={props.size} onClick={props.handleButtonClick} ></Button>}
-        {(props.icon && !props.is_password) && <Icon name={props.icon} size={props.size} />}
+          ref={inputRef}
+        />
+        {props.clearable && (
+          <Button icon="close" size={props.size} onClick={handleClear}></Button>
+        )}
+        {props.icon && props.is_password && (
+          <Button
+            icon={props.icon}
+            size={props.size}
+            onClick={props.handleButtonClick}
+          ></Button>
+        )}
+        {props.icon && !props.is_password && (
+          <Icon name={props.icon} size={props.size} />
+        )}
       </InputWrapper>
       {props.help_text && <HelpMessage>{props.help_text}</HelpMessage>}
       {props.error && <ErrorMessage>{props.error_message}</ErrorMessage>}
     </InputContainer>
-  )
+  );
 };
 
 Input.defaultProps = {
@@ -56,4 +75,4 @@ Input.defaultProps = {
   error_message: "",
   is_password: false,
   clearable: false,
-}
+};
