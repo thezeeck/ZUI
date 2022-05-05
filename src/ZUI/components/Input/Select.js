@@ -7,17 +7,17 @@ import {
   HelpMessage,
   ErrorMessage,
 } from "./style";
-import DropDownMenuPortal from "../DropDownMenu";
+import { DropDownMenuPortal } from "../DropDownMenu";
 
 export const Select = (props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [position, setPosition] = useState({});
-  const handleClick = e => {
+  const handleClick = (e) => {
     const getPosition = e.target.getBoundingClientRect();
     setIsExpanded(!isExpanded);
     setPosition(getPosition);
-  }
-  const buttonProps = {...props};
+  };
+  const buttonProps = { ...props };
   delete buttonProps.children;
 
   return (
@@ -33,19 +33,25 @@ export const Select = (props) => {
         type={props.type}
         is_password={props.is_password}
       >
-        <SelectUI {...buttonProps}
+        <SelectUI
+          {...buttonProps}
           tabIndex="0"
           role="button"
           aria-expanded={isExpanded}
           aria-disabled={props.disabled}
           data-state={isExpanded ? "open" : "closed"}
-          onClick={handleClick} >
-            {props.label ? props.label : "Select an option"}
+          onClick={handleClick}
+        >
+          {props.label ? props.label : "Select an option"}
         </SelectUI>
       </InputWrapper>
       {props.help_text && <HelpMessage>{props.help_text}</HelpMessage>}
       {props.error && <ErrorMessage>{props.error_message}</ErrorMessage>}
-      {isExpanded && <DropDownMenuPortal position={position} close={setIsExpanded}>{props.children}</DropDownMenuPortal>}
+      {isExpanded && (
+        <DropDownMenuPortal position={position} close={setIsExpanded}>
+          {props.children}
+        </DropDownMenuPortal>
+      )}
     </InputContainer>
   );
 };

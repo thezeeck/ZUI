@@ -20,12 +20,6 @@ export const Input = (props) => {
   delete inputProps.help_text;
   delete inputProps.clearable;
 
-  const handleClear = () => {
-    inputRef.current.value = "";
-    if (props.onChange) {
-    }
-  };
-
   return (
     <InputContainer>
       {props.label && (

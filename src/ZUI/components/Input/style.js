@@ -249,3 +249,23 @@ export const SelectUI = styled.span`
     }
   }
 `;
+
+export const ItemInputUI = styled.button`
+  padding: 1rem;
+  background: transparent;
+  transition: all 0.3s ease;
+  border-width: 0 0 var(--ZUI-sizes_border_sm);
+  border-style: solid;
+  border-color: var(--ZUI-colors_gray_3);
+  color: var(--ZUI-colors_text);
+  width: 100%;
+  text-align: left;
+
+  &:focus-visible,
+  &:hover {
+    outline: currentcolor none medium;
+    box-shadow: 0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2)
+        var(--ZUI-colors_background),
+      0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_primary_3);
+  }
+`;
