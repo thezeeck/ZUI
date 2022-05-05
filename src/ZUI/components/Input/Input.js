@@ -4,6 +4,7 @@ import {
   ErrorMessage,
   InputWrapper,
   HelpMessage,
+  IconWrapper,
 } from "./style";
 import { Icon } from "../Icons";
 import { Button } from "../Button";
@@ -44,9 +45,6 @@ export const Input = (props) => {
           type={props.isPasswordVisible ? "text" : props.type}
           ref={inputRef}
         />
-        {props.clearable && (
-          <Button icon="close" size={props.size} onClick={handleClear}></Button>
-        )}
         {props.icon && props.is_password && (
           <Button
             icon={props.icon}
@@ -55,7 +53,9 @@ export const Input = (props) => {
           ></Button>
         )}
         {props.icon && !props.is_password && (
-          <Icon name={props.icon} size={props.size} />
+          <IconWrapper>
+            <Icon name={props.icon} size={props.size} />
+          </IconWrapper>
         )}
       </InputWrapper>
       {props.help_text && <HelpMessage>{props.help_text}</HelpMessage>}
@@ -74,5 +74,4 @@ Input.defaultProps = {
   error: false,
   error_message: "",
   is_password: false,
-  clearable: false,
 };

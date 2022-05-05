@@ -46,20 +46,6 @@ export const InputWrapper = styled.span`
   position: relative;
   display: inline-block;
 
-  > span {
-    position: absolute;
-    top: var(--ZUI-sizes_border_sm);
-    left: var(--ZUI-sizes_border_sm);
-    height: calc(100% - (var(--ZUI-sizes_border_sm) * 2));
-    width: ${({ size }) =>
-      `calc(var(--ZUI-sizes_spacing_${
-        calculateIconPadding(size)[1]
-      }) - var(--ZUI-sizes_border_sm))`};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   > button {
     position: absolute;
     top: var(--ZUI-sizes_border_sm);
@@ -166,8 +152,23 @@ export const InputWrapper = styled.span`
   }
 `;
 
+export const IconWrapper = styled.span`
+  position: absolute;
+  top: var(--ZUI-sizes_border_sm);
+  left: var(--ZUI-sizes_border_sm);
+  height: calc(100% - (var(--ZUI-sizes_border_sm) * 2));
+  width: ${({ size }) =>
+    `calc(var(--ZUI-sizes_spacing_${
+      calculateIconPadding(size)[1]
+    }) - var(--ZUI-sizes_border_sm))`};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const SelectUI = styled.span`
   appearance: none;
+
   background: var(--ZUI-colors_gray_1);
   padding: ${({ icon, is_password, size }) => {
     const padding = calculateIconPadding(size);
