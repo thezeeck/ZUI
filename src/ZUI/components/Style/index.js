@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { useThemeContext } from "../Theme";
+import { hexToRgba } from "../../utils";
 import icons_svg from "../../fonts/zui_ui_icon.svg";
 import icons_ttf from "../../fonts/zui_ui_icon.ttf";
 import icons_woff from "../../fonts/zui_ui_icon.woff";
@@ -112,6 +113,20 @@ const CSS = createGlobalStyle`
           transform: translate(1190%, 150%);
           opacity: .5;
         }
+      }
+
+      dialog {
+        background-color: ${hexToRgba(theme.colors.background, .5)};
+        border: 0 none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        max-height: 100%;
       }
     `)
   }}

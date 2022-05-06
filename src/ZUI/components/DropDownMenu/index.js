@@ -22,15 +22,16 @@ const DropDownMenu = ({ children, callback, position, close }) => {
 };
 
 export const DropDownMenuPortal = (props) => {
-  const element = document.createElement("div");
+  const element = document.createElement("dialog");
 
   useEffect(() => {
     const body = document.querySelector("body");
     body.appendChild(element);
+    element.showModal();
 
     return () => {
+      element.close();
       body.removeChild(element);
-      console.log("remove");
     };
   }, [props.status, element]);
 

@@ -264,8 +264,6 @@ export const ItemInputUI = styled.button`
   &:focus-visible,
   &:hover {
     outline: currentcolor none medium;
-    box-shadow: 0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2)
-        var(--ZUI-colors_background),
-      0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_primary_3);
+    background-color: var(--ZUI-colors_gray_2);
   }
 `;

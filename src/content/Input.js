@@ -300,10 +300,10 @@ export const InputContent = () => {
         <p></p>
         <p>
           <Input.Select>
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <Input.Item value="volvo" label="Volvo" />
+            <Input.Item value="saab" label="Saab" />
+            <Input.Item value="mercedes" label="Mercedes" />
+            <Input.Item value="audi" label="Audi" />
           </Input.Select>
           <Input type="email" />
         </p>
@@ -317,9 +317,9 @@ export const InputContent = () => {
         <p>
           <Input.Select>
             <Input.Item value="volvo" label="Volvo" />
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <Input.Item value="saab" label="Saab" />
+            <Input.Item value="mercedes" label="Mercedes" />
+            <Input.Item value="audi" label="Audi" />
           </Input.Select>
           <Input type="email" />
         </p>
