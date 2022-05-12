@@ -1,10 +1,35 @@
 import styled from "styled-components";
 
-const calculateIconPadding = (size) => {
+const calculateIconPadding = size => {
   if (size === "lg") return [4, 8];
   if (size === "xl") return [5, 10];
   else return [3, 6];
 };
+
+const genericInputStyles = (size, color, variant) => {
+  let sizes = {};
+  if (size === "xs") sizes = { fs: 1, rd: "xs", wd: 4 };
+  else if (size === "sm") sizes = { fs: 2, rd: "sm", wd: 5 };
+  else if (size === "lg") sizes = { fs: 3, rd: "md", wd: 8 };
+  else if (size === "xl") sizes = { fs: 4, rd: "lg", wd: 10 };
+  else sizes = { fs: 3, rd: "md", wd: 6 };
+
+  if (variant === "underline") sizes.rd = 0;
+  if (variant === "rounded") sizes.rd = "var(--ZUI-sizes_radius_xl)";
+  else sizes.rd = `var(--ZUI-sizes_radius_${sizes.rd})`;
+
+  return `
+  background: var(--ZUI-colors_gray_1);
+  display: inline-block;
+  box-sizing: border-box;
+  transition: all var(--ZUI-transitions_fast);
+  font-size: var(--ZUI-sizes_font_${sizes.fs});
+  width: var(--ZUI-sizes_space_${sizes.wd});
+  border-radius: ${sizes.rd};
+  height: var(--ZUI-sizes_button_height_${size});
+  color: var(--ZUI-colors_${color}_5);
+`
+}
 
 export const InputContainer = styled.label`
   display: inline-block;
@@ -43,9 +68,11 @@ export const HelpMessage = styled.span`
 `;
 
 export const InputWrapper = styled.span`
+  ${({icon, is_password, size, color, variant}) => genericInputStyles(size, color, variant)}
+  
   position: relative;
   display: inline-block;
-
+  
   > button {
     position: absolute;
     top: var(--ZUI-sizes_border_sm);
@@ -167,9 +194,7 @@ export const IconWrapper = styled.span`
 `;
 
 export const SelectUI = styled.span`
-  appearance: none;
-
-  background: var(--ZUI-colors_gray_1);
+  ${({size, color, variant}) => genericInputStyles(size, color, variant)}
   padding: ${({ icon, is_password, size }) => {
     const padding = calculateIconPadding(size);
     if (is_password)
@@ -178,27 +203,6 @@ export const SelectUI = styled.span`
       return `0 var(--ZUI-sizes_spacing_${padding[0]}) 0 var(--ZUI-sizes_spacing_${padding[1]}) `;
     return "0 var(--ZUI-sizes_spacing_3)";
   }};
-  display: inline-block;
-  box-sizing: border-box;
-  transition: all var(--ZUI-transitions_fast);
-  ${({ size, variant }) => {
-    let sizes = {};
-    if (size === "xs") sizes = { fs: 1, rd: "xs", wd: 4 };
-    else if (size === "sm") sizes = { fs: 2, rd: "sm", wd: 5 };
-    else if (size === "lg") sizes = { fs: 3, rd: "md", wd: 8 };
-    else if (size === "xl") sizes = { fs: 4, rd: "lg", wd: 10 };
-    else sizes = { fs: 3, rd: "md", wd: 6 };
-
-    if (variant === "underline") sizes.rd = 0;
-    if (variant === "rounded") sizes.rd = "var(--ZUI-sizes_radius_xl)";
-    else sizes.rd = `var(--ZUI-sizes_radius_${sizes.rd})`;
-
-    return `
-      font-size: var(--ZUI-sizes_font_${sizes.fs});
-      width: var(--ZUI-sizes_space_${sizes.wd});
-      border-radius: ${sizes.rd};
-      height: var(--ZUI-sizes_button_height_${size});`;
-  }}
   ${({ color, variant }) => {
     if (variant === "default" || variant === "rounded")
       return `border: var(--ZUI-sizes_border_sm) solid var(--ZUI-colors_${color}_3);`;
@@ -210,22 +214,19 @@ export const SelectUI = styled.span`
     if (variant === "shadow")
       return `border: var(--ZUI-sizes_border_sm) solid transparent;`;
   }};
-  color: ${({ color }) => `var(--ZUI-colors_${color}_5)`};
+  display: flex;
+  align-items: center;
 
   &::placeholder {
-    color: ${({ color }) => `var(--ZUI-colors_${color}_4)`};
+    color: var(--ZUI-colors_${({color}) => color}_4);
     opacity: 0.5;
   }
 
   &:focus,
   &:focus-visible {
     outline: currentcolor none medium;
-    box-shadow: ${({ color }) =>
-      `0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_${
-        color === "gray" ? "primary" : color
-      })`};
-    ${({ variant, color }) =>
-      variant === "shadow" && `background: var(--ZUI-colors_${color}_1);`}
+    box-shadow: 0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2) var(--ZUI-colors_background), 0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_${({color}) => color === "gray" ? "primary" : color});
+    ${({color, variant}) => variant === "shadow" && `background: var(--ZUI-colors_${color}_1);`}
   }
 
   &:disabled {
@@ -244,8 +245,7 @@ export const SelectUI = styled.span`
       box-shadow: 0 0 0 calc(var(--ZUI-sizes_spacing_1) / 2)
           var(--ZUI-colors_background),
         0 0 0 var(--ZUI-sizes_spacing_1) var(--ZUI-colors_error);
-      ${({ variant, color }) =>
-        variant === "shadow" && `background: var(--ZUI-colors_${color}_1);`}
+        ${({color, variant}) => variant === "shadow" && `background: var(--ZUI-colors_${color}_1);`}
     }
   }
 `;
@@ -260,10 +260,16 @@ export const ItemInputUI = styled.button`
   color: var(--ZUI-colors_text);
   width: 100%;
   text-align: left;
+  cursor: pointer;
 
   &:focus-visible,
-  &:hover {
+  &:hover,
+  &:focus {
     outline: currentcolor none medium;
     background-color: var(--ZUI-colors_gray_2);
   }
+`;
+
+export const HiddenInput = styled.input`
+  display: none !important;
 `;

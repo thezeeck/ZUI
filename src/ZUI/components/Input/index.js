@@ -1,10 +1,10 @@
 import { Input } from "./Input";
 import { Password } from "./Password";
 import { Select } from "./Select";
-import { Item } from "./Item";
+import { Option } from "./Option";
 
 Input.Password = Password;
 Input.Select = Select;
-Input.Item = Item;
+Input.Option = Option;
 
 export default Input;

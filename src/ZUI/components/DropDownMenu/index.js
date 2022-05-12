@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import { useThemeContext } from "../Theme";
 import { DropDownMenuUI, MenuWrapper } from "./styles";
 
-const DropDownMenu = ({ children, callback, position, close }) => {
+const DropDownMenu = ({ children, changeValue, position, close }) => {
   const { theme } = useThemeContext();
   const menuRef = useRef(null);
 
@@ -13,8 +13,8 @@ const DropDownMenu = ({ children, callback, position, close }) => {
   }, []);
 
   return (
-    <DropDownMenuUI theme={theme} onClick={() => close(false)}>
-      <MenuWrapper ref={menuRef} position={position}>
+    <DropDownMenuUI theme={theme} onClick={() => close(false)} tabIndex="-1">
+      <MenuWrapper ref={menuRef} position={position} role="option" tabIndex="0" aria-selected="true" onClick={changeValue}>
         {children}
       </MenuWrapper>
     </DropDownMenuUI>

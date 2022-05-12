@@ -52,7 +52,7 @@ export const FooterUI = styled.footer`
   }}
 `;
 
-export const CoverUI = styled.section`
+export const CoverUI = styled.article`
   position: absolute;
   left: 0;
   top: 0;
