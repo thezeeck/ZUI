@@ -22,7 +22,6 @@ export const InputContent = () => {
     setInputState({ value: e.target.value, error: e.target.value === "" });
   const changeClear = (e) => {
     setInputClear(e.target.value);
-    console.log("input change");
   };
 
   return (

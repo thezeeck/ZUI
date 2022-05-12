@@ -6,15 +6,25 @@ import { DropDownMenuUI, MenuWrapper } from "./styles";
 const DropDownMenu = ({ children, changeValue, position, close }) => {
   const { theme } = useThemeContext();
   const menuRef = useRef(null);
+  const handleKey = (e) => {
+    if (e.code === "Space" || e.code === "Enter") changeValue(e);
+  };
 
   useEffect(() => {
-    console.log(menuRef.current.firstChild);
     setTimeout(() => menuRef.current.firstChild.focus(), 100);
   }, []);
 
   return (
     <DropDownMenuUI theme={theme} onClick={() => close(false)} tabIndex="-1">
-      <MenuWrapper ref={menuRef} position={position} role="option" tabIndex="0" aria-selected="true" onClick={changeValue}>
+      <MenuWrapper
+        ref={menuRef}
+        position={position}
+        role="option"
+        tabIndex="0"
+        aria-selected="true"
+        onClick={changeValue}
+        onKeyUp={handleKey}
+      >
         {children}
       </MenuWrapper>
     </DropDownMenuUI>
