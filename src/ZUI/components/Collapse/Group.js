@@ -6,24 +6,28 @@ import { useThemeContext } from "../Theme";
 export const Collapse = (props) => {
   let indexLoop = 0;
   const { theme } = useThemeContext();
-  const childrenWithState = Children.map(props.children, child => {
+  const childrenWithState = Children.map(props.children, (child) => {
     indexLoop++;
-    return cloneElement(child, {id: indexLoop});
+    return cloneElement(child, { id: indexLoop });
   });
 
   return (
-    <CollapseProvider state={{
-      expanded: props.expanded ? [props.expanded] : [],
-      animation: props.animation,
-      gap: props.gap,
-      accordion: props.accordion,
-      variant: props.variant,
-      divider: props.divider,
-      dividerWeight: props.dividerWeight,
-    }}>
-      <GroupUI {...props} theme={theme}>{childrenWithState}</GroupUI>
+    <CollapseProvider
+      state={{
+        expanded: props.expanded ? [props.expanded] : [],
+        animation: props.animation,
+        gap: props.gap,
+        accordion: props.accordion,
+        variant: props.variant,
+        divider: props.divider,
+        divider_weight: props.divider_weight,
+      }}
+    >
+      <GroupUI {...props} theme={theme}>
+        {childrenWithState}
+      </GroupUI>
     </CollapseProvider>
-  )
+  );
 };
 
 Collapse.defaultProps = {
@@ -32,6 +36,6 @@ Collapse.defaultProps = {
   gap: 4,
   divider: true,
   variant: "transparent",
-  dividerWeight: "xs",
+  divider_weight: "xs",
   expanded: 0,
-}
+};

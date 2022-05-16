@@ -294,38 +294,7 @@ export const InputContent = () => {
   <Input help_text="Please enter a valid email" type="email" label="test@test.com" />
 </p>`}</ExampleCode>
       </Container.Row>
-      <Container.Row>
-        <H2>Select</H2>
-        <p></p>
-        <p>
-          <Input.Select>
-            <Input.Option value="volvo" label="Volvo" />
-            <Input.Option value="saab" label="Saab" />
-            <Input.Option value="mercedes" label="Mercedes" />
-            <Input.Option value="audi" label="Audi" />
-          </Input.Select>
-          <Input type="email" />
-        </p>
-        <ExampleCode>{`<p>
-  <Input help_text="Please enter a valid email" type="email" label="test@test.com" />
-</p>`}</ExampleCode>
-      </Container.Row>
-      <Container.Row>
-        <H2>Select</H2>
-        <p></p>
-        <p>
-          <Input.Select>
-            <Input.Option value="volvo" label="Volvo" />
-            <Input.Option value="saab" label="Saab" />
-            <Input.Option value="mercedes" label="Mercedes" />
-            <Input.Option value="audi" label="Audi" />
-          </Input.Select>
-          <Input type="email" />
-        </p>
-        <ExampleCode>{`<p>
-  <Input help_text="Please enter a valid email" type="email" label="test@test.com" />
-</p>`}</ExampleCode>
-      </Container.Row>
+
       {/* <Container.Row>
       <h3>Block</h3>
       <p>Adds a background color in the hover state and also change the display inline to inline-block.</p>

@@ -1,6 +1,14 @@
 import { Anchor, Container } from "../ZUI";
 import { Layout } from "../components/Layout";
-import { H1, H2, Code, Table, Row, ExampleCode, Types } from "../components/StyledComponents";
+import {
+  H1,
+  H2,
+  Code,
+  Table,
+  Row,
+  ExampleCode,
+  Types,
+} from "../components/StyledComponents";
 import { Link } from "react-router-dom";
 
 export const AnchorContent = () => (
@@ -8,18 +16,20 @@ export const AnchorContent = () => (
     <Container.Row>
       <H1>Anchor</H1>
       <p>
-        Anchors <Code>{`<Anchor>`}</Code> component brings to the developers the possibility to customize
-        all links in their project in the same place or customize each element separately, this
-        component renders an <Code>{`<a>`}</Code> HTML element.
+        Anchors <Code>{`<Anchor>`}</Code> component brings to the developers the
+        possibility to customize all links in their project in the same place or
+        customize each element separately, this component renders an{" "}
+        <Code>{`<a>`}</Code> HTML element.
       </p>
-      <ExampleCode lang='javascript'>
+      <ExampleCode lang="javascript">
         {`import { Anchor } from "zeeck-ui";`}
       </ExampleCode>
     </Container.Row>
     <Container.Row>
       <H2>Default</H2>
       <p>
-        The default Anchor color it's the primary color defined in the theme config.
+        The default Anchor color it's the primary color defined in the theme
+        config.
       </p>
       <p>
         <Anchor link="#">Lorem ipsum dolor sit amet</Anchor>
@@ -34,21 +44,34 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Colors</H2>
-      <p>You can change the Anchor <Code>color</Code> with the <Code>text_color</Code> property</p>
       <p>
-        <Anchor text_color="primary" href="#">Lorem ipsum dolor sit amet (Primary)</Anchor>
+        You can change the Anchor <Code>color</Code> with the{" "}
+        <Code>text_color</Code> property
       </p>
       <p>
-        <Anchor text_color="secondary" href="#">Lorem ipsum dolor sit amet (Secondary)</Anchor>
+        <Anchor text_color="primary" href="#">
+          Lorem ipsum dolor sit amet (Primary)
+        </Anchor>
       </p>
       <p>
-        <Anchor text_color="success" href="#">Lorem ipsum dolor sit amet (Success)</Anchor>
+        <Anchor text_color="secondary" href="#">
+          Lorem ipsum dolor sit amet (Secondary)
+        </Anchor>
       </p>
       <p>
-        <Anchor text_color="warning" href="#">Lorem ipsum dolor sit amet (Warning)</Anchor>
+        <Anchor text_color="success" href="#">
+          Lorem ipsum dolor sit amet (Success)
+        </Anchor>
       </p>
       <p>
-        <Anchor text_color="error" href="#">Lorem ipsum dolor sit amet (Error)</Anchor>
+        <Anchor text_color="warning" href="#">
+          Lorem ipsum dolor sit amet (Warning)
+        </Anchor>
+      </p>
+      <p>
+        <Anchor text_color="error" href="#">
+          Lorem ipsum dolor sit amet (Error)
+        </Anchor>
       </p>
       <p>
         <Anchor href="#">Lorem ipsum dolor sit amet (Default)</Anchor>
@@ -83,18 +106,26 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Variants</H2>
-      <p>You can change the default look with the <Code>decoration</Code> and <Code>Block</Code> properties.</p>
+      <p>
+        You can change the default look with the <Code>decoration</Code> and{" "}
+        <Code>Block</Code> properties.
+      </p>
     </Container.Row>
     <Container.Row>
       <h3>Underline</h3>
       <p>Adds an underline style only in the hover state.</p>
       <p>
-        <Anchor href="#" decoration>Lorem ipsum dolor sit amet (Decoration)</Anchor>
+        <Anchor href="#" decoration>
+          Lorem ipsum dolor sit amet (Decoration)
+        </Anchor>
       </p>
       <p>
-        <Anchor href="#" decoration text_color="secondary">Lorem ipsum dolor sit amet (Decoration)</Anchor>
+        <Anchor href="#" decoration text_color="secondary">
+          Lorem ipsum dolor sit amet (Decoration)
+        </Anchor>
       </p>
-      <ExampleCode>{`<p>
+      <ExampleCode>
+        {`<p>
   <Anchor href="#" decoration>
     Lorem ipsum dolor sit amet (Decoration)
   </Anchor>
@@ -107,12 +138,19 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <h3>Block</h3>
-      <p>Adds a background color in the hover state and also change the display inline to inline-block.</p>
       <p>
-        <Anchor href="#" box text_color="success">Lorem ipsum dolor sit amet (Box)</Anchor>
+        Adds a background color in the hover state and also change the display
+        inline to inline-block.
       </p>
       <p>
-        <Anchor href="#" box text_color="warning">Lorem ipsum dolor sit amet (Box)</Anchor>
+        <Anchor href="#" box text_color="success">
+          Lorem ipsum dolor sit amet (Box)
+        </Anchor>
+      </p>
+      <p>
+        <Anchor href="#" box text_color="warning">
+          Lorem ipsum dolor sit amet (Box)
+        </Anchor>
       </p>
       <ExampleCode>
         {`<p>
@@ -127,12 +165,20 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <H2>Icons</H2>
-      <p>You can add the default icon setting the <Code>icon</Code> property and also you can add a custom icon changing the <Code>icon</Code> property value.</p>
       <p>
-        <Anchor href="#" icon>Lorem ipsum dolor sit amet (Icon)</Anchor>
+        You can add the default icon setting the <Code>icon</Code> property and
+        also you can add a custom icon changing the <Code>icon</Code> property
+        value.
       </p>
       <p>
-        <Anchor href="#" icon="chevron-left">Lorem ipsum dolor sit amet (Icon back)</Anchor>
+        <Anchor href="#" icon>
+          Lorem ipsum dolor sit amet (Icon)
+        </Anchor>
+      </p>
+      <p>
+        <Anchor href="#" icon="chevron-left">
+          Lorem ipsum dolor sit amet (Icon back)
+        </Anchor>
       </p>
       <ExampleCode>
         {`<p>
@@ -147,44 +193,54 @@ export const AnchorContent = () => (
       </ExampleCode>
     </Container.Row>
     <Container.Row>
-    <H2>Props</H2>
-      <Table> 
+      <H2>Props</H2>
+      <Table>
         <Row
           attribute="box"
           type={<Code>boolean</Code>}
           values={<Code>true/false</Code>}
           description="Change the display to inline-block"
-          defaultValue={<Code>false</Code>} />
+          defaultValue={<Code>false</Code>}
+        />
         <Row
           attribute="decoration"
           type={<Code>boolean</Code>}
           values={<Code>true/false</Code>}
           description="Display the underline text only in the hover status"
-          defaultValue={<Code>false</Code>} />
+          defaultValue={<Code>false</Code>}
+        />
         <Row
           attribute="href"
           type={<Code>string</Code>}
           values="-"
           description="Link url"
-          defaultValue="-" />
+          defaultValue="-"
+        />
         <Row
           attribute="icon"
-          type={<><Code>boolean</Code> <Code>string</Code></>}
-          values={<><Code>true/false</Code> <Anchor as={Link} to="/icons">Icons</Anchor></>}
+          type={
+            <>
+              <Code>boolean</Code> <Code>string</Code>
+            </>
+          }
+          values={
+            <>
+              <Code>true/false</Code>{" "}
+              <Anchor as={Link} to="/icons">
+                Icons
+              </Anchor>
+            </>
+          }
           description="Show an icon"
-          defaultValue={<Code>false</Code>} />
-        <Row
-          attribute="style"
-          type="-"
-          values="Any valid CSS rule"
-          description="Override Default CSS rules"
-          defaultValue="-" />
+          defaultValue={<Code>false</Code>}
+        />
         <Row
           attribute="text_color"
           type={<Code>string</Code>}
           values={<Anchor href="#anchorColors">LinkColors</Anchor>}
           description="Change font color"
-          defaultValue={<Code>inherit</Code>} />
+          defaultValue={<Code>inherit</Code>}
+        />
       </Table>
     </Container.Row>
     <Container.Row>
@@ -193,7 +249,9 @@ export const AnchorContent = () => (
     </Container.Row>
     <Container.Row>
       <h3 id="icons">Icons</h3>
-      <Anchor as={Link} to="/icons">Icons</Anchor>
+      <Anchor as={Link} to="/icons">
+        Icons
+      </Anchor>
     </Container.Row>
   </Layout>
 );

@@ -7,14 +7,16 @@ export const Aside = () => {
   return (
     <aside>
       <ul>
-        {menu.map(item => (
+        {menu.map((item) => (
           <li key={`id${item.name}`}>
             <h1>{item.name}</h1>
             <ul>
               {item.childs.sort().map((child, index) => (
                 <li key={index}>
                   <Text text_color={theme.colors.text} decoration="none">
-                    <Anchor as={Link} to={child.path}>{child.name}</Anchor>
+                    <Anchor as={Link} to={child.path}>
+                      {child.name}
+                    </Anchor>
                   </Text>
                 </li>
               ))}
@@ -23,5 +25,5 @@ export const Aside = () => {
         ))}
       </ul>
     </aside>
-  )
-}
+  );
+};
