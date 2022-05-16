@@ -294,6 +294,52 @@ export const InputContent = () => {
   <Input help_text="Please enter a valid email" type="email" label="test@test.com" />
 </p>`}</ExampleCode>
       </Container.Row>
+      <Container.Row>
+        <H2>Types</H2>
+        <p>
+          You can add a help message to the <Code>Input</Code> with the property{" "}
+          <Code>help_text</Code>.
+        </p>
+        <p>
+          <Input
+            type="email"
+            label="eMail"
+          />
+        </p>
+        <p>
+          <Input
+            type="number"
+            label="number"
+          />
+        </p>
+        <p>
+          <Input
+            type="text"
+            label="Text"
+          />
+        </p>
+        <p>
+          <Input
+            type="url"
+            label="URL"
+          />
+        </p>
+        <p>
+          <Input
+            type="time"
+            label="Time"
+          />
+        </p>
+        <p>
+          <Input
+            type="date"
+            label="Date"
+          />
+        </p>
+        <ExampleCode>{`<p>
+  <Input help_text="Please enter a valid email" type="email" label="test@test.com" />
+</p>`}</ExampleCode>
+      </Container.Row>
 
       {/* <Container.Row>
       <h3>Block</h3>

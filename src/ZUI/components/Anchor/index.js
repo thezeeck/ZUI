@@ -13,7 +13,7 @@ import { Icon } from "../Icons";
  * text_color   string             inherit     Change font color
  */
 
-export const Anchor = (props) => {
+export const Anchor = props => {
   const { theme } = useThemeContext();
   return (
     <AnchorUI href={props.link} {...props} theme={theme}>
