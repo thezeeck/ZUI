@@ -19,6 +19,12 @@ export const Input = (props) => {
   delete inputProps.handleButtonClick;
   delete inputProps.help_text;
   delete inputProps.clearable;
+  const inputTypes = ["email", "number", "text", "url", "time", "date"];
+
+  if (!inputTypes.includes(props.type))
+    return console.error(
+      "Invalid input type, supported types are: email, number, text, url, time, date"
+    );
 
   return (
     <InputContainer>

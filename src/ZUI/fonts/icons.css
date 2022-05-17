@@ -34,3 +34,7 @@
 .ZUI-secure::before {
   content: "\018a";
 }
+
+.ZUI-loading_1::before {
+  content: "\019a";
+}
