@@ -1,7 +1,7 @@
 import { GridItem } from "./styles";
 import { useThemeContext } from "../Theme";
 
-export const Item = props => {
+export const Item = (props) => {
   const xs = props.xs;
   const sm = props.sm ? props.sm : xs;
   const md = props.md ? props.md : sm;
@@ -9,13 +9,9 @@ export const Item = props => {
   const xl = props.xl ? props.xl : lg;
   const { theme } = useThemeContext();
 
-  if (!theme.break_points) {
-    debugger;
-    return <div>error!</div>
-  }
-
   return (
-    <GridItem className="grid-item"
+    <GridItem
+      className="grid-item"
       xs={xs}
       sm={sm}
       md={md}
@@ -26,5 +22,5 @@ export const Item = props => {
     >
       {props.children}
     </GridItem>
-  )
+  );
 };

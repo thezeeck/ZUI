@@ -7,28 +7,35 @@ import icons_woff from "../../fonts/zui_ui_icon.woff";
 import icons_woff2 from "../../fonts/zui_ui_icon.woff2";
 import "../../fonts/icons.css";
 
-
 export const Styles = () => {
   const { theme } = useThemeContext();
-  return (<CSS theme={theme} />);
-}
+  return <CSS theme={theme} />;
+};
 
 const CSS = createGlobalStyle`
-  ${({theme}) => {
+  ${({ theme }) => {
     let rules = "";
+    let customMedia = "";
+    const sizes = ["sm", "md", "lg", "xl"];
 
     for (const key in theme) {
-      if(typeof theme[key] !== "string") {
+      if (typeof theme[key] !== "string") {
         for (const childKey in theme[key]) {
           rules += `--ZUI-${key}_${childKey}: ${theme[key][childKey]};`;
         }
       }
     }
-    
-    return (`
+
+    sizes.forEach((size) => {
+      customMedia += `--ZUI-media_${size} (min-width: ${theme.break_points[size]});`;
+    });
+
+    return `
       :root {
         ${rules}
       }
+
+      ${customMedia}
 
       @font-face {
           font-family: 'zui_ui';
@@ -116,7 +123,7 @@ const CSS = createGlobalStyle`
       }
 
       dialog {
-        background-color: ${hexToRgba(theme.colors.background, .5)};
+        background-color: ${hexToRgba(theme.colors.background, 0.5)};
         border: 0 none;
         position: fixed;
         top: 0;
@@ -128,6 +135,6 @@ const CSS = createGlobalStyle`
         max-width: 100%;
         max-height: 100%;
       }
-    `)
+    `;
   }}
 `;
