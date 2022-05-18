@@ -5,6 +5,7 @@ import { ButtonContent } from "../content/Button";
 import { CollapseContent } from "../content/Collapse";
 import { CardContent } from "../content/Card";
 import { InputContent } from "../content/Input";
+import { Core } from "../content/Core";
 
 export const menu = [
   {
@@ -14,6 +15,16 @@ export const menu = [
         name: "Getting started",
         path: "/",
         component: Home
+      }
+    ]
+  },
+  {
+    name: "Theme",
+    childs: [
+      {
+        name: "Core theme",
+        path: "/core-theme",
+        component: Core,
       }
     ]
   },

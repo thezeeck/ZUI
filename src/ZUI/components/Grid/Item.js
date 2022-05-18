@@ -9,16 +9,22 @@ export const Item = props => {
   const xl = props.xl ? props.xl : lg;
   const { theme } = useThemeContext();
 
+  if (!theme.break_points) {
+    debugger;
+    return <div>error!</div>
+  }
+
   return (
-  <GridItem className="grid-item"
-    xs={xs}
-    sm={sm}
-    md={md}
-    lg={lg}
-    xl={xl}
-    theme={theme}
-    {...props}
-  >
-    {props.children}
-  </GridItem>
-)};
+    <GridItem className="grid-item"
+      xs={xs}
+      sm={sm}
+      md={md}
+      lg={lg}
+      xl={xl}
+      theme={theme}
+      {...props}
+    >
+      {props.children}
+    </GridItem>
+  )
+};
