@@ -1,11 +1,12 @@
 import { menu } from "../../constant/menu";
 import { Text, useThemeContext, Anchor } from "../../ZUI";
 import { Link } from "react-router-dom";
+import { AsideUI } from "./styles";
 
-export const Aside = () => {
+export const Menu = ({ menuStatus }) => {
   const { theme } = useThemeContext();
   return (
-    <aside>
+    <AsideUI menuStatus={menuStatus} theme={theme}>
       <ul>
         {menu.map((item) => (
           <li key={`id${item.name}`}>
@@ -24,6 +25,6 @@ export const Aside = () => {
           </li>
         ))}
       </ul>
-    </aside>
+    </AsideUI>
   );
 };

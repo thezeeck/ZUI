@@ -130,18 +130,22 @@ export const ButtonContent = () => (
       <H2>Loading</H2>
       <p>The <Code>loading</Code> state removes the content button and you can choose 3 different animations.</p>
       <p>
-        <Button color="primary" loading={1}>Primary</Button>
+        <Button color="primary" loading={1}>Loading</Button>
       </p>
       <p>
-        <Button color="secondary" loading={2}>secondary</Button>
+        <Button color="secondary" loading={2}>Loading</Button>
       </p>
       <p>
-        <Button color="success" loading={3}>Success</Button>
+        <Button color="success" loading={3}>Loading</Button>
+      </p>
+      <p>
+        <Button color="warning" loading={4}>Loading</Button>
       </p>
       <ExampleCode>{`<p>
-  <Button color="primary" loading={1}>Primary</Button>
-  <Button color="secondary" loading={2}>secondary</Button>
-  <Button color="success" loading={3}>Success</Button>
+  <Button color="primary" loading={1}>Loading</Button>
+  <Button color="secondary" loading={2}>Loading</Button>
+  <Button color="success" loading={3}>Loading</Button>
+  <Button color="success" loading={4}>Loading</Button>
 </p>`}</ExampleCode>
     </Container.Row>
     <Container.Row>

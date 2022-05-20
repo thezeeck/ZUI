@@ -122,6 +122,15 @@ const CSS = createGlobalStyle`
         }
       }
 
+      @keyframes ZUI-loading-type4 {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(359deg);
+        }
+      }
+
       dialog {
         background-color: ${hexToRgba(theme.colors.background, 0.5)};
         border: 0 none;

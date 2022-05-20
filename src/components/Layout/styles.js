@@ -12,14 +12,14 @@ export const MainLayout = styled.section`
     width: 100%;
   }
 
-  aside {
-    max-width: 20rem;
-    width: 30%;
-  }
-
   main {
     width: 70%;
     max-width: 1000px;
     margin: 0 auto;
   }
+`;
+
+export const MainUI = styled.main`
+  transition: all var(--ZUI-transitions_slow) ease;
+  filter: blur(${({menuStatus}) => menuStatus ? "5px" : 0});
 `;
