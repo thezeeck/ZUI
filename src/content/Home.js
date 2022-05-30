@@ -3,7 +3,7 @@ import { H1, H2, Code, ExampleCode } from "../components/StyledComponents";
 import { Container } from "../ZUI";
 
 export const Home = () => (
-  <Layout>
+  <Layout id="HomeContent">
     <Container.Row>
       <H1>Getting started</H1>
       <p>

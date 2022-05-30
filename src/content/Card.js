@@ -152,7 +152,7 @@ export const CardContent = () => (
         component as background
       </p>
       <Grid>
-        <Grid.Item xs={4}>
+        <Grid.Item xs={12} sm={6} md={4}>
           <Card cover={images.cover01}>
             <Card.Body>
               <h3
@@ -174,7 +174,7 @@ export const CardContent = () => (
             </Card.Body>
           </Card>
         </Grid.Item>
-        <Grid.Item xs={4}>
+        <Grid.Item xs={12} sm={6} md={4}>
           <Card cover="https://www.webivm.com/wp-content/uploads/2016/12/Free-Stock-Images.jpg">
             <Card.Body
               style={{ textAlign: "center", textShadow: "0px 0px 8px black" }}
@@ -184,7 +184,7 @@ export const CardContent = () => (
             </Card.Body>
           </Card>
         </Grid.Item>
-        <Grid.Item xs={4}>
+        <Grid.Item xs={12} sm={6} md={4}>
           <Card
             cover={
               <div

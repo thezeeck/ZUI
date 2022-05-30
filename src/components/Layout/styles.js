@@ -13,7 +13,7 @@ export const MainLayout = styled.section`
   }
 
   main {
-    width: 70%;
+    width: 90%;
     max-width: 1000px;
     margin: 0 auto;
   }

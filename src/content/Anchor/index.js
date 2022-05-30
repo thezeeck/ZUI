@@ -1,109 +1,28 @@
-import { Anchor, Container } from "../ZUI";
-import { Layout } from "../components/Layout";
+import { Anchor, Container } from "../../ZUI";
+import { TitleContent } from "../../components/TitleContent";
+import { Layout } from "../../components/Layout";
 import {
-  H1,
   H2,
   Code,
   Table,
   Row,
   ExampleCode,
   Types,
-} from "../components/StyledComponents";
+} from "../../components/StyledComponents";
 import { Link } from "react-router-dom";
+import { AnchorDefault } from "./Default";
+import { AnchorColors } from "./Colors";
 
 export const AnchorContent = () => (
   <Layout>
-    <Container.Row>
-      <H1>Anchor</H1>
-      <p>
-        Anchors <Code>{`<Anchor>`}</Code> component brings to the developers the
-        possibility to customize all links in their project in the same place or
-        customize each element separately, this component renders an{" "}
-        <Code>{`<a>`}</Code> HTML element.
-      </p>
-      <ExampleCode lang="javascript">
-        {`import { Anchor } from "zeeck-ui";`}
-      </ExampleCode>
-    </Container.Row>
-    <Container.Row>
-      <H2>Default</H2>
-      <p>
-        The default Anchor color it's the primary color defined in the theme
-        config.
-      </p>
-      <p>
-        <Anchor link="#">Lorem ipsum dolor sit amet</Anchor>
-      </p>
-      <ExampleCode>
-        {`<p>
-  <Anchor link="#">
-    Lorem ipsum dolor sit amet
-  </Anchor>
-</p>`}
-      </ExampleCode>
-    </Container.Row>
-    <Container.Row>
-      <H2>Colors</H2>
-      <p>
-        You can change the Anchor <Code>color</Code> with the{" "}
-        <Code>text_color</Code> property
-      </p>
-      <p>
-        <Anchor text_color="primary" href="#">
-          Lorem ipsum dolor sit amet (Primary)
-        </Anchor>
-      </p>
-      <p>
-        <Anchor text_color="secondary" href="#">
-          Lorem ipsum dolor sit amet (Secondary)
-        </Anchor>
-      </p>
-      <p>
-        <Anchor text_color="success" href="#">
-          Lorem ipsum dolor sit amet (Success)
-        </Anchor>
-      </p>
-      <p>
-        <Anchor text_color="warning" href="#">
-          Lorem ipsum dolor sit amet (Warning)
-        </Anchor>
-      </p>
-      <p>
-        <Anchor text_color="error" href="#">
-          Lorem ipsum dolor sit amet (Error)
-        </Anchor>
-      </p>
-      <p>
-        <Anchor href="#">Lorem ipsum dolor sit amet (Default)</Anchor>
-      </p>
-      <ExampleCode>
-        {`<p>
-  <Anchor text_color="primary" href="#">
-    Lorem ipsum dolor sit amet (Primary)
-  </Anchor>
-  <br />
-  <Anchor text_color="secondary" href="#">
-    Lorem ipsum dolor sit amet (Secondary)
-  </Anchor>
-  <br />
-  <Anchor text_color="success" href="#">
-    Lorem ipsum dolor sit amet (Success)
-  </Anchor>
-  <br />
-  <Anchor text_color="warning" href="#">
-    Lorem ipsum dolor sit amet (Warning)
-  </Anchor>
-  <br />
-  <Anchor text_color="error" href="#">
-    Lorem ipsum dolor sit amet (Error)
-  </Anchor>
-  <br />
-  <Anchor href="#">
-    Lorem ipsum dolor sit amet (Default)
-  </Anchor>
-</p>`}
-      </ExampleCode>
-    </Container.Row>
+    <TitleContent title="Anchor">
+      Anchors <Code>{`<Anchor>`}</Code> component brings to the developers the
+      possibility to customize all links in their project in the same place or
+      customize each element separately, this component renders an{" "}
+      <Code>{`<a>`}</Code> HTML element.
+    </TitleContent>
+    <AnchorDefault />
+    <AnchorColors />
     <Container.Row>
       <H2>Variants</H2>
       <p>

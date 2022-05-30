@@ -4,7 +4,6 @@ import { Routes } from './Routes';
 import { userTheme } from '../styles/theme';
 
 export const App = () => {
-  console.log(userTheme);
   return (
     <ThemeProvider theme={userTheme}>
       <Styles />
