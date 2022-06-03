@@ -7,7 +7,7 @@ import {
   HelpMessage,
   ErrorMessage,
   HiddenInput,
-} from "./style";
+} from "./Input.style";
 import { DropDownMenuPortal } from "../DropDownMenu";
 
 export const Select = (props) => {

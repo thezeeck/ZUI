@@ -1,7 +1,7 @@
 import { Menu } from "./Menu";
 import { Children, cloneElement } from "react";
 import { TabProvider } from "./context";
-import { TabList } from "./styles";
+import { TabList } from "./Tabs.styles";
 
 export const Tabs = props => {
   let indexLoop = 0;

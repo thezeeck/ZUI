@@ -1,4 +1,4 @@
-import { CoverUI, CoverFigure, CoverCustomContent } from "./styles";
+import { CoverUI, CoverFigure, CoverCustomContent } from "./Card.styles";
 
 export const Cover = ({ content }) => {
   const setCover = () => {

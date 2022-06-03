@@ -1,4 +1,4 @@
-import { CardUI, ContentUI } from "./styles";
+import { CardUI, ContentUI } from "./Card.styles";
 import { useThemeContext } from "../Theme";
 import { CardProvider } from "./context";
 import { Cover } from "./Cover";

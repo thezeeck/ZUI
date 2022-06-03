@@ -1,4 +1,4 @@
-import { ItemContent, ItemUI, ItemTitle } from "./styles";
+import { ItemContent, ItemUI, ItemTitle } from "./Collapse.styles";
 import { useRef } from "react";
 import { useCollapseContext } from "./context";
 import { Icon } from "../Icons";

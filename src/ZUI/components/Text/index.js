@@ -1,4 +1,4 @@
-import { TextUI } from "./styles";
+import { TextUI } from "./Text.styles";
 
 export const Text = props => {
   return (

@@ -1,4 +1,4 @@
-import { ContainerUI } from "./styles";
+import { ContainerUI } from "./Container.styles";
 import { useThemeContext } from "../Theme";
 import { ContainerProvider } from "./context";
 

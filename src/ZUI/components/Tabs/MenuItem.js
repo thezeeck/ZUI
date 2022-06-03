@@ -1,5 +1,5 @@
 import { useTabContext } from "./context";
-import { ButtonMenu } from "./styles";
+import { ButtonMenu } from "./Tabs.styles";
 
 export const MenuItem = props => {
   const { state, setNewState } = useTabContext();

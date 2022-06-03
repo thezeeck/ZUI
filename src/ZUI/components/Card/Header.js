@@ -1,4 +1,4 @@
-import { HeaderUI } from "./styles";
+import { HeaderUI } from "./Card.styles";
 import { useCardContext } from "./context";
 import { useThemeContext } from "../Theme";
 

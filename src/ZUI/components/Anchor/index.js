@@ -1,4 +1,4 @@
-import { AnchorUI, IconWrapper } from "./styles";
+import { AnchorUI, IconWrapper } from "./Anchor.styles";
 import { useThemeContext } from "../Theme";
 import { Icon } from "../Icons";
 

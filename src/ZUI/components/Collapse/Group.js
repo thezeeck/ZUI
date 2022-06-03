@@ -1,5 +1,5 @@
 import { Children, cloneElement } from "react";
-import { GroupUI } from "./styles";
+import { GroupUI } from "./Collapse.styles";
 import { CollapseProvider } from "./context";
 import { useThemeContext } from "../Theme";
 

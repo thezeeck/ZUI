@@ -1,4 +1,4 @@
-import { GridItem } from "./styles";
+import { GridItem } from "./Grid.styles";
 import { useThemeContext } from "../Theme";
 
 export const Item = (props) => {

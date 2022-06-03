@@ -1,4 +1,4 @@
-import { ItemInputUI } from "./style";
+import { ItemInputUI } from "./Input.style";
 
 export const Option = ({ label, value }) => {
   return (

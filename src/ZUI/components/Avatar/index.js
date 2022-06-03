@@ -1,4 +1,4 @@
-import { AvatarUI, Background } from "./styles";
+import { AvatarUI, Background } from "./Avatar.styles";
 import { useThemeContext } from "../Theme";
 import { Icon } from "../Icons";
 

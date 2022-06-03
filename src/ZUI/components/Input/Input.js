@@ -5,7 +5,7 @@ import {
   InputWrapper,
   HelpMessage,
   IconWrapper,
-} from "./style";
+} from "./Input.style";
 import { Icon } from "../Icons";
 import { Button } from "../Button";
 import { useRef } from "react";

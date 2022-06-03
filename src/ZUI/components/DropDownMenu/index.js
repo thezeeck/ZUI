@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { useEffect, useRef } from "react";
 import { useThemeContext } from "../Theme";
-import { DropDownMenuUI, MenuWrapper } from "./styles";
+import { DropDownMenuUI, MenuWrapper } from "./DropDownMenu.styles";
 
 const DropDownMenu = ({ children, changeValue, position, close }) => {
   const { theme } = useThemeContext();

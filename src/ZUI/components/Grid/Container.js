@@ -1,4 +1,4 @@
-import { GridContainer } from "./styles";
+import { GridContainer } from "./Grid.styles";
 
 export const Grid = props => {
   return (

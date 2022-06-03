@@ -6,6 +6,9 @@ export const MainLayout = styled.section`
   background-color: ${({theme}) => theme.colors.background};
   color: ${({theme}) => theme.colors.text};
   font-family: sans-serif;
+  width: clamp(90%, 1000px, calc(80ch + 200px));
+  margin: 0 auto;
+  position: relative;
 
   header,
   footer {
@@ -13,8 +16,7 @@ export const MainLayout = styled.section`
   }
 
   main {
-    width: 90%;
-    max-width: 1000px;
+    width: clamp(250px, 90%, 80ch);
     margin: 0 auto;
   }
 `;

@@ -1,4 +1,4 @@
-import { ButtonUI, ButtonContentUI, IconWrapper } from "./styles";
+import { ButtonUI, ButtonContentUI, IconWrapper } from "./Button.styles";
 import { useThemeContext } from "../Theme";
 import { Loading } from "../Loading";
 import { Icon } from "../Icons";

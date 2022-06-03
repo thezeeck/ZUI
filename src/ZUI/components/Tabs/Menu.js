@@ -1,5 +1,5 @@
 import { MenuItem } from "./MenuItem";
-import { MenuUI } from "./styles";
+import { MenuUI } from "./Tabs.styles";
 
 export const Menu = ({menuOptions}) => {
   return (

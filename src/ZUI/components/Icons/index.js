@@ -1,4 +1,4 @@
-import { IconContainer } from "./styles";
+import { IconContainer } from "./Icons.styles";
 
 export const Icon = ({ name, size }) => (
   <IconContainer size={size}>

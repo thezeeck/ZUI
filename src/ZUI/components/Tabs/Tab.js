@@ -1,4 +1,4 @@
-import { TabUI } from "./styles";
+import { TabUI } from "./Tabs.styles";
 import { useTabContext } from "./context";
 
 export const Tab = props => {

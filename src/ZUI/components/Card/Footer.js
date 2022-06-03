@@ -1,4 +1,4 @@
-import { FooterUI } from "./styles";
+import { FooterUI } from "./Card.styles";
 import { useCardContext } from "./context";
 import { useThemeContext } from "../Theme";
 
