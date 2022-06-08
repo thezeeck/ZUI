@@ -156,7 +156,7 @@ export const InputContent = () => {
       <Container.Row>
         <H2>Variants</H2>
         <p>
-          You can change the default look with the <Code>variant</Code>{" "}
+          You can change the default look with the <Code>variant</Code>
           property.
         </p>
       </Container.Row>

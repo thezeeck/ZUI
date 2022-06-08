@@ -2,7 +2,7 @@ import { img } from "../../constant";
 import { LogoSize, MenuContent } from "./styles";
 import { useThemeContext, lightTheme, Grid, Button, Icon } from "../../ZUI";
 import { userTheme } from "../../styles/theme";
-import { Menu } from "../Aside";
+// import { Menu } from "../Aside";
 
 export const Header = ({ menuStatus, handleClick }) => {
   const { theme, setNewTheme } = useThemeContext();
@@ -27,7 +27,7 @@ export const Header = ({ menuStatus, handleClick }) => {
           </Button>
         </Grid.Item>
       </Grid>
-      <Menu menuStatus={menuStatus} />
+      {/* <Menu menuStatus={menuStatus} /> */}
     </header>
   );
 }

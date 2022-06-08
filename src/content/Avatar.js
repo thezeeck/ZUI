@@ -371,7 +371,7 @@ export const AvatarContent = () => (
   </Grid.Item>
 </Grid>`}</ExampleCode>
     </Container.Row>
-    <Container.Row>
+    <Container.Row xs={0}>
       <H2>Props</H2>
       <Table>
         <Row

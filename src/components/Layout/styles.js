@@ -1,23 +1,41 @@
 import styled from "styled-components";
 
 export const MainLayout = styled.section`
-  display: flex;
-  flex-wrap: wrap;
-  background-color: ${({theme}) => theme.colors.background};
-  color: ${({theme}) => theme.colors.text};
-  font-family: sans-serif;
-  width: clamp(90%, 1000px, calc(80ch + 200px));
+  display: grid;
+  width: clamp(90%, 100%, calc(80ch + 200px));
   margin: 0 auto;
-  position: relative;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--ZUI-sizes_spacing_4);
 
   header,
   footer {
-    width: 100%;
+    grid-column: 1/5;
+  }
+
+  header {
+    grid-row: 1;
+  }
+
+  footer {
+    grid-row: 3;
   }
 
   main {
-    width: clamp(250px, 90%, 80ch);
-    margin: 0 auto;
+    grid-row: 2;
+    grid-column: 1/5;
+    overflow: hidden;
+
+    @media (min-width: 650px) {
+      grid-column: 2/5;
+    }
+  }
+
+  aside {
+    grid-column: 1/2;
+
+    @media (max-width: 649px) {
+      display: none;
+    }
   }
 `;
 

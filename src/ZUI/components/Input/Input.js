@@ -19,7 +19,7 @@ export const Input = (props) => {
   delete inputProps.handleButtonClick;
   delete inputProps.help_text;
   delete inputProps.clearable;
-  const inputTypes = ["email", "number", "text", "url", "time", "date"];
+  const inputTypes = ["email", "number", "text", "url", "time", "date", "password"];
 
   if (!inputTypes.includes(props.type))
     return console.error(

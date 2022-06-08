@@ -3,7 +3,7 @@ import { Text, useThemeContext, Anchor } from "../../ZUI";
 import { Link } from "react-router-dom";
 import { AsideUI } from "./styles";
 
-export const Menu = ({ menuStatus }) => {
+export const Aside = ({ menuStatus }) => {
   const { theme } = useThemeContext();
   return (
     <AsideUI menuStatus={menuStatus} theme={theme}>
