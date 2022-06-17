@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LogoSize = styled.figure`
-  width: 6.25rem;
+  width: 3rem;
   margin: 0;
 
   img {
@@ -19,6 +19,14 @@ export const MenuContent = styled.div`
 
   > button > span {
     transition: all var(--ZUI-transitions_regular) ease;
-    transform: ${({menuStatus}) => menuStatus ? "rotate(180deg)" : "none"};
+    transform: ${({ menuStatus }) => (menuStatus ? "rotate(180deg)" : "none")};
   }
+`;
+
+export const HeaderUI = styled.header`
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: ${({ theme }) => theme.colors.background};
+  box-shadow: 0 0 2rem ${({ theme }) => theme.colors.background};
 `;
